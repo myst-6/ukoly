@@ -1,5 +1,5 @@
 import { SCodeBlock, SList, SText, STitle } from "components";
-import { op, brace } from "../util";
+import { op, brace } from "../../util";
 
 export const Dino = () => {
   return (

@@ -1,5 +1,5 @@
 import { HStack, Image, Link, SCodeBlock, SText, STitle, SList } from "components";
-import { brace } from "../util";
+import { brace } from "../../util";
 
 export const Proto = () => {
   return (

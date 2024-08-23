@@ -1,5 +1,5 @@
 import { Link, SCode, SCodeBlock, SList, SText, STitle } from "components";
-import { brace, op } from "../util";
+import { brace, op } from "../../util";
 
 export const Whisperer = () => {
   return (
