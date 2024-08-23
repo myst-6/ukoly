@@ -1,4 +1,4 @@
-import { HStack, Image, Link, SCode, SText, STitle, SList } from "components";
+import { HStack, Image, Link, SCodeBlock, SText, STitle, SList } from "components";
 import { brace } from "../util";
 
 export const Proto = () => {
@@ -61,7 +61,7 @@ export const Proto = () => {
       </SText>
 
       <STitle>Code</STitle>
-      <SCode path="proto/sol1.cpp"  />
+      <SCodeBlock path="proto/sol1.cpp"  />
 
       <STitle>Solution 2: Sweep Line and Set</STitle>
       <SText>
@@ -72,7 +72,7 @@ export const Proto = () => {
       </SText>
 
       <STitle>Code</STitle>
-      <SCode path="missing.cpp" />
+      <SCodeBlock path="missing.cpp" />
 
       <STitle>Solution 3: CDQ Divide and Conquer</STitle>
       <SText>
@@ -83,7 +83,7 @@ export const Proto = () => {
       </SText>
 
       <STitle>Code</STitle>
-      <SCode path="proto/sol3.cpp"  />
+      <SCodeBlock path="proto/sol3.cpp"  />
     </>
   );
 };

@@ -1,6 +1,5 @@
-import { Link, SCode, SList, SText, STitle } from "components";
+import { Link, SCode, SCodeBlock, SList, SText, STitle } from "components";
 import { brace, op } from "../util";
-import { Code } from "@chakra-ui/react";
 
 export const Whisperer = () => {
   return (
@@ -71,7 +70,7 @@ export const Whisperer = () => {
         The number of nodes in the graph will be bounded by the number of lists containing $p$ 
         non-negative integers whose sum is the same as the given list.
       </SText>
-      <SCode path="whisperer/count1.cpp" />
+      <SCodeBlock path="whisperer/count1.cpp" />
       <SText>
         This is maximised when $p = 10$ and $\sum = 90$, and gives $\approx 1.731 \cdot 10^{brace("12")}$.
         Even though the true number of states explored is likely to be a lot less than this, the order of
@@ -85,7 +84,7 @@ export const Whisperer = () => {
         Unfortunately I don't have a proof for this right now, but hopefully somebody can contribute
         one in the near future. Now let's run another program to see how many states we have.
       </SText>
-      <SCode path="whisperer/count2.cpp" />
+      <SCodeBlock path="whisperer/count2.cpp" />
       <SText>
         In the worst case when $p = 10$ this code outputs $\approx 3.74 \cdot 10^8$, which is 
         probably good enough. However, because it's quite close to the upper limit, we need to perform 
@@ -94,16 +93,16 @@ export const Whisperer = () => {
 
       <STitle>Encoding</STitle>
       <SText>
-        Instead of representing each node by an <Code>std::array</Code> or <Code>std::vector</Code> or similar,
+        Instead of representing each node by an <SCode>std::array</SCode> or <SCode>std::vector</SCode> or similar,
         we can represent each node in a single integer by doing something similar to
         <Link href="https://cp-algorithms.com/string/string-hashing.html" color="blue">polynomial hashing</Link>.
         In this case, $p$ is small so we don't need to take any modulus. We can use any base as long as it 
-        fits in a <Code>long long</Code>. We can perform operations quickly by using the encoded number and 
+        fits in a <SCode>long long</SCode>. We can perform operations quickly by using the encoded number and 
         we've removed at least one $p$ factor from the runtime of the code.
       </SText>
 
       <STitle>Code</STitle>
-      <SCode path="whisperer/sol.cpp"  />
+      <SCodeBlock path="whisperer/sol.cpp"  />
     </>
   );
 };

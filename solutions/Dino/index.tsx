@@ -1,4 +1,4 @@
-import { SCode, SList, SText, STitle } from "components";
+import { SCodeBlock, SList, SText, STitle } from "components";
 import { op, brace } from "../util";
 
 export const Dino = () => {
@@ -82,7 +82,7 @@ export const Dino = () => {
       </SText>
 
       <STitle>Code</STitle>
-      <SCode path="dino/sol.cpp" />
+      <SCodeBlock path="dino/sol.cpp" />
     </>
   );
 };

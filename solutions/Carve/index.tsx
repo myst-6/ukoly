@@ -1,5 +1,4 @@
-import { Code } from "@chakra-ui/react";
-import { SCode, SText, STitle } from "components";
+import { SCode, SCodeBlock, SText, STitle } from "components";
 import { brace } from "solutions/util";
 
 export const Carve = () => {
@@ -69,13 +68,13 @@ export const Carve = () => {
         There's just one more consideration. Unfortunately, the memory limit for this problem
         is so low that you cannot store the prefix sums for all the rows and cols. Firstly, instead
         of storing prefix sums for both the rows and columns, we need to store a 2D prefix sum of
-        the entire grid. Secondly, an <Code>int</Code> data type will overflow but
-        a <Code>long long</Code> data type is too large and will use too much memory. 
-        Therefore, you need to use an <Code>unsigned int</Code> for this problem. It's strange, but it works.
+        the entire grid. Secondly, an <SCode>int</SCode> data type will overflow but
+        a <SCode>long long</SCode> data type is too large and will use too much memory. 
+        Therefore, you need to use an <SCode>unsigned int</SCode> for this problem. It's strange, but it works.
       </SText>
 
       <STitle>Code</STitle>
-      <SCode path="carve/sol.cpp" />
+      <SCodeBlock path="carve/sol.cpp" />
     </>
   );
 };

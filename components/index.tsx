@@ -15,6 +15,7 @@ export * from "./Problem";
 export * from "./Profile";
 export * from "./SimpleGrid";
 export * from "./SCode";
+export * from "./SCodeBlock";
 export * from "./SText";
 export * from "./STitle";
 export * from "./Skeleton";
