@@ -32,7 +32,7 @@ export const Proto = () => {
             have any points which are above and to the right of them, so they both have a cost of $0$.
             In total, the answer is $5 + 5 + 2 = 12$.
         </SText>
-        <Image src="./assets/images/proto/sample.png" height="16rem" alt="Sample Diagram" />
+        <Image src="/assets/images/proto/sample.png" height="16rem" alt="Sample Diagram" />
       </HStack>
 
       <STitle>Idea</STitle>
