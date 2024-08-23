@@ -1,7 +1,5 @@
-import { Carve } from "solutions/Carve";
 import { ProblemInfo } from "../base";
-import { Dino, Proto } from "solutions";
-import { Whisperer } from "solutions/Whisperer";
+import { Carve, Dino, Proto, Whisperer } from "solutions";
 
 export const bio2Problems = {
   proto: {
