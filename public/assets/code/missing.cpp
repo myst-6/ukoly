@@ -1,1 +1,1 @@
-// No solution for this method yet :C\n
+// No solution for this method yet :C
