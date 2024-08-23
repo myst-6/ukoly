@@ -27,8 +27,8 @@ export const people = {
   sam: {
     name: "Samuel Trajtenberg",
     description: `\
-  Strong IOI participant, providing solutions. Helped with testing\
-  the website in its early stages.\
+  Strong UK IOI participant, three-time BIO finals attendee.\
+  Provides solutions and feedback.\
   `,
     socials: [
       {
