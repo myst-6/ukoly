@@ -82,8 +82,8 @@ export const Whisperer = () => {
       <SText>
         In fact, not only does the input satisfy this condition, but all nodes on the level graph will 
         also have $a_i &lt; p$. This can be easily guessed and seems intuitive, and is very easy to implement.
-        PROOF IS TODO.
-        Now let's run another program to see how many states we have.
+        Unfortunately I don't have a proof for this right now, but hopefully somebody can contribute
+        one in the near future. Now let's run another program to see how many states we have.
       </SText>
       <SCode path="whisperer/count2.cpp" />
       <SText>
