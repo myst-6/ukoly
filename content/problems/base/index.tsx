@@ -6,7 +6,8 @@ export type Tag =
   "Graphs" | 
   "Divide and Conquer" |
   "Greedy" |
-  "Brute Force";
+  "Brute Force" |
+  "Implementation";
 
 export type Difficulty = 
   "Easy" |
