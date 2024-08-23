@@ -70,7 +70,7 @@ export const Whisperer = () => {
         The number of nodes in the graph will be bounded by the number of lists containing $p$ 
         non-negative integers whose sum is the same as the given list.
       </SText>
-      <SCodeBlock path="whisperer/count1.cpp" />
+      <SCodeBlock path="whisperer/count1" />
       <SText>
         This is maximised when $p = 10$ and $\sum = 90$, and gives $\approx 1.731 \cdot 10^{brace("12")}$.
         Even though the true number of states explored is likely to be a lot less than this, the order of
@@ -84,7 +84,7 @@ export const Whisperer = () => {
         Unfortunately I don't have a proof for this right now, but hopefully somebody can contribute
         one in the near future. Now let's run another program to see how many states we have.
       </SText>
-      <SCodeBlock path="whisperer/count2.cpp" />
+      <SCodeBlock path="whisperer/count2" />
       <SText>
         In the worst case when $p = 10$ this code outputs $\approx 3.74 \cdot 10^8$, which is 
         probably good enough. However, because it's quite close to the upper limit, we need to perform 
@@ -102,7 +102,7 @@ export const Whisperer = () => {
       </SText>
 
       <STitle>Code</STitle>
-      <SCodeBlock path="whisperer/sol.cpp"  />
+      <SCodeBlock path="whisperer/sol"  />
     </>
   );
 };

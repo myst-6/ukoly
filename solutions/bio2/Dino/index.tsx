@@ -82,7 +82,7 @@ export const Dino = () => {
       </SText>
 
       <STitle>Code</STitle>
-      <SCodeBlock path="dino/sol.cpp" />
+      <SCodeBlock path="dino/sol" />
     </>
   );
 };

@@ -61,7 +61,7 @@ export const Proto = () => {
       </SText>
 
       <STitle>Code</STitle>
-      <SCodeBlock path="proto/sol1.cpp"  />
+      <SCodeBlock path="proto/sol1"  />
 
       <STitle>Solution 2: Sweep Line and Set</STitle>
       <SText>
@@ -72,7 +72,7 @@ export const Proto = () => {
       </SText>
 
       <STitle>Code</STitle>
-      <SCodeBlock path="missing.cpp" />
+      <SCodeBlock path="missing" />
 
       <STitle>Solution 3: CDQ Divide and Conquer</STitle>
       <SText>
@@ -83,7 +83,7 @@ export const Proto = () => {
       </SText>
 
       <STitle>Code</STitle>
-      <SCodeBlock path="proto/sol3.cpp"  />
+      <SCodeBlock path="proto/sol3"  />
     </>
   );
 };

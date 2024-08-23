@@ -74,7 +74,7 @@ export const Carve = () => {
       </SText>
 
       <STitle>Code</STitle>
-      <SCodeBlock path="carve/sol.cpp" />
+      <SCodeBlock path="carve/sol" />
     </>
   );
 };
