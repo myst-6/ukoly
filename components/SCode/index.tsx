@@ -15,7 +15,12 @@ export const SCode = ({ path, ...props }: SCodeProps) => {
     fetch(base + path)
       .then(response => response.text())
       .then(data => setCode(data))
-      .catch(error => console.error("Error fetching the text file:", error));
+      .catch(error => {
+        console.error("Error fetching the text file:", error);
+        setCode(`\
+// Sorry, there was an error fetching the solution.
+// Please report this to one of the managers on discord.`);
+      });
   }, [path]);
 
   return (
