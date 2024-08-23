@@ -27,7 +27,7 @@ export const people = {
   sam: {
     name: "Samuel Trajtenberg",
     description: `\
-  Strong UK IOI participant, three-time BIO finals attendee.\
+  Strong UK IOI participant, three-time BIO finalist.\
   Provides solutions and feedback.\
   `,
     socials: [
