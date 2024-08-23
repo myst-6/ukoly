@@ -7,7 +7,6 @@ export const bio2Problems = {
     display: "Prototype",
     original: "https://www.olympiad.org.uk/papers/2021/final/proto.pdf",
     year: 2021,
-    url: "./proto",
     tags: ["Data Structures"],
     editorialAuthors: ["Boris Hall"],
     solutionAuthors: ["Boris Hall", "Samuel Trajtenberg"],
