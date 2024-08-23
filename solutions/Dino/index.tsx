@@ -7,7 +7,7 @@ export const Dino = () => {
       <STitle>Abridged Statement</STitle>
       <SText>
         The required conditions are laid out pretty clearly in the statement, but they are obscued
-        by a lot of legend, so let&apos;s write them out again here. Let the opposite index in a pair
+        by a lot of legend, so let's write them out again here. Let the opposite index in a pair
         of spies be ${op("opp")}_i$. We need to construct a string $s$ of even length $n$ 
         consisting only of the characters $A$ and $B$ satisfying the following conditions:
       </SText>
@@ -50,7 +50,7 @@ export const Dino = () => {
       <SText typography="body.medium">
         It turns out that strings in the form $(AB|BA)+$ are sufficient to generate all solutions.
         We need to assign each disjoint pair of characters to either an $AB$ or a $BA$. 
-        So let&apos;s create a graph with each node representing the disjoint pairs of characters.
+        So let's create a graph with each node representing the disjoint pairs of characters.
         Each node can be assigned one of two values - to be $AB$ or to be $BA$.
         We can think of these two states as colours of the graph. So we should try to construct
         a graph such that its two-colouring will give a valid solution under the first condition.
@@ -58,7 +58,7 @@ export const Dino = () => {
 
       <STitle>Solution</STitle>
       <SText typography="body.medium">
-        Let&apos;s find a way to add edges to the graph so that it remains bipartite (so that it has a 
+        Let's find a way to add edges to the graph so that it remains bipartite (so that it has a 
         two-colouring) and so that it enforces the first condition. Consider the parity of each index
         in the pairs given in the input. If both indices are even, or both are odd, it follows that
         one of the two nodes in the graph must have opposite colours - that is, one must be $AB$ and 
@@ -72,11 +72,11 @@ export const Dino = () => {
 
       <STitle>Proof of Existence</STitle>
       <SText>
-        So we&apos;ve proven that, if we can find a two-colouring of this graph, the solution will
+        So we've proven that, if we can find a two-colouring of this graph, the solution will
         satisfy all three condition. How can we prove that a two-colouring always exists? Well, a graph
         is bipartite if and only if all cycles are of even length. A cycle starting and ending at a node
         begins from either the even or odd index in the pair, and returns to the index of opposite parity.
-        It&apos;s clear to see from our construction that any path connecting two indices of the same parity 
+        It's clear to see from our construction that any path connecting two indices of the same parity 
         has odd length and any path connecting two indices of opposite parity has even length. Therefore, all 
         cycles are of even length and so a two-colouring will always exist.
       </SText>

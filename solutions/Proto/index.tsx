@@ -6,7 +6,7 @@ export const Proto = () => {
     <>
       <STitle>Abridged Statement</STitle>
       <SText>
-        First, let&apos;s write this problem formally. We are given a set of $n$ points, and
+        First, let's write this problem formally. We are given a set of $n$ points, and
         for each point $(x_i, y_i)$, we need to find a point $(x_j, y_j)$ such that:
       </SText>
       <SList>
@@ -37,19 +37,19 @@ export const Proto = () => {
 
       <STitle>Idea</STitle>
       <SText>
-          In fact, this problem is a very standard data structure problem. It doesn&apos;t need
+          In fact, this problem is a very standard data structure problem. It doesn't need
           many special observations, and there are three ways to go about solving it.
       </SText>
 
       <STitle>Solution 1: Sweep Line and Segment Tree</STitle>
       <SText>
-        As we know, a segment tree can support range minimum queries. Let&apos;s assign the value of 
+        As we know, a segment tree can support range minimum queries. Let's assign the value of 
         each point as $a_i = x_i + y_i$, then we can easily see that $(x_j - x_i) + (y_j - y_i) = a_j - a_i$. 
         So we need to range query all points which have higher $x$ and $y$ coordinates for the minimum value 
-        of $a$ across them. Let&apos;s say we iterate through the points in descending $x$ coordinate, and add 
+        of $a$ across them. Let's say we iterate through the points in descending $x$ coordinate, and add 
         the $a$ value at position $y$ in the tree as we go. At any point when we query the tree, all points 
         in the tree have greater $x$ coordinate due to this iteration order. So we can range query 
-        $[y_i, \max_y]$ in the segment tree to find the best $a_j$ value. So now by sorting the points we&apos;ve 
+        $[y_i, \max_y]$ in the segment tree to find the best $a_j$ value. So now by sorting the points we've 
         reduced the problem to a one-dimensional range query. However, currently $\max_y \le 2^{brace("30")}$. 
         To maintain the ordering of $y_i$ while reducing the magnitude of the values, we can use coordinate 
         compression. This involves assigning each $y_i$ to its position in the sorted list of $y$ values. 
@@ -65,7 +65,7 @@ export const Proto = () => {
 
       <STitle>Solution 2: Sweep Line and Set</STitle>
       <SText>
-        In fact, this solution doesn&apos;t actually require a segment tree; it can be implemented using a set.
+        In fact, this solution doesn't actually require a segment tree; it can be implemented using a set.
         This is because all queries on the segment tree are suffix queries, and we are only ever inserting
         new points into the data structure and not deleting them. Details about this technique can be found
         <Link href="https://usaco.guide/adv/springboards" color="blue">here</Link>.
@@ -76,7 +76,7 @@ export const Proto = () => {
 
       <STitle>Solution 3: CDQ Divide and Conquer</STitle>
       <SText>
-        Actually, we don&apos;t even need a set! It can be solved with only sorting.
+        Actually, we don't even need a set! It can be solved with only sorting.
         This is a technique to solve multi-dimensional range queries with extremely low memory usage,
         discovered by a Chinese competitive programmer called CDQ. You can read more about it 
         <Link href="https://robert1003.github.io/2020/01/31/cdq-divide-and-conquer.html" color="blue">here</Link>.

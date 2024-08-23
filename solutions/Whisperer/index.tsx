@@ -7,7 +7,7 @@ export const Whisperer = () => {
     <>
       <STitle>Abridged Statement</STitle>
       <SText>
-        We&apos;re given a list $a$ of $p$ non-negative integers ($4 \le p \le 10$).
+        We're given a list $a$ of $p$ non-negative integers ($4 \le p \le 10$).
         In one operation, we do the following:
       </SText>
       <SList>
@@ -38,12 +38,12 @@ export const Whisperer = () => {
       <SText>
         Whenever we have a question about returning the $n$-th lexicographical sequence, a common idea is 
         to have a way of counting the number of sequences beginning with a certain prefix.
-        If we have this, we can build the sequence one entry at a time. Let&apos;s say we currently know
+        If we have this, we can build the sequence one entry at a time. Let's say we currently know
         the prefix of length $k$ of the $n$-th sequence, and we know how many sequences are smaller than
-        the current prefix (i.e., how many we&apos; &apos;skipped&apos; over). We can count how many sequences 
+        the current prefix (i.e., how many we 'skipped' over). We can count how many sequences 
         begin with all possible prefixes of length $k + 1$ by iterating through the possibilities for the next 
         entry to add onto the current prefix. If the number of sequences beginning with the new prefix of 
-        length $k + 1$ is at least $n$ minus the number of sequences we&apos;ve skipped, we know that the sequence
+        length $k + 1$ is at least $n$ minus the number of sequences we've skipped, we know that the sequence
         must begin with the new prefix of length $k + 1$. Otherwise, we can choose to skip all of these sequences
         and try the next lexicographically larger entry. By continuing this process until the number of skipped
         sequences is exactly $n - 1$, we can build the $n$-th sequence.
@@ -55,7 +55,7 @@ export const Whisperer = () => {
         Since the constraints on $p$ are small, it makes sense to try a brute-force. 
         The idea is to contruct a graph where the nodes are the lists of integers, and edges connect
         two sequences if we can perform exactly one operation to transform one into the other.
-        Let&apos;s say we&apos;ve constructed this graph. We can run BFS on this graph to find the length
+        Let's say we've constructed this graph. We can run BFS on this graph to find the length
         of the minimum sequence, and we can also use BFS to count the number of paths to the end from a 
         given node. To count the number of paths to the end, we can simply do 
         ${op("dp")}_u = \sum{op("dp")}_v$, for all nodes $v$ such that ${op("dist")}_v = {op("dist")}_u + 1$. 
