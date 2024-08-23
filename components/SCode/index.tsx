@@ -32,6 +32,7 @@ export const SCode = ({ path, ...props }: SCodeProps) => {
         maxHeight: "30em",
         overflowY: "auto",
         fontSize: "0.8rem",
+        marginTop: "0.5rem",
       }}
       showLineNumbers 
       {...props}

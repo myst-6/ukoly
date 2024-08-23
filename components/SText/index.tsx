@@ -36,7 +36,7 @@ export const SText = ({
 
   return (  
     <>
-      <Text typography={typography} style={inline ? { display: "inline" } : {}} {...props}>
+      <Text mt={2} typography={typography} style={inline ? { display: "inline" } : {}} {...props}>
         {...children.map((el, idx) => {
           if (typeof el === "string") {
             if (italics) {

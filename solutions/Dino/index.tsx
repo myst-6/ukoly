@@ -66,9 +66,11 @@ export const Dino = () => {
         draw an edge between the edges, saying that they should be opposite. Similarly, if one index is even 
         and the other is odd, it follows that both of the nodes in the graph must have the same colour - that 
         is, they are either both $AB$ or both $BA$. To enforce this, we can connect each of the nodes in question
-        to a new dummy node.
+        to a new dummy node. To find a two-colouring after building the graph, we can just run a DFS and assign 
+        the colours greedily.
       </SText>
 
+      <STitle>Proof of Existence</STitle>
       <SText>
         So we&apos;ve proven that, if we can find a two-colouring of this graph, the solution will
         satisfy all three condition. How can we prove that a two-colouring always exists? Well, a graph
@@ -79,11 +81,7 @@ export const Dino = () => {
         cycles are of even length and so a two-colouring will always exist.
       </SText>
 
-      <SText>
-        To find a two-colouring after building the graph, we can just run a DFS and assign colours greedily.
-      </SText>
-
-      <SText>Code</SText>
+      <STitle>Code</STitle>
       <SCode path="dino/sol.cpp" />
     </>
   );

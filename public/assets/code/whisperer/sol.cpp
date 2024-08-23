@@ -1,3 +1,5 @@
+// author: myst-6
+
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -43,11 +45,8 @@ int main() {
     int l = get(code, i);
     int r = get(code, (i+1)%p);
     
-    // these conditions should speed up the code a lot!
     if (l-1 < 0) return -1;
     if (r+1 >= p) return -1;
-    if (l <= r) return -1;
-    if (l <= X && r >= X) return -1;
 
     code -= powP[i] * l;
     code -= powP[(i+1)%p] * r;

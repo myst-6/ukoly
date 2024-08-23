@@ -5,6 +5,7 @@ import { Flex } from "../Flex";
 import { HStack } from "../Stack";
 import { Spacer } from "../Spacer";
 import { Text } from "../Text";
+import { Wrap } from "../Wrap";
 import { difficultyColors, ProblemInfo } from "content";
 
 export interface ProblemProps extends CardProps {
@@ -28,9 +29,9 @@ export const Problem = ({ problem, onChoose, ...props }: ProblemProps) => {
         </Flex>
       </HStack>
       Editorial authored by {problem.editorialAuthors.join(", ")}.
-      Solutions provided by {problem.solutionAuthors.join(", ")}.
+      Code provided by {problem.solutionAuthors.join(", ")}.
       <Spacer margin={2} />
-      <HStack>
+      <Wrap>
         <Badge colorScheme={difficultyColors[problem.difficulty]}>{problem.difficulty}</Badge>
         <Badge>{problem.year}</Badge>
         {
@@ -40,7 +41,7 @@ export const Problem = ({ problem, onChoose, ...props }: ProblemProps) => {
             );
           })
         }
-      </HStack>
+      </Wrap>
     </Card>
   );
 };

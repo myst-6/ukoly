@@ -40,7 +40,7 @@ export const bio2Problems = {
     display: "Pigeon Whisperer",
     original: "https://www.olympiad.org.uk/papers/2021/final/whisperer.pdf",
     year: 2021,
-    tags: ["Dynamic Programming"],
+    tags: ["Dynamic Programming", "Graphs", "Brute Force"],
     editorialAuthors: ["Boris Hall"],
     solutionAuthors: ["Boris Hall"],
     component: <Whisperer />
