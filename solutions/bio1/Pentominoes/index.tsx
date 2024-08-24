@@ -1,16 +1,15 @@
-import { Link, HStack, Image, SCodeBlock, SText, STitle, VStack } from "components";
-import { brace } from "solutions/util";
+import { Image, SCodeBlock, SText, STitle, VStack } from "components";
 
 export const Pentominoes = () => {
   return (
     <>
       <STitle>Solution</STitle>
       <SText>
-        This problem is a good old brute-force bash. The problem can be solved by drawing the two pentominoes at every possible position in a virtual canvas. The resulting shape is valid if the two shapes do not overlap and there is at least one square of one pentomino adjacent by an edge to a square of the other pentomino.
+        This problem is a good old brute-force bash. It can be solved by drawing the two pentominoes at every possible position in a virtual canvas. The resulting shape is valid if the two shapes do not overlap and there is at least one square of one pentomino adjacent by an edge to a square of the other pentomino.
         All valid shapes are then added to a set. The number of distinguishable shapes is the size of the set once all possible position combinations are tried.
       </SText>
       <SText>
-        In the sample code, the pentominoes are hard-coded as a matrix of 1s and 0s, with a 1 indicating a 'filled' square and a 0 indicating an empty square.
+        In the sample code, the pentominoes are hard-coded as a matrix of 1s and 0s, with a 1 indicating a 'filled' square and a 0 an empty square.
         The canvas is modelled as a matrix of integers, and drawing the shapes is done by overwriting some elements on the canvas with the elements in the pentomino matrix.
       </SText>
       <SText>

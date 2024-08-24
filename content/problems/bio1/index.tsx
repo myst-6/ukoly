@@ -1,5 +1,5 @@
 import { ProblemInfo } from "../base";
-import { IntegerStrings, ParsingLists, WordGame, Unlock, ZeckendorfRepresentation, Pentominoes } from "solutions";
+import { IntegerStrings, ParsingLists, WordGame, Unlock, ZeckendorfRepresentation, Pentominoes, DreamingSpires } from "solutions";
 
 export const bio1Problems = {
   proto: {
@@ -61,5 +61,15 @@ export const bio1Problems = {
     editorialAuthors: ["Vladimir Filip"],
     solutionAuthors: ["Vladimir Filip"],
     component: <Pentominoes />,
+  } as ProblemInfo,
+  dreamingspires: {
+    difficulty: "Medium",
+    display: "Dreaming Spires",
+    original: "https://www.olympiad.org.uk/papers/2023/bio/bio23-exam.pdf",
+    year: 2023,
+    tags: ["Q3", "Breadth-first Search"],
+    editorialAuthors: ["Vladimir Filip"],
+    solutionAuthors: ["Vladimir Filip"],
+    component: <DreamingSpires />,
   } as ProblemInfo,
 };

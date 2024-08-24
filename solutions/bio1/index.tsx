@@ -4,3 +4,4 @@ export * from "./WordGame";
 export * from "./Unlock";
 export * from "./ZeckendorfRepresentation";
 export * from "./Pentominoes";
+export * from "./DreamingSpires";
