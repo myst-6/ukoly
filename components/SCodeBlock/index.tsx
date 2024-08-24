@@ -1,32 +1,36 @@
 import { Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { CopyBlock, atomOneDark } from "react-code-blocks";
-import { CopyBlockProps } from "react-code-blocks/dist/components/CopyBlock";
-
+import {
+  atomOneDark,
+} from "react-syntax-highlighter/dist/cjs/styles/hljs";
+import CodeBlock from "./codeBlock";
 export const base: string = "/assets/code/";
 
 export interface Language {
   display: string;
   extension: string;
+  highlight: string;
 }
 
 export const languages: Language[] = [
   {
     display: "C++",
     extension: "cpp",
+    highlight: "cpp"
   },
   {
     display: "Python",
-    extension: "py"
+    extension: "py",
+    highlight: "python"
   }
 ];
 
 export type SourceCode = null | string;
-export interface SCodeBlockProps extends Omit<Omit<CopyBlockProps, "text">, "language"> {
+type SCodeBlockProps = {
   path: string;
-}
+};
 
-export const SCodeBlock = ({ path, ...props }: SCodeBlockProps) => {
+export const SCodeBlock = ({ path }: SCodeBlockProps) => {
   const [codes, setCodes] = useState<SourceCode[]>(languages.map(() => null));
 
   useEffect(() => {
@@ -67,19 +71,8 @@ export const SCodeBlock = ({ path, ...props }: SCodeBlockProps) => {
           ...codes.filter(code => code !== null).map((code, idx) => {
             return (
               <TabPanel key={idx}>
-                <CopyBlock
-                  text={code} 
-                  language={languages[idx]!.extension}
-                  theme={atomOneDark} 
-                  customStyle={{
-                    maxHeight: "30em",
-                    overflowY: "auto",
-                    fontSize: "0.8rem",
-                    marginTop: "0.5rem",
-                  }}
-                  showLineNumbers 
-                  {...props}
-                />
+                <CodeBlock style={atomOneDark} code={code} language={languages[idx]!.highlight}>
+                </CodeBlock>
               </TabPanel>
             )
           })
@@ -88,3 +81,21 @@ export const SCodeBlock = ({ path, ...props }: SCodeBlockProps) => {
     </Tabs>
   );
 }
+
+/*
+import {
+  vs,
+  vs2015,
+} from "react-syntax-highlighter/dist/cjs/styles/hljs";
+import CodeBlock from "./codeBlock";
+
+export const SCodeBlock = () => {
+  return (
+      <div className="App">
+          <CodeBlock style={vs} code={code} language={'bash'} />
+          <br />
+          <br />
+          <CodeBlock style={vs2015} code={typescriptCode} language={'typescript'} />
+      </div>
+  );
+}*/
