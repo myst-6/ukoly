@@ -67,7 +67,7 @@ export const bio1Problems = {
     display: "Dreaming Spires",
     original: "https://www.olympiad.org.uk/papers/2023/bio/bio23-exam.pdf",
     year: 2023,
-    tags: ["Q3", "Breadth-first Search"],
+    tags: ["Q3", "DFS and Similar"],
     editorialAuthors: ["Vladimir Filip"],
     solutionAuthors: ["Vladimir Filip"],
     component: <DreamingSpires />,

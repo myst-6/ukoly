@@ -9,11 +9,11 @@ export const Pentominoes = () => {
         All valid shapes are then added to a set. The number of distinguishable shapes is the size of the set once all possible position combinations are tried.
       </SText>
       <SText>
-        In the sample code, the pentominoes are hard-coded as a matrix of 1s and 0s, with a 1 indicating a 'filled' square and a 0 an empty square.
+        In the sample code, the pentominoes are hard-coded as a matrix of $1$s and $0$s, with a $1$ indicating a 'filled' square and a $0$ an empty square.
         The canvas is modelled as a matrix of integers, and drawing the shapes is done by overwriting some elements on the canvas with the elements in the pentomino matrix.
       </SText>
       <SText>
-        Since the largest pentomino width or height is 5 and there are two shapes on the canvas, the minimum necessary canvas width and height is 10 (the canvas is made square for convenience).
+        Since the largest pentomino width or height is $5$ and there are two shapes on the canvas, the minimum necessary canvas width and height is $10$ (the canvas is made square for convenience).
       </SText>
       <SText>
         At this stage, there is a problem. Take two possible valid shapes generated from $FF$ below, for example.
