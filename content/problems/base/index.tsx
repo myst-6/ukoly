@@ -8,7 +8,11 @@ export type Tag =
   "Greedy" |
   "Brute Force" |
   "Implementation" | 
-  "DFS and Similar";
+  "DFS and Similar" |
+  "Math" |
+  "Q1" |
+  "Q2" |
+  "Q3";
 
 export type Difficulty = 
   "Easy" |

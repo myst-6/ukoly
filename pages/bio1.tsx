@@ -39,7 +39,7 @@ export default function BIO1() {
             }
           </Box>
           <Divider mb={3} mt={6} />
-          <Text typography="display.small">Problem Viewer {problem && `: ${problem.display}`}</Text>
+          <Text typography="display.small">Problem Viewer{problem && `: ${problem.display}`}</Text>
           {
             problem === null ? <SolutionSkeleton /> : <Solution problem={problem} />
           }
