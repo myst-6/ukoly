@@ -1,5 +1,5 @@
 import { ProblemInfo } from "../base";
-import { IntegerStrings, ParsingLists, WordGame, Unlock } from "solutions";
+import { IntegerStrings, ParsingLists, WordGame, Unlock, ZeckendorfRepresentation, Pentominoes, DreamingSpires } from "solutions";
 
 export const bio1Problems = {
   proto: {
@@ -41,5 +41,35 @@ export const bio1Problems = {
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <Unlock />,
-  } as ProblemInfo
+  } as ProblemInfo,
+  zeckendorfrepresentation: {
+    difficulty: "Easy",
+    display: "Zeckendorf Representation",
+    original: "https://www.olympiad.org.uk/papers/2023/bio/bio23-exam.pdf",
+    year: 2023,
+    tags: ["Q1", "Math"],
+    editorialAuthors: ["Vladimir Filip"],
+    solutionAuthors: ["Vladimir Filip"],
+    component: <ZeckendorfRepresentation />,
+  } as ProblemInfo,
+  pentominoes: {
+    difficulty: "Medium",
+    display: "Pentominoes",
+    original: "https://www.olympiad.org.uk/papers/2023/bio/bio23-exam.pdf",
+    year: 2023,
+    tags: ["Q2", "Brute Force", "Implementation"],
+    editorialAuthors: ["Vladimir Filip"],
+    solutionAuthors: ["Vladimir Filip"],
+    component: <Pentominoes />,
+  } as ProblemInfo,
+  dreamingspires: {
+    difficulty: "Medium",
+    display: "Dreaming Spires",
+    original: "https://www.olympiad.org.uk/papers/2023/bio/bio23-exam.pdf",
+    year: 2023,
+    tags: ["Q3", "DFS and Similar"],
+    editorialAuthors: ["Vladimir Filip"],
+    solutionAuthors: ["Vladimir Filip"],
+    component: <DreamingSpires />,
+  } as ProblemInfo,
 };
