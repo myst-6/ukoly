@@ -72,16 +72,6 @@ export const bio1Problems = {
     solutionAuthors: ["Vladimir Filip", "Alex Pylypenko"],
     component: <DreamingSpires />,
   } as ProblemInfo,
-    decoderring: {
-    difficulty: "Easy",
-    display: "Decoder Ring",
-    original: "https://www.olympiad.org.uk/papers/2018/bio/bio18-exam.pdf",
-    year: 2018,
-    tags: ["Q2", "Implementation"],
-    editorialAuthors: ["Adwaya Gupta"],
-    solutionAuthors: ["Adwaya Gupta"],
-    component: <DecoderRing />,
-  } as ProblemInfo,
   debtrepayment: {
     difficulty: "Easy",
     display: "Debt Repayment",
@@ -91,5 +81,15 @@ export const bio1Problems = {
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <DebtRepayment />,
+  } as ProblemInfo,
+  decoderring: {
+    difficulty: "Easy",
+    display: "Decoder Ring",
+    original: "https://www.olympiad.org.uk/papers/2018/bio/bio18-exam.pdf",
+    year: 2018,
+    tags: ["Q2", "Implementation"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <DecoderRing />,
   } as ProblemInfo,
 };
