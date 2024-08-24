@@ -67,7 +67,7 @@ export const bio2Problems = {
     display: "Terminal Velocity",
     original: "https://olympiad.org.uk/papers/2019/final/velocity.pdf",
     year: 2019,
-    tags: [],
+    tags: ["Greedy"],
     editorialAuthors: ["Anango Prabhat"],
     solutionAuthors: ["Anango Prabhat"],
     component: <TerminalVelocity />
