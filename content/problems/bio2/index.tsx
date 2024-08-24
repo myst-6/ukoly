@@ -1,5 +1,5 @@
 import { ProblemInfo } from "../base";
-import { Carve, Dino, Proto, Whisperer, BrokersDoom } from "solutions";
+import { BrokersDoom, Carve, Dino, Milk, Proto, Whisperer } from "solutions";
 
 export const bio2Problems = {
   proto: {
@@ -51,5 +51,15 @@ export const bio2Problems = {
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <BrokersDoom />
+  } as ProblemInfo,
+  milk: {
+    difficulty: "Medium",
+    display: "A Splash of Milk",
+    original: "https://www.olympiad.org.uk/papers/2023/final/milk.pdf",
+    year: 2023,
+    tags: ["Graphs", "DFS and Similar"],
+    editorialAuthors: ["Boris Hall"],
+    solutionAuthors: ["Boris Hall"],
+    component: <Milk />
   } as ProblemInfo
 };

@@ -7,7 +7,8 @@ export type Tag =
   "Divide and Conquer" |
   "Greedy" |
   "Brute Force" |
-  "Implementation" |
+  "Implementation" | 
+  "DFS and Similar" |
   "Math" |
   "Q1" |
   "Q2" |
