@@ -1,3 +1,4 @@
+# Solution Author: Adwaya Gupta
 from math import ceil
 
 interest, repayment = map(int, input().split())
