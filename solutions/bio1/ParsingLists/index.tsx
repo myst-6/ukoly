@@ -11,7 +11,7 @@ export const ParsingLists = () => {
 
       <STitle>Sample Explanation</STitle>
       <SText>
-        The $i$th element with the description E(OE) is equal to: E[O[E[E[E[O[E[i]]]]]]].
+        The $i$-th element with the description E(OE) is equal to: E[O[E[E[E[O[E[i]]]]]]].
         Now, working from the inside out:
       </SText>
       <SList>
@@ -24,7 +24,7 @@ export const ParsingLists = () => {
         <SText>E[175] = 350</SText>
       </SList>
       <SText>
-        So the $i$th element with the description E(OE) is equal to 350, when $i=3$.
+        So the $i$-th element with the description E(OE) is equal to 350, when $i=3$.
       </SText>
 
       <STitle>Idea</STitle>
@@ -46,10 +46,10 @@ export const ParsingLists = () => {
       </SText>
       <SList>
         <SText>
-          It is easy to see that $E(x) = 2x$, since E = [2, 4, 6, 8, 10, 12...]
+          It is easy to see that $E(x) = 2x$, since E = $[2, 4, 6, 8, 10, 12...]$.
         </SText>
         <SText>
-          Similarly, $O(x) = 2x - 1$, since O = [1, 3, 5, 7, 9, 11...]
+          Similarly, $O(x) = 2x - 1$, since O = $[1, 3, 5, 7, 9, 11...]$.
         </SText>
         <SText>
           It gets somewhat more challenging for $T(x)$. There are two ways to calculate $T(x)$, 
@@ -57,7 +57,7 @@ export const ParsingLists = () => {
            that $T(x) =$ ${floor("\\sqrt{2x} + \\frac{1}{2}")}$. The binary search solution is to
           consider the function $L(i)$, which returns the last index $i$ such that $T(i) = k$, 
           and then binary search on $L$ to find such an $i$ such that $L(i) \geq x$ and $L(i-1) \lt x$.
-          The value of $L(i)$ for any $i$ is simply the $i$th triangular number, which is $\frac{brace("i(i+1)")}{brace("2")}$.
+          The value of $L(i)$ for any $i$ is simply the $i$-th triangular number, which is $\frac{brace("i(i+1)")}{brace("2")}$.
         </SText>
       </SList>
       <SText>

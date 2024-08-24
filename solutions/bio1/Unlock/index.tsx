@@ -14,9 +14,9 @@ export const Unlock = () => {
 
       <STitle>Solution</STitle>
       <SText>
-        Just bruteforce all possible combinations of the top 5 buttons, and 
+        Just bruteforce all possible combinations of the top $5$ buttons, and 
         then use the results of those button presses to determine the rest of the 
-        button presses. Notice that after the top 5 buttons have been pressed, for
+        button presses. Notice that after the top $5$ buttons have been pressed, for
         each light in the top row, the only button that can affect its state, thus 
         set it to the correct state, is the button directly below it (for button A, this 
         is button F, for button B, this is button G, and so on). Thus, we can try to build a 
@@ -29,7 +29,7 @@ export const Unlock = () => {
         This can be done in ${brace("O(n^{2} * 3^n)")}$ time,
         where $n$ is the number of buttons in a row, which is $5$ in this case.
         The $3^n$ factor comes from the fact that there are $3$ possible states for each button,
-        and the $n^2$ factor comes from the fact that for each possible combination of the top 5 buttons,
+        and the $n^2$ factor comes from the fact that for each possible combination of the top $5$ buttons,
         we need to attempt to generate a valid combination of the other buttons.
         This is fast enough because ${brace("3^{5}*5^2 = 6075")}$, which passes comfortably in any language.
       </SText>

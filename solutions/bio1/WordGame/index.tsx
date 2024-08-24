@@ -25,7 +25,7 @@ export const WordGame = () => {
         returns the number of valid words with score $x$ 
         whose first letter is $y$.
         The base case is when $x = 0$, 
-        in which case the function returns 0. Also, when $y \gt x$,
+        in which case the function returns $0$. Also, when $y \gt x$,
         the function returns 0, since the first letter cannot have a score
         greater than the total score of the word. Otherwise, 
         the function returns the sum of $f(x - y, z)$ for all
