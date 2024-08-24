@@ -95,7 +95,7 @@ export const Whisperer = () => {
       <SText>
         Instead of representing each node by an <SCode>std::array</SCode> or <SCode>std::vector</SCode> or similar,
         we can represent each node in a single integer by doing something similar to
-        <Link href="https://cp-algorithms.com/string/string-hashing.html" color="blue">polynomial hashing</Link>.
+        <Link href="https://cp-algorithms.com/string/string-hashing.html">polynomial hashing</Link>.
         In this case, $p$ is small so we don't need to take any modulus. We can use any base as long as it 
         fits in a <SCode>long long</SCode>. We can perform operations quickly by using the encoded number and 
         we've removed at least one $p$ factor from the runtime of the code.
