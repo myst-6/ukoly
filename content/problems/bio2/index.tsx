@@ -1,5 +1,5 @@
 import { ProblemInfo } from "../base";
-import { BrokersDoom, Carve, Dino, Milk, Proto, Whisperer, TerminalVelocity } from "solutions";
+import { BrokersDoom, Carve, Dino, Milk, Proto, Whisperer, TerminalVelocity, KeepOnTheGrass } from "solutions";
 
 export const bio2Problems = {
   proto: {
@@ -71,5 +71,15 @@ export const bio2Problems = {
     editorialAuthors: ["Anango Prabhat"],
     solutionAuthors: ["Anango Prabhat"],
     component: <TerminalVelocity />
-  } as ProblemInfo
+  } as ProblemInfo,
+  keeponthegrass: {
+    difficulty: "Easy",
+    display: "Keep On The Grass",
+    original: "https://olympiad.org.uk/papers/2017/final/KeepOnTheGrass.pdf",
+    year: 2017,
+    tags: ["Math", "Implementation"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <KeepOnTheGrass />
+  } as ProblemInfo,
 };
