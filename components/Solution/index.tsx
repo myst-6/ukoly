@@ -13,7 +13,7 @@ export const Solution = ({ problem, children, ...props }: SolutionProps) => {
     <Box {...props}>
       <STitle>Source</STitle>
       <SText>
-        The original problem statement can be found <Link href={problem.original}>here</Link>.
+        The original problem statement can be found<Link href={problem.original}>here.</Link>
       </SText>
       {problem.component}
     </Box>

@@ -7,7 +7,11 @@ export type Tag =
   "Divide and Conquer" |
   "Greedy" |
   "Brute Force" |
-  "Implementation";
+  "Implementation" |
+  "Math" |
+  "Q1" |
+  "Q2" |
+  "Q3";
 
 export type Difficulty = 
   "Easy" |

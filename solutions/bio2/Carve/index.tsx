@@ -44,7 +44,7 @@ export const Carve = () => {
         column?
       </SText>
       <SText>
-        Let's introduce an additional paremeter $X$. Up until the point where we've taken
+        Let's introduce an additional parameter $X$. Up until the point where we've taken
         less than $X$ columns off of the left edge, we should prioritise the left edge. After this, we
         should take no more columns off of the last edge. At the end of the process, if exactly $X$ operations
         have taken place then the algorithm will return the minimum right edge of the row given that the left 
