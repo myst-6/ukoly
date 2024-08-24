@@ -46,10 +46,10 @@ export const ParsingLists = () => {
       </SText>
       <SList>
         <SText>
-          It is easy to see that $E(x) = 2x$, since $E = [2, 4, 6, 8, 10, 12\dots]$.
+          It is easy to see that $E(x) = 2x$, since $E = [2, 4, 6, 8, 10, 12,\dots]$.
         </SText>
         <SText>
-          Similarly, $O(x) = 2x - 1$, since $O = [1, 3, 5, 7, 9, 11\dots]$.
+          Similarly, $O(x) = 2x - 1$, since $O = [1, 3, 5, 7, 9, 11,\dots]$.
         </SText>
         <SText>
           It gets somewhat more challenging for $T(x)$. There are two ways to calculate $T(x)$, 

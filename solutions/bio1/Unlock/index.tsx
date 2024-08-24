@@ -7,7 +7,7 @@ export const Unlock = () => {
       <STitle>Observation</STitle>
       <SText>
         This problem cannot be solved by bruteforcing every possible combination
-        of button presses, since the number of possible combinations is ${brace("3^{25} \\approx 8.47*10^{11}")}$, which
+        of button presses, since the number of possible combinations is ${brace("3^{25} \\approx 8.47 \\cdot 10^{11}")}$, which
         would be far too slow. However, is it possible to bruteforce only some set of the buttons,
         and then use the results of those button presses to determine the rest of the button presses?
       </SText>
@@ -31,7 +31,7 @@ export const Unlock = () => {
         The $3^n$ factor comes from the fact that there are $3$ possible states for each button,
         and the $n^2$ factor comes from the fact that for each possible combination of the top $5$ buttons,
         we need to attempt to generate a valid combination of the other buttons.
-        This is fast enough because ${brace("3^{5}*5^2 = 6075")}$, which passes comfortably in any language.
+        This is fast enough because ${brace("3^{5} \\cdot 5^2 = 6075")}$, which passes comfortably in any language.
       </SText>
 
       <STitle>Code</STitle>

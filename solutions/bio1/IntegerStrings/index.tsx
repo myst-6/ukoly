@@ -16,12 +16,12 @@ export const IntegerStrings = () => {
 
       <STitle>Idea</STitle>
       <SText>
-        The digit at the $i$-th position in the string when $n=1$ is the same as the digit at the $i+k$-th position in the string when $n=1$, where $k$ is the number of digits before $n$ appears in the string.
+        The digit at the $i$-th position in the string when $n=1$ is the same as the digit at the $(i+k)$-th position in the string when $n=1$, where $k$ is the number of digits before $n$ appears in the string.
       </SText>
 
       <STitle>Solution</STitle>
       <SText>
-        Of course, we can't generate the entire string. However, we can calculate the number of digits before $n$ appears in the string. We can then calculate the digit at the $i$-th position in the string when $n=1$ by calculating the digit at the $i+k$th position in the string when $n=1$.
+        Of course, we can't generate the entire string. However, we can calculate the number of digits before $n$ appears in the string. We can then calculate the digit at the $i$-th position in the string when $n=1$ by calculating the digit at the $(i+k)$-th position in the string when $n=1$.
       </SText>
       <SText>
         To calculate the number of digits before $n$ appears in the string, we can consider the number of $1$-digit numbers below $n$, the number of $2$-digit numbers below $n$, and so on. We can then calculate the number of digits before $n$ appears in the string by summing each of these values multiplied by the number of digits in each number. This can be done in $\mathcal{brace("O")}(\log(n))$ time.
