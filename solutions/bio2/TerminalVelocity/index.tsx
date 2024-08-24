@@ -24,8 +24,8 @@ export const TerminalVelocity = () => {
       <SText>
         Since we are given all of the inversions, for a particular pigeon $x$ we know exactly which other 
         pigeons will come before it in the final permutation. These are exactly the pigeons $y$ with a smaller 
-        starting position $y<x$ such that $(x,y)$ is not an inversion, and the pigeons $y$ with a larger starting 
-        position $y>x$ such that $(x,y)$ is an inversion.
+        starting position $y \lt x$ such that $(x,y)$ is not an inversion, and the pigeons $y$ with a larger starting 
+        position $y \gt x$ such that $(x,y)$ is an inversion.
       </SText>
       <SText>
         Therefore, for each $x$ we can count the number of pigeons which come before $x$ in the final ordering. 
