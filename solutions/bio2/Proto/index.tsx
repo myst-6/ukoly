@@ -57,7 +57,7 @@ export const Proto = () => {
       </SText>
       <SText>
         You can read further on this topic 
-        <Link href="https://usaco.guide/plat/range-sweep" color="blue">here</Link>.
+        <Link href="https://usaco.guide/plat/range-sweep">here</Link>.
       </SText>
 
       <STitle>Code</STitle>
@@ -68,7 +68,7 @@ export const Proto = () => {
         In fact, this solution doesn't actually require a segment tree; it can be implemented using a set.
         This is because all queries on the segment tree are suffix queries, and we are only ever inserting
         new points into the data structure and not deleting them. Details about this technique can be found
-        <Link href="https://usaco.guide/adv/springboards" color="blue">here</Link>.
+        <Link href="https://usaco.guide/adv/springboards">here</Link>.
       </SText>
 
       <STitle>Code</STitle>
@@ -79,7 +79,7 @@ export const Proto = () => {
         Actually, we don't even need a set! It can be solved with only sorting.
         This is a technique to solve multi-dimensional range queries with extremely low memory usage,
         discovered by a Chinese competitive programmer called CDQ. You can read more about it 
-        <Link href="https://robert1003.github.io/2020/01/31/cdq-divide-and-conquer.html" color="blue">here</Link>.
+        <Link href="https://robert1003.github.io/2020/01/31/cdq-divide-and-conquer.html">here</Link>.
       </SText>
 
       <STitle>Code</STitle>
