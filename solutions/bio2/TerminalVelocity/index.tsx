@@ -12,7 +12,7 @@ export const TerminalVelocity = () => {
         if and only if the one with a larger starting position (competitor number) comes before the one 
         with the smaller starting position. This leads us to this formalised statement: Given all the 
         inversions of a permutation, reconstruct a possible permutation. 
-        <Link href="https://en.wikipedia.org/wiki/Inversion_(discrete_mathematics)">(definition of inversions)</a>
+        <Link href="https://en.wikipedia.org/wiki/Inversion_(discrete_mathematics)">(definition of inversions)</Link>
       </SText>
 
       <STitle>Idea</STitle>
