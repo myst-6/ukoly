@@ -42,15 +42,15 @@ export const BrokersDoom = () => {
         Of course, simply iterating through all pairs of elements in 
         the prefix sum array and checking if the difference is 
         greater than or equal to $t$ will work, but this is 
-        too slow for any non-trivial subtasks. Instead, we can sort the 
+        too slow given the constraint on $n$. Instead, we can sort the 
         prefix sum array and use a {<Link href="https://usaco.guide/silver/two-pointers">two-pointer</Link>} 
         approach. We first initialise {<SCode>int ans = LLONG_MAX</SCode>}, 
         then set the left pointer to $0$ and the right 
         pointer to $1$. Then, at each step, we check if
         the difference between the values at the left and right
         pointers is greater than or equal to $t$. If it is, we do
-        {<SCode>ans = min(ans, a[right] - a[left])</SCode>} 
-         and move the left pointer to the right. This decreases
+        {<SCode>ans = min(ans, a[right] - a[left])</SCode>} {" "} and 
+        move the left pointer to the right. This decreases
         the time complexity from $\mathcal{brace("O")}(n^2)$ to $\mathcal{brace("O")}(n \log n)$.
       </SText>
 
