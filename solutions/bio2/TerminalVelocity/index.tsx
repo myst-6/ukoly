@@ -31,17 +31,14 @@ export const TerminalVelocity = () => {
       <SText>
         Therefore, for each $x$ we can count the number of pigeons which come before $x$ in the final ordering. 
         Let's process the inversion pairs one by one. At the beginning, with no inversions processed, the final 
-        position is the same as the initial position. Then, when processing pair $(x,y)$, we swap $x$ and $y$ if $y\x$ 
-        to ensure that $x<y$. Now we know that one more pigeon comes before $x$ than we thought before (pigeon $y$), 
+        position is the same as the initial position. Then, when processing pair $(x,y)$, we swap $x$ and $y$ if $y \lt x$ 
+        to ensure that $x \lt y$. Now we know that one more pigeon comes before $x$ than we thought before (pigeon $y$), 
         and we know that one less pigeon comes before $y$ than we thought before (pigeon $x$), so we can update our counts. 
         In this way we know for each pigeon $i$ how many pigeons $j$ come before $i$ in the final ordering, and thus we 
         know the position of each initial pigeon in the final ordering.
+      Time Complexity: $O(n^2)$
       </SText>
-
-      <STitle>Time Complexity</STitle>
-      <SText>
-        $O(n^2)$
-      </SText>
+      <SCodeBlock path="terminalvelocity/sol" />
     </>
   );
 };
