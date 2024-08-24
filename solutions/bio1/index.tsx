@@ -6,3 +6,4 @@ export * from "./ZeckendorfRepresentation";
 export * from "./Pentominoes";
 export * from "./DreamingSpires";
 export * from "./Unlock";
+export * from "./DecoderRing";
