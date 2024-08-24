@@ -1,9 +1,8 @@
 import { Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import {
-  atomOneDark,
-} from "react-syntax-highlighter/dist/cjs/styles/hljs";
-import CodeBlock from "./codeBlock";
+import { atomOneDark } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+import { CodeBlock } from "./CodeBlock";
+
 export const base: string = "/assets/code/";
 
 export interface Language {
@@ -26,9 +25,10 @@ export const languages: Language[] = [
 ];
 
 export type SourceCode = null | string;
-type SCodeBlockProps = {
+
+export interface SCodeBlockProps {
   path: string;
-};
+}
 
 export const SCodeBlock = ({ path }: SCodeBlockProps) => {
   const [codes, setCodes] = useState<SourceCode[]>(languages.map(() => null));
@@ -71,8 +71,11 @@ export const SCodeBlock = ({ path }: SCodeBlockProps) => {
           ...codes.filter(code => code !== null).map((code, idx) => {
             return (
               <TabPanel key={idx}>
-                <CodeBlock style={atomOneDark} code={code} language={languages[idx]!.highlight}>
-                </CodeBlock>
+                <CodeBlock 
+                  theme={atomOneDark} 
+                  code={code} 
+                  language={languages[idx]!.highlight} 
+                />
               </TabPanel>
             )
           })
@@ -81,21 +84,3 @@ export const SCodeBlock = ({ path }: SCodeBlockProps) => {
     </Tabs>
   );
 }
-
-/*
-import {
-  vs,
-  vs2015,
-} from "react-syntax-highlighter/dist/cjs/styles/hljs";
-import CodeBlock from "./codeBlock";
-
-export const SCodeBlock = () => {
-  return (
-      <div className="App">
-          <CodeBlock style={vs} code={code} language={'bash'} />
-          <br />
-          <br />
-          <CodeBlock style={vs2015} code={typescriptCode} language={'typescript'} />
-      </div>
-  );
-}*/
