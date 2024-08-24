@@ -51,5 +51,5 @@ export const bio2Problems = {
     editorialAuthors: ["Boris Hall"],
     solutionAuthors: ["Boris Hall"],
     component: <Milk />
-  }
+  } as ProblemInfo,
 };
