@@ -1,3 +1,4 @@
+import { TerminalVelocity } from "solutions/bio2/TerminalVelocity";
 import { ProblemInfo } from "../base";
 import { BrokersDoom, Carve, Dino, Milk, Proto, Whisperer } from "solutions";
 
@@ -61,5 +62,15 @@ export const bio2Problems = {
     editorialAuthors: ["Boris Hall"],
     solutionAuthors: ["Boris Hall"],
     component: <Milk />
+  } as ProblemInfo,
+  terminalvelocity: {
+    difficulty: "Easy",
+    display: "Terminal Velocity",
+    original: "https://olympiad.org.uk/papers/2019/final/velocity.pdf",
+    year: 2019,
+    tags: [],
+    editorialAuthors: ["Anango Prabhat"],
+    solutionAuthors: ["Anango Prabhat"],
+    component: <TerminalVelocity />
   } as ProblemInfo
 };
