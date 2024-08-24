@@ -36,8 +36,11 @@ export const TerminalVelocity = () => {
         and we know that one less pigeon comes before $y$ than we thought before (pigeon $x$), so we can update our counts. 
         In this way we know for each pigeon $i$ how many pigeons $j$ come before $i$ in the final ordering, and thus we 
         know the position of each initial pigeon in the final ordering.
-      Time Complexity: $$\mathcal{brace("O")}(p^2)$$
       </SText>
+        <SText>
+          
+      Time Complexity: $\mathcal{brace("O")}(p^2)$
+        </SText>
       <SCodeBlock path="terminalvelocity/sol" />
     </>
   );
