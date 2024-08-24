@@ -49,7 +49,7 @@ export const IntegerStrings = () => {
       </SText> 
       <SText>
         For the version of the problem where $n=1$, 
-        and a whole host of better explanations, see<Link href="https://cses.fi/problemset/task/2431" color="blue">this CSES problem</Link>
+        and a whole host of better explanations, see<Link href="https://cses.fi/problemset/task/2431">this CSES problem</Link>
         and the vast array of explanations available online.
       </SText>
 

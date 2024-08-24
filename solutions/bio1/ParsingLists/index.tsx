@@ -75,7 +75,7 @@ export const ParsingLists = () => {
       </SText>
       <SText>
         This problem is a miniature version of a programming language interpreter. If you enjoyed this problem,
-        you may enjoy<Link href="https://www.youtube.com/watch?v=Eythq9848Fg&list=PLZQftyCk7_SdoVexSmwy_tBgs7P0b97yD" color="blue">this video series</Link>on how to build a programming language interpreter.
+        you may enjoy<Link href="https://www.youtube.com/watch?v=Eythq9848Fg&list=PLZQftyCk7_SdoVexSmwy_tBgs7P0b97yD">this video series</Link>on how to build a programming language interpreter.
       </SText>
       <STitle>Code</STitle>
       <SCodeBlock path="parsinglists/sol" />
