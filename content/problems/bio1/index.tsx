@@ -1,5 +1,5 @@
 import { ProblemInfo } from "../base";
-import { IntegerStrings, ParsingLists, WordGame, Unlock, DecoderRing } from "solutions";
+import { IntegerStrings, ParsingLists, WordGame, Unlock } from "solutions";
 
 export const bio1Problems = {
   proto: {
@@ -41,15 +41,5 @@ export const bio1Problems = {
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <Unlock />,
-  } as ProblemInfo,
-  decoderring: {
-    difficulty: "Easy",
-    display: "Decoder Ring",
-    original: "https://www.olympiad.org.uk/papers/2018/bio/bio18-exam.pdf",
-    year: 2018,
-    tags: ["Q2", "Implementation"],
-    editorialAuthors: ["Adwaya Gupta"],
-    solutionAuthors: ["Adwaya Gupta"],
-    component: <DecoderRing />,
   } as ProblemInfo
 };

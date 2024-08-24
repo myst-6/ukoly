@@ -1,5 +1,3 @@
-# Solution author: Alex Pylypenko
-
 def e(i):
     return 2 * i
 
