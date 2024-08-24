@@ -1,6 +1,6 @@
 def getLargestFibonacci(n):
   #
-  # Returns the largest fibonacci lower than or equal to n
+  # Returns the largest Fibonacci number lower than or equal to n
   #
   if n == 1:
     return 1
