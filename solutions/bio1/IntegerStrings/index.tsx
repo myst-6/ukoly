@@ -11,7 +11,7 @@ export const IntegerStrings = () => {
 
       <STitle>Sample Explanation</STitle>
       <SText>
-        If we start at $999$, the string is $9991000100110021003...$. The $1$st digit is $9$, the $2$nd digit is also $9$, the $11$th digit is $1$.
+        If we start at $999$, the string is $9991000100110021003...$. The $1$-st digit is $9$, the $2$-nd digit is also $9$, the $11$-th digit is $1$.
       </SText>
 
       <STitle>Idea</STitle>

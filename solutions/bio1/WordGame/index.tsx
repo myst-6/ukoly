@@ -1,4 +1,4 @@
-import { SCodeBlock, SText, STitle } from "components";
+import { SCode, SCodeBlock, SText, STitle } from "components";
 
 export const WordGame = () => {
   return (
@@ -15,7 +15,7 @@ export const WordGame = () => {
       <STitle>Sample Explanation</STitle>
       <SText>
         Let's consider the sample input $BAB$.
-        Alphabetically, it is the third word with score 5,
+        Alphabetically, it is the third word with score $5$,
         the first two being $ACA$ and $AD$.
       </SText>
 
@@ -26,7 +26,7 @@ export const WordGame = () => {
         whose first letter is $y$.
         The base case is when $x = 0$, 
         in which case the function returns $0$. Also, when $y \gt x$,
-        the function returns 0, since the first letter cannot have a score
+        the function returns $0$, since the first letter cannot have a score
         greater than the total score of the word. Otherwise, 
         the function returns the sum of $f(x - y, z)$ for all
         $z$ from $1$ to $26$, where $z \neq y$.
@@ -40,10 +40,10 @@ export const WordGame = () => {
         Due to the recursive nature of the function, it can 
         be memoized to avoid recomputing the same values 
         more than once. This is done by
-        storing the results of $f(x, y)$ in a dictionary "memo", 
-        and returning memo[(x, y)] if it exists, and otherwise 
-        computing the value and storing it in memo. This can 
-        also be done using python's functools.cache() decorator,
+        storing the results of $f(x, y)$ in a dictionary {<SCode>memo</SCode>}, 
+        and returning {<SCode>memo[(x, y)]</SCode>} if it exists, and otherwise 
+        computing the value and storing it in {<SCode>memo</SCode>}. This can 
+        also be done using Python's {<SCode>functools.cache()</SCode>} decorator,
         as shown in the code below. 
       </SText>
       <SText>
