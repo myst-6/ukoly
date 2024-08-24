@@ -1,5 +1,5 @@
-import { Link, SCode, SCodeBlock, HStack, SText, STitle, Image } from "components";
-import { brace, op } from "../../util";
+import { SCode, SCodeBlock, HStack, SText, STitle, Image } from "components";
+import { brace } from "../../util";
 
 export const KeepOnTheGrass = () => {
   return (
