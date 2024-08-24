@@ -1,4 +1,4 @@
-import { Link, SCode, SCodeBlock, SText, STitle } from "components";
+import { Link, SCodeBlock, SText, STitle } from "components";
 import { brace } from "solutions/util";
 
 export const IntegerStrings = () => {

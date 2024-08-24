@@ -1,6 +1,4 @@
-import { Link, SCode, SCodeBlock, SList, SText, STitle } from "components";
-import { ST } from "next/dist/shared/lib/utils";
-import { brace, floor } from "solutions/util";
+import { SCodeBlock, SText, STitle } from "components";
 
 export const WordGame = () => {
   return (
