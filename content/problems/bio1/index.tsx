@@ -69,7 +69,7 @@ export const bio1Problems = {
     year: 2023,
     tags: ["Q3", "DFS and Similar"],
     editorialAuthors: ["Vladimir Filip"],
-    solutionAuthors: ["Vladimir Filip"],
+    solutionAuthors: ["Vladimir Filip", "Alex Pylypenko"],
     component: <DreamingSpires />,
   } as ProblemInfo,
 };
