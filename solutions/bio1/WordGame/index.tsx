@@ -88,7 +88,7 @@ export const WordGame = () => {
         with some property, you should consider using this method.
       </SText>
       <STitle>Code</STitle>
-      <SCodeBlock path="parsinglists/sol" />
+      <SCodeBlock path="wordgame/sol" />
     </>
   );
 };

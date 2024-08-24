@@ -1,3 +1,4 @@
+# Solution author: Alex Pylypenko
 from math import floor, log10
 
 

@@ -1,5 +1,5 @@
 import { ProblemInfo } from "../base";
-import { Carve, Dino, Milk, Proto, Whisperer } from "solutions";
+import { BrokersDoom, Carve, Dino, Milk, Proto, Whisperer } from "solutions";
 
 export const bio2Problems = {
   proto: {
@@ -42,6 +42,16 @@ export const bio2Problems = {
     solutionAuthors: ["Boris Hall"],
     component: <Whisperer />
   } as ProblemInfo,
+  brokersdoom: {
+    difficulty: "Easy",
+    display: "Brokers Doom",
+    original: "https://www.olympiad.org.uk/papers/2017/final/BrokersDoom.pdf",
+    year: 2017,
+    tags: ["Greedy", "Two Pointers"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <BrokersDoom />
+  } as ProblemInfo,
   milk: {
     difficulty: "Medium",
     display: "A Splash of Milk",
@@ -51,5 +61,5 @@ export const bio2Problems = {
     editorialAuthors: ["Boris Hall"],
     solutionAuthors: ["Boris Hall"],
     component: <Milk />
-  } as ProblemInfo,
+  } as ProblemInfo
 };
