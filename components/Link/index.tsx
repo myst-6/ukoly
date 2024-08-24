@@ -1,13 +1,13 @@
 import NextLink from "next/link";
 import { Link as ChakraLink, type LinkProps as ChakraLinkProps } from "@chakra-ui/next-js";
-import { useColorModePreference } from "@chakra-ui/react";
+import { useColorMode } from "@chakra-ui/react";
 
 export interface LinkProps extends ChakraLinkProps {
   current?: boolean;
 }
 
 export const Link = ({ children, current, ...props }: LinkProps) => {
-  const colorMode = useColorModePreference();
+  const { colorMode } = useColorMode();
 
   return <ChakraLink 
     as={NextLink} 
