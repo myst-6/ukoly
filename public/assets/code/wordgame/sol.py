@@ -1,5 +1,3 @@
-# Solution author: Alex Pylypenko
-
 from functools import cache
 from collections import deque, defaultdict
 from math import comb as choose
