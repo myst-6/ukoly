@@ -46,8 +46,8 @@ export const Carve = () => {
       <SText>
         Let's introduce an additional parameter $X$. Up until the point where we've taken
         less than $X$ columns off of the left edge, we should prioritise the left edge. After this, we
-        should take no more columns off of the last edge. At the end of the process, if exactly $X$ operations
-        have taken place then the algorithm will return the minimum right edge of the row given that the left 
+        should take no more columns off of the left edge. At the end of the process, if exactly $X$ operations
+        have taken place then the algorithm will return the maximum right edge of the row given that the left 
         edge is at position $X$ (if not, the left edge is never $X$ in an optimal solution and we can ignore 
         this result). Therefore, if we can run the algorithm for all values of $0 \le X &lt; c$, this can give 
         us the answer for the maximum row length we can be left with.
@@ -58,7 +58,7 @@ export const Carve = () => {
         all $0 \le X &lt; c$ in $\mathcal{brace("O")}(c \cdot (r + c))$ time.
       </SText>
       <SText>
-        We can repeat this exact same idea for finding the maximum length of the column and choose
+        We can repeat this exact same idea for finding the maximum height of the column and choose
         the best answer from both processes. In total, the time complexity is
         $\mathcal{brace("O")}((r + c)^2)$.
       </SText>
@@ -66,7 +66,7 @@ export const Carve = () => {
       <STitle>Memory</STitle>
       <SText>
         There's just one more consideration. Unfortunately, the memory limit for this problem
-        is so low that you cannot store the prefix sums for all the rows and cols. Firstly, instead
+        is so low that you cannot store the prefix sums for all the rows and columns. Firstly, instead
         of storing prefix sums for both the rows and columns, we need to store a 2D prefix sum of
         the entire grid. Secondly, an <SCode>int</SCode> data type will overflow but
         a <SCode>long long</SCode> data type is too large and will use too much memory. 
