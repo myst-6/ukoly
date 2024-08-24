@@ -1,4 +1,4 @@
-import { Link, SCode, SCodeBlock, SList, SText, STitle } from "components";
+import { Link, SCodeBlock,  SText, STitle } from "components";
 import { brace, op } from "../../util";
 
 export const TerminalVelocity = () => {
@@ -13,7 +13,7 @@ export const TerminalVelocity = () => {
         if and only if the one with a larger starting position (competitor number) comes before the one 
         with the smaller starting position. This leads us to this formalised statement: Given all the 
         inversions of a permutation, reconstruct a possible permutation. 
-        <a href="https://en.wikipedia.org/wiki/Inversion_(discrete_mathematics)">(definition of inversions)</a>
+        <Link href="https://en.wikipedia.org/wiki/Inversion_(discrete_mathematics)">(definition of inversions)</a>
       </SText>
 
       <STitle>Idea</STitle>
