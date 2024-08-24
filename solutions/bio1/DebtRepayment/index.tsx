@@ -13,10 +13,21 @@ export const DebtRepayment = () => {
 
       <STitle>Solution</STitle>
       <SText>
-        To preprocess the inputs, we can first convert the integer percentages into decimal form (i.e. $10$ into $0.1$). This is done by dividing by $100$. Additionally, we should add $1$ to the interest amount, to allow easier multiplication when calculating the new debt.<br />
-        To avoid floating point math, we should keep track of the debt in cents. This way, we can avoid rounding errors. <br /><br />
-        Each iteration, we can simply do as the problem statement says: multiply the debt by the interest rate, and subtract the repaid amount. We can then add the repaid amount to the total repaid amount.<br />
-        Finally, we can output the total repaid amount. Remember that we have to divide this by $100$ to convert it from "pence" to "pounds". To avoid floating point errors, we should once again round this to $2$ decimal places.<br />
+        To preprocess the inputs, we can first convert the integer percentages into decimal form (i.e. $10$ into $0.1$). 
+        This is done by dividing by $100$. Additionally, we should add $1$ to the interest amount, to allow easier multiplication when calculating the new debt.
+      </SText>
+      <SText>
+        To avoid floating point math, we should keep track of the debt in cents. 
+        This way, we can avoid rounding errors.
+      </SText>
+      <SText>
+        Each iteration, we can simply do as the problem statement says: multiply the debt by the interest rate, and subtract the repaid amount. 
+        We can then add the repaid amount to the total repaid amount.
+      </SText>
+      <SText>
+        Finally, we can output the total repaid amount. 
+        Remember that we have to divide this by $100$ to convert it from "pence" to "pounds". 
+        To avoid floating point errors, we should once again round this to $2$ decimal places.
       </SText>
 
       <STitle>Code</STitle>
