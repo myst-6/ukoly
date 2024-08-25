@@ -11,6 +11,13 @@ export interface Language {
   highlight: string;
 }
 
+/*
+
+See here for a list of highlights:
+https://github.com/react-syntax-highlighter/react-syntax-highlighter/blob/HEAD/AVAILABLE_LANGUAGES_HLJS.MD
+
+*/
+
 export const languages: Language[] = [
   {
     display: "C++",
@@ -68,13 +75,13 @@ export const SCodeBlock = ({ path }: SCodeBlockProps) => {
       </TabList>
       <TabPanels>
         {
-          ...codes.filter(code => code !== null).map((code, idx) => {
+          ...Object.entries(codes).filter(([_, code]) => code !== null).map(([idx, code]) => {
             return (
-              <TabPanel key={idx}>
+              <TabPanel key={+idx}>
                 <CodeBlock 
                   theme={atomOneDark} 
-                  code={code} 
-                  language={languages[idx]!.highlight} 
+                  code={code!}
+                  language={languages[+idx]!.highlight} 
                 />
               </TabPanel>
             )
