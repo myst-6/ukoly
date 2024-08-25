@@ -92,4 +92,14 @@ export const bio1Problems = {
     solutionAuthors: ["Adwaya Gupta"],
     component: <DecoderRing />,
   } as ProblemInfo,
+  serialnumbers: {
+    difficulty: "Easy",
+    display: "Serial Numbers",
+    original: "https://www.olympiad.org.uk/papers/2018/bio/bio18-exam.pdf",
+    year: 2018,
+    tags: ["Q3", "DFS and Similar"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <SerialNumbers />,
+  } as ProblemInfo,
 };
