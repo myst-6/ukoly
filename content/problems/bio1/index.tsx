@@ -1,5 +1,5 @@
 import { ProblemInfo } from "../base";
-import { IntegerStrings, ParsingLists, WordGame, Unlock, ZeckendorfRepresentation, Pentominoes, DreamingSpires, DecoderRing, DebtRepayment } from "solutions";
+import { IntegerStrings, ParsingLists, WordGame, Unlock, ZeckendorfRepresentation, Pentominoes, DreamingSpires, DecoderRing, DebtRepayment, SerialNumbers } from "solutions";
 
 export const bio1Problems = {
   proto: {
@@ -91,5 +91,15 @@ export const bio1Problems = {
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <DecoderRing />,
+  } as ProblemInfo,
+  serialnumbers: {
+    difficulty: "Easy",
+    display: "Serial Numbers",
+    original: "https://www.olympiad.org.uk/papers/2018/bio/bio18-exam.pdf",
+    year: 2018,
+    tags: ["Q3", "DFS and Similar"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <SerialNumbers />,
   } as ProblemInfo,
 };

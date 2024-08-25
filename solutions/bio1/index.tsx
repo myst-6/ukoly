@@ -8,3 +8,4 @@ export * from "./DreamingSpires";
 export * from "./Unlock";
 export * from "./DecoderRing";
 export * from "./DebtRepayment";
+export * from "./SerialNumbers";
