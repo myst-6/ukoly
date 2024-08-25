@@ -25,7 +25,7 @@ export const SerialNumbers = () => {
         To do this, we can iterate through each pair, and if the condition is satisfied, we can swap the two digits.
       </SText>
       <SText>
-        Finally, we can carry out a standard BFS, where we start with the input serial number, and explore through all its equvalents.
+        Finally, we can carry out a standard BFS, where we start with the input serial number, and explore through all its equivalents.
       </SText>
       <SText>
         To do this, we can use a queue to keep track of the serial numbers we need to explore. 
