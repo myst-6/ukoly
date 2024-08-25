@@ -6,3 +6,4 @@ export * from "./Whisperer";
 export * from "./BrokersDoom";
 export * from "./TerminalVelocity";
 export * from "./ScoopOne";
+export * from "./ScoopTwo";
