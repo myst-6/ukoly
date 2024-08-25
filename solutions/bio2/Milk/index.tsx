@@ -1,12 +1,11 @@
 import { Image, STitle, SText, SList, HStack, SCodeBlock } from "components";
-import { brace } from "../../util";
 
 export const Milk = () => {
   return (
     <>
       <STitle>Abridged Statement</STitle>
       <SText>
-        You're given a connected graph of $h$ vertices ($1 \le h \le 2^{brace("12")}$), and the degree of each node
+        You're given a connected graph of $h$ vertices, and the degree of each node
         does not exceed $3$. Furthermore, the degree of node $1$ does not exceed $2$. 
         To begin with, vertex $1$ is contaminated. At the beginning of each hour, you can 
         remove any node from the graph which is <b>not</b> contaminated. At the end of each hour, 
