@@ -29,9 +29,9 @@ export default function BIO1() {
           <Spacer m={2} />
           <Box display="flex" alignItems="center" justifyContent="center" flexWrap="wrap" gap="1em">
             {
-              ...Object.entries(bio1Problems).map(([key, problem]) => {
+              ...bio1Problems.map((problem) => {
                 return (
-                  <Box display="flex" key={key}>
+                  <Box display="flex" key={problem.display}>
                     <Problem problem={problem} onChoose={() => setProblem(problem)} />
                   </Box>
                 );

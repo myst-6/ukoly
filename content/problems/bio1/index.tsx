@@ -1,8 +1,8 @@
 import { ProblemInfo } from "../base";
 import { IntegerStrings, ParsingLists, WordGame, Unlock, ZeckendorfRepresentation, Pentominoes, DreamingSpires, DecoderRing, DebtRepayment, SerialNumbers } from "solutions";
 
-export const bio1Problems = {
-  proto: {
+export const bio1Problems = [
+  {
     difficulty: "Easy",
     display: "Integer Strings",
     original: "https://www.olympiad.org.uk/papers/2024/bio/bio24-exam.pdf",
@@ -12,7 +12,7 @@ export const bio1Problems = {
     solutionAuthors: ["Alex Pylypenko"],
     component: <IntegerStrings />,
   } as ProblemInfo,
-  dine: {
+  {
     difficulty: "Medium",
     display: "Parsing Lists",
     original: "https://www.olympiad.org.uk/papers/2024/bio/bio24-exam.pdf",
@@ -22,7 +22,7 @@ export const bio1Problems = {
     solutionAuthors: ["Alex Pylypenko"],
     component: <ParsingLists />,
   } as ProblemInfo,
-  wordgame: {
+  {
     difficulty: "Easy",
     display: "Word Game",
     original: "https://www.olympiad.org.uk/papers/2024/bio/bio24-exam.pdf",
@@ -32,7 +32,7 @@ export const bio1Problems = {
     solutionAuthors: ["Alex Pylypenko"],
     component: <WordGame />,
   } as ProblemInfo,
-  unlock: {
+  {
     difficulty: "Hard",
     display: "Unlock",
     original: "https://www.olympiad.org.uk/papers/2013/bio/bio13-exam.pdf",
@@ -42,7 +42,7 @@ export const bio1Problems = {
     solutionAuthors: ["Alex Pylypenko"],
     component: <Unlock />,
   } as ProblemInfo,
-  zeckendorfrepresentation: {
+  {
     difficulty: "Easy",
     display: "Zeckendorf Representation",
     original: "https://www.olympiad.org.uk/papers/2023/bio/bio23-exam.pdf",
@@ -52,7 +52,7 @@ export const bio1Problems = {
     solutionAuthors: ["Vladimir Filip"],
     component: <ZeckendorfRepresentation />,
   } as ProblemInfo,
-  pentominoes: {
+  {
     difficulty: "Medium",
     display: "Pentominoes",
     original: "https://www.olympiad.org.uk/papers/2023/bio/bio23-exam.pdf",
@@ -62,7 +62,7 @@ export const bio1Problems = {
     solutionAuthors: ["Vladimir Filip"],
     component: <Pentominoes />,
   } as ProblemInfo,
-  dreamingspires: {
+  {
     difficulty: "Medium",
     display: "Dreaming Spires",
     original: "https://www.olympiad.org.uk/papers/2023/bio/bio23-exam.pdf",
@@ -72,7 +72,7 @@ export const bio1Problems = {
     solutionAuthors: ["Vladimir Filip", "Alex Pylypenko"],
     component: <DreamingSpires />,
   } as ProblemInfo,
-  debtrepayment: {
+  {
     difficulty: "Easy",
     display: "Debt Repayment",
     original: "https://www.olympiad.org.uk/papers/2018/bio/bio18-exam.pdf",
@@ -82,7 +82,7 @@ export const bio1Problems = {
     solutionAuthors: ["Adwaya Gupta"],
     component: <DebtRepayment />,
   } as ProblemInfo,
-  decoderring: {
+  {
     difficulty: "Easy",
     display: "Decoder Ring",
     original: "https://www.olympiad.org.uk/papers/2018/bio/bio18-exam.pdf",
@@ -92,7 +92,7 @@ export const bio1Problems = {
     solutionAuthors: ["Adwaya Gupta"],
     component: <DecoderRing />,
   } as ProblemInfo,
-  serialnumbers: {
+  {
     difficulty: "Easy",
     display: "Serial Numbers",
     original: "https://www.olympiad.org.uk/papers/2018/bio/bio18-exam.pdf",
@@ -102,4 +102,4 @@ export const bio1Problems = {
     solutionAuthors: ["Adwaya Gupta"],
     component: <SerialNumbers />,
   } as ProblemInfo,
-};
+];

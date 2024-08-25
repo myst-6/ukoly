@@ -1,8 +1,8 @@
 import { ProblemInfo } from "../base";
 import { BrokersDoom, Carve, Dino, Milk, Proto, Whisperer, TerminalVelocity } from "solutions";
 
-export const bio2Problems = {
-  proto: {
+export const bio2Problems = [
+  {
     difficulty: "Medium",
     display: "Prototype",
     original: "https://www.olympiad.org.uk/papers/2021/final/proto.pdf",
@@ -12,7 +12,7 @@ export const bio2Problems = {
     solutionAuthors: ["Boris Hall", "Samuel Trajtenberg"],
     component: <Proto />,
   } as ProblemInfo,
-  dine: {
+  {
     difficulty: "Medium",
     display: "Dinocracy",
     original: "https://www.olympiad.org.uk/papers/2021/final/dine.pdf",
@@ -22,7 +22,7 @@ export const bio2Problems = {
     solutionAuthors: ["Boris Hall"],
     component: <Dino />,
   } as ProblemInfo,
-  carve: {
+  {
     difficulty: "Hard",
     display: "What a Carve Up",
     original: "https://www.olympiad.org.uk/papers/2021/final/carve.pdf",
@@ -32,7 +32,7 @@ export const bio2Problems = {
     solutionAuthors: ["Boris Hall"],
     component: <Carve />,
   } as ProblemInfo,
-  whisperer: {
+  {
     difficulty: "Insane",
     display: "Pigeon Whisperer",
     original: "https://www.olympiad.org.uk/papers/2021/final/whisperer.pdf",
@@ -42,7 +42,7 @@ export const bio2Problems = {
     solutionAuthors: ["Boris Hall"],
     component: <Whisperer />
   } as ProblemInfo,
-  brokersdoom: {
+  {
     difficulty: "Easy",
     display: "Brokers Doom",
     original: "https://www.olympiad.org.uk/papers/2017/final/BrokersDoom.pdf",
@@ -52,7 +52,7 @@ export const bio2Problems = {
     solutionAuthors: ["Alex Pylypenko"],
     component: <BrokersDoom />
   } as ProblemInfo,
-  milk: {
+  {
     difficulty: "Medium",
     display: "A Splash of Milk",
     original: "https://www.olympiad.org.uk/papers/2023/final/milk.pdf",
@@ -62,7 +62,7 @@ export const bio2Problems = {
     solutionAuthors: ["Boris Hall"],
     component: <Milk />
   } as ProblemInfo,
-  terminalvelocity: {
+  {
     difficulty: "Easy",
     display: "Terminal Velocity",
     original: "https://olympiad.org.uk/papers/2019/final/velocity.pdf",
@@ -72,4 +72,4 @@ export const bio2Problems = {
     solutionAuthors: ["Anango Prabhat"],
     component: <TerminalVelocity />
   } as ProblemInfo
-};
+];
