@@ -1,5 +1,5 @@
 import { ProblemInfo } from "../base";
-import { IntegerStrings, ParsingLists, WordGame, Unlock, ZeckendorfRepresentation, Pentominoes, DreamingSpires, DecoderRing, DebtRepayment } from "solutions";
+import { ASpaceOddity, IntegerStrings, ParsingLists, WordGame, Unlock, ZeckendorfRepresentation, Pentominoes, DreamingSpires, DecoderRing, DebtRepayment } from "solutions";
 
 export const bio1Problems = {
   proto: {
@@ -91,5 +91,15 @@ export const bio1Problems = {
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <DecoderRing />,
+  } as ProblemInfo,
+  aspaceoddity: {
+    difficulty: "Hard",
+    display: "A Space Oddity",
+    original: "https://olympiad.org.uk/papers/2001/bio/bio01ex.pdf",
+    year: 2001,
+    tags: ["Q3", "Graphs", "DFS and Similar"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <ASpaceOddity />,
   } as ProblemInfo,
 };
