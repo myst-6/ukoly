@@ -1,5 +1,5 @@
 import { ProblemInfo } from "../base";
-import { IntegerStrings, ParsingLists, WordGame, Unlock, ZeckendorfRepresentation, Pentominoes, DreamingSpires, DecoderRing, DebtRepayment } from "solutions";
+import { IntegerStrings, ParsingLists, WordGame, Unlock, ZeckendorfRepresentation, Pentominoes, DreamingSpires, DecoderRing, DebtRepayment, SerialNumbers } from "solutions";
 
 export const bio1Problems = {
   proto: {
