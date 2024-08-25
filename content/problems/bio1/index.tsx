@@ -1,7 +1,7 @@
 import { ProblemInfo } from "../base";
 import { IntegerStrings, ParsingLists, WordGame, Unlock, ZeckendorfRepresentation, Pentominoes, DreamingSpires, DecoderRing, DebtRepayment, SerialNumbers } from "solutions";
 
-export const bio1Problems = [
+export const bio1Problems : ProblemInfo[] = [
   {
     difficulty: "Easy",
     display: "Integer Strings",
@@ -11,7 +11,7 @@ export const bio1Problems = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <IntegerStrings />,
-  } as ProblemInfo,
+  },
   {
     difficulty: "Medium",
     display: "Parsing Lists",
@@ -21,7 +21,7 @@ export const bio1Problems = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <ParsingLists />,
-  } as ProblemInfo,
+  },
   {
     difficulty: "Easy",
     display: "Word Game",
@@ -31,7 +31,7 @@ export const bio1Problems = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <WordGame />,
-  } as ProblemInfo,
+  },
   {
     difficulty: "Hard",
     display: "Unlock",
@@ -41,7 +41,7 @@ export const bio1Problems = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <Unlock />,
-  } as ProblemInfo,
+  },
   {
     difficulty: "Easy",
     display: "Zeckendorf Representation",
@@ -51,7 +51,7 @@ export const bio1Problems = [
     editorialAuthors: ["Vladimir Filip"],
     solutionAuthors: ["Vladimir Filip"],
     component: <ZeckendorfRepresentation />,
-  } as ProblemInfo,
+  },
   {
     difficulty: "Medium",
     display: "Pentominoes",
@@ -61,7 +61,7 @@ export const bio1Problems = [
     editorialAuthors: ["Vladimir Filip"],
     solutionAuthors: ["Vladimir Filip"],
     component: <Pentominoes />,
-  } as ProblemInfo,
+  },
   {
     difficulty: "Medium",
     display: "Dreaming Spires",
@@ -71,7 +71,7 @@ export const bio1Problems = [
     editorialAuthors: ["Vladimir Filip"],
     solutionAuthors: ["Vladimir Filip", "Alex Pylypenko"],
     component: <DreamingSpires />,
-  } as ProblemInfo,
+  },
   {
     difficulty: "Easy",
     display: "Debt Repayment",
@@ -81,7 +81,7 @@ export const bio1Problems = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <DebtRepayment />,
-  } as ProblemInfo,
+  },
   {
     difficulty: "Easy",
     display: "Decoder Ring",
@@ -91,7 +91,7 @@ export const bio1Problems = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <DecoderRing />,
-  } as ProblemInfo,
+  },
   {
     difficulty: "Easy",
     display: "Serial Numbers",
@@ -101,5 +101,5 @@ export const bio1Problems = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <SerialNumbers />,
-  } as ProblemInfo,
+  },
 ];

@@ -1,7 +1,7 @@
 import { ProblemInfo } from "../base";
 import { BrokersDoom, Carve, Dino, Milk, Proto, Whisperer, TerminalVelocity } from "solutions";
 
-export const bio2Problems = [
+export const bio2Problems: ProblemInfo[] = [
   {
     difficulty: "Medium",
     display: "Prototype",
@@ -11,7 +11,7 @@ export const bio2Problems = [
     editorialAuthors: ["Boris Hall"],
     solutionAuthors: ["Boris Hall", "Samuel Trajtenberg"],
     component: <Proto />,
-  } as ProblemInfo,
+  },
   {
     difficulty: "Medium",
     display: "Dinocracy",
@@ -21,7 +21,7 @@ export const bio2Problems = [
     editorialAuthors: ["Boris Hall"],
     solutionAuthors: ["Boris Hall"],
     component: <Dino />,
-  } as ProblemInfo,
+  },
   {
     difficulty: "Hard",
     display: "What a Carve Up",
@@ -31,7 +31,7 @@ export const bio2Problems = [
     editorialAuthors: ["Boris Hall"],
     solutionAuthors: ["Boris Hall"],
     component: <Carve />,
-  } as ProblemInfo,
+  },
   {
     difficulty: "Insane",
     display: "Pigeon Whisperer",
@@ -41,7 +41,7 @@ export const bio2Problems = [
     editorialAuthors: ["Boris Hall"],
     solutionAuthors: ["Boris Hall"],
     component: <Whisperer />
-  } as ProblemInfo,
+  },
   {
     difficulty: "Easy",
     display: "Brokers Doom",
@@ -51,7 +51,7 @@ export const bio2Problems = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <BrokersDoom />
-  } as ProblemInfo,
+  },
   {
     difficulty: "Medium",
     display: "A Splash of Milk",
@@ -61,7 +61,7 @@ export const bio2Problems = [
     editorialAuthors: ["Boris Hall"],
     solutionAuthors: ["Boris Hall"],
     component: <Milk />
-  } as ProblemInfo,
+  },
   {
     difficulty: "Easy",
     display: "Terminal Velocity",
@@ -71,5 +71,5 @@ export const bio2Problems = [
     editorialAuthors: ["Anango Prabhat"],
     solutionAuthors: ["Anango Prabhat"],
     component: <TerminalVelocity />
-  } as ProblemInfo
+  }
 ];

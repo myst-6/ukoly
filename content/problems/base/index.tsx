@@ -9,6 +9,7 @@ export type Tag =
   "Brute Force" |
   "Implementation" | 
   "DFS and Similar" |
+  "Two Pointers" |
   "Math" |
   "Q1" |
   "Q2" |
