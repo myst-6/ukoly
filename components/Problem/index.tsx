@@ -8,13 +8,20 @@ import { HStack, VStack } from "../Stack";
 import { Text } from "../Text";
 import { Wrap } from "../Wrap";
 import { difficultyColors, ProblemInfo } from "content";
+import assert from "assert";
 
 export interface ProblemProps extends CardProps {
   problem: ProblemInfo;
   onChoose: () => void;
 }
 
+const MAXLEN = 24;
+
 export const Problem = ({ problem, onChoose, ...props }: ProblemProps) => {
+  assert(problem.display.length <= MAXLEN, `\
+Problem display can't be too long (>${MAXLEN}ch). \
+'${problem.display}' has ${problem.display.length} characters.`);
+
   return (
     <Card width="sm" height="3xs" {...props}>
       <VStack height="100%" justifyContent="space-between">
@@ -37,7 +44,7 @@ export const Problem = ({ problem, onChoose, ...props }: ProblemProps) => {
             Code provided by {problem.solutionAuthors.join(", ")}.
           </Text>
         </Box>
-        <Wrap>
+        <Wrap width="100%" justify="center">
           <Badge colorScheme={difficultyColors[problem.difficulty]}>{problem.difficulty}</Badge>
           <Badge>{problem.year}</Badge>
           {

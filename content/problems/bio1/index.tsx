@@ -44,7 +44,7 @@ export const bio1Problems : ProblemInfo[] = [
   },
   {
     difficulty: "Easy",
-    display: "Zeckendorf Representation",
+    display: "Zeckendorf",
     original: "https://www.olympiad.org.uk/papers/2023/bio/bio23-exam.pdf",
     year: 2023,
     tags: ["Q1", "Math"],
