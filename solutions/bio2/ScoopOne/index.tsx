@@ -46,7 +46,7 @@ export const ScoopOne = () => {
       </HStack>
       <STitle>Solution </STitle>
       <SText>
-        Combining the above we get that the answer is $6E - 3h$. $E$ is simply one less than $v$, as the graph is a tree. $h$ can be computed with a DFS in $\mathcal{brace("O")}(n)$.
+        Combining the above we get that the answer is $6E - 3h$. The number of edges, $E$, is one less than $v$, as the graph is a tree. Finally, the value of $h$ can be computed with a DFS in $\mathcal{brace("O")}(v)$.
       </SText>
      
       <STitle>Sample Explanation</STitle>
