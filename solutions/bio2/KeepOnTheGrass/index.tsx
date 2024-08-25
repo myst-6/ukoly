@@ -1,4 +1,4 @@
-import { SCode, SCodeBlock, HStack, SText, STitle, Image } from "components";
+import { SCode, SCodeBlock, HStack, SText, STitle, Image, VStack, SList } from "components";
 import { brace } from "../../util";
 
 export const KeepOnTheGrass = () => {
@@ -15,67 +15,83 @@ export const KeepOnTheGrass = () => {
       </SText>
       <STitle>Observation 2</STitle>
       <SText>
-        The diagrams given in the problem statement are
-        deliberately misleading, because they do not quite
-        give enough squares to show how the pattern proceeds.
-        However, by generating the next few "terms" of the
-        pattern, we can see that the pattern is actually
-        periodic - if we let $f(x, y)$ be the colour of
-        the square at coordinates $(x, y)$, then we have
-        $f(x, y) = f(x + 4n, y + 4m)$ for all integers $n, m$.
+        Can you easily map some subset of the grid in the
+        diagram for day $2^n$ onto the grid for day $2^{brace("n+1")}$?
       </SText>
 
       <STitle>Solution</STitle>
       <SText>
-        Just generate the pattern for some large number
-        of days, and then some observations can quickly
-        be made about the shortest path to each point.
-        Instead of considering the entire map, just consider
-        the top-right quadrant. Then, generate the pattern for some large number
-          of days, and some observations can quickly
-          be made about the shortest path to each point.
+        The key observation to make here is that the grid for day $2^n$
+        can be mapped onto the grid for day $2^{brace("n+1")}$ by resizing the
+        grid by a factor of 2 (to get the black squares), filling in the gaps
+        (the green squares), and then adding some more squares (the red squares).
+        This is shown in the diagrams below, going from day $4$ to day $8$ on the left,
+        and from day $8$ to day $16$ on the right.
       </SText>
-      <HStack alignItems="flex-start">
-        <Image src="/assets/images/keeponthegrass/keeponthegrass.png" height="16rem" padding="20px" alt="Sample Diagram" />
+      <HStack alignItems="flex-start" paddingTop="20px">
+        <VStack m={2} justify="space-between">
+          <Image src="/assets/images/keeponthegrass/grass4.png" width="100rem" alt="Sample Diagram" />
+          <Image src="/assets/images/keeponthegrass/grass5.png" width="30rem" alt="Sample Diagram" />
+        </VStack>
+        <VStack m={2} justify="space-between">
         <SText>
-         
-          Straight away, a clear observation can be made 
-          about each dark (grassed) square on this diagram -
-          each square is either located on a continuous 
-          dark line (in which case, the answer
-          is just $X+Y$), or it is located one square away 
-          from such a line (in which case, the answer is
-          $X+Y+1$). Since computing whether or not a square
-          is on a dark line is somewhat challenging, we can 
-          make some more observations to simplify the problem.
-          One such observation is that if $X$ and $Y$ are
-          both even, then the answer is double the answer for
-          $f({brace("\\frac{X}{2}")}, {brace("\\frac{Y}{2}")})$.
-          Another observation is that if $X$ and $Y$ are both odd,
-          then the square is not grassed (white on the diagram),
-          therefore you can return {<SCode>LLONG_MAX</SCode>}. Although this 
-          isn't important in itself, it can be used to simplify
-          the next step. Without loss of generality, let's assume
-          $X$ is even and $Y$ is odd (otherwise, you can swap $X$
-          and $Y$, then proceed in the same fashion), then the
-          answer is the minimum of $f(X, Y-1)$ and $f(X, Y+1)$.
-          This is because one of these squares is guaranteed
-          to be grassed, and the other is guaranteed not to be, so 
-          this returns the optimal answer. 
+          When the squares are colour-coded like this, it is
+          much easier to solve the problem, because it is
+          clear that each square on day ${brace("2^{n+1}")}$
+          is either:
         </SText>
+        <SList>
+          <SText>
+            Not grassed (white on the diagram), in which case
+            the square is unreachable.
+          </SText>
+          <SText>
+            Black, in which case the square can directly be
+            mapped to a square on day $2^n$, and the answer
+            is $2f({brace("\\frac{X}{2}")}, {brace("\\frac{Y}{2}")})$,
+            because the black squares are twice as far apart 
+            on day $2^{brace("n+1")}$ as they are on day $2^n$.
+          </SText>
+          <SText>
+            Red, in which case the square is guaranteed to be 
+            one square away from a black square, so the answer
+            is $1 + f(n_x, n_y)$, where $(n_x, n_y)$ are the
+            coordinates of the adjacent black square.
+          </SText>
+          <SText>
+            Green, in which case the square is guaranteed to be
+            one square away from two black squares, so the answer
+            is $1 + min(f(a_x, a_y), f(b_x, b_y))$, where
+            $(a_x, a_y)$ and $(b_x, b_y)$ are the coordinates
+            of the adjacent black squares.
+          </SText>
+        </SList>
+        </VStack>
+        <VStack m={2} justify="space-between">
+          <Image src="/assets/images/keeponthegrass/grass2.png" width="100rem" alt="Sample Diagram" />
+          <Image src="/assets/images/keeponthegrass/grass.png" width="30rem" alt="Sample Diagram" />
+        </VStack>
       </HStack>
+      <STitle>Small implementation detail</STitle>
+      <SText>
+        We can even simplify the solution further by merging
+        the red and green cases into one, by modifying the function
+        to return {<SCode>LLONG_MAX</SCode>} when a square is unreachable,
+        so for every red or green square, we can just return 
+        {<SCode>1 + min(f(a_x, a_y), f(b_x, b_y))</SCode>}.
+      </SText>
       <STitle>Conclusion</STitle>
       <SText>
-        Although ad-hoc tasks like this one can sometimes 
-        be quite intimidating, they often have very simple 
+        Although ad-hoc tasks like this one can sometimes
+        be quite intimidating, they often have very simple
         and elegant solutions. This problem is a good example
-        of one such task, where generating a bigger version 
+        of one such task, where generating a bigger version
         of the pattern and making some observations
         can lead to a very short solution.
       </SText>
       <SCodeBlock path="keeponthegrass/sol" />
       <SText>
-        Or otherwise, you can choose to be like Boris and code this... take your pick!!
+        Or otherwise, you can choose to be like Boris and code whatever this is... take your pick!!
       </SText>
       <SCodeBlock path="keeponthegrass/borissol" />
     </>

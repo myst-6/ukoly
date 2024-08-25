@@ -22,7 +22,7 @@ export const ASpaceOddity = () => {
         this means that the oxygen tank must move from
         one side to the other, as well as $1$ or $2$
         astronauts. The weight of the edge is the maximum
-        of the input times of the astronauts that had to 
+        of the travelling times of the astronauts that had to 
         move to get from one state to the other. Also,
         it is clear that these edges are undirected, because 
         if it is possible to move from state $A$ to state
