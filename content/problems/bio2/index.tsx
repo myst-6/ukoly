@@ -1,5 +1,5 @@
 import { ProblemInfo } from "../base";
-import { BrokersDoom, Carve, Dino, Milk, Proto, Whisperer, TerminalVelocity } from "solutions";
+import { BrokersDoom, Carve, Dino, Milk, Proto, Whisperer, TerminalVelocity, ScoopOne } from "solutions";
 
 export const bio2Problems: ProblemInfo[] = [
   {
@@ -71,5 +71,15 @@ export const bio2Problems: ProblemInfo[] = [
     editorialAuthors: ["Anango Prabhat"],
     solutionAuthors: ["Anango Prabhat"],
     component: <TerminalVelocity />
+  },
+  {
+    difficulty: "Medium",
+    display: "Scoop (part 1)",
+    original: "https://www.olympiad.org.uk/papers/2016/final/Scoop1.pdf",
+    year: 2016,
+    tags: ["Trees", "DFS and Similar"],
+    editorialAuthors: ["Yuvan Raja"],
+    solutionAuthors: ["Yuvan Raja"],
+    component: <ScoopOne />
   }
 ];
