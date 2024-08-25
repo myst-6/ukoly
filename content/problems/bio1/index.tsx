@@ -1,5 +1,5 @@
 import { ProblemInfo } from "../base";
-import { IntegerStrings, ParsingLists, WordGame, Unlock, ZeckendorfRepresentation, Pentominoes, DreamingSpires, DecoderRing, DebtRepayment, SerialNumbers } from "solutions";
+import { IntegerStrings, ParsingLists, WordGame, Unlock, ZeckendorfRepresentation, Pentominoes, DreamingSpires, DecoderRing, DebtRepayment, SerialNumbers, DotsAndBoxes } from "solutions";
 
 export const bio1Problems : ProblemInfo[] = [
   {
@@ -101,5 +101,15 @@ export const bio1Problems : ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <SerialNumbers />,
+  },
+    {
+    difficulty: "Medium",
+    display: "Dots and Boxes",
+    original: "https://www.olympiad.org.uk/papers/2017/bio/bio17-exam.pdf",
+    year: 2017,
+    tags: ["Q2", "Implementation"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <DotsAndBoxes />,
   },
 ];
