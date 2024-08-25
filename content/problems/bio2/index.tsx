@@ -81,5 +81,5 @@ export const bio2Problems: ProblemInfo[] = [
     editorialAuthors: ["Yuvan Raja"],
     solutionAuthors: ["Yuvan Raja"],
     component: <ScoopOne />
-  } as ProblemInfo
+  }
 ];
