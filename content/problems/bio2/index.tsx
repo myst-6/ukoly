@@ -1,5 +1,5 @@
 import { ProblemInfo } from "../base";
-import { BrokersDoom, Carve, Dino, Milk, Proto, Whisperer, TerminalVelocity, ScoopOne, ScoopTwo } from "solutions";
+import { BrokersDoom, Carve, Dino, Milk, Proto, Whisperer, TerminalVelocity, ScoopOne, ScoopTwo, KeepOnTheGrass } from "solutions";
 
 export const bio2Problems: ProblemInfo[] = [
   {
@@ -91,5 +91,15 @@ export const bio2Problems: ProblemInfo[] = [
     editorialAuthors: ["Yuvan Raja"],
     solutionAuthors: ["Yuvan Raja"],
     component: <ScoopTwo />
+  },
+  {
+    difficulty: "Easy",
+    display: "Keep On The Grass",
+    original: "https://olympiad.org.uk/papers/2017/final/KeepOnTheGrass.pdf",
+    year: 2017,
+    tags: ["Math", "Implementation"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <KeepOnTheGrass />
   }
 ];

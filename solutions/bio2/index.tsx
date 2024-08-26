@@ -5,5 +5,6 @@ export * from "./Proto";
 export * from "./Whisperer";
 export * from "./BrokersDoom";
 export * from "./TerminalVelocity";
+export * from "./KeepOnTheGrass";
 export * from "./ScoopOne";
 export * from "./ScoopTwo";
