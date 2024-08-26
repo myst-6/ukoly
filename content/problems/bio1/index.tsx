@@ -120,7 +120,7 @@ export const bio1Problems: ProblemInfo[] = [
     component: <SerialNumbers />,
   },
   {
-    difficulty: "Hard",
+    difficulty: "Medium",
     display: "Block-chain",
     original: "https://www.olympiad.org.uk/papers/2019/bio/bio19-exam.pdf",
     year: 2019,
