@@ -27,7 +27,7 @@ export const Byway = () => {
         the edges in the graph, and for each edge, simulate halving 
         its weight, reaching one end of the edge from node $1$ and the other
         end from node $v$, and then doing the opposite. This 
-        results in an $O(E+V \log V)$ solution, where $E$ is the number
+        results in an $O(E \log V)$ solution, where $E$ is the number
         of edges and $V$ is the number of vertices, which is the 
         same complexity as Dijkstra's algorithm.
       </SText>

@@ -107,7 +107,7 @@ export const bio2Problems: ProblemInfo[] = [
     display: "Byway",
     original: "https://www.olympiad.org.uk/papers/2018/final/Byway.pdf",
     year: 2018,
-    tags: ["Graphs"],
+    tags: ["Graphs", "DFS and Similar"],
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <Byway />
