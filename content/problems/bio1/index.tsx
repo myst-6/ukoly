@@ -145,5 +145,5 @@ export const bio1Problems : ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <ASpaceOddity />,
-  }
+  },
 ];
