@@ -12,3 +12,4 @@ export * from "./ASpaceOddity";
 export * from "./SerialNumbers";
 export * from "./DotsAndBoxes";
 export * from "./ColouredTriangles";
+export * from "./MysteryParcel";
