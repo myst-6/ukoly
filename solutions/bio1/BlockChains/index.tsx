@@ -51,7 +51,7 @@ export const BlockChains = () => {
             </SText>
 
             <STitle>Code</STitle>
-            <SCodeBlock path="BlockChains/sol" />
+            <SCodeBlock path="blockchains/sol" />
         </>
     );
 };
