@@ -15,7 +15,8 @@ import {
   DotsAndBoxes,
   ColouredTriangles,
   MysteryParcel,
-  BlockChains
+  BlockChains,
+  Migration
 } from "solutions";
 
 export const bio1Problems: ProblemInfo[] = [
@@ -158,6 +159,16 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <MysteryParcel />,
+  },
+  {
+    difficulty: "Easy",
+    display: "Migration",
+    original: "https://www.olympiad.org.uk/papers/2016/bio/bio16-exam.pdf",
+    year: 2016,
+    tags: ["Q2", "Implementation"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <Migration />,
   },
   {
     difficulty: "Hard",
