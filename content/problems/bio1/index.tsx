@@ -1,5 +1,22 @@
 import { ProblemInfo } from "../base";
-import { IntegerStrings, ParsingLists, WordGame, Unlock, ZeckendorfRepresentation, Pentominoes, DreamingSpires, DecoderRing, DebtRepayment, SerialNumbers, BlockChains } from "solutions";
+
+import { 
+  ASpaceOddity,
+  IntegerStrings, 
+  ParsingLists, 
+  WordGame, 
+  Unlock, 
+  ZeckendorfRepresentation, 
+  Pentominoes, 
+  DreamingSpires, 
+  DecoderRing, 
+  DebtRepayment, 
+  SerialNumbers,
+  DotsAndBoxes,
+  ColouredTriangles,
+  MysteryParcel,
+  BlockChains
+} from "solutions";
 
 export const bio1Problems : ProblemInfo[] = [
   {
@@ -112,4 +129,45 @@ export const bio1Problems : ProblemInfo[] = [
         solutionAuthors: ["Julia Volovich"],
         component: <BlockChains />,
     },
+  },
+  {
+    difficulty: "Easy",
+    display: "Coloured Triangles",
+    original: "https://www.olympiad.org.uk/papers/2017/bio/bio17-exam.pdf",
+    year: 2017,
+    tags: ["Q1", "Implementation"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <ColouredTriangles />,
+  },
+  {
+    difficulty: "Medium",
+    display: "Dots and Boxes",
+    original: "https://www.olympiad.org.uk/papers/2017/bio/bio17-exam.pdf",
+    year: 2017,
+    tags: ["Q2", "Implementation"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <DotsAndBoxes />,
+  },
+  {
+    difficulty: "Medium",
+    display: "Mystery Parcel",
+    original: "https://www.olympiad.org.uk/papers/2017/bio/bio17-exam.pdf",
+    year: 2017,
+    tags: ["Q3", "Dynamic Programming"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <MysteryParcel />,
+  },
+  {
+    difficulty: "Hard",
+    display: "A Space Oddity",
+    original: "https://olympiad.org.uk/papers/2001/bio/bio01ex.pdf",
+    year: 2001,
+    tags: ["Q3", "Graphs", "DFS and Similar"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <ASpaceOddity />,
+  },
 ];

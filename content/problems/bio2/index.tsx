@@ -1,5 +1,5 @@
 import { ProblemInfo } from "../base";
-import { BrokersDoom, Carve, Dino, Milk, Proto, Whisperer, TerminalVelocity } from "solutions";
+import { BrokersDoom, Carve, Dino, Milk, Proto, Whisperer, TerminalVelocity, ScoopOne, ScoopTwo, Byway, KeepOnTheGrass } from "solutions";
 
 export const bio2Problems: ProblemInfo[] = [
   {
@@ -71,5 +71,45 @@ export const bio2Problems: ProblemInfo[] = [
     editorialAuthors: ["Anango Prabhat"],
     solutionAuthors: ["Anango Prabhat"],
     component: <TerminalVelocity />
+  },
+  {
+    difficulty: "Medium",
+    display: "Scoop! (part 1)",
+    original: "https://www.olympiad.org.uk/papers/2016/final/Scoop1.pdf",
+    year: 2016,
+    tags: ["Trees", "DFS and Similar"],
+    editorialAuthors: ["Yuvan Raja"],
+    solutionAuthors: ["Yuvan Raja"],
+    component: <ScoopOne />
+  },
+  {
+    difficulty: "Medium",
+    display: "Scoop! (part 2)",
+    original: "https://www.olympiad.org.uk/papers/2016/final/Scoop2.pdf",
+    year: 2016,
+    tags: ["Trees", "DFS and Similar"],
+    editorialAuthors: ["Yuvan Raja"],
+    solutionAuthors: ["Yuvan Raja"],
+    component: <ScoopTwo />
+  },
+  {
+    difficulty: "Easy",
+    display: "Keep On The Grass",
+    original: "https://olympiad.org.uk/papers/2017/final/KeepOnTheGrass.pdf",
+    year: 2017,
+    tags: ["Math", "Implementation"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <KeepOnTheGrass />
+  },
+  {
+    difficulty: "Easy",
+    display: "Byway",
+    original: "https://www.olympiad.org.uk/papers/2018/final/Byway.pdf",
+    year: 2018,
+    tags: ["Graphs", "DFS and Similar"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <Byway />
   }
 ];
