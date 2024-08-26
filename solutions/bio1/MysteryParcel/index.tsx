@@ -35,7 +35,7 @@ export const MysteryParcel = () => {
       <SSubtitle>Parcel Combinations</SSubtitle>
       <SText>
         Using the helper function, we can count the number of parcel combinations.
-        To do this, we can iterate through the possible weight of the $i$-th parcel, and recursively call the function with the remaining weight and items.
+        To do this, we can iterate through the number of items in the $i$-th parcel, and recursively call the function with the remaining weight and items.
         Finally, we can output the number of ways to distribute the parcels.
         Once again, we can memoize the results to prevent duplicate calls.
       </SText>
