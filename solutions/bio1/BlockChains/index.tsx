@@ -1,5 +1,4 @@
-﻿import { SCodeBlock, SText, STitle, SList, number} from "components";
-//import { brace, floor } from "solutions/util";
+﻿import { SCodeBlock, SText, STitle, SList } from "components";
 
 export const BlockChains = () => {
     return (
@@ -52,7 +51,7 @@ export const BlockChains = () => {
             </SText>
 
             <STitle>Code</STitle>
-            <SCodeBlock path="BlockChains/sol" />
+            <SCodeBlock path="blockchains/sol" />
         </>
     );
 };
