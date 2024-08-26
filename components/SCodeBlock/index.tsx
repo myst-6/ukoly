@@ -1,32 +1,43 @@
 import { Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { CopyBlock, atomOneDark } from "react-code-blocks";
-import { CopyBlockProps } from "react-code-blocks/dist/components/CopyBlock";
+import { atomOneDark } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+import { CodeBlock } from "./CodeBlock";
 
 export const base: string = "/assets/code/";
 
 export interface Language {
   display: string;
   extension: string;
+  highlight: string;
 }
+
+/*
+
+See here for a list of highlights:
+https://github.com/react-syntax-highlighter/react-syntax-highlighter/blob/HEAD/AVAILABLE_LANGUAGES_HLJS.MD
+
+*/
 
 export const languages: Language[] = [
   {
     display: "C++",
     extension: "cpp",
+    highlight: "cpp"
   },
   {
     display: "Python",
-    extension: "py"
+    extension: "py",
+    highlight: "python"
   }
 ];
 
 export type SourceCode = null | string;
-export interface SCodeBlockProps extends Omit<Omit<CopyBlockProps, "text">, "language"> {
+
+export interface SCodeBlockProps {
   path: string;
 }
 
-export const SCodeBlock = ({ path, ...props }: SCodeBlockProps) => {
+export const SCodeBlock = ({ path }: SCodeBlockProps) => {
   const [codes, setCodes] = useState<SourceCode[]>(languages.map(() => null));
 
   useEffect(() => {
@@ -64,21 +75,13 @@ export const SCodeBlock = ({ path, ...props }: SCodeBlockProps) => {
       </TabList>
       <TabPanels>
         {
-          ...codes.filter(code => code !== null).map((code, idx) => {
+          ...Object.entries(codes).filter(([_, code]) => code !== null).map(([idx, code]) => {
             return (
-              <TabPanel key={idx}>
-                <CopyBlock
-                  text={code} 
-                  language={languages[idx]!.extension}
+              <TabPanel key={+idx}>
+                <CodeBlock 
                   theme={atomOneDark} 
-                  customStyle={{
-                    maxHeight: "30em",
-                    overflowY: "auto",
-                    fontSize: "0.8rem",
-                    marginTop: "0.5rem",
-                  }}
-                  showLineNumbers 
-                  {...props}
+                  code={code!}
+                  language={languages[+idx]!.highlight} 
                 />
               </TabPanel>
             )

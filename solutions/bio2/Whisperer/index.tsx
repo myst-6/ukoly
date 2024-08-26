@@ -6,7 +6,7 @@ export const Whisperer = () => {
     <>
       <STitle>Abridged Statement</STitle>
       <SText>
-        We're given a list $a$ of $p$ non-negative integers ($4 \le p \le 10$).
+        We're given a list $a$ of $p$ non-negative integers.
         In one operation, we do the following:
       </SText>
       <SList>

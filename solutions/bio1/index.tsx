@@ -9,3 +9,5 @@ export * from "./Unlock";
 export * from "./DecoderRing";
 export * from "./DebtRepayment";
 export * from "./ASpaceOddity";
+export * from "./SerialNumbers";
+export * from "./DotsAndBoxes";

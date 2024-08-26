@@ -1,8 +1,21 @@
 import { ProblemInfo } from "../base";
-import { ASpaceOddity, IntegerStrings, ParsingLists, WordGame, Unlock, ZeckendorfRepresentation, Pentominoes, DreamingSpires, DecoderRing, DebtRepayment } from "solutions";
+import { 
+  ASpaceOddity,
+  IntegerStrings, 
+  ParsingLists, 
+  WordGame, 
+  Unlock, 
+  ZeckendorfRepresentation, 
+  Pentominoes, 
+  DreamingSpires, 
+  DecoderRing, 
+  DebtRepayment, 
+  SerialNumbers,
+  DotsAndBoxes 
+} from "solutions";
 
-export const bio1Problems = {
-  proto: {
+export const bio1Problems : ProblemInfo[] = [
+  {
     difficulty: "Easy",
     display: "Integer Strings",
     original: "https://www.olympiad.org.uk/papers/2024/bio/bio24-exam.pdf",
@@ -11,8 +24,8 @@ export const bio1Problems = {
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <IntegerStrings />,
-  } as ProblemInfo,
-  dine: {
+  },
+  {
     difficulty: "Medium",
     display: "Parsing Lists",
     original: "https://www.olympiad.org.uk/papers/2024/bio/bio24-exam.pdf",
@@ -21,8 +34,8 @@ export const bio1Problems = {
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <ParsingLists />,
-  } as ProblemInfo,
-  wordgame: {
+  },
+  {
     difficulty: "Easy",
     display: "Word Game",
     original: "https://www.olympiad.org.uk/papers/2024/bio/bio24-exam.pdf",
@@ -31,8 +44,8 @@ export const bio1Problems = {
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <WordGame />,
-  } as ProblemInfo,
-  unlock: {
+  },
+  {
     difficulty: "Hard",
     display: "Unlock",
     original: "https://www.olympiad.org.uk/papers/2013/bio/bio13-exam.pdf",
@@ -41,18 +54,18 @@ export const bio1Problems = {
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <Unlock />,
-  } as ProblemInfo,
-  zeckendorfrepresentation: {
+  },
+  {
     difficulty: "Easy",
-    display: "Zeckendorf Representation",
+    display: "Zeckendorf",
     original: "https://www.olympiad.org.uk/papers/2023/bio/bio23-exam.pdf",
     year: 2023,
     tags: ["Q1", "Math"],
     editorialAuthors: ["Vladimir Filip"],
     solutionAuthors: ["Vladimir Filip"],
     component: <ZeckendorfRepresentation />,
-  } as ProblemInfo,
-  pentominoes: {
+  },
+  {
     difficulty: "Medium",
     display: "Pentominoes",
     original: "https://www.olympiad.org.uk/papers/2023/bio/bio23-exam.pdf",
@@ -61,8 +74,8 @@ export const bio1Problems = {
     editorialAuthors: ["Vladimir Filip"],
     solutionAuthors: ["Vladimir Filip"],
     component: <Pentominoes />,
-  } as ProblemInfo,
-  dreamingspires: {
+  },
+  {
     difficulty: "Medium",
     display: "Dreaming Spires",
     original: "https://www.olympiad.org.uk/papers/2023/bio/bio23-exam.pdf",
@@ -71,8 +84,8 @@ export const bio1Problems = {
     editorialAuthors: ["Vladimir Filip"],
     solutionAuthors: ["Vladimir Filip", "Alex Pylypenko"],
     component: <DreamingSpires />,
-  } as ProblemInfo,
-  debtrepayment: {
+  },
+  {
     difficulty: "Easy",
     display: "Debt Repayment",
     original: "https://www.olympiad.org.uk/papers/2018/bio/bio18-exam.pdf",
@@ -81,8 +94,8 @@ export const bio1Problems = {
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <DebtRepayment />,
-  } as ProblemInfo,
-  decoderring: {
+  },
+  {
     difficulty: "Easy",
     display: "Decoder Ring",
     original: "https://www.olympiad.org.uk/papers/2018/bio/bio18-exam.pdf",
@@ -91,8 +104,28 @@ export const bio1Problems = {
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <DecoderRing />,
-  } as ProblemInfo,
-  aspaceoddity: {
+  },
+  {
+    difficulty: "Easy",
+    display: "Serial Numbers",
+    original: "https://www.olympiad.org.uk/papers/2018/bio/bio18-exam.pdf",
+    year: 2018,
+    tags: ["Q3", "DFS and Similar"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <SerialNumbers />,
+  },
+    {
+    difficulty: "Medium",
+    display: "Dots and Boxes",
+    original: "https://www.olympiad.org.uk/papers/2017/bio/bio17-exam.pdf",
+    year: 2017,
+    tags: ["Q2", "Implementation"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <DotsAndBoxes />,
+  },
+  {
     difficulty: "Hard",
     display: "A Space Oddity",
     original: "https://olympiad.org.uk/papers/2001/bio/bio01ex.pdf",
@@ -101,5 +134,5 @@ export const bio1Problems = {
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <ASpaceOddity />,
-  } as ProblemInfo,
-};
+  }
+];
