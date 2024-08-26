@@ -12,7 +12,8 @@ import {
   DebtRepayment, 
   SerialNumbers,
   DotsAndBoxes,
-  ColouredTriangles
+  ColouredTriangles,
+  MysteryParcel
 } from "solutions";
 
 export const bio1Problems : ProblemInfo[] = [
@@ -135,6 +136,16 @@ export const bio1Problems : ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <DotsAndBoxes />,
+  },
+  {
+    difficulty: "Medium",
+    display: "Mystery Parcel",
+    original: "https://www.olympiad.org.uk/papers/2017/bio/bio17-exam.pdf",
+    year: 2017,
+    tags: ["Q3", "Dynamic Programming"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <MysteryParcel />,
   },
   {
     difficulty: "Hard",
