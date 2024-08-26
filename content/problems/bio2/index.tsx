@@ -1,5 +1,5 @@
 import { ProblemInfo } from "../base";
-import { BrokersDoom, Carve, Dino, Milk, Proto, Whisperer, TerminalVelocity } from "solutions";
+import { BrokersDoom, Carve, Dino, Milk, Proto, Whisperer, TerminalVelocity, TickTock } from "solutions";
 
 export const bio2Problems: ProblemInfo[] = [
   {
@@ -71,5 +71,15 @@ export const bio2Problems: ProblemInfo[] = [
     editorialAuthors: ["Anango Prabhat"],
     solutionAuthors: ["Anango Prabhat"],
     component: <TerminalVelocity />
+  },
+  {
+    difficulty: "Medium",
+    display: "Tick Tock",
+    original: "https://www.olympiad.org.uk/papers/2017/final/TickTock.pdf",
+    year: 2017,
+    tags: ["Dynamic Programming", "Math"],
+    editorialAuthors: ["Vladimir Filip"],
+    solutionAuthors: ["Vladimir Filip"],
+    component: <TickTock />
   }
 ];
