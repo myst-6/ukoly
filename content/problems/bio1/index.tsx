@@ -11,7 +11,8 @@ import {
   DecoderRing, 
   DebtRepayment, 
   SerialNumbers,
-  DotsAndBoxes 
+  DotsAndBoxes,
+  ColouredTriangles
 } from "solutions";
 
 export const bio1Problems : ProblemInfo[] = [
@@ -115,7 +116,17 @@ export const bio1Problems : ProblemInfo[] = [
     solutionAuthors: ["Adwaya Gupta"],
     component: <SerialNumbers />,
   },
-    {
+  {
+    difficulty: "Easy",
+    display: "Coloured Triangles",
+    original: "https://www.olympiad.org.uk/papers/2017/bio/bio17-exam.pdf",
+    year: 2017,
+    tags: ["Q1", "Implementation"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <ColouredTriangles />,
+  },
+  {
     difficulty: "Medium",
     display: "Dots and Boxes",
     original: "https://www.olympiad.org.uk/papers/2017/bio/bio17-exam.pdf",
