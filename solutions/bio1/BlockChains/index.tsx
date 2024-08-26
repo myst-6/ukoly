@@ -1,4 +1,4 @@
-﻿import { SCodeBlock, SText, STitle, SList } from "components";
+﻿import { SCodeBlock, SText, STitle, SList} from "components";
 
 export const BlockChains = () => {
     return (
@@ -51,7 +51,7 @@ export const BlockChains = () => {
             </SText>
 
             <STitle>Code</STitle>
-            <SCodeBlock path="blockchains/sol" />
+            <SCodeBlock path="BlockChains/sol" />
         </>
     );
 };
