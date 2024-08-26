@@ -1,5 +1,5 @@
 import { ProblemInfo } from "../base";
-import { BrokersDoom, Carve, Dino, Milk, Proto, Whisperer, TerminalVelocity, ScoopOne, ScoopTwo, KeepOnTheGrass } from "solutions";
+import { BrokersDoom, Carve, Dino, Milk, Proto, Whisperer, TerminalVelocity, ScoopOne, ScoopTwo, KeepOnTheGrass, Cables } from "solutions";
 
 export const bio2Problems: ProblemInfo[] = [
   {
@@ -101,5 +101,15 @@ export const bio2Problems: ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <KeepOnTheGrass />
+  },
+  {
+    difficulty: "Medium",
+    display: "Cables",
+    original: "https://www.olympiad.org.uk/papers/2018/final/Cables.pdf",
+    year: 2018,
+    tags: ["Greedy", "Geometry"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <Cables />
   }
 ];
