@@ -1,5 +1,5 @@
 import { ProblemInfo } from "../base";
-import { IntegerStrings, ParsingLists, WordGame, Unlock, ZeckendorfRepresentation, Pentominoes, DreamingSpires, DecoderRing, DebtRepayment, SerialNumbers } from "solutions";
+import { IntegerStrings, ParsingLists, WordGame, Unlock, ZeckendorfRepresentation, Pentominoes, DreamingSpires, DecoderRing, DebtRepayment, SerialNumbers, BlockChains } from "solutions";
 
 export const bio1Problems : ProblemInfo[] = [
   {
@@ -101,5 +101,15 @@ export const bio1Problems : ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <SerialNumbers />,
-  },
+    },
+    {
+        difficulty: "Hard",
+        display: "Block-chain",
+        original: "https://www.olympiad.org.uk/papers/2019/bio/bio19-exam.pdf",
+        year: 2019,
+        tags: ["Q3", "DFS and Similar"],
+        editorialAuthors: ["Julia Volovich"],
+        solutionAuthors: ["Julia Volovich"],
+        component: <BlockChains />,
+    },
 ];

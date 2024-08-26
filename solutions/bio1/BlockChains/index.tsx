@@ -1,7 +1,7 @@
 ﻿import { SCodeBlock, SText, STitle, SList } from "components";
 //import { brace, floor } from "solutions/util";
 
-export const Unlock = () => {
+export const BlockChains = () => {
     return (
         <>
             <STitle>Observation</STitle>
