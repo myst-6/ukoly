@@ -11,7 +11,10 @@ import {
   DecoderRing, 
   DebtRepayment, 
   SerialNumbers,
-  DotsAndBoxes 
+  DotsAndBoxes,
+  ColouredTriangles,
+  MysteryParcel,
+  Migration
 } from "solutions";
 
 export const bio1Problems : ProblemInfo[] = [
@@ -115,7 +118,17 @@ export const bio1Problems : ProblemInfo[] = [
     solutionAuthors: ["Adwaya Gupta"],
     component: <SerialNumbers />,
   },
-    {
+  {
+    difficulty: "Easy",
+    display: "Coloured Triangles",
+    original: "https://www.olympiad.org.uk/papers/2017/bio/bio17-exam.pdf",
+    year: 2017,
+    tags: ["Q1", "Implementation"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <ColouredTriangles />,
+  },
+  {
     difficulty: "Medium",
     display: "Dots and Boxes",
     original: "https://www.olympiad.org.uk/papers/2017/bio/bio17-exam.pdf",
@@ -126,6 +139,26 @@ export const bio1Problems : ProblemInfo[] = [
     component: <DotsAndBoxes />,
   },
   {
+    difficulty: "Medium",
+    display: "Mystery Parcel",
+    original: "https://www.olympiad.org.uk/papers/2017/bio/bio17-exam.pdf",
+    year: 2017,
+    tags: ["Q3", "Dynamic Programming"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <MysteryParcel />,
+  },
+  {
+    difficulty: "Easy",
+    display: "Migration",
+    original: "https://www.olympiad.org.uk/papers/2016/bio/bio16-exam.pdf",
+    year: 2016,
+    tags: ["Q2", "Implementation"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <Migration />,
+  },
+  {
     difficulty: "Hard",
     display: "A Space Oddity",
     original: "https://olympiad.org.uk/papers/2001/bio/bio01ex.pdf",
@@ -134,5 +167,5 @@ export const bio1Problems : ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <ASpaceOddity />,
-  }
+  },
 ];
