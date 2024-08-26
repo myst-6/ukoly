@@ -33,7 +33,7 @@ export const Whisperer = () => {
         number $x$.
       </SText>
 
-      <STitle>Lexicogaphical Sequences</STitle>
+      <STitle>Lexicographical Sequences</STitle>
       <SText>
         Whenever we have a question about returning the $n$-th lexicographical sequence, a common idea is 
         to have a way of counting the number of sequences beginning with a certain prefix.
