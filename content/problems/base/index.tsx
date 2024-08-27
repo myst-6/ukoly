@@ -11,6 +11,7 @@ export type Tag =
   "DFS and Similar" |
   "Two Pointers" |
   "Math" |
+  "Geometry" |
   "Q1" |
   "Q2" |
   "Q3";
