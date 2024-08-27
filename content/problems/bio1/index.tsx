@@ -215,6 +215,7 @@ export const bio1Problems: ProblemInfo[] = [
     component: <WindowDressing />,
   },
   {
+    difficulty: "Medium",
     display: "Down Pat",
     original: "https://www.olympiad.org.uk/papers/2021/bio/bio21-exam.pdf",
     year: 2021,
