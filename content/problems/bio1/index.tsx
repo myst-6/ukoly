@@ -18,6 +18,7 @@ import {
   BlockChains,
   Migration,
   PrimeConnections
+  BlockPalindromes
 } from "solutions";
 
 export const bio1Problems: ProblemInfo[] = [
@@ -190,5 +191,15 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <ASpaceOddity />,
+  },
+  {
+    difficulty: "Medium",
+    display: "Block Palindromes",
+    original: "https://www.olympiad.org.uk/papers/2015/bio/bio15-exam.pdf",
+    year: 2015,
+    tags: ["Q1", "Brute Force", "Implementation"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <BlockPalindromes />,
   },
 ];
