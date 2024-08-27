@@ -1,22 +1,31 @@
-#include <bits/stdc++.h> 
-using namespace std; 
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int solve(const string& s) {
+    int answer = 1;
+    if (s.size()<2) return 1;
+    // Iterate through the string up to its midpoint
+    for (int i = 1; i <= s.length() / 2; i++) {
+        // Check if the first 'i' characters are equal to the last 'i' characters
+        if (s.substr(0, i) != s.substr(s.length() - i, i)) {
+            continue;
+        }
+        // Recursively call 'solve' on the substring excluding the matched part
+        answer += solve(s.substr(i, s.length() - 2 * i));
+    }
+
+    return answer;
+}
 
 int main() {
-    string s; 
-    cin >> s; 
-    int n = ssize(s); 
+    string s;
+    cout << "Please enter a word: ";
+    cin >> s;
 
-    function<int(string)> solve = [&] (const string &t) {
-        int res = 1; 
-        for (int i=1; i<=ssize(t)/2; i++) {
-            if (t.substr(0,i) == t.substr(ssize(t)-i,i)) {
-                res += solve(t.substr(i, ssize(t)-2*i)); 
-            }
-        }
-        return res; 
-    }; 
+    // Output the result after subtracting 1 (to match the original Python behavior)
+    cout << solve(s) - 1 << endl;
 
-    cout << solve(s) - 1 << '\n'; 
-
-    return 0; 
+    return 0;
 }
