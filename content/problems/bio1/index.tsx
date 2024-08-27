@@ -1,3 +1,4 @@
+import { WindowDressing } from "solutions/bio1/WindowDressing";
 import { ProblemInfo } from "../base";
 
 import {
@@ -201,5 +202,15 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <BlockPalindromes />,
+  },
+  {
+    difficulty: "Medium",
+    display: "Window Dressing",
+    original: "https://www.olympiad.org.uk/papers/2023/bio/bio23-exam.pdf",
+    year: 2021,
+    tags: ["Q3", "DFS and Similar"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <WindowDressing />,
   },
 ];
