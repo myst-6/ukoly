@@ -33,7 +33,7 @@ export const PromenadeFractions = () => {
 
       <STitle>Idea</STitle>
       <SText>
-        Let's first observe that the constraints for the size of the promenade fraction is quite small. 
+        Let's first observe that the constraint for the maximum size of the promenade fraction is quite small. 
         This suggests we can simply iterate through and simulate each choice.
       </SText>
 
