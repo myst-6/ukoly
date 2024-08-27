@@ -24,14 +24,17 @@ export const PrimeConnections = () => {
         To do this, we can use the Sieve of Eratosthenes algorithm 
         (see <Link href="https://cp-algorithms.com/algebra/sieve-of-eratosthenes.html">here</Link> for more detail)
         to generate all prime numbers up to the specified limit.
-        This will create an array of booleans, where the index represents the number and the value represents whether the number is prime, 
-        allowing us to efficiently check if a number is prime in $\mathcal{brace("O")}(1)$ time.
+        To do this, we first initialise an array of booleans, where the index represents the number and the value represents whether the number is prime.
+        Then we can iterate through each number flagged <SCode>true</SCode> in the array 
+        (each prime number, $0$ and $1$ should be flagged as <SCode>false</SCode> as they are not prime) 
+        and flag all of it's multiples as <SCode>false</SCode>.
+        This leaves us with a boolean array which allows us to efficiently check if a number is prime in $\mathcal{brace("O")}(1)$ time.
       </SText>
       <SSubtitle>Finding the Shortest Path</SSubtitle>
       <SText>
         Now we can carry out a breadth first search from the starting node. 
         In a breadth first search, we maintain a queue of nodes to visit and their distance from the start, as well as a set of visited nodes.
-        For each node, we can iterate through all the prime numebrs that are $2^k$ away from the current node for some value $k$, 
+        For each node, we can iterate through all the prime numbers that are $2^k$ away from the current node for some integer $k$, 
         and push them onto the end of the queue.
         If we ever reach the end node, we can return the distance of that node from the start node.
       </SText>
