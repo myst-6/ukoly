@@ -18,7 +18,8 @@ import {
   BlockChains,
   Migration,
   PrimeConnections,
-  BlockPalindromes
+  BlockPalindromes,
+  PromenadeFractions
 } from "solutions";
 
 export const bio1Problems: ProblemInfo[] = [
@@ -201,5 +202,15 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <BlockPalindromes />,
+  },
+  {
+    difficulty: "Easy",
+    display: "Promenade Fractions",
+    original: "https://www.olympiad.org.uk/papers/2016/bio/bio16-exam.pdf",
+    year: 2016,
+    tags: ["Q1", "Implementation"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <PromenadeFractions />,
   },
 ];
