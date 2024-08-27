@@ -17,7 +17,7 @@ import {
   MysteryParcel,
   BlockChains,
   Migration,
-  PrimeConnections
+  PrimeConnections,
   BlockPalindromes
 } from "solutions";
 
