@@ -1,5 +1,5 @@
 import { ProblemInfo } from "../base";
-import { BrokersDoom, Carve, Dino, Milk, Proto, Whisperer, TerminalVelocity, ScoopOne, ScoopTwo, KeepOnTheGrass, Byway, Cables } from "solutions";
+import { BrokersDoom, Carve, Dino, Milk, Proto, Whisperer, TerminalVelocity, ScoopOne, ScoopTwo, KeepOnTheGrass, Byway, Cables, BestOfShow } from "solutions";
 
 export const bio2Problems: ProblemInfo[] = [
   {
@@ -126,9 +126,9 @@ export const bio2Problems: ProblemInfo[] = [
   display: "Best Of Show",
   original: "https://www.olympiad.org.uk/papers/2018/final/Show.pdf",
   year: 2018,
-  tags: ["Graphs"],
+  tags: ["Graphs", "Greedy"],
   editorialAuthors: ["Yuvan Raja"],
   solutionAuthors: ["Yuvan Raja"],
-  component: <Byway />
+  component: <BestOfShow />
   }
 ];
