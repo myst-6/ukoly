@@ -1,4 +1,4 @@
-import { SCode, SCodeBlock, SText, STitle } from "components";
+import { SCodeBlock, SText, STitle } from "components";
 import { brace } from "solutions/util";
 
 export const TickTock = () => {
