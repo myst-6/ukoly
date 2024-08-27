@@ -17,8 +17,12 @@ import {
   MysteryParcel,
   BlockChains,
   Migration,
+  PrimeConnections,
   BlockPalindromes,
+  PromenadeFractions,
+  DownPat,
   PalindromicNumbers
+
 } from "solutions";
 
 export const bio1Problems: ProblemInfo[] = [
@@ -173,6 +177,16 @@ export const bio1Problems: ProblemInfo[] = [
     component: <Migration />,
   },
   {
+    difficulty: "Easy",
+    display: "Prime Connections",
+    original: "https://www.olympiad.org.uk/papers/2016/bio/bio16-exam.pdf",
+    year: 2016,
+    tags: ["Q3", "DFS and Similar"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <PrimeConnections />,
+  },
+  {
     difficulty: "Hard",
     display: "A Space Oddity",
     original: "https://olympiad.org.uk/papers/2001/bio/bio01ex.pdf",
@@ -194,6 +208,7 @@ export const bio1Problems: ProblemInfo[] = [
   },
   {
     difficulty: "Easy",
+
     display: "Palindromic Numbers",
     original: "https://www.olympiad.org.uk/papers/2019/bio/bio19-exam.pdf",
     year: 2019,
@@ -202,4 +217,23 @@ export const bio1Problems: ProblemInfo[] = [
     solutionAuthors: ["Yuvan Raja"],
     component: <PalindromicNumbers />,
   },
+  {
+    display: "Promenade Fractions",
+    original: "https://www.olympiad.org.uk/papers/2016/bio/bio16-exam.pdf",
+    year: 2016,
+    tags: ["Q1", "Implementation"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <PromenadeFractions />,
+  },
+  {  
+    difficulty: "Medium",
+    display: "Down Pat",
+    original: "https://www.olympiad.org.uk/papers/2021/bio/bio21-exam.pdf",
+    year: 2021,
+    tags: ["Q1", "Brute Force", "Implementation"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <DownPat />,
+  }
 ];

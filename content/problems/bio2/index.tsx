@@ -1,5 +1,6 @@
 import { ProblemInfo } from "../base";
-import { BrokersDoom, Carve, Dino, Milk, Proto, Whisperer, TerminalVelocity, ScoopOne, ScoopTwo, KeepOnTheGrass, Byway, Cables } from "solutions";
+import { BrokersDoom, Carve, Dino, Milk, Proto, Whisperer, TerminalVelocity, ScoopOne, ScoopTwo, KeepOnTheGrass, Byway, Cables, TickTock, BestOfShow } from "solutions";
+
 
 export const bio2Problems: ProblemInfo[] = [
   {
@@ -121,5 +122,24 @@ export const bio2Problems: ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <Byway />
-  }
+  },
+  { difficulty: "Medium",
+  display: "Best Of Show",
+  original: "https://www.olympiad.org.uk/papers/2018/final/Show.pdf",
+  year: 2018,
+  tags: ["Graphs", "Greedy"],
+  editorialAuthors: ["Yuvan Raja"],
+  solutionAuthors: ["Yuvan Raja"],
+  component: <BestOfShow />
+  },
+  {
+    difficulty: "Medium",
+    display: "Tick Tock",
+    original: "https://www.olympiad.org.uk/papers/2017/final/TickTock.pdf",
+    year: 2017,
+    tags: ["Math"],
+    editorialAuthors: ["Vladimir Filip", "Yuvan Raja"],
+    solutionAuthors: ["Vladimir Filip", "Yuvan Raja"],
+    component: <TickTock />
+  },
 ];
