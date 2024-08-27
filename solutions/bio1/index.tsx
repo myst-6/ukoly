@@ -17,5 +17,6 @@ export * from "./MysteryParcel";
 export * from "./Migration";
 export * from "./PrimeConnections";
 export * from "./BlockPalindromes";
+export * from "./PalindromicNumbers";
 export * from "./PromenadeFractions";
 export * from "./DownPat";

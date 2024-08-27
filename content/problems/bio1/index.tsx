@@ -20,7 +20,9 @@ import {
   PrimeConnections,
   BlockPalindromes,
   PromenadeFractions,
-  DownPat
+  DownPat,
+  PalindromicNumbers
+
 } from "solutions";
 
 export const bio1Problems: ProblemInfo[] = [
@@ -203,6 +205,17 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <BlockPalindromes />,
+  },
+  {
+    difficulty: "Easy",
+
+    display: "Palindromic Numbers",
+    original: "https://www.olympiad.org.uk/papers/2019/bio/bio19-exam.pdf",
+    year: 2019,
+    tags: ["Q1", "Math"],
+    editorialAuthors: ["Yuvan Raja"],
+    solutionAuthors: ["Yuvan Raja"],
+    component: <PalindromicNumbers />,
   },
   {
     difficulty: "Easy",
