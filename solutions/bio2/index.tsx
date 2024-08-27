@@ -10,3 +10,4 @@ export * from "./ScoopOne";
 export * from "./ScoopTwo";
 export * from "./Cables";
 export * from "./Byway";
+export * from "./BestOfShow";

@@ -121,5 +121,14 @@ export const bio2Problems: ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <Byway />
+  },
+  { difficulty: "Medium",
+  display: "Best Of Show",
+  original: "https://www.olympiad.org.uk/papers/2018/final/Show.pdf",
+  year: 2018,
+  tags: ["Graphs"],
+  editorialAuthors: ["Yuvan Raja"],
+  solutionAuthors: ["Yuvan Raja"],
+  component: <Byway />
   }
 ];
