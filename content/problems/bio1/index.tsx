@@ -218,6 +218,7 @@ export const bio1Problems: ProblemInfo[] = [
     component: <PalindromicNumbers />,
   },
   {
+    difficulty: "Easy",
     display: "Promenade Fractions",
     original: "https://www.olympiad.org.uk/papers/2016/bio/bio16-exam.pdf",
     year: 2016,
