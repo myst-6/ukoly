@@ -6,7 +6,7 @@ export const BestOfShow = () => {
     <>
       <STitle>Abridged Statement</STitle>
       <SText>
-        You are given a <Link href="https://en.wikipedia.org/wiki/Tournament_(graph_theory)">tournament</Link> on $n$ vertices and have to find a <Link href="https://en.wikipedia.org/wiki/Hamiltonian_path">Hamiltonian path</Link>. In the context of the problem, a directed edge $x$ to $y$ is interpreted as "testing showed that film $x$ was worse than film $y$".
+        You are given a<Link href="https://en.wikipedia.org/wiki/Tournament_(graph_theory)">tournament</Link>on $n$ vertices and have to find a<Link href="https://en.wikipedia.org/wiki/Hamiltonian_path">Hamiltonian path.</Link>In the context of the problem, a directed edge $x$ to $y$ is interpreted as "testing showed that film $x$ was worse than film $y$".
       </SText>
 
       <STitle>Observation</STitle>
