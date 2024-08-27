@@ -1,4 +1,4 @@
-import { Link, SCodeBlock, SList, SText, STitle } from "components";
+import { SCodeBlock, SText, STitle } from "components";
 import { frac, ceil} from "solutions/util";
 
 export const PalindromicNumbers = () => {
