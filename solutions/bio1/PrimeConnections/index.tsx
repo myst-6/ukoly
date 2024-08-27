@@ -21,14 +21,10 @@ export const PrimeConnections = () => {
       <SSubtitle>Generating Primes</SSubtitle>
       <SText>
         Initially, we need an efficient way to check if a number is prime.
-        To do this, we can use the Sieve of Eratosthenes algorithm 
-        (see <Link href="https://cp-algorithms.com/algebra/sieve-of-eratosthenes.html">here</Link> for more detail)
+        (see <Link href="https://cp-algorithms.com/algebra/sieve-of-eratosthenes.html">here</Link> for more details)
         to generate all prime numbers up to the specified limit.
-        To do this, we first initialise an array of booleans, where the index represents the number and the value represents whether the number is prime.
-        Then we can iterate through each number flagged <SCode>true</SCode> in the array 
-        (each prime number, $0$ and $1$ should be flagged as <SCode>false</SCode> as they are not prime) 
-        and flag all of it's multiples as <SCode>false</SCode>.
-        This leaves us with a boolean array which allows us to efficiently check if a number is prime in $\mathcal{brace("O")}(1)$ time.
+        This will create an array of booleans, where the index represents the number and the value represents whether the number is prime, 
+        allowing us to efficiently check if a number is prime in $\mathcal{brace("O")}(1)$ time.
       </SText>
       <SSubtitle>Finding the Shortest Path</SSubtitle>
       <SText>
