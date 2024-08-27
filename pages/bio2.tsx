@@ -1,24 +1,9 @@
-import { useState, useEffect } from "react";
 import { Box, Card, Container, Divider, Flex, Header, Problem, Solution, SolutionSkeleton, Text, VStack } from "components";
-import { bio2Problems, pages, ProblemInfo } from "content";
-import { getProblemFromURL, loadProblemFromURL, setProblemWrapper } from "pages-lib/util";
+import { bio2Problems, pages } from "content";
+import { useProblemset } from "pages-lib/util";
 
 export default function BIO2() {
-  const [problem, setProblem] = useState<ProblemInfo | null>(null);
-
-  useEffect(() => {
-    loadProblemFromURL(bio2Problems, setProblem);
-    onpopstate = () => {
-      /*
-       * Callback when the user navigates session history.
-      */
-      let problemInURL = getProblemFromURL(bio2Problems);
-      if (problemInURL)
-        setProblemWrapper(problemInURL, setProblem, false);
-      else
-        setProblemWrapper(null, setProblem, false);
-    }
-  }, []);
+  const { problem, setProblem } = useProblemset(bio2Problems);
 
   return (
     <>
@@ -49,7 +34,7 @@ export default function BIO2() {
                       ...bio2Problems.map((problem) => {
                         return (
                           <Box display="flex" p={1} key={problem.display}>
-                            <Problem problem={problem} onChoose={() => setProblemWrapper(problem, setProblem)} />
+                            <Problem problem={problem} onChoose={() => setProblem(problem)} />
                           </Box>
                         );
                       })
