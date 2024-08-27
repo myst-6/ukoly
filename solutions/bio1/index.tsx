@@ -10,6 +10,7 @@ export * from "./DecoderRing";
 export * from "./DebtRepayment";
 export * from "./ASpaceOddity";
 export * from "./SerialNumbers";
+export * from "./BlockChains";
 export * from "./DotsAndBoxes";
 export * from "./ColouredTriangles";
 export * from "./MysteryParcel";
