@@ -19,6 +19,7 @@ import {
   Migration,
   PrimeConnections,
   BlockPalindromes,
+  PromenadeFractions,
   DownPat
 } from "solutions";
 
@@ -204,6 +205,16 @@ export const bio1Problems: ProblemInfo[] = [
     component: <BlockPalindromes />,
   },
   {
+    difficulty: "Easy",
+    display: "Promenade Fractions",
+    original: "https://www.olympiad.org.uk/papers/2016/bio/bio16-exam.pdf",
+    year: 2016,
+    tags: ["Q1", "Implementation"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <PromenadeFractions />,
+  },
+  {  
     difficulty: "Medium",
     display: "Down Pat",
     original: "https://www.olympiad.org.uk/papers/2021/bio/bio21-exam.pdf",
