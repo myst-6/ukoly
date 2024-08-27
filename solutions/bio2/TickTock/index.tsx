@@ -10,7 +10,7 @@ export const TickTock = () => {
       You have $n$ clocks, each of which are audible from time $f$ to $l$ inclusive and make a tick sound when they are audible and the sum of the digits of the time they display is even.
       </SText>
       <SText>
-      The input given is the integer $n$ and then $n$ lines of two integers $f_i$ and $l_i$, corresponding to the $f$ and $l$ values of the audible period of the $i$th clock.
+      The input given is the integer $n$ and then $n$ lines of two integers $f_i$ and $l_i$, corresponding to the $f$ and $l$ values of the audible period of the $i^{brace("\\,\\text{th}")}$ clock.
       </SText>
       <SText>
       Output the total number of seconds in which at least one clock is audible and the number of those seconds in which a tick occurs.
