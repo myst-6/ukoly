@@ -17,6 +17,7 @@ import {
   MysteryParcel,
   BlockChains,
   Migration,
+  PrimeConnections,
   BlockPalindromes
 } from "solutions";
 
@@ -170,6 +171,16 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <Migration />,
+  },
+  {
+    difficulty: "Easy",
+    display: "Prime Connections",
+    original: "https://www.olympiad.org.uk/papers/2016/bio/bio16-exam.pdf",
+    year: 2016,
+    tags: ["Q3", "DFS and Similar"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <PrimeConnections />,
   },
   {
     difficulty: "Hard",
