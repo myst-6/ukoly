@@ -11,7 +11,7 @@ export const BestOfShow = () => {
 
       <STitle>Observation</STitle>
       <SText>
-        Note that the problem text assures us that a Hamiltonian path always exists. This lends the problem to an inductive greedy approach, where we attemtpt to extend the Hamiltonian path on $n-1$ vertices (which is guaranteed to exist) to create a Hamiltonian path on $n$ vertices. 
+        Note that the problem text assures us that a Hamiltonian path always exists. This lends the problem to an inductive greedy approach, where we attempt to extend the Hamiltonian path on $n-1$ vertices (which is guaranteed to exist) to create a Hamiltonian path on $n$ vertices. 
       </SText>
       <HStack>
         <VStack align="flex-start">
@@ -33,7 +33,7 @@ export const BestOfShow = () => {
 
       <STitle>Solution</STitle>
       <SText>
-        We can now apply this $\mathcal{brace("O")}(n)$ algorithm $n - 1$ times, starting from a list of 1 element to reach a complete list that forms a Hamiltonian path. This is an $\mathcal{brace("O")}(n^2)$ algorithm which will work given the constraints $n &lt; 2^{brace("10")}$. When implementing this, a singly linked list approach works well for linear searching and then inserting elements into the list, but a vector could also be used.
+        We can now apply this $\mathcal{brace("O")}(n)$ algorithm $n - 1$ times, starting from a list of 1 element to reach a complete list that forms a Hamiltonian path. This is an $\mathcal{brace("O")}(n^2)$ algorithm which will work given the constraints ($n &lt; 2^{brace("10")}$). When implementing this, a singly linked list approach works well for linear searching and then inserting elements into the list, but a vector could also be used.
       </SText>
 
       <STitle>Code</STitle>
