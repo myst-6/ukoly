@@ -1,9 +1,44 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Box, Divider, Flex, Header, Problem, Solution, SolutionSkeleton, Spacer, Text } from "components";
 import { bio2Problems, pages, ProblemInfo } from "content";
+import { getProblemFromURL } from "./util";
 
 export default function BIO2() {
   const [problem, setProblem] = useState<ProblemInfo | null>(null);
+
+  function _setProblem(newProblem: ProblemInfo | null, pushToHistory: boolean = true) {
+    if (pushToHistory) {
+      /*
+       * Pushes problem URL to the session history
+       * Allows user to navigate between problems they've viewed
+      */
+      const url = new URL(location.toString());
+      if (newProblem !== null)
+        url.searchParams.set("problem", newProblem.display);
+      else
+        url.searchParams.delete("problem");      
+      history.pushState({}, "", url)
+    }
+    setProblem(newProblem);
+  }
+
+  useEffect(() => {
+    let problemInURL = getProblemFromURL(bio2Problems);
+    console.log(problemInURL?.display);
+    if (problemInURL)
+      // If the problem parameter is already in the URL, there's no need to push it again to session history
+      _setProblem(problemInURL, false);
+    onpopstate = () => {
+      /*
+       * Callback when the user navigates session history.
+      */
+      let problemInURL = getProblemFromURL(bio2Problems);
+      if (problemInURL)
+        _setProblem(problemInURL, false);
+      else
+        _setProblem(null, false);
+    }
+  }, []);
 
   return (
     <>
@@ -31,7 +66,7 @@ export default function BIO2() {
               ...bio2Problems.map((problem) => {
                 return (
                   <Box display="flex" key={problem.display}>
-                    <Problem problem={problem} onChoose={() => setProblem(problem)} />
+                    <Problem problem={problem} onChoose={() => _setProblem(problem)} />
                   </Box>
                 );
               })
@@ -40,7 +75,7 @@ export default function BIO2() {
           <Divider mb={3} mt={6} />
           <Text typography="display.small">Problem Viewer{problem && `: ${problem.display}`}</Text>
           {
-            problem === null ? <SolutionSkeleton /> : <Solution problem={problem} />
+            problem === null ? <SolutionSkeleton /> : <Solution problem={problem}/>
           }
           <Spacer mt={6} p={6} />
         </Box>
