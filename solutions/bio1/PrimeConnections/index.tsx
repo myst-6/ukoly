@@ -1,4 +1,4 @@
-import { Link, SCodeBlock, SSubtitle, SText, STitle, SCode } from "components";
+import { Link, SCodeBlock, SSubtitle, SText, STitle } from "components";
 import { brace } from "solutions/util";
 
 export const PrimeConnections = () => {
