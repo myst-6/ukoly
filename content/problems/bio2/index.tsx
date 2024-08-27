@@ -117,9 +117,9 @@ export const bio2Problems: ProblemInfo[] = [
     display: "Tick Tock",
     original: "https://www.olympiad.org.uk/papers/2017/final/TickTock.pdf",
     year: 2017,
-    tags: ["Dynamic Programming", "Math"],
-    editorialAuthors: ["Vladimir Filip"],
-    solutionAuthors: ["Vladimir Filip"],
+    tags: ["Math"],
+    editorialAuthors: ["Vladimir Filip", "Yuvan Raja"],
+    solutionAuthors: ["Vladimir Filip", "Yuvan Raja"],
     component: <TickTock />
   },
 ];

@@ -2,7 +2,7 @@
 
 using namespace std;
 
-#define int unsigned long long
+#define int long long
 
 ifstream fin("input.txt");
 ofstream fout("output.txt");
@@ -10,33 +10,24 @@ ofstream fout("output.txt");
 #define cin fin
 #define cout fout
 
-int numTicks(int n, int prevParity = 0) {
-    int res = 0;
-    if (n < 10) {
-        /*
-         * Determines number of units digits corresponding to a tick,
-         * given the parity of the previous digits
-         */
-        for (int i = 0; i < n; i++)
-            if ((i + prevParity) % 2 == 0)
-                res++;
-    } else {
-        /*
-         * Adding the number of ticks across all times where the first digit
-         * is lower than the first digit of n
-         */
-        int pow10 = (int) powl(10L, floorl(log10l((long double) n)));
-        int firstDigit = n / pow10;
-        res += firstDigit * pow10 / 2;
-        /*
-         * All other ticks up to n exclusive have the same first digit as n, so parity is
-         * updated accordingly
-         */
-        prevParity += firstDigit;
-        prevParity %= 2;
-        int restDigits = n % (firstDigit * pow10);
-        res += numTicks(restDigits, prevParity);
+int getParity(int x) {
+    int parity = 0;
+    while (x > 0) {
+        parity += x % 10;
+        parity %= 2;
+        x /= 10;
     }
+    return parity;
+}
+
+int numTicks(int n) {
+    int m_n = n / 10;
+    int r_n = n % 10;
+    int parity = getParity(m_n);
+    int res = 5 * m_n;
+    for (int r = 0; r < r_n; r++)
+        if ((r + parity) % 2 == 0)
+            res++;
     return res;
 }
 
