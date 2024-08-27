@@ -1,5 +1,4 @@
 import { SCode, SCodeBlock, SText, STitle } from "components";
-import { Code } from "react-code-blocks";
 
 export const DownPat = () => {
   return (
