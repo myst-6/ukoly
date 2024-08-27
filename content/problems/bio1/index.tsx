@@ -1,22 +1,26 @@
 import { ProblemInfo } from "../base";
-import { 
+
+import {
   ASpaceOddity,
-  IntegerStrings, 
-  ParsingLists, 
-  WordGame, 
-  Unlock, 
-  ZeckendorfRepresentation, 
-  Pentominoes, 
-  DreamingSpires, 
-  DecoderRing, 
-  DebtRepayment, 
+  IntegerStrings,
+  ParsingLists,
+  WordGame,
+  Unlock,
+  ZeckendorfRepresentation,
+  Pentominoes,
+  DreamingSpires,
+  DecoderRing,
+  DebtRepayment,
   SerialNumbers,
   DotsAndBoxes,
   ColouredTriangles,
-  MysteryParcel
+  MysteryParcel,
+  BlockChains,
+  Migration,
+  BlockPalindromes
 } from "solutions";
 
-export const bio1Problems : ProblemInfo[] = [
+export const bio1Problems: ProblemInfo[] = [
   {
     difficulty: "Easy",
     display: "Integer Strings",
@@ -118,6 +122,16 @@ export const bio1Problems : ProblemInfo[] = [
     component: <SerialNumbers />,
   },
   {
+    difficulty: "Medium",
+    display: "Block-chain",
+    original: "https://www.olympiad.org.uk/papers/2019/bio/bio19-exam.pdf",
+    year: 2019,
+    tags: ["Q3", "DFS and Similar"],
+    editorialAuthors: ["Julia Volovich"],
+    solutionAuthors: ["Julia Volovich"],
+    component: <BlockChains />,
+  },
+  {
     difficulty: "Easy",
     display: "Coloured Triangles",
     original: "https://www.olympiad.org.uk/papers/2017/bio/bio17-exam.pdf",
@@ -148,6 +162,16 @@ export const bio1Problems : ProblemInfo[] = [
     component: <MysteryParcel />,
   },
   {
+    difficulty: "Easy",
+    display: "Migration",
+    original: "https://www.olympiad.org.uk/papers/2016/bio/bio16-exam.pdf",
+    year: 2016,
+    tags: ["Q2", "Implementation"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <Migration />,
+  },
+  {
     difficulty: "Hard",
     display: "A Space Oddity",
     original: "https://olympiad.org.uk/papers/2001/bio/bio01ex.pdf",
@@ -156,5 +180,15 @@ export const bio1Problems : ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <ASpaceOddity />,
+  },
+  {
+    difficulty: "Medium",
+    display: "Block Palindromes",
+    original: "https://www.olympiad.org.uk/papers/2015/bio/bio15-exam.pdf",
+    year: 2015,
+    tags: ["Q1", "Brute Force", "Implementation"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <BlockPalindromes />,
   },
 ];
