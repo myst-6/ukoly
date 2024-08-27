@@ -15,3 +15,4 @@ export * from "./DotsAndBoxes";
 export * from "./ColouredTriangles";
 export * from "./MysteryParcel";
 export * from "./Migration";
+export * from "./BlockPalindromes";
