@@ -62,9 +62,6 @@ class Grid:
         self.grid[n//2][n//2 - 1].value = 0
         self.leftmost = (n//2, n//2 - 1)
 
-    def valid(self, r, c):
-        return r >= 0 and r < len(grid) and c >= 0 and c < len(grid[0])
-
     def getNext(self, edge):
         full = lambda r, c: self.grid[r][c].value is not None
         r,c = edge.adj[0] if full(*edge.adj[0]) else edge.adj[1]
