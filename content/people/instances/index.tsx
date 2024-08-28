@@ -22,6 +22,16 @@ export const people: Person[] = [
     roles: ["Manager", "Developer", "Contributor"],
   },
   {
+    name: "Alex Pylypenko",
+    socials: [
+      {
+        platform: platforms.github,
+        handle: "macaquedev",
+      }
+    ],
+    roles: ["Manager", "Contributor"]
+  },
+  {
     name: "Vladimir Filip",
     socials: [
       {
@@ -34,16 +44,6 @@ export const people: Person[] = [
       }
     ],
     roles: ["Developer", "Contributor"]
-  },
-  {
-    name: "Alex Pylypenko",
-    socials: [
-      {
-        platform: platforms.github,
-        handle: "macaquedev",
-      }
-    ],
-    roles: ["Contributor"]
   },
   {
     name: "Adwaya Gupta",
