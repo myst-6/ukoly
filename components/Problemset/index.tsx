@@ -20,6 +20,7 @@ export interface ProblemsetProps {
 
 export const Problemset = ({ problems }: ProblemsetProps) => {
   const { problem, setProblem } = useProblemset(problems);
+  
   const [allowedYears, setAllowedYears] = useState<number[]>();
   const [allowedTags, setAllowedTags] = useState<Tag[]>();
 
@@ -133,6 +134,10 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
                     return false;
                   }
                   return true;
+                })
+                .sort((problemA, problemB) => {
+                  // TODO add sorting
+                  return problemA.year - problemB.year;
                 })
                 .map(problem => {
                   return (
