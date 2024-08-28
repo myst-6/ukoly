@@ -5,7 +5,7 @@ export const Loops = () => {
     <>
       <STitle>Idea</STitle>
       <SText>
-        Due to the small amount of cell types, we know what each cell's position must be in relation to another cell in order to form a loop.
+        Due to the small number of cell types, we know what each cell's position must be in relation to another cell in order to form a loop.
         For example, we know that for the red lines to be a connected, a cell of type $5$ must be above a cell of type $1$, $3$ or $4$.
       </SText>
 
