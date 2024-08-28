@@ -294,6 +294,16 @@ export const bio1Problems: ProblemInfo[] = [
   },
   {
     difficulty: "Easy",
+    display: "Decrypt",
+    original: "https://www.olympiad.org.uk/papers/2022/bio/bio22-exam.pdf",
+    year: 2022,
+    tags: ["Q1", "Math"],
+    editorialAuthors: ["Yuvan Raja"],
+    solutionAuthors: ["Yuvan Raja"],
+    component: <Decrypt />,
+  },
+  {
+    difficulty: "Easy",
     display: "Roman Look-and-Say",
     original: "https://www.olympiad.org.uk/papers/2020/bio/bio20-exam.pdf",
     year: 2020,
