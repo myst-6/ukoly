@@ -1,3 +1,4 @@
+import { WindowDressing } from "solutions/bio1/WindowDressing";
 import { ProblemInfo } from "../base";
 
 import {
@@ -228,6 +229,16 @@ export const bio1Problems: ProblemInfo[] = [
     component: <PromenadeFractions />,
   },
   {  
+    difficulty: "Medium",
+    display: "Window Dressing",
+    original: "https://www.olympiad.org.uk/papers/2021/bio/bio21-exam.pdf",
+    year: 2021,
+    tags: ["Q3", "DFS and Similar"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <WindowDressing />,
+  },
+  {
     difficulty: "Medium",
     display: "Down Pat",
     original: "https://www.olympiad.org.uk/papers/2021/bio/bio21-exam.pdf",
