@@ -22,8 +22,8 @@ import {
   BlockPalindromes,
   PromenadeFractions,
   DownPat,
-  PalindromicNumbers
-
+  PalindromicNumbers,
+  TriIsoGame
 } from "solutions";
 
 export const bio1Problems: ProblemInfo[] = [
@@ -247,5 +247,15 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <DownPat />,
-  }
+  },
+  {
+    difficulty: "Insane",
+    display: "Tri-Iso Game",
+    original: "https://www.olympiad.org.uk/papers/2021/bio/bio21-exam.pdf",
+    year: 2021,
+    tags: ["Q2", "Implementation"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <TriIsoGame />,
+  },
 ];
