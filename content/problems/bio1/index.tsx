@@ -26,7 +26,8 @@ import {
   TriIsoGame,
   Loops,
   Battleships,
-  DigitWords
+  DigitWords,
+  Decrypt
 } from "solutions";
 
 export const bio1Problems: ProblemInfo[] = [
@@ -290,5 +291,15 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <Battleships />,
+  },
+  {
+    difficulty: "Easy",
+    display: "Decrypt",
+    original: "https://www.olympiad.org.uk/papers/2022/bio/bio22-exam.pdf",
+    year: 2022,
+    tags: ["Q1", "Math"],
+    editorialAuthors: ["Yuvan Raja"],
+    solutionAuthors: ["Yuvan Raja"],
+    component: <Decrypt />,
   },
 ];
