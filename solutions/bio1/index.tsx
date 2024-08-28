@@ -20,3 +20,4 @@ export * from "./BlockPalindromes";
 export * from "./PalindromicNumbers";
 export * from "./PromenadeFractions";
 export * from "./DownPat";
+export * from "./TriIsoGame";
