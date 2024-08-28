@@ -28,9 +28,9 @@ export const Profile = ({ person }: ProfileProps) => {
         </HStack>
       </HStack>
       <Divider m={2} />
-      <Text typography="body.medium">
+      {/* <Text typography="body.medium">
         { person.description }
-      </Text>
+      </Text> */}
       <Spacer m={3} />
       <VStack flex={1} justifyContent="flex-end">
         <HStack>
