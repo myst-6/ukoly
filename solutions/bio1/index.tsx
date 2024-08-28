@@ -23,3 +23,4 @@ export * from "./DownPat";
 export * from "./TriIsoGame";
 export * from "./Loops";
 export * from "./DigitWords";
+export * from "./Battleships";

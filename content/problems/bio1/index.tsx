@@ -25,6 +25,7 @@ import {
   PalindromicNumbers,
   TriIsoGame,
   Loops,
+  Battleships,
   DigitWords
 } from "solutions";
 
@@ -279,5 +280,15 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <DigitWords />,
+  },
+  {
+    difficulty: "Easy",
+    display: "Battleships",
+    original: "https://www.olympiad.org.uk/papers/2015/bio/bio15-exam.pdf",
+    year: 2015,
+    tags: ["Q2", "Implementation"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <Battleships />,
   },
 ];
