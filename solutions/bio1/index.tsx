@@ -24,4 +24,4 @@ export * from "./TriIsoGame";
 export * from "./Loops";
 export * from "./DigitWords";
 export * from "./Battleships";
-export * from "./Decrypt";
+export * from "./RomanLookAndSay"
