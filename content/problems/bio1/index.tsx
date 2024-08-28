@@ -236,7 +236,7 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <DownPat />,
-  }
+  },
   {
     difficulty: "Easy",
     display: "Tri-Iso Game",
