@@ -27,6 +27,7 @@ import {
   Loops,
   Battleships,
   DigitWords,
+  Decrypt, 
   RomanLookAndSay
 } from "solutions";
 
