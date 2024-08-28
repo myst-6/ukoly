@@ -49,7 +49,7 @@ export const TriIsoGame = () => {
       <SSubtitle>Finding Optimal Moves</SSubtitle>
       <SText>
         Additonally, we can create a function to check if claiming a cell will result in gaining a point.
-        To do this, we can check each of the 3 possible large triangles which can be formed from the current cell.
+        To do this, we can check each of the $3$ possible large triangles which can be formed from the current cell.
         If the value in any of the large triangles is equal to the player's number, then it is optimal for the player to stop
         at that cell to allow them to win the point in the next turn. 
       </SText>
