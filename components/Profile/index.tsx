@@ -31,7 +31,7 @@ export const Profile = ({ person }: ProfileProps) => {
       {/* <Text typography="body.medium">
         { person.description }
       </Text> */}
-      <Spacer m={3} />
+      <Spacer m={1} />
       <VStack flex={1} justifyContent="flex-end">
         <HStack>
           {
