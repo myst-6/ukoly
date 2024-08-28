@@ -21,3 +21,4 @@ export * from "./PalindromicNumbers";
 export * from "./PromenadeFractions";
 export * from "./DownPat";
 export * from "./TriIsoGame";
+export * from "./Loops";
