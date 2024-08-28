@@ -28,10 +28,10 @@ export const Profile = ({ person }: ProfileProps) => {
         </HStack>
       </HStack>
       <Divider m={2} />
-      <Text typography="body.medium">
+      {/* <Text typography="body.medium">
         { person.description }
-      </Text>
-      <Spacer m={3} />
+      </Text> */}
+      <Spacer m={1} />
       <VStack flex={1} justifyContent="flex-end">
         <HStack>
           {

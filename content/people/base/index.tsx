@@ -7,7 +7,6 @@ export type Role =
 
 export interface Person {
   name: string;
-  description: string;
   socials: Socials;
   roles: Role[];
 }

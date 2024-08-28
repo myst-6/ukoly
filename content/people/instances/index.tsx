@@ -1,14 +1,15 @@
 import { Person } from "../base";
 import { platforms } from "../socials";
 
-export const people = {
-  boris: {
+// orz
+export const people: Person[] = [
+  {
     name: "Boris Hall",
-    description: `\
-  The founder of this site. So far, the one and only web developer for this website.\
-  Writes most of the editorials and provides solutions.\
-  `,
     socials: [
+      {
+        platform: platforms.discord,
+        handle: "446711256737644556",
+      },
       {
         platform: platforms.codeforces,
         handle: "myst-6",
@@ -17,19 +18,88 @@ export const people = {
         platform: platforms.github,
         handle: "myst-6",
       },
+    ],
+    roles: ["Manager", "Developer", "Contributor"],
+  },
+  {
+    name: "Alex Pylypenko",
+    socials: [
       {
-        platform: platforms.discord,
-        handle: "446711256737644556",
+        platform: platforms.github,
+        handle: "macaquedev",
+      }
+    ],
+    roles: ["Manager", "Contributor"]
+  },
+  {
+    name: "Vladimir Filip",
+    socials: [
+      {
+        platform: platforms.codeforces,
+        handle: "vladimirfilip",
+      },
+      {
+        platform: platforms.github,
+        handle: "vladimirfilip",
+      }
+    ],
+    roles: ["Developer", "Contributor"]
+  },
+  {
+    name: "Adwaya Gupta",
+    socials: [
+      {
+        platform: platforms.codeforces,
+        handle: "AG-88301",
+      },
+      {
+        platform: platforms.github,
+        handle: "AG-88301",
+      }
+    ],
+    roles: ["Contributor"]
+  },
+  {
+    name: "Yuvan Raja",
+    socials: [
+      // i don't know yuvan's discord :C
+      {
+        platform: platforms.github,
+        handle: "ykr5184",
+      }
+    ],
+    roles: ["Contributor"],
+  },
+  {
+    name: "Anango Prabhat",
+    socials: [
+      {
+        platform: platforms.codeforces,
+        handle: "anango",
+      },
+      {
+        platform: platforms.github,
+        handle: "AnangoPrabhat",
+      }
+    ],
+    roles: ["Contributor"]
+  },
+  {
+    name: "Julia Volovich",
+    socials: [
+      {
+        platform: platforms.codeforces,
+        handle: "JuliaTatad",
+      },
+      {
+        platform: platforms.github,
+        handle: "JuliaTatad"
       },
     ],
-    roles: ["Contributor", "Developer", "Manager"],
-  } as Person,
-  sam: {
+    roles: ["Contributor"]
+  },
+  {
     name: "Samuel Trajtenberg",
-    description: `\
-  Strong UK IOI participant, three-time BIO finalist.\
-  Provides solutions and feedback.\
-  `,
     socials: [
       {
         platform: platforms.codeforces,
@@ -41,7 +111,5 @@ export const people = {
       },
     ],
     roles: ["Contributor"],
-  } as Person,
-};
-
-export const People = typeof people;
+  },
+];
