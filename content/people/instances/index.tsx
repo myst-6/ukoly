@@ -1,13 +1,9 @@
 import { Person } from "../base";
 import { platforms } from "../socials";
 
-export const people = {
-  boris: {
+export const people: Person[] = [
+  {
     name: "Boris Hall",
-    description: `\
-  The founder of this site. So far, the one and only web developer for this website.\
-  Writes most of the editorials and provides solutions.\
-  `,
     socials: [
       {
         platform: platforms.codeforces,
@@ -23,13 +19,9 @@ export const people = {
       },
     ],
     roles: ["Contributor", "Developer", "Manager"],
-  } as Person,
-  sam: {
+  },
+  {
     name: "Samuel Trajtenberg",
-    description: `\
-  Strong UK IOI participant, three-time BIO finalist.\
-  Provides solutions and feedback.\
-  `,
     socials: [
       {
         platform: platforms.codeforces,
@@ -41,7 +33,5 @@ export const people = {
       },
     ],
     roles: ["Contributor"],
-  } as Person,
-};
-
-export const People = typeof people;
+  },
+];

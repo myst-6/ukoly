@@ -29,8 +29,11 @@ export default function Home() {
             If you want to contribute, message any of the managers on discord by clicking the icon next to their name.
           </Text>
           <SimpleGrid mt={2} columns={2} gap={4}>
-            <Profile person={people.boris} />
-            <Profile person={people.sam} />
+            {
+              ...people.map((info, index) => {
+                return <Profile key={index} person={info} />;
+              })
+            }
           </SimpleGrid>
         </Box>
       </Flex>
