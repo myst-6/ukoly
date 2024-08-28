@@ -24,7 +24,8 @@ import {
   DownPat,
   PalindromicNumbers,
   TriIsoGame,
-  Loops
+  Loops,
+  DigitWords
 } from "solutions";
 
 export const bio1Problems: ProblemInfo[] = [
@@ -268,5 +269,15 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <Loops />,
+  },
+  {
+    difficulty: "Easy",
+    display: "Digit Words",
+    original: "https://www.olympiad.org.uk/papers/2009/bio/bio09-exam.pdf",
+    year: 2009,
+    tags: ["Q1", "Brute Force"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <DigitWords />,
   },
 ];
