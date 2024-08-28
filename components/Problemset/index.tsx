@@ -107,14 +107,13 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
           spacing={1} 
           maxH="65vh"
         >
-          <Text p={1} typography="display.small">Problems</Text>
           <HStack spacing={2} justifyContent="center">
+            <Text p={1} typography="display.small">Problems</Text>
             <FilterMenu 
               problems={problems} 
               onYearChange={allowed => {setAllowedYears(allowed); console.log(allowed)}}
               onTagChange={allowed => setAllowedTags(allowed)}
             />
-            {/* <FilterMenu problems={problems} /> */}
           </HStack>
           <Wrap justify="center" overflowY="auto">
             {
@@ -146,6 +145,14 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
                     </WrapItem>
                   );
                 })
+                .reduce<any[]>((res, curr, index) => {
+                  if (index === 0) return [curr];
+                  else return [...res, curr];
+                }, [
+                  <Text typography="title.large" key={0}>
+                    No problems found!
+                  </Text>
+                ])
             }
           </Wrap>
         </VStack>
