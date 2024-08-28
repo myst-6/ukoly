@@ -238,7 +238,7 @@ export const bio1Problems: ProblemInfo[] = [
     component: <DownPat />,
   },
   {
-    difficulty: "Easy",
+    difficulty: "Insane",
     display: "Tri-Iso Game",
     original: "https://www.olympiad.org.uk/papers/2021/bio/bio21-exam.pdf",
     year: 2021,
