@@ -11,6 +11,7 @@ import { SolutionSkeleton } from "../SolutionSkeleton";
 import { Text } from "../Text";
 import { useProblemset } from "./hook";
 import { MouseEvent, useRef, useState } from "react";
+import { Wrap, WrapItem } from "@chakra-ui/react";
 
 export interface ProblemsetProps {
   problems: ProblemInfo[];
@@ -89,7 +90,7 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
         cardRef={cardRefLeft}
         flex={collapseRight ? 1 : undefined}
         width={`${collapseLeft ? 8 : width}px`} 
-        minW={collapseLeft ? "8px" : "fit-content"}
+        minW={collapseLeft ? "8px" : "md"}
         cursor={collapseLeft ? "col-resize" : "inherit"}
         onMouseDown={() => setDrag(collapseLeft)}
       >
@@ -102,17 +103,17 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
           maxH="65vh"
         >
           <Text p={1} typography="display.small">Problems</Text>
-          <VStack overflowY="auto">
+          <Wrap justify="center" overflowY="auto">
             {
               ...problems.map((problem) => {
                 return (
-                  <Box display="flex" p={1} key={problem.display}>
+                  <WrapItem p={1} key={problem.display}>
                     <Problem problem={problem} onChoose={() => setProblem(problem)} />
-                  </Box>
+                  </WrapItem>
                 );
               })
             }
-          </VStack>
+          </Wrap>
         </VStack>
       </Card>
       <Spacer 
