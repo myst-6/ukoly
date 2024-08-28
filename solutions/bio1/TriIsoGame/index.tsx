@@ -5,7 +5,7 @@ export const TriIsoGame = () => {
     <>
       <STitle>Idea</STitle>
       <SText>
-        Due to the small constraint on $m$, we can simulate the game on a sparse grid. 
+        Due to the small constraint on $m$, we can simulate the game on a sparse grid (a grid large enough to accommodate the maximum constraint on $m$). 
       </SText>
 
       <STitle>Solution</STitle>
@@ -15,10 +15,10 @@ export const TriIsoGame = () => {
       </SText>
       <SList>
         <SText>
-            <SCode>Edge</SCode> which stores one edge of the triangular grid. It should also store the trianglular cells it is part of.
+            <SCode>Edge</SCode> which stores one edge of the triangular grid. It should also store the triangular cells it is part of.
         </SText>
         <SText>
-            <SCode>Triangle</SCode> and <SCode>InvertedTriangle</SCode> (for upside down cells), which represent each trianglular cell. 
+            <SCode>Triangle</SCode> and <SCode>InvertedTriangle</SCode> (for upside down cells), which represent each triangular cell. 
             They should store the edges that make up the cell, as well as if they have been claimed by a player.
         </SText>
         <SText>
@@ -59,7 +59,7 @@ export const TriIsoGame = () => {
         It is now possible to simulate the position of each player on the grid.
         The last step is to find the perimeter of the claimed cells.
         To do this, we can arbitrarily choose a player, and make them traverse the perimeter of the cells
-        until they reach back to the point where they started. 
+        until they reach the point where they started. 
         The number of traversals they make is equal to the perimeter. 
       </SText>
 
