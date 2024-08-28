@@ -1,3 +1,4 @@
+# Solution Author: Adwaya Gupta
 class Edge:
     def __init__(self, *adj):
         self.adj = list(adj)
