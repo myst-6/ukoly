@@ -207,7 +207,7 @@ export const bio1Problems: ProblemInfo[] = [
   {
     difficulty: "Medium",
     display: "Window Dressing",
-    original: "https://www.olympiad.org.uk/papers/2023/bio/bio23-exam.pdf",
+    original: "https://www.olympiad.org.uk/papers/2021/bio/bio21-exam.pdf",
     year: 2021,
     tags: ["Q3", "DFS and Similar"],
     editorialAuthors: ["Alex Pylypenko"],
