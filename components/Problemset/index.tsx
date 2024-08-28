@@ -1,17 +1,18 @@
-import { ProblemInfo } from "content";
+import { ProblemInfo, Tag } from "content";
 import { Box } from "../Box";
 import { Card } from "../Card";
 import { Divider } from "../Divider";
 import { Flex } from "../Flex";
 import { Problem } from "../Problem";
 import { Spacer } from "../Spacer";
-import { VStack } from "../Stack";
+import { HStack, VStack } from "../Stack";
 import { Solution } from "../Solution";
 import { SolutionSkeleton } from "../SolutionSkeleton";
 import { Text } from "../Text";
+import { Wrap, WrapItem } from "../Wrap";
 import { useProblemset } from "./hook";
 import { MouseEvent, useRef, useState } from "react";
-import { Wrap, WrapItem } from "@chakra-ui/react";
+import { FilterMenu } from "./FilterMenu";
 
 export interface ProblemsetProps {
   problems: ProblemInfo[];
@@ -19,6 +20,9 @@ export interface ProblemsetProps {
 
 export const Problemset = ({ problems }: ProblemsetProps) => {
   const { problem, setProblem } = useProblemset(problems);
+  const [allowedYears, setAllowedYears] = useState<number[]>();
+  const [allowedTags, setAllowedTags] = useState<Tag[]>();
+
   const [width, setWidth] = useState<number>(0);
   const [drag, setDrag] = useState<boolean>(false);
 
@@ -103,15 +107,40 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
           maxH="65vh"
         >
           <Text p={1} typography="display.small">Problems</Text>
+          <HStack spacing={2} justifyContent="center">
+            <FilterMenu 
+              problems={problems} 
+              onYearChange={allowed => {setAllowedYears(allowed); console.log(allowed)}}
+              onTagChange={allowed => setAllowedTags(allowed)}
+            />
+            {/* <FilterMenu problems={problems} /> */}
+          </HStack>
           <Wrap justify="center" overflowY="auto">
             {
-              ...problems.map((problem) => {
-                return (
-                  <WrapItem p={1} key={problem.display}>
-                    <Problem problem={problem} onChoose={() => setProblem(problem)} />
-                  </WrapItem>
-                );
-              })
+              ...problems
+                .filter(problem => {
+                  if (allowedYears) {
+                    if (!allowedYears.includes(problem.year)) {
+                      return false;
+                    }
+                  }
+                  if (allowedTags) {
+                    for (const tag of problem.tags) {
+                      if (allowedTags.includes(tag)) {
+                        return true;
+                      }
+                    }
+                    return false;
+                  }
+                  return true;
+                })
+                .map(problem => {
+                  return (
+                    <WrapItem p={1} key={problem.display}>
+                      <Problem problem={problem} onChoose={() => setProblem(problem)} />
+                    </WrapItem>
+                  );
+                })
             }
           </Wrap>
         </VStack>
