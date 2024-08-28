@@ -18,26 +18,40 @@ export interface ProblemsetProps {
 
 export const Problemset = ({ problems }: ProblemsetProps) => {
   const { problem, setProblem } = useProblemset(problems);
-  const [width, setWidth] = useState<number>(500);
+  const [width, setWidth] = useState<number>(0);
   const [drag, setDrag] = useState<boolean>(false);
+
+  const [collapse, setCollapse] = useState<boolean>(false);
+  const [limit, setLimit] = useState<number>(0);
+  
   const grabRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
 
   const onMouseMove = (ev: MouseEvent) => {
     if (!drag) return;
     if (grabRef.current === null) return;
+    if (cardRef.current === null) return;
 
     // get x-coordinate of left side of box
     const { left } = ev.currentTarget.getBoundingClientRect();
     
     // get left padding of bar being dragged
-    const { paddingLeft, paddingRight } = getComputedStyle(grabRef.current);
+    const { paddingLeft } = getComputedStyle(grabRef.current);
     const pl = parseFloat(paddingLeft);
-    const pr = parseFloat(paddingRight);
 
     // go halfway into the bar
-    const x = ev.clientX - left - pl - pr;
+    const x = ev.clientX - left - pl;
 
-    setWidth(x);
+    // check if in collapsing territory
+    const { width } = getComputedStyle(cardRef.current);
+    const w = parseFloat(width);
+    if (!collapse && x <= w / 4) {
+      setCollapse(true);
+      setLimit(Math.max(x + 2, w / 4) + 2); // +2 to prevent flicker
+    } else {
+      if (collapse && x >= limit) setCollapse(false);
+      setWidth(x);
+    }
   };
 
   return (
@@ -46,12 +60,16 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
       onMouseMove={ev => onMouseMove(ev)}
       onMouseUp={() => setDrag(false)}
       userSelect={drag ? "none" : "auto"}
+      cursor={drag ? "col-resize" : "auto"}
     >
       <Card 
-        variant="outline" 
+        variant={collapse ? "filled" : "outline"}
         m={0}
-        width={width && `${width}px`} 
-        minW={"fit-content"}
+        cardRef={cardRef}
+        width={`${collapse ? 8 : width}px`} 
+        minW={collapse ? "8px" : "fit-content"}
+        cursor={collapse ? "col-resize" : "inherit"}
+        onMouseDown={() => setDrag(collapse)}
       >
         <VStack 
           flex="0" 
@@ -79,7 +97,7 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
         p={1}
         flex={0} 
         ref={grabRef}
-        cursor="col-resize" 
+        cursor={collapse ? "col-resize" : "col-resize"}
         onMouseDown={() => setDrag(true)}
       >
         <Divider orientation="vertical" />
