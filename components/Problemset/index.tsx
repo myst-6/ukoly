@@ -105,7 +105,7 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
           p={0} 
           m={0} 
           spacing={1} 
-          maxH="65vh"
+          h="65vh"
         >
           <HStack spacing={2} justifyContent="center">
             <Text p={1} typography="display.small">Problems</Text>
@@ -175,7 +175,7 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
         cursor={collapseRight ? "col-resize" : "inherit"}
         onMouseDown={() => setDrag(collapseRight)}
       >
-        <VStack maxWidth="full" spacing={1} maxH="65vh" alignItems="left">
+        <VStack maxWidth="full" spacing={1} h="65vh" alignItems="left">
           <Text p={1}align="left" typography="display.small">Problem Viewer{problem && `: ${problem.display}`}</Text>
           <VStack overflowY="auto" alignItems="start">
             <Box pr={4} maxW="full">
