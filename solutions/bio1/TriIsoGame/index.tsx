@@ -34,7 +34,7 @@ export const TriIsoGame = () => {
       </SText>
       <HStack>
         <SText>
-          We can see that for each edge, we can iterate through all the adjacent edges anticlockwise, 
+          We can see that for each edge, we can iterate through all the adjacent edges clockwise, 
           and check if the triangle adjacent it has been claimed. 
           From the diagram, we can see that there are $5$ possibilities for each edge.
           Note that we should handle <SCode>Triangle</SCode> and <SCode>InvertedTriangle</SCode> separately.
