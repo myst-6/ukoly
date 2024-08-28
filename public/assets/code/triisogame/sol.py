@@ -60,16 +60,12 @@ class Grid:
                                     Edge((r,c))))
 
         self.grid[n//2][n//2 - 1].value = 0
-        self.perimeter = 3
         self.leftmost = (n//2, n//2 - 1)
 
     def valid(self, r, c):
         return r >= 0 and r < len(grid) and c >= 0 and c < len(grid[0])
 
     def getNext(self, edge):
-        if len(edge.adj) == 1:
-            raise Exception("Run out of space")
-        
         full = lambda r, c: self.grid[r][c].value is not None
         r,c = edge.adj[0] if full(*edge.adj[0]) else edge.adj[1]
         filled = self.grid[r][c]
@@ -84,7 +80,6 @@ class Grid:
                 elif full(r, c+1):
                     return self.grid[r][c+1].top
                 return self.grid[r][c].right
-            
             elif filled.right == edge:
                 if full(r, c+2):
                     return self.grid[r][c+2].left
@@ -95,7 +90,6 @@ class Grid:
                 elif full(r+1, c):
                     return self.grid[r+1][c].right
                 return self.grid[r][c].bottom
-            
             else:
                 if full(r+1, c-1):
                     return self.grid[r+1][c-1].right
@@ -106,7 +100,6 @@ class Grid:
                 elif full(r, c-1):
                     return self.grid[r][c-1].left
                 return self.grid[r][c].left
-        
         else:
             if filled.left == edge:
                 if full(r, c-2):
@@ -118,7 +111,6 @@ class Grid:
                 elif full(r-1, c):
                     return self.grid[r-1][c].left
                 return self.grid[r][c].top
-            
             elif filled.right == edge:
                 if full(r+1, c+1):
                     return self.grid[r+1][c+1].top 
@@ -129,7 +121,6 @@ class Grid:
                 elif full(r, c-1):
                     return self.grid[r][c-1].bottom
                 return self.grid[r][c].left
-            
             else:
                 if full(r-1, c+1):
                     return self.grid[r-1][c+1].left
@@ -162,7 +153,6 @@ class Grid:
     
 grid = Grid()
 r, c = grid.leftmost
-last = None
 
 p, m = map(int, input().split())
 traversals = list(map(int, input().split()))
@@ -178,10 +168,8 @@ for move in range(m):
         positions[player] = grid.grid[grid.leftmost[0]][grid.leftmost[1]].left
         start = positions[player]
 
-    toTraverse = traversals[player]
     curr = start
-    
-    for t in range(toTraverse):
+    for t in range(traversals[player]):
         curr = grid.getNext(curr)
         if grid.pointsQuery(curr, player + 1) > 0:
             break
@@ -197,9 +185,7 @@ for move in range(m):
                 if grid.grid[pos.adj[0][0]][pos.adj[0][1]].value is not None and \
                     grid.grid[pos.adj[1][0]][pos.adj[1][1]].value is not None:
                     positions[i] = grid.grid[grid.leftmost[0]][grid.leftmost[1]].left
-            
             break
-    last = start
         
 for p in playerScore: print(p)
 
