@@ -26,7 +26,7 @@ export default function Home() {
           <Divider mb={3} mt={3} />
           <Text typography="display.small">Authors</Text>
           <Text typography="body.medium">
-            If you want to contribute, message any of the managers on discord by clicking the icon next to their name.
+            If you want to contribute, message Boris on discord by clicking the discord icon by his name.
           </Text>
           <SimpleGrid mt={2} columns={2} gap={4}>
             {
