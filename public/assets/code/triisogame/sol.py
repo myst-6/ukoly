@@ -71,84 +71,54 @@ class Grid:
         filled = self.grid[r][c]
         if type(filled) == Triangle:
             if filled.left == edge:
-                if full(r-1, c-1):
-                    return self.grid[r-1][c-1].bottom
-                elif full(r-1, c):
-                    return self.grid[r-1][c].left
-                elif full(r-1, c+1):
-                    return self.grid[r-1][c+1].left
-                elif full(r, c+1):
-                    return self.grid[r][c+1].top
+                if full(r-1, c-1): return self.grid[r-1][c-1].bottom
+                elif full(r-1, c): return self.grid[r-1][c].left
+                elif full(r-1, c+1): return self.grid[r-1][c+1].left
+                elif full(r, c+1): return self.grid[r][c+1].top
                 return self.grid[r][c].right
             elif filled.right == edge:
-                if full(r, c+2):
-                    return self.grid[r][c+2].left
-                elif full(r+1, c+2):
-                    return self.grid[r+1][c+2].top
-                elif full(r+1, c+1):
-                    return self.grid[r+1][c+1].right
-                elif full(r+1, c):
-                    return self.grid[r+1][c].right
+                if full(r, c+2): return self.grid[r][c+2].left
+                elif full(r+1, c+2): return self.grid[r+1][c+2].top
+                elif full(r+1, c+1): return self.grid[r+1][c+1].right
+                elif full(r+1, c): return self.grid[r+1][c].right
                 return self.grid[r][c].bottom
             else:
-                if full(r+1, c-1):
-                    return self.grid[r+1][c-1].right
-                elif full(r+1, c-2):
-                    return self.grid[r+1][c-2].right
-                elif full(r, c-2):
-                    return self.grid[r][c-2].bottom
-                elif full(r, c-1):
-                    return self.grid[r][c-1].left
+                if full(r+1, c-1): return self.grid[r+1][c-1].right
+                elif full(r+1, c-2): return self.grid[r+1][c-2].right
+                elif full(r, c-2): return self.grid[r][c-2].bottom
+                elif full(r, c-1): return self.grid[r][c-1].left
                 return self.grid[r][c].left
         else:
             if filled.left == edge:
-                if full(r, c-2):
-                    return self.grid[r][c-2].right
-                elif full(r-1, c-2):
-                    return self.grid[r-1][c-2].bottom
-                elif full(r-1, c-1):
-                    return self.grid[r-1][c-1].left
-                elif full(r-1, c):
-                    return self.grid[r-1][c].left
+                if full(r, c-2): return self.grid[r][c-2].right
+                elif full(r-1, c-2): return self.grid[r-1][c-2].bottom
+                elif full(r-1, c-1): return self.grid[r-1][c-1].left
+                elif full(r-1, c): return self.grid[r-1][c].left
                 return self.grid[r][c].top
             elif filled.right == edge:
-                if full(r+1, c+1):
-                    return self.grid[r+1][c+1].top 
-                elif full(r+1, c):
-                    return self.grid[r+1][c].right
-                elif full(r+1, c-1):
-                    return self.grid[r+1][c-1].right
-                elif full(r, c-1):
-                    return self.grid[r][c-1].bottom
+                if full(r+1, c+1): return self.grid[r+1][c+1].top 
+                elif full(r+1, c): return self.grid[r+1][c].right
+                elif full(r+1, c-1): return self.grid[r+1][c-1].right
+                elif full(r, c-1): return self.grid[r][c-1].bottom
                 return self.grid[r][c].left
             else:
-                if full(r-1, c+1):
-                    return self.grid[r-1][c+1].left
-                elif full(r-1, c+2):
-                    return self.grid[r-1][c+2].left
-                elif full(r, c+2):
-                    return self.grid[r][c+2].top
-                elif full(r, c+1):
-                    return self.grid[r][c+1].right
+                if full(r-1, c+1): return self.grid[r-1][c+1].left
+                elif full(r-1, c+2): return self.grid[r-1][c+2].left
+                elif full(r, c+2): return self.grid[r][c+2].top
+                elif full(r, c+1): return self.grid[r][c+1].right
                 return self.grid[r][c].right
             
     def pointsQuery(self, edge, player):
         r, c = edge.adj[0] if self.grid[edge.adj[0][0]][edge.adj[0][1]].value is None else edge.adj[1]
         ans = 0
         if type(self.grid[r][c]) == Triangle:
-            if self.grid[r][c+2].value == self.grid[r-1][c+1].value == player:
-                ans += 1
-            if self.grid[r+1][c+1].value == self.grid[r+1][c-1].value == player:
-                ans += 1
-            if self.grid[r-1][c-1].value == self.grid[r][c-2].value == player:
-                ans += 1
+            if self.grid[r][c+2].value == self.grid[r-1][c+1].value == player: ans += 1
+            if self.grid[r+1][c+1].value == self.grid[r+1][c-1].value == player: ans += 1
+            if self.grid[r-1][c-1].value == self.grid[r][c-2].value == player: ans += 1
         else:
-            if self.grid[r][c+2].value == self.grid[r+1][c+1].value == player:
-                ans += 1
-            if self.grid[r][c-2].value == self.grid[r+1][c-1].value == player:
-                ans += 1
-            if self.grid[r-1][c-1].value == self.grid[r-1][c+1].value == player:
-                ans += 1
+            if self.grid[r][c+2].value == self.grid[r+1][c+1].value == player: ans += 1
+            if self.grid[r][c-2].value == self.grid[r+1][c-1].value == player: ans += 1
+            if self.grid[r-1][c-1].value == self.grid[r-1][c+1].value == player: ans += 1
         return ans
     
 grid = Grid()
@@ -171,8 +141,7 @@ for move in range(m):
     curr = start
     for t in range(traversals[player]):
         curr = grid.getNext(curr)
-        if grid.pointsQuery(curr, player + 1) > 0:
-            break
+        if grid.pointsQuery(curr, player + 1) > 0: break
     positions[player] = curr
     
     for r, c in start.adj:
