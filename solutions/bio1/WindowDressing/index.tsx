@@ -37,7 +37,6 @@ export const WindowDressing = () => {
       <SText>
         This editorial was a brief explanation of BFS in the context of this problem. For a more rigorous coverage, visit<Link href="https://usaco.guide/silver/graph-traversal?lang=cpp">this USACO Guide page</Link>.
       </SText>
-      <SCodeBlock path="dreamingspires/sol" />
       <STitle>Code</STitle>
       <SCodeBlock path="windowdressing/sol" />
     </>
