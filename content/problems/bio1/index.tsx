@@ -23,7 +23,8 @@ import {
   PromenadeFractions,
   DownPat,
   PalindromicNumbers,
-  TriIsoGame
+  TriIsoGame,
+  Loops
 } from "solutions";
 
 export const bio1Problems: ProblemInfo[] = [
@@ -257,5 +258,15 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <TriIsoGame />,
+  },
+  {
+    difficulty: "Medium",
+    display: "Loops",
+    original: "https://www.olympiad.org.uk/papers/2014/bio/bio14-exam.pdf",
+    year: 2014,
+    tags: ["Q2", "Implementation"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <Loops />,
   },
 ];
