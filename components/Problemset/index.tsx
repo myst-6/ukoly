@@ -145,7 +145,7 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
                     </WrapItem>
                   );
                 })
-                .reduce<any[]>((res, curr, index) => {
+                .reduce<JSX.Element[]>((res, curr, index) => {
                   if (index === 0) return [curr];
                   else return [...res, curr];
                 }, [
