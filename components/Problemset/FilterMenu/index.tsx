@@ -1,4 +1,4 @@
-import { Divider, HStack, IconButton, Menu, MenuButton, MenuItemOption, MenuList, MenuOptionGroup } from "@chakra-ui/react";
+import { HStack, IconButton, Menu, MenuButton, MenuItemOption, MenuList, MenuOptionGroup } from "@chakra-ui/react";
 import { difficulties, Difficulty, ProblemInfo, Tag } from "content";
 import { FaFilter } from "react-icons/fa";
 import { useGroup } from "./hook";
