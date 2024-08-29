@@ -27,7 +27,8 @@ import {
   Loops,
   Battleships,
   DigitWords,
-  Decrypt
+  Decrypt, 
+  RomanLookAndSay
 } from "solutions";
 
 export const bio1Problems: ProblemInfo[] = [
@@ -302,4 +303,14 @@ export const bio1Problems: ProblemInfo[] = [
     solutionAuthors: ["Yuvan Raja"],
     component: <Decrypt />,
   },
+  {
+    difficulty: "Easy",
+    display: "Roman Look-and-Say",
+    original: "https://www.olympiad.org.uk/papers/2020/bio/bio20-exam.pdf",
+    year: 2020,
+    tags: ["Q1", "Implementation"],
+    editorialAuthors: ["Seyoon Park"],
+    solutionAuthors: ["Seyoon Park"],
+    component: <RomanLookAndSay />,
+  }
 ];
