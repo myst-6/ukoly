@@ -29,7 +29,7 @@ export const RomanLookAndSay = () => {
             {<SCode>t</SCode>} (an initially empty string, which will have our new string by the end)
           </SText>
         </SList>
-        The intricate implementation details can be found below. Note that we add a garbage character '.' to the end of the string being processed, such that {<SCode>t</SCode>} will contain the remaining unused information of {<SCode>last</SCode>} and {<SCode>sz</SCode>}. 
+        The intricate implementation details can be found below. Note that we add a garbage character '.' to the end of the string being processed, so that {<SCode>t</SCode>} will contain the remaining unused information of {<SCode>last</SCode>} and {<SCode>sz</SCode>}. 
       </SText>
       <STitle>Code</STitle>
       <SCodeBlock path="romanLookAndSay/sol"/>
