@@ -15,14 +15,12 @@ export const RomanLookAndSay = () => {
       <SText>
         We can convert an integer number to a Roman numeral string by greedily taking the greatest number of powers of ten in each go. 
         A simple way to do this is to construct an array of {<SCode>ones</SCode>}, {<SCode>tens</SCode>} and {<SCode>hundreds</SCode>}.
-
+      </SText> 
+      <SText> 
         To apply Roman look-and-say to a string, we can keep track of the following variables: 
         <SList>
           <SText>
             {<SCode>last</SCode>} (the last character we encountered)
-          </SText>
-          <SText>
-            {<SCode>sz</SCode>} (the number of contiguous {<SCode>last</SCode>}) 
           </SText>
           <SText>
             {<SCode>sz</SCode>} (the number of contiguous {<SCode>last</SCode>}) 
