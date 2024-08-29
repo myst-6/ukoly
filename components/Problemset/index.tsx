@@ -60,7 +60,7 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
       const w = parseFloat(width);
       if (!collapseLeft && x <= w / 4) {
         setCollapseLeft(true);
-        setLimitLeft(Math.max(x + 2, w / 4)); // +2 to prevent flicker
+        setLimitLeft(Math.max(x + 8, w / 4)); // +8 to prevent flicker
       } else if (collapseLeft && x >= limitLeft) {
         setCollapseLeft(false);
       }
@@ -73,7 +73,7 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
       const w = parseFloat(width);
       if (!collapseRight && x >= side - left + 3 * w / 4) {
         setCollapseRight(true);
-        setLimitRight(Math.min(x - 2, side - left + 3 * w / 4)); // -2 to prevent flicker
+        setLimitRight(Math.min(x - 8, side - left + 3 * w / 4)); // -8 to prevent flicker
       } else if (collapseRight && x <= limitRight) {
         setCollapseRight(false);
       }
