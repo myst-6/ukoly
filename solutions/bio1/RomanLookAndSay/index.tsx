@@ -9,7 +9,7 @@ export const RomanLookAndSay = () => {
       </SText>
       <STitle>Solution</STitle>
       <SText> 
-        We can finish the solution by running {<SCode>n</SCode>} loops, with each loop applying the Roman look-and-say description on the current string, and outputting the number of Is and Vs at the end. 
+        We can solve the problem by applying the "Roman look-and-say" description {<SCode>n</SCode>} times, and then outputting the number of Is and Vs in the string after {<SCode>n</SCode>} operations. 
       </SText>
       <STitle>Implementation Detail</STitle>
       <SText>
@@ -17,7 +17,7 @@ export const RomanLookAndSay = () => {
         A simple way to do this is to construct an array of {<SCode>ones</SCode>}, {<SCode>tens</SCode>} and {<SCode>hundreds</SCode>}.
 
         To apply Roman look-and-say to a string, we can keep track of {<SCode>last</SCode>} (the last character we encountered), {<SCode>len</SCode>} (the number of contiguous {<SCode>last</SCode>} encountered so far) and {<SCode>t</SCode>} (an initially empty string, which would have our new string by the end). 
-        The intricate implementation details can be found below. Note that on line 17, we add a garbage character '.' at the end, such that {<SCode>t</SCode>} would contain the remaining unused information of {<SCode>last</SCode>} and {<SCode>new</SCode>}. 
+        The intricate implementation details can be found below. Note that we add a garbage character '.' at the end, such that {<SCode>t</SCode>} would contain the remaining unused information of {<SCode>last</SCode>} and {<SCode>new</SCode>}. 
       </SText>
       <STitle>Code</STitle>
       <SCodeBlock path="romanLookAndSay/sol"/>
