@@ -27,7 +27,8 @@ import {
   Loops,
   Battleships,
   DigitWords,
-  Decrypt
+  Decrypt,
+  FalsePlan
 } from "solutions";
 
 export const bio1Problems: ProblemInfo[] = [
@@ -301,5 +302,15 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Yuvan Raja"],
     solutionAuthors: ["Yuvan Raja"],
     component: <Decrypt />,
+  },
+  {
+    difficulty: "Medium",
+    display: "False Plan",
+    original: "https://www.olympiad.org.uk/papers/2020/bio/bio20-exam.pdf",
+    year: 2020,
+    tags: ["Q3", "Dynamic Programming"],
+    editorialAuthors: ["Yuvan Raja"],
+    solutionAuthors: ["Yuvan Raja"],
+    component: <FalsePlan />,
   },
 ];
