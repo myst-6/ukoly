@@ -9,7 +9,7 @@ export const RomanLookAndSay = () => {
       </SText>
       <STitle>Solution</STitle>
       <SText> 
-        We can solve the problem by applying the "Roman look-and-say" description $n$ times, and then outputting the number of $\textit{"I"}$s and $\textit{"V"}$s in the string after $n$ operations. 
+        We can solve the problem by applying the "Roman look-and-say" description $n$ times, and then outputting the number of $I$s and $V$s in the string after $n$ operations. 
       </SText>
       <STitle>Implementation Detail</STitle>
       <SText>
@@ -29,7 +29,7 @@ export const RomanLookAndSay = () => {
             {<SCode>t</SCode>} (an initially empty string, which will have our new string by the end)
           </SText>
         </SList>
-        The intricate implementation details can be found below. Note that we add a garbage character '.' at the end, such that {<SCode>t</SCode>} would contain the remaining unused information of {<SCode>last</SCode>} and {<SCode>sz</SCode>}. 
+        The intricate implementation details can be found below. Note that we add a garbage character '.' to the end of the string being processed, such that {<SCode>t</SCode>} will contain the remaining unused information of {<SCode>last</SCode>} and {<SCode>sz</SCode>}. 
       </SText>
       <STitle>Code</STitle>
       <SCodeBlock path="romanLookAndSay/sol"/>
