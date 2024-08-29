@@ -11,16 +11,16 @@ for _ in range(n):
     s += '.'
     t = ""
     last = ' '
-    length = 0
+    sz = 0
     
     for i in range(len(s)):
         if last != s[i]:
             if last != ' ':
-                t += roman_numeral(length) + last
+                t += roman_numeral(sz) + last
             last = s[i]
-            length = 1
+            sz = 1
         else:
-            length += 1
+            sz += 1
     
     s = t
 
