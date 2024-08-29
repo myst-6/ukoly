@@ -12,6 +12,7 @@ export * from "./Link";
 export * from "./List";
 export * from "./Logo";
 export * from "./Problem";
+export * from "./Problemset";
 export * from "./Profile";
 export * from "./SimpleGrid";
 export * from "./SCode";

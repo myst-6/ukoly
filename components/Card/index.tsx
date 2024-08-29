@@ -1,13 +1,14 @@
-import { CSSProperties } from "react";
+import { CSSProperties, LegacyRef } from "react";
 import { Card as ChakraCard, CardBody, type CardProps as ChakraCardProps } from "@chakra-ui/react";
 
 export interface CardProps extends ChakraCardProps {
+  cardRef?: LegacyRef<HTMLDivElement>;
   innerStyle?: CSSProperties;
 }
 
-export const Card = ({ children, innerStyle, ...props }: CardProps) => {
+export const Card = ({ children, cardRef, innerStyle, ...props }: CardProps) => {
   return (
-    <ChakraCard {...props}>
+    <ChakraCard ref={cardRef} {...props}>
       <CardBody style={innerStyle}>
         {children}
       </CardBody>
