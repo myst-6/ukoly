@@ -19,7 +19,7 @@ export const GameOfDrones = () => {
       <SSubtitle>Skirmish: Claiming an Edge</SSubtitle>
       <SText>
         To claim an edge, we can firstly update the state of the edge in the <SCode>Hexagon</SCode> class.
-        However,  must be aware that updating a shared edge will also update the state of it in the adjacent hexagon.
+        However, we must be aware that updating a shared edge will also update the state of it in the adjacent hexagon.
         To handle this, we can calculate the offsets of the adjacent hexagons based on the direction of the edge. 
         We should note that the offset is different based on if the row is even or odd.
         For example, travelling in direction $3$ from hexagon $(2,0)$ lands in hexagon $(3,0)$, which is an offset of $(1, 0)$, 
