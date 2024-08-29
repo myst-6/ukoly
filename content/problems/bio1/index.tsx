@@ -28,7 +28,8 @@ import {
   Battleships,
   DigitWords,
   Decrypt,
-  GameOfDrones
+  GameOfDrones 
+  RomanLookAndSay
 } from "solutions";
 
 export const bio1Problems: ProblemInfo[] = [
@@ -313,4 +314,14 @@ export const bio1Problems: ProblemInfo[] = [
     solutionAuthors: ["Adwaya Gupta"],
     component: <GameOfDrones />,
   },
+  {
+    difficulty: "Easy",
+    display: "Roman Look-and-Say",
+    original: "https://www.olympiad.org.uk/papers/2020/bio/bio20-exam.pdf",
+    year: 2020,
+    tags: ["Q1", "Implementation"],
+    editorialAuthors: ["Seyoon Park"],
+    solutionAuthors: ["Seyoon Park"],
+    component: <RomanLookAndSay />,
+  }
 ];
