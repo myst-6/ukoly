@@ -1,4 +1,4 @@
-import { difficulties, Difficulty, difficultyColors, ProblemInfo, Tag } from "content";
+import { difficulties, Difficulty, ProblemInfo, Tag } from "content";
 import { Box } from "../Box";
 import { Card } from "../Card";
 import { Divider } from "../Divider";
@@ -28,6 +28,7 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
   const [allowedDiffs, setAllowedDiffs] = useState<Difficulty[]>();
 
   const [sort, setSort] = useState<Sort>(defaultSort);
+  const [search, setSearch] = useState<string>("");
 
   const [width, setWidth] = useState<number>(0);
   const [drag, setDrag] = useState<boolean>(false);
@@ -121,11 +122,15 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
               onDiffChange={allowed => setAllowedDiffs(allowed)}
             />
             <SortMenu onChange={sort => setSort(sort)} />
+            <SearchMenu  onChange={search => setSearch(search)} />
           </HStack>
           <Wrap justify="center" overflowY="auto">
             {
               ...problems
                 .filter(problem => {
+                  if (!problem.display.toLowerCase().includes(search.trim().toLowerCase())) {
+                    return false;
+                  }
                   if (allowedYears) {
                     if (!allowedYears.includes(problem.year)) {
                       return false;
