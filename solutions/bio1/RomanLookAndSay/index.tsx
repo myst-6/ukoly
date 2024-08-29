@@ -9,7 +9,7 @@ export const RomanLookAndSay = () => {
       </SText>
       <STitle>Solution</STitle>
       <SText> 
-        We can solve the problem by applying the "Roman look-and-say" description $n$ times, and then outputting the number of $\textit{I}$s and $\textit{V}$s in the string after $n$ operations. 
+        We can solve the problem by applying the "Roman look-and-say" description $n$ times, and then outputting the number of $\textit{"I"}$s and $\textit{"V"}$s in the string after $n$ operations. 
       </SText>
       <STitle>Implementation Detail</STitle>
       <SText>
