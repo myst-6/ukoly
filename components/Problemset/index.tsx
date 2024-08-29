@@ -1,4 +1,4 @@
-import { ProblemInfo, Tag } from "content";
+import { Difficulty, ProblemInfo, Tag } from "content";
 import { Box } from "../Box";
 import { Card } from "../Card";
 import { Divider } from "../Divider";
@@ -23,6 +23,7 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
   
   const [allowedYears, setAllowedYears] = useState<number[]>();
   const [allowedTags, setAllowedTags] = useState<Tag[]>();
+  const [allowedDiffs, setAllowedDiffs] = useState<Difficulty[]>();
 
   const [width, setWidth] = useState<number>(0);
   const [drag, setDrag] = useState<boolean>(false);
@@ -111,8 +112,9 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
             <Text p={1} typography="display.small">Problems</Text>
             <FilterMenu 
               problems={problems} 
-              onYearChange={allowed => {setAllowedYears(allowed); console.log(allowed)}}
+              onYearChange={allowed => setAllowedYears(allowed)}
               onTagChange={allowed => setAllowedTags(allowed)}
+              onDiffChange={allowed => setAllowedDiffs(allowed)}
             />
           </HStack>
           <Wrap justify="center" overflowY="auto">
@@ -121,6 +123,11 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
                 .filter(problem => {
                   if (allowedYears) {
                     if (!allowedYears.includes(problem.year)) {
+                      return false;
+                    }
+                  }
+                  if (allowedDiffs) {
+                    if (!allowedDiffs.includes(problem.difficulty)) {
                       return false;
                     }
                   }
