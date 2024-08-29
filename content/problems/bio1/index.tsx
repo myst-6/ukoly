@@ -27,7 +27,8 @@ import {
   Loops,
   Battleships,
   DigitWords,
-  Decrypt
+  Decrypt,
+  GameOfDrones
 } from "solutions";
 
 export const bio1Problems: ProblemInfo[] = [
@@ -301,5 +302,15 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Yuvan Raja"],
     solutionAuthors: ["Yuvan Raja"],
     component: <Decrypt />,
+  },
+  {
+    difficulty: "Hard",
+    display: "Game of Drones",
+    original: "https://www.olympiad.org.uk/papers/2022/bio/bio22-exam.pdf",
+    year: 2022,
+    tags: ["Q2", "Implementation"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <GameOfDrones />,
   },
 ];
