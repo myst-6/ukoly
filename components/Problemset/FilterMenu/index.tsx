@@ -1,6 +1,6 @@
 import { HStack, IconButton, Menu, MenuButton, MenuItemOption, MenuList, MenuOptionGroup } from "@chakra-ui/react";
 import { difficulties, Difficulty, ProblemInfo, Tag } from "content";
-import { FaFilter } from "react-icons/fa";
+import { FaFilter, FaTags } from "react-icons/fa";
 import { useGroup } from "./hook";
 
 export interface FilterMenuProps {
@@ -70,7 +70,7 @@ export const FilterMenu = ({
       <MenuButton
         as={IconButton}
         aria-label="Filter"
-        icon={<FaFilter />}
+        icon={<FaTags />}
         variant="filled"
       />
       <MenuList maxH="sm" overflowY="auto">
