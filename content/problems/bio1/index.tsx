@@ -29,7 +29,8 @@ import {
   DigitWords,
   Decrypt,
   GameOfDrones, 
-  RomanLookAndSay
+  RomanLookAndSay,
+  FibonacciLetters
 } from "solutions";
 
 export const bio1Problems: ProblemInfo[] = [
@@ -279,7 +280,7 @@ export const bio1Problems: ProblemInfo[] = [
     display: "Digit Words",
     original: "https://www.olympiad.org.uk/papers/2009/bio/bio09-exam.pdf",
     year: 2009,
-    tags: ["Q1", "Brute Force"],
+    tags: ["Q1", "Brute Force", "Greedy"],
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <DigitWords />,
@@ -323,5 +324,15 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Seyoon Park"],
     solutionAuthors: ["Seyoon Park"],
     component: <RomanLookAndSay />,
+  },
+  {
+    difficulty: "Easy",
+    display: "Fibonacci Letters",
+    original: "https://olympiad.org.uk/papers/2011/bio/bio2011-Round1-Exam.pdf",
+    year: 2011,
+    tags: ["Q1", "Implementation", "Brute Force"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <FibonacciLetters />,
   }
 ];
