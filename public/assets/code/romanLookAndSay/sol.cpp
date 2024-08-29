@@ -17,16 +17,16 @@ int main() {
 		s += '.'; 
 		string t = ""; 
 		char last = ' '; 
-		int len = 0; 
+		int sz = 0; 
 		for (int i=0; i<ssize(s); i++) {
 			if (last != s[i]) {
 				if (last != ' ') {
-					t += roman_numeral(len) + last; 
+					t += roman_numeral(sz) + last; 
 				}
 				last = s[i]; 
-				len = 1; 
+				sz = 1; 
 			} else {
-				++len; 
+				++sz; 
 			}
 		}
 		s = t; 
