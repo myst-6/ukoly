@@ -1,4 +1,3 @@
-import { WindowDressing } from "solutions/bio1/WindowDressing";
 import { ProblemInfo } from "../base";
 
 import {
@@ -30,7 +29,9 @@ import {
   Decrypt,
   GameOfDrones, 
   RomanLookAndSay,
-  FibonacciLetters
+  FibonacciLetters,
+  Neutron,
+  WindowDressing,
 } from "solutions";
 
 export const bio1Problems: ProblemInfo[] = [
@@ -334,5 +335,15 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <FibonacciLetters />,
+  },
+  {
+    difficulty: "Medium",
+    display: "Neutron",
+    original: "https://www.olympiad.org.uk/papers/2013/bio/bio13-exam.pdf",
+    year: 2013,
+    tags: ["Q2", "Implementation"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <Neutron />,
   }
 ];
