@@ -35,6 +35,8 @@ import {
   WindowDressing,
   ModernArt,
   MuTorere,
+  EenieMeenieMaineeMo,
+  ModernArt
 } from "solutions";
 
 export const bio1Problems: ProblemInfo[] = [
@@ -361,6 +363,16 @@ export const bio1Problems: ProblemInfo[] = [
   },
   {
     difficulty: "Easy",
+    display: "Eenie Meenie Mainee Mo!",
+    original: "https://olympiad.org.uk/papers/2001/bio/bio01ex.pdf",
+    year: 2001,
+    tags: ["Q1", "Brute Force", "Dynamic Programming"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <EenieMeenieMaineeMo />,
+  },
+  {
+    difficulty: "Medium",
     display: "Modern Art",
     original: "https://www.olympiad.org.uk/papers/2015/bio/bio15-exam.pdf",
     year: 2015,
@@ -378,5 +390,5 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <MuTorere />,
-  },
+  }
 ];
