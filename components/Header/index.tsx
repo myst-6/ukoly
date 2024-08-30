@@ -15,19 +15,18 @@ export const Header = ({ page }: HeaderProps) => {
 
   return <Flex
     as="header"
-    justifyContent="center"
     borderBottomWidth={1}
     boxShadow="0 0.5px lightgray"  
     className={colorMode}
+    width="100%"
   >
-    <HStack flex={1} justifyContent="space-between">
-      <Box width="xs" />
-      <Box width="xl">
+    <HStack flex={1} justifyContent="space-around">
+      <Box />
+      <Box width={["xs", "sm", "md"]}>
         <HStack
           flex={1} 
           backgroundColor="lightgray.200"
           padding="1em"
-          gap="5em"
           justifyContent="space-around"
         >
           {
@@ -38,6 +37,7 @@ export const Header = ({ page }: HeaderProps) => {
                     typography="display.small" 
                     color={colorMode === "dark" ? "white" : "black"}
                     fontWeight={page === linkedPage ? 500 : 300}
+                    flexWrap={"nowrap"}
                   >
                     {linkedPage.display}
                   </Text>
@@ -47,7 +47,7 @@ export const Header = ({ page }: HeaderProps) => {
           }
         </HStack>
       </Box>
-      <VStack width="xs" justifyContent="flex-end">
+      <VStack justifyContent="flex-end">
         <Text typography="body.medium">Dark Mode</Text>
         <Switch 
           isChecked={colorMode === "dark"}
