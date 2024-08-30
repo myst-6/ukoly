@@ -36,3 +36,4 @@ export * from "./EenieMeenieMaineeMo";
 export * from "./ModernArt";
 export * from "./MuTorere";
 export * from "./AnagramNumbers";
+export * from "./Juggluging";

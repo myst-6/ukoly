@@ -36,7 +36,8 @@ import {
   MuTorere,
   EenieMeenieMaineeMo,
   ModernArt,
-  AnagramNumbers
+  AnagramNumbers,
+  Juggluging
 } from "solutions";
 
 export const bio1Problems: ProblemInfo[] = [
@@ -109,6 +110,16 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Vladimir Filip"],
     solutionAuthors: ["Vladimir Filip", "Alex Pylypenko"],
     component: <DreamingSpires />,
+  },
+  {
+    difficulty: "Medium",
+    display: "Juggl(ug)ing",
+    original: "https://olympiad.org.uk/papers/2010/bio/bio-10-exam.pdf",
+    year: 2010,
+    tags: ["Q3", "DFS and Similar"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <Juggluging />,
   },
   {
     difficulty: "Easy",

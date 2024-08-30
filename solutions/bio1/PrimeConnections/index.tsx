@@ -8,7 +8,7 @@ export const PrimeConnections = () => {
       <SText>
         The problem involves finding the shortest path between two prime numbers. 
         We can treat the prime numbers as nodes in a graph, and the edges as the connections between them.
-        Since the graph is undirected, we can use a breadth-first search 
+        Since the graph is unweighted, we can use a breadth-first search 
         (BFS, see more <Link href="https://usaco.guide/silver/graph-traversal?lang=cpp">here</Link>) 
         to find the shortest path between the two prime numbers.
       </SText>
