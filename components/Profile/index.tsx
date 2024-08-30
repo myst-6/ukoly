@@ -3,8 +3,9 @@ import { Card, type CardProps } from "../Card";
 import { Divider } from "../Divider";
 import { Social } from "../Social";
 import { Spacer } from "../Spacer";
-import { HStack, VStack } from "../Stack";
+import { HStack } from "../Stack";
 import { Text } from "../Text";
+import { Wrap, WrapItem } from "../Wrap";
 import { Person, roleColors } from "content";
 
 export interface ProfileProps extends CardProps {
@@ -18,7 +19,7 @@ export const Profile = ({ person }: ProfileProps) => {
       innerStyle={{ display: "flex", flexDirection: "column" }}
     >
       <HStack>
-        <Text typography="title.large">{person.name}</Text>
+        <Text typography={["title.medium", null, "title.large"]}>{person.name}</Text>
         <HStack flex={1} justifyContent="flex-end">
           {
             ...person.socials.map((social, index) => {
@@ -32,15 +33,17 @@ export const Profile = ({ person }: ProfileProps) => {
         { person.description }
       </Text> */}
       <Spacer m={1} />
-      <VStack flex={1} justifyContent="flex-end">
-        <HStack>
-          {
-            ...person.roles.map(role => {
-              return <Badge colorScheme={roleColors[role]} key={role}>{role}</Badge>;
-            })
-          }
-        </HStack>
-      </VStack>
+      <Wrap flex={1} justify="center" spacing={2}>
+        {
+          ...person.roles.map(role => {
+            return (
+              <WrapItem key={role}>
+                <Badge colorScheme={roleColors[role]}>{role}</Badge>
+              </WrapItem>
+            );
+          })
+        }
+      </Wrap>
     </Card>
   );
 };
