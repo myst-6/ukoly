@@ -9,7 +9,7 @@ export const Juggluging = () => {
                 number of steps required to reach one of a set of
                 states from a given state. This is a classic
                 shortest path problem, which can be solved using
-                Breadth First Search (BFS).
+                breadth-first search (BFS).
             </SText>
             <STitle>Solution</STitle>
             <SText>
