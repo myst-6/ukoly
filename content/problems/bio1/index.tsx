@@ -33,7 +33,6 @@ import {
   FibonacciLetters,
   Neutron,
   WindowDressing,
-  ModernArt,
   MuTorere,
   EenieMeenieMaineeMo,
   ModernArt
