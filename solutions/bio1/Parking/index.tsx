@@ -15,7 +15,7 @@ export const Parking = () => {
         Taking the sample as an example, it is clear the parking slots progress like this:
       </SText>
       <SText>
-        .... -{'>'} .a... -{'>'} .ab. -{'>'} cab. -{'>'} cabd
+      <SCode>.... -{'>'} .a... -{'>'} .ab. -{'>'} cab. -{'>'} cabd</SCode>
       </SText>
 
       <SText>
@@ -32,11 +32,14 @@ export const Parking = () => {
       </SText>
       
       <SText>
-        cabd : 1<br/>
-        cab. : 4<br/>
-        .ab. : 4<br/>
-        .a.. : 8<br/>
-        .... : 8
+        <br/>
+        <SCode>cabd : 1</SCode><br/>
+        <SCode>cab. : 4</SCode><br/>
+        <SCode>.ab. : 4</SCode><br/>
+        <SCode>.a.. : 8</SCode><br/>
+        <SCode>.... : 8</SCode><br/>
+        <br/>
+        So we can find these numbers easily by iterating backwards and multiplying the previous number by the number of choices for preferred slot at each stage.
       </SText>
 
       <STitle>Code</STitle>
