@@ -15,8 +15,8 @@ export const MuTorere = () => {
             <STitle>Solution</STitle>
             <SSubtitle>Dealing with the $r$ command</SSubtitle>
             <SText>
-                Notice that the game only has $9$ circles - the
-                "putahi" and the $8$ "kawai". Each circle can be in one of $3$ states:
+                Notice that the game only has $9$ circles -
+                the <i>putahi</i> and the $8$ <i>kawai</i>. Each circle can be in one of $3$ states:
                 $E$ (empty), $O$ (occupied by player $1$) or $X$ (occupied by player $2$).
                 Also, notice that there must be exactly one $E$, $4$ $O$s and $4$ $X$s
                 in a game state. Therefore, the number of possible game states
@@ -35,14 +35,14 @@ export const MuTorere = () => {
             <SText>
                 In implementation questions like this, it is often useful to
                 use object-oriented programming. We define a class <SCode>Board</SCode>,
-                which represents a game state, and it has two attributes:
-                <SCode>chars</SCode> and <SCode>current_turn</SCode>. The variable
-                <SCode>chars</SCode> is a string of length $9$, which stores the
-                board state in the form of the input, and <SCode>current_turn</SCode>
-                is an integer which stores whose turn it is. A neat trick when
-                <SCode>current_turn</SCode> is either $1$ or $2$ is to use
-                <SCode>current_turn = 3 - current_turn</SCode> to flip the
-                current turn.
+                which represents a game state, and it has two 
+                attributes: <SCode>chars</SCode> and <SCode>current_turn</SCode>. 
+                The variable <SCode>chars</SCode> is a string of length 
+                $9$, which stores the board state in the form of the 
+                input, and <SCode>current_turn</SCode> is an integer which 
+                stores whose turn it is. A neat trick when <SCode>current_turn</SCode> is 
+                either $1$ or $2$ is to use <SCode>current_turn = 3 - current_turn</SCode> to 
+                flip the current turn.
             </SText>
             <SSubtitle>
                 Making a move
@@ -91,8 +91,9 @@ export const MuTorere = () => {
                 of directly adding the <SCode>Board</SCode> instance to the set, we
                 can make a new string, which is the concatenation of the 
                 two attributes of the <SCode>Board</SCode> instance, and add that
-                to the set instead. This guarantees that two different <SCode>Board</SCode>
-                instances representing the same game state will have the same hash value.
+                to the set instead. This guarantees that two 
+                different <SCode>Board</SCode> instances representing 
+                the same game state will have the same hash value.
             </SText>
 
             <STitle>Code</STitle>
