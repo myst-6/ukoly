@@ -17,7 +17,7 @@ export const ModernArt = () => {
       <SText>
         Let's first define a function that takes in parameters $a$, $b$, $c$ and $d$ 
         - the counts of characters <SCode>"A"</SCode>, <SCode>"B"</SCode>, <SCode>"C"</SCode> and <SCode>"D"</SCode> in the string respectively.
-        It should also take in the length of the string that needs to be constructed.
+        It should also take in the length, $n$ of the string that needs to be constructed.
         Let's first set up some base cases:
       </SText>
       <SList>
@@ -34,21 +34,21 @@ export const ModernArt = () => {
       </SText>
       <SList>
         <SText>
-            The number of ways to construct a string with length $length-1$ and $a-1$, $b$, $c$ and $d$ characters (make <SCode>"A"</SCode> the first character).
+            The number of ways to construct a string with length $n-1$ and $a-1$, $b$, $c$ and $d$ characters (make <SCode>"A"</SCode> the first character).
         </SText>
         <SText>
-            The number of ways to construct a string with length $length-1$ and $a$, $b-1$, $c$ and $d$ characters (make <SCode>"B"</SCode> the first character).
+            The number of ways to construct a string with length $n-1$ and $a$, $b-1$, $c$ and $d$ characters (make <SCode>"B"</SCode> the first character).
         </SText>
         <SText>
-            The number of ways to construct a string with length $length-1$ and $a$, $b$, $c-1$ and $d$ characters (make <SCode>"C"</SCode> the first character).
+            The number of ways to construct a string with length $n-1$ and $a$, $b$, $c-1$ and $d$ characters (make <SCode>"C"</SCode> the first character).
         </SText>
         <SText>
-            The number of ways to construct a string with length $length-1$ and $a$, $b$, $c$ and $d-1$ characters (make <SCode>"D"</SCode> the first character).
+            The number of ways to construct a string with length $n-1$ and $a$, $b$, $c$ and $d-1$ characters (make <SCode>"D"</SCode> the first character).
         </SText>
       </SList>
       <SText>
         We can count this recursively. To remove repeated work, we should memoize the results.
-        We can do this either by using a <SCode>std::map</SCode>, or Python's <SCode>functools.lru_cache</SCode>.
+        We can do this either by using an <SCode>std::map</SCode>, or Python's <SCode>functools.lru_cache</SCode>.
       </SText>
 
       <SSubtitle>Finding the Answer</SSubtitle>
