@@ -32,6 +32,7 @@ import {
   FibonacciLetters,
   Neutron,
   WindowDressing,
+  ModernArt,
 } from "solutions";
 
 export const bio1Problems: ProblemInfo[] = [
@@ -345,5 +346,15 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <Neutron />,
-  }
+  },
+  {
+    difficulty: "Easy",
+    display: "Modern Art",
+    original: "https://www.olympiad.org.uk/papers/2015/bio/bio15-exam.pdf",
+    year: 2015,
+    tags: ["Q3", "Dynamic Programming"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <ModernArt />,
+  },
 ];
