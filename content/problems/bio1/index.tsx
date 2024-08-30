@@ -34,6 +34,7 @@ import {
   Neutron,
   WindowDressing,
   EenieMeenieMaineeMo,
+  ModernArt
 } from "solutions";
 
 export const bio1Problems: ProblemInfo[] = [
@@ -368,4 +369,13 @@ export const bio1Problems: ProblemInfo[] = [
     solutionAuthors: ["Adwaya Gupta"],
     component: <EenieMeenieMaineeMo />,
   },
+  {
+    display: "Modern Art",
+    original: "https://www.olympiad.org.uk/papers/2015/bio/bio15-exam.pdf",
+    year: 2015,
+    tags: ["Q3", "Dynamic Programming"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <ModernArt />,
+  }
 ];

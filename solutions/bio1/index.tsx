@@ -33,4 +33,4 @@ export * from "./FalsePlan";
 export * from "./Neutron";
 export * from "./WindowDressing";
 export * from "./EenieMeenieMaineeMo";
-
+export * from "./ModernArt";
