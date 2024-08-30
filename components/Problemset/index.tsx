@@ -141,7 +141,7 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
                       return false;
                     }
                   }
-                  if (allowedTags) {
+                  if (search.trim() === "" && allowedTags) {
                     for (const tag of problem.tags) {
                       if (allowedTags.includes(tag)) {
                         return true;
