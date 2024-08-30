@@ -35,3 +35,4 @@ export * from "./WindowDressing";
 export * from "./EenieMeenieMaineeMo";
 export * from "./ModernArt";
 export * from "./MuTorere";
+export * from "./AnagramNumbers";
