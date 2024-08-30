@@ -26,6 +26,8 @@ export * from "./DigitWords";
 export * from "./Battleships";
 export * from "./Decrypt";
 export * from "./GameOfDrones";
+export * from "./RomanLookAndSay";
+export * from "./FibonacciLetters";
 export * from "./RomanLookAndSay"
 export * from "./Neutron";
 export * from "./WindowDressing";

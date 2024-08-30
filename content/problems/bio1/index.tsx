@@ -29,6 +29,7 @@ import {
   Decrypt,
   GameOfDrones, 
   RomanLookAndSay,
+  FibonacciLetters,
   Neutron,
   WindowDressing,
 } from "solutions";
@@ -280,7 +281,7 @@ export const bio1Problems: ProblemInfo[] = [
     display: "Digit Words",
     original: "https://www.olympiad.org.uk/papers/2009/bio/bio09-exam.pdf",
     year: 2009,
-    tags: ["Q1", "Brute Force"],
+    tags: ["Q1", "Brute Force", "Greedy"],
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <DigitWords />,
@@ -326,6 +327,16 @@ export const bio1Problems: ProblemInfo[] = [
     component: <RomanLookAndSay />,
   },
   {
+    difficulty: "Easy",
+    display: "Fibonacci Letters",
+    original: "https://olympiad.org.uk/papers/2011/bio/bio2011-Round1-Exam.pdf",
+    year: 2011,
+    tags: ["Q1", "Implementation", "Brute Force"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <FibonacciLetters />,
+  },
+  {
     difficulty: "Medium",
     display: "Neutron",
     original: "https://www.olympiad.org.uk/papers/2013/bio/bio13-exam.pdf",
@@ -334,5 +345,5 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <Neutron />,
-  },
+  }
 ];
