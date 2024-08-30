@@ -2,42 +2,26 @@
 from functools import lru_cache
 
 @lru_cache(None)
-def wayswithLength(length, a, b, c, d):
-    if a < 0 or b < 0 or c < 0 or d < 0: 
-        return 0
-    if length == 1:
-        return (a>0) + (b>0) + (c>0) + (d>0)
+def wayswithLength(a, b, c, d):
+    if a < 0 or b < 0 or c < 0 or d < 0: return 0
+    if a+b+c+d == 1: return (a>0) + (b>0) + (c>0) + (d>0)
     
-    return wayswithLength(length-1, a - 1, b, c, d) + \
-           wayswithLength(length-1, a, b - 1, c, d) + \
-           wayswithLength(length-1, a, b, c - 1, d) + \
-           wayswithLength(length-1, a, b, c, d - 1)
+    return wayswithLength(a - 1, b, c, d) + \
+           wayswithLength(a, b - 1, c, d) + \
+           wayswithLength(a, b, c - 1, d) + \
+           wayswithLength(a, b, c, d - 1)
 
-def find(a, b, c, d):
+def find(cnts):
     global ways
-    if a + b + c + d == 1:
-        if a: return 'a'
-        if b: return 'b'
-        if c: return 'c'
-        if d: return 'd'
+    if sum(cnts) == 1: return 'ABCD'[cnts.index(1)]
     
-    if ways + wayswithLength(a+b+c+d-1, a-1, b, c, d) >= n and a:
-        return 'a' + find(a - 1, b, c, d)
-    
-    ways += wayswithLength(a+b+c+d-1, a-1, b, c, d)
-    
-    if ways + wayswithLength(a+b+c+d-1, a, b-1, c, d) >= n and b:
-        return 'b' + find(a, b - 1, c, d)
-    
-    ways += wayswithLength(a+b+c+d-1, a, b-1, c, d)
-    
-    if ways + wayswithLength(a+b+c+d-1, a, b, c-1, d) >= n and c:
-        return 'c' + find(a, b, c - 1, d)
-    
-    ways += wayswithLength(a+b+c+d-1, a, b, c-1, d)
-    
-    return 'd' + find(a, b, c, d - 1)
+    for chr in range(4):
+        cnts[chr] -= 1
+        if ways + wayswithLength(*cnts) >= n:
+            return 'ABCD'[chr] + find(cnts)       
+        ways += wayswithLength(*cnts)
+        cnts[chr] += 1
 
-a, b, c, d, n = map(int, input().split())
+*cnts, n = map(int, input().split())
 ways = 0
-print(find(a, b, c, d).upper())
+print(find(cnts))
