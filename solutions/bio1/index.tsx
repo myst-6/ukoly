@@ -31,3 +31,4 @@ export * from "./FibonacciLetters";
 export * from "./RomanLookAndSay"
 export * from "./Neutron";
 export * from "./WindowDressing";
+export * from "./ModernArt";
