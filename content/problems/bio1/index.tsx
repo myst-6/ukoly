@@ -35,7 +35,8 @@ import {
   WindowDressing,
   MuTorere,
   EenieMeenieMaineeMo,
-  ModernArt
+  ModernArt,
+  AnagramNumbers
 } from "solutions";
 
 export const bio1Problems: ProblemInfo[] = [
@@ -389,5 +390,15 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <MuTorere />,
+  },
+  {
+    difficulty: "Easy",
+    display: "Anagram Numbers",
+    original: "https://olympiad.org.uk/papers/2010/bio/bio-10-exam.pdf",
+    year: 2010,
+    tags: ["Q1", "Implementation"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <AnagramNumbers />,
   }
 ];
