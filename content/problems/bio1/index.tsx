@@ -370,6 +370,7 @@ export const bio1Problems: ProblemInfo[] = [
     component: <EenieMeenieMaineeMo />,
   },
   {
+    difficulty: "Medium",
     display: "Modern Art",
     original: "https://www.olympiad.org.uk/papers/2015/bio/bio15-exam.pdf",
     year: 2015,
