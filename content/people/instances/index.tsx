@@ -112,4 +112,32 @@ export const people: Person[] = [
     ],
     roles: ["Contributor"],
   },
+  {
+    name: "Seyoon Park",
+    socials: [
+      {
+        platform: platforms.codeforces,
+        handle: "s3yoonpark",
+      },
+      {
+        platform: platforms.github,
+        handle: "s3yoonpark",
+      },
+    ],
+    roles: ["Contributor"],
+  },
+  {
+    name: "Duy Nguyen",
+    socials: [
+      {
+        platform: platforms.codeforces,
+        handle: "yud08",
+      },
+      {
+        platform: platforms.github,
+        handle: "yud08",
+      },
+    ],
+    roles: ["Contributor"],
+  },
 ];

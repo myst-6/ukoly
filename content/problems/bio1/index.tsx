@@ -34,6 +34,7 @@ import {
   Neutron,
   WindowDressing,
   ModernArt,
+  MuTorere,
 } from "solutions";
 
 export const bio1Problems: ProblemInfo[] = [
@@ -367,5 +368,15 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <ModernArt />,
+  },
+  {
+    difficulty: "Hard",
+    display: "Mu Torere",
+    original: "https://olympiad.org.uk/papers/2007/bio/bio07exam.pdf",
+    year: 2007,
+    tags: ["Q2", "Implementation"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <MuTorere />,
   },
 ];
