@@ -1,4 +1,4 @@
-import { Link, SCodeBlock, SList, SCode, SText, STitle } from "components";
+import { SCodeBlock, SCode, SText, STitle } from "components";
 
 export const Parking = () => {
   return (
