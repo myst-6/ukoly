@@ -1,4 +1,4 @@
-import { Difficulty, ProblemInfo, Tag } from "content";
+import { difficulties, Difficulty, ProblemInfo, Tag } from "content";
 import { Box } from "../Box";
 import { Card } from "../Card";
 import { Divider } from "../Divider";
@@ -13,6 +13,8 @@ import { Wrap, WrapItem } from "../Wrap";
 import { useProblemset } from "./hook";
 import { MouseEvent, useRef, useState } from "react";
 import { FilterMenu } from "./FilterMenu";
+import { defaultSort, Sort, SortMenu } from "./SortMenu";
+import { SearchMenu } from "./SearchMenu";
 
 export interface ProblemsetProps {
   problems: ProblemInfo[];
@@ -24,6 +26,9 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
   const [allowedYears, setAllowedYears] = useState<number[]>();
   const [allowedTags, setAllowedTags] = useState<Tag[]>();
   const [allowedDiffs, setAllowedDiffs] = useState<Difficulty[]>();
+
+  const [sort, setSort] = useState<Sort>(defaultSort);
+  const [search, setSearch] = useState<string>("");
 
   const [width, setWidth] = useState<number>(0);
   const [drag, setDrag] = useState<boolean>(false);
@@ -116,11 +121,16 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
               onTagChange={allowed => setAllowedTags(allowed)}
               onDiffChange={allowed => setAllowedDiffs(allowed)}
             />
+            <SortMenu onChange={sort => setSort(sort)} />
+            <SearchMenu  onChange={search => setSearch(search)} />
           </HStack>
           <Wrap justify="center" overflowY="auto">
             {
               ...problems
                 .filter(problem => {
+                  if (search.trim() !== "") {
+                    return problem.display.toLowerCase().includes(search.trim().toLowerCase());
+                  }
                   if (allowedYears) {
                     if (!allowedYears.includes(problem.year)) {
                       return false;
@@ -142,9 +152,14 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
                   return true;
                 })
                 .sort((problemA, problemB) => {
-                  // TODO add sorting
-                  return problemA.year - problemB.year;
-                })
+                  const res = 
+                    sort.prop === "Year" ? problemA.year - problemB.year :
+                    sort.prop === "Difficulty" ? 
+                      difficulties.indexOf(problemA.difficulty) -
+                      difficulties.indexOf(problemB.difficulty) :
+                    problemA.display.localeCompare(problemB.display);
+                    return sort.asc ? res : -res;
+                  })
                 .map(problem => {
                   return (
                     <WrapItem p={1} key={problem.display}>
