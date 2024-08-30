@@ -15,12 +15,12 @@ def find(cnts):
     global ways
     if sum(cnts) == 1: return 'ABCD'[cnts.index(1)]
     
-    for chr in range(4):
-        cnts[chr] -= 1
+    for char in range(4):
+        cnts[char] -= 1
         if ways + wayswithLength(*cnts) >= n:
-            return 'ABCD'[chr] + find(cnts)       
+            return 'ABCD'[char] + find(cnts)       
         ways += wayswithLength(*cnts)
-        cnts[chr] += 1
+        cnts[char] += 1
 
 *cnts, n = map(int, input().split())
 ways = 0
