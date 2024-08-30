@@ -1,3 +1,4 @@
+import { useMediaQuery } from "@chakra-ui/react";
 import { difficulties, Difficulty, ProblemInfo, Tag } from "content";
 import { Box } from "../Box";
 import { Card } from "../Card";
@@ -42,6 +43,8 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
   const grabRef = useRef<HTMLDivElement>(null);
   const cardRefLeft = useRef<HTMLDivElement>(null);
   const cardRefRight = useRef<HTMLDivElement>(null);
+
+  const [ isNarrow ] = useMediaQuery("(max-width: 72em)");
 
   const onMouseMove = (ev: MouseEvent) => {
     if (!drag) return;
@@ -94,16 +97,18 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
       onMouseUp={() => setDrag(false)}
       userSelect={drag ? "none" : "auto"}
       cursor={drag ? "col-resize" : "auto"}
+      overflow="hidden"
+      direction={isNarrow ? "column" : "row"}
     >
       <Card 
-        variant={collapseLeft ? "filled" : "outline"}
+        variant={!isNarrow && collapseLeft ? "filled" : "outline"}
         m={0}
         cardRef={cardRefLeft}
-        flex={collapseRight ? 1 : undefined}
-        width={`${collapseLeft ? 8 : width}px`} 
-        minW={collapseLeft ? "8px" : "md"}
-        cursor={collapseLeft ? "col-resize" : "inherit"}
-        onMouseDown={() => setDrag(collapseLeft)}
+        flex={!isNarrow && collapseRight ? 1 : undefined}
+        width={isNarrow ? "100%" : `${collapseLeft ? 8 : width}px`} 
+        minW={!isNarrow && collapseLeft ? "8px" : "md"}
+        cursor={!isNarrow && collapseLeft ? "col-resize" : "inherit"}
+        onMouseDown={() => !isNarrow && setDrag(collapseLeft)}
       >
         <VStack 
           flex="0" 
@@ -179,23 +184,27 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
           </Wrap>
         </VStack>
       </Card>
-      <Spacer 
-        p={1}
-        flex={0} 
-        ref={grabRef}
-        cursor={(collapseLeft || collapseRight) ? "col-resize" : "col-resize"}
-        onMouseDown={() => setDrag(true)}
-      >
-        <Divider orientation="vertical" />
-      </Spacer>
+      {
+        !isNarrow &&
+          <Spacer 
+            p={1}
+            flex={0} 
+            ref={grabRef}
+            cursor={(collapseLeft || collapseRight) ? "col-resize" : "col-resize"}
+            onMouseDown={() => setDrag(true)}
+          >
+            <Divider orientation="vertical" />
+          </Spacer>
+      }
       <Card 
-        variant={collapseRight ? "filled" : "outline"}
+        mt={isNarrow ? 3 : 0}
+        variant={!isNarrow && collapseRight ? "filled" : "outline"}
         cardRef={cardRefRight}
-        flex={collapseRight ? 0 : 1}
-        width={collapseRight ? "8px" : "auto"} 
-        minW={collapseRight ? "8px" : "md"}
-        cursor={collapseRight ? "col-resize" : "inherit"}
-        onMouseDown={() => setDrag(collapseRight)}
+        flex={!isNarrow && collapseRight ? 0 : 1}
+        width={!isNarrow && collapseRight ? "8px" : "auto"} 
+        minW={!isNarrow && collapseRight ? "8px" : "md"}
+        cursor={!isNarrow && collapseRight ? "col-resize" : "inherit"}
+        onMouseDown={() => !isNarrow && setDrag(collapseRight)}
       >
         <VStack maxWidth="full" spacing={1} h="65vh" alignItems="left">
           <Text p={1}align="left" typography="display.small">Problem Viewer{problem && `: ${problem.display}`}</Text>
