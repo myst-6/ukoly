@@ -94,7 +94,7 @@ export const bio2Problems: ProblemInfo[] = [
     component: <ScoopTwo />
   },
   {
-    difficulty: "Easy",
+    difficulty: "Medium",
     display: "Keep On The Grass",
     original: "https://olympiad.org.uk/papers/2017/final/KeepOnTheGrass.pdf",
     year: 2017,
