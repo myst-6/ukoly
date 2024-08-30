@@ -29,7 +29,8 @@ import {
   DigitWords,
   Decrypt,
   GameOfDrones, 
-  RomanLookAndSay
+  RomanLookAndSay,
+  Neutron,
 } from "solutions";
 
 export const bio1Problems: ProblemInfo[] = [
@@ -323,5 +324,15 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Seyoon Park"],
     solutionAuthors: ["Seyoon Park"],
     component: <RomanLookAndSay />,
-  }
+  },
+  {
+    difficulty: "Medium",
+    display: "Neutron",
+    original: "https://www.olympiad.org.uk/papers/2013/bio/bio13-exam.pdf",
+    year: 2013,
+    tags: ["Q2", "Implementation"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <Neutron />,
+  },
 ];
