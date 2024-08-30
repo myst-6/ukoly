@@ -128,8 +128,8 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
             {
               ...problems
                 .filter(problem => {
-                  if (!problem.display.toLowerCase().includes(search.trim().toLowerCase())) {
-                    return false;
+                  if (search.trim() !== "") {
+                    return problem.display.toLowerCase().includes(search.trim().toLowerCase());
                   }
                   if (allowedYears) {
                     if (!allowedYears.includes(problem.year)) {
@@ -141,7 +141,7 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
                       return false;
                     }
                   }
-                  if (search.trim() === "" && allowedTags) {
+                  if (allowedTags) {
                     for (const tag of problem.tags) {
                       if (allowedTags.includes(tag)) {
                         return true;
