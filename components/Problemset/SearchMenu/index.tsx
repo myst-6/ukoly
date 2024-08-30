@@ -1,4 +1,4 @@
-import { FocusLock, IconButton, Input, Popover, PopoverArrow, PopoverCloseButton, PopoverContent, PopoverTrigger, useDisclosure } from "@chakra-ui/react";
+import { FocusLock, FormLabel, IconButton, Input, Popover, PopoverArrow, PopoverCloseButton, PopoverContent, PopoverTrigger, useDisclosure } from "@chakra-ui/react";
 import { useEffect, useRef, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 
@@ -37,8 +37,8 @@ export const SearchMenu = ({
         <FocusLock persistentFocus={false}>
           <PopoverArrow />
           <PopoverCloseButton />
+          <FormLabel>Title</FormLabel>
           <Input 
-            mt={3} 
             ref={ref} 
             onChange={ev => setSearch(ev.currentTarget.value)} 
           />
