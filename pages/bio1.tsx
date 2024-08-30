@@ -22,7 +22,7 @@ export default function BIO1() {
             publicly available test data.
           </Text>
           <Divider mb={3} mt={3} />
-          <Box maxWidth="full" overflow="hidden" p={0}>
+          <Box maxWidth="full" p={0}>
             <Problemset problems={bio1Problems} />
           </Box>
         </Box>

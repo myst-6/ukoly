@@ -14,7 +14,7 @@ export default function Home() {
           justifyContent="center"
           height="100%"
         >
-        <Box width="4xl">
+        <Box width={["xs", "md", "xl", "2xl", "4xl"]}>
           <Text typography="display.small">About</Text>
           <Text typography="body.medium">
             This is a project aimed towards providing more information and assistance

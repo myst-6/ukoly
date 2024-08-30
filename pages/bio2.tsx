@@ -21,7 +21,7 @@ export default function BIO2() {
             here, but we will provide editorials and AC solutions.
           </Text>
           <Divider mb={3} mt={3} />
-          <Box maxWidth="full" overflow="hidden" p={0}>
+          <Box maxWidth="full" p={0}>
             <Problemset problems={bio2Problems} />
           </Box>
         </Box>
