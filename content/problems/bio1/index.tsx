@@ -1,4 +1,3 @@
-import { WindowDressing } from "solutions/bio1/WindowDressing";
 import { ProblemInfo } from "../base";
 
 import {
@@ -29,7 +28,11 @@ import {
   DigitWords,
   Decrypt, 
   RomanLookAndSay,
-  FalsePlan
+  FalsePlan,
+  GameOfDrones, 
+  FibonacciLetters,
+  Neutron,
+  WindowDressing,
 } from "solutions";
 
 export const bio1Problems: ProblemInfo[] = [
@@ -279,7 +282,7 @@ export const bio1Problems: ProblemInfo[] = [
     display: "Digit Words",
     original: "https://www.olympiad.org.uk/papers/2009/bio/bio09-exam.pdf",
     year: 2009,
-    tags: ["Q1", "Brute Force"],
+    tags: ["Q1", "Brute Force", "Greedy"],
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <DigitWords />,
@@ -305,6 +308,16 @@ export const bio1Problems: ProblemInfo[] = [
     component: <Decrypt />,
   },
   {
+    difficulty: "Hard",
+    display: "Game of Drones",
+    original: "https://www.olympiad.org.uk/papers/2022/bio/bio22-exam.pdf",
+    year: 2022,
+    tags: ["Q2", "Implementation"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <GameOfDrones />,
+  },
+  {
     difficulty: "Easy",
     display: "Roman Look-and-Say",
     original: "https://www.olympiad.org.uk/papers/2020/bio/bio20-exam.pdf",
@@ -324,4 +337,24 @@ export const bio1Problems: ProblemInfo[] = [
     solutionAuthors: ["Yuvan Raja"],
     component: <FalsePlan />,
   },
+  {
+    difficulty: "Easy",
+    display: "Fibonacci Letters",
+    original: "https://olympiad.org.uk/papers/2011/bio/bio2011-Round1-Exam.pdf",
+    year: 2011,
+    tags: ["Q1", "Implementation", "Brute Force"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <FibonacciLetters />,
+  },
+  {
+    difficulty: "Medium",
+    display: "Neutron",
+    original: "https://www.olympiad.org.uk/papers/2013/bio/bio13-exam.pdf",
+    year: 2013,
+    tags: ["Q2", "Implementation"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <Neutron />,
+  }
 ];
