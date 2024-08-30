@@ -40,7 +40,7 @@ import {
 
 export const bio1Problems: ProblemInfo[] = [
   {
-    difficulty: "Easy",
+    difficulty: "Medium",
     display: "Integer Strings",
     original: "https://www.olympiad.org.uk/papers/2024/bio/bio24-exam.pdf",
     year: 2024,
@@ -60,7 +60,7 @@ export const bio1Problems: ProblemInfo[] = [
     component: <ParsingLists />,
   },
   {
-    difficulty: "Easy",
+    difficulty: "Medium",
     display: "Word Game",
     original: "https://www.olympiad.org.uk/papers/2024/bio/bio24-exam.pdf",
     year: 2024,
@@ -130,7 +130,7 @@ export const bio1Problems: ProblemInfo[] = [
     component: <DecoderRing />,
   },
   {
-    difficulty: "Easy",
+    difficulty: "Medium",
     display: "Serial Numbers",
     original: "https://www.olympiad.org.uk/papers/2018/bio/bio18-exam.pdf",
     year: 2018,
@@ -140,7 +140,7 @@ export const bio1Problems: ProblemInfo[] = [
     component: <SerialNumbers />,
   },
   {
-    difficulty: "Medium",
+    difficulty: "Hard",
     display: "Block-chain",
     original: "https://www.olympiad.org.uk/papers/2019/bio/bio19-exam.pdf",
     year: 2019,
@@ -190,7 +190,7 @@ export const bio1Problems: ProblemInfo[] = [
     component: <Migration />,
   },
   {
-    difficulty: "Easy",
+    difficulty: "Medium",
     display: "Prime Connections",
     original: "https://www.olympiad.org.uk/papers/2016/bio/bio16-exam.pdf",
     year: 2016,
