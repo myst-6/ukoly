@@ -1,4 +1,3 @@
-import { WindowDressing } from "solutions/bio1/WindowDressing";
 import { ProblemInfo } from "../base";
 
 import {
@@ -31,6 +30,7 @@ import {
   GameOfDrones, 
   RomanLookAndSay,
   Neutron,
+  WindowDressing,
 } from "solutions";
 
 export const bio1Problems: ProblemInfo[] = [
