@@ -1,6 +1,6 @@
-import { IconButton, Menu, MenuButton, MenuItemOption, MenuList, MenuOptionGroup } from "@chakra-ui/react";
+import { Icon, IconButton, Menu, MenuButton, MenuItemOption, MenuList, MenuOptionGroup } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { FaSort } from "react-icons/fa";
+import { FaSort, FaSortAmountDown, FaSortAmountUp } from "react-icons/fa";
 
 export interface Sort {
   prop: "Difficulty" | "Year" | "Title";
@@ -40,19 +40,27 @@ export const SortMenu = ({
           overflowY="auto"
           value={`${sort.prop}${+sort.asc}`}
         >
+          <MenuItemOption 
+            value={"dir"}
+            onClick={() => setSort(({ prop, asc }) => ({ prop, asc: !asc }))}
+          >
+            <Icon 
+              as={sort.asc ? FaSortAmountUp : FaSortAmountDown} 
+              display="inline"
+              mr={2}
+            />
+            {sort.asc ? "Ascending" : "Descending"}
+          </MenuItemOption>
           {
             ...(["Year", "Difficulty", "Title"] as const).flatMap(prop => {
-              return [false, true].map(asc => {
-                const value = `${prop}${+asc}`;
-                return (
-                  <MenuItemOption 
-                    key={value} 
-                    value={value} 
-                    onClick={() => setSort({ prop, asc })}>
-                    {prop} ({asc ? "Asc" : "Desc"})
-                  </MenuItemOption>
-                );
-              });
+              return (
+                <MenuItemOption 
+                  key={prop} 
+                  value={prop} 
+                  onClick={() => setSort(({ prop: _oldProp, asc }) => ({ prop, asc }))}>
+                  {prop}
+                </MenuItemOption>
+              );
             })
           }
         </MenuOptionGroup>
