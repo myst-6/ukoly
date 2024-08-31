@@ -13,8 +13,10 @@ export const NumberLadder = () => {
                 breadth-first search (BFS) to solve this problem.
                 However, there is a small catch. Notice that
                 from each number, we need to try to move to
-                all other possible numbers. There are $999$ possibilities
-                for each node, so the runtime of this will blow up very fast.
+                all other possible numbers. Checking whether 
+                an edge exists between two numbers is an expensive operation,
+                so running BFS $3$ times naively (visiting each edge $6$ times
+                in the worst case) will not pass the constraints.
             </SText>
             <STitle>Solution</STitle>
             <SText>
@@ -23,10 +25,11 @@ export const NumberLadder = () => {
                 To do this,
                 first precompute the count of each letter in the representation
                 of each number. Then, create an empty adjacency list, which is a
-                list of lists, where the $i$th list contains all the numbers
+                list of lists, where the $i$-th list contains all the numbers
                 that can be reached from number $i$. Now, iterate through all
-                pairs $(i, j)$ of numbers, and if the difference between the counts of
-                each letter in the representations of $i$ and $j$ is less than $5$,
+                pairs $(i, j)$ of numbers, and if the sum of the differences 
+                between the counts of each letter in the representation of $i$ and $j$
+                is at most $5$,
                 add an edge between the two numbers. To do this, append $j$ to the
                 $i$-th list in the adjacency list, and append $i$ to the $j$-th list.
             </SText>
