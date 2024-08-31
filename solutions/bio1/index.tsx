@@ -39,3 +39,4 @@ export * from "./MuTorere";
 export * from "./AnagramNumbers";
 export * from "./Juggluging";
 export * from "./DistinctPrimeFactorisation";
+export * from "./GoldbachConjecture";
