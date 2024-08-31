@@ -210,7 +210,7 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
           <Text p={1}align="left" typography="display.small">Problem Viewer{problem && `: ${problem.display}`}</Text>
           <Text p={1}align="left" typography={"title.small"} marginTop={"-1.5vh"}>
             {problem && `Editorial Author`}
-            {problem && `${(problem.editorialAuthors.length === 1) ? "" : "s"} : ${problem.editorialAuthors.join(", ")}`}
+            {problem && `${(problem.editorialAuthors.length === 1) ? "" : "s"}: ${problem.editorialAuthors.join(", ")}`}
           </Text>
           <VStack overflowY="auto" alignItems="start">
             <Box pr={4} maxW="full">
