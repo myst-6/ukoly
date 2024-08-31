@@ -39,7 +39,6 @@ import {
   ModernArt,
   AnagramNumbers,
   Juggluging,
-  DistinctPrimeFactorisation,
   GoldbachConjecture,
   NumberLadder,
   DistinctPrimeFactorisation
