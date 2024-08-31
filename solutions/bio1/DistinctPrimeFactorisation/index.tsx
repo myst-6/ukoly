@@ -18,13 +18,15 @@ export const DistinctPrimeFactorisation = () => {
         here is a proof:
       </SText>
       <SText>
-        Let $p$ be a prime factor of $n$. Once we have removed 
-        all multiples of $p$ from $n$, we will never encounter
-        $p$, or a lower prime, again. This is because if we did,
-        it would mean we had not removed all multiples of $p$ from
-        $n$. Therefore, we can be sure that if we are processing 
-        a number, and it is a factor of $n$, it must be the lowest 
-        prime factor of $n$ that we have not yet processed.
+        After the $i$-th iteration, $n$ is no longer divisible by
+        any number $d$ such that $2 \leq d \lt i$. 
+      </SText>
+      <SText>
+        Therefore, if $n$ is divisible by $i$ at the start 
+        of the $i$-th iteration, $i$ cannot be divisible by any
+        number $d$ such that $2 \leq d \lt i$, otherwise $n$ would 
+        also be divisible by $d$, which is a contradiction, so $i$
+        must be prime.
       </SText>
 
       <STitle>Code</STitle>

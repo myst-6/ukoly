@@ -1,3 +1,4 @@
+# Solution author: Alex Pylypenko
 if __name__ == "__main__":
     n = int(input("Please enter a number: "))
     answer = 1
