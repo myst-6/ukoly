@@ -416,7 +416,7 @@ export const bio1Problems: ProblemInfo[] = [
   {
     difficulty: "Medium",
     display: "Increasing Passwords",
-    original: "https://olympiad.org.uk/papers/2014/bio/bio-14-exam.pdf",
+    original: "https://olympiad.org.uk/papers/2014/bio/bio14-exam.pdf",
     year: 2014,
     tags: ["Q3", "Dynamic Programming"],
     editorialAuthors: ["Adwaya Gupta"],
