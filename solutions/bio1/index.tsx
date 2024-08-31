@@ -38,3 +38,4 @@ export * from "./MuTorere";
 export * from "./AnagramNumbers";
 export * from "./Juggluging";
 export * from "./NumberLadder";
+export * from "./DistinctPrimeFactorisation";
