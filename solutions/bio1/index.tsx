@@ -38,5 +38,6 @@ export * from "./ModernArt";
 export * from "./MuTorere";
 export * from "./AnagramNumbers";
 export * from "./Juggluging";
-export * from "./NumberLadder";
 export * from "./DistinctPrimeFactorisation";
+export * from "./GoldbachConjecture";
+export * from "./NumberLadder";

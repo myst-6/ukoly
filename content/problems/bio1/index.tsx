@@ -39,6 +39,7 @@ import {
   ModernArt,
   AnagramNumbers,
   Juggluging,
+  GoldbachConjecture,
   NumberLadder,
   DistinctPrimeFactorisation
 } from "solutions";
@@ -324,6 +325,16 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <DigitWords />,
+  },
+  {
+    difficulty: "Easy",
+    display: "Goldbach Conjecture",
+    original: "https://olympiad.org.uk/papers/2008/bio/bio08-exam.pdf",
+    year: 2008,
+    tags: ["Q1", "Brute Force", "Math"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <GoldbachConjecture />,
   },
   {
     difficulty: "Easy",
