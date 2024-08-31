@@ -37,3 +37,4 @@ export * from "./ModernArt";
 export * from "./MuTorere";
 export * from "./AnagramNumbers";
 export * from "./Juggluging";
+export * from "./IncreasingPasswords";
