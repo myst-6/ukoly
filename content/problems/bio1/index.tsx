@@ -37,7 +37,8 @@ import {
   EenieMeenieMaineeMo,
   ModernArt,
   AnagramNumbers,
-  Juggluging
+  Juggluging,
+  NumberLadder
 } from "solutions";
 
 export const bio1Problems: ProblemInfo[] = [
@@ -50,6 +51,16 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <IntegerStrings />,
+  },
+  {
+    difficulty: "Hard",
+    display: "Number Ladder",
+    original: "https://www.olympiad.org.uk/papers/2012/bio/bio12-exam.pdf",
+    year: 2012,
+    tags: ["Q3", "DFS and Similar", "Implementation"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <NumberLadder />,
   },
   {
     difficulty: "Medium",
