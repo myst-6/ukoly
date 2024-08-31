@@ -1,4 +1,4 @@
-import { SCodeBlock, SText, STitle, SCode, SSubtitle, SList, Link } from "components";
+import { SCodeBlock, SText, STitle, Link } from "components";
 import { brace } from "solutions/util";
 
 export const NumberLadder = () => {
