@@ -37,7 +37,8 @@ import {
   EenieMeenieMaineeMo,
   ModernArt,
   AnagramNumbers,
-  Juggluging
+  Juggluging,
+  IncreasingPasswords,
 } from "solutions";
 
 export const bio1Problems: ProblemInfo[] = [
@@ -411,5 +412,15 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <AnagramNumbers />,
-  }
+  },
+  {
+    difficulty: "Medium",
+    display: "Increasing Passwords",
+    original: "https://olympiad.org.uk/papers/2014/bio/bio-14-exam.pdf",
+    year: 2014,
+    tags: ["Q3", "Dynamic Programming"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <IncreasingPasswords />,
+  },
 ];
