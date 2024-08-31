@@ -15,7 +15,7 @@ export interface ProblemProps extends CardProps {
   onChoose: () => void;
 }
 
-const MAXLEN = 24;
+const MAXLEN = 28;
 
 export const Problem = ({ problem, onChoose, ...props }: ProblemProps) => {
   assert(problem.display.length <= MAXLEN, `\
