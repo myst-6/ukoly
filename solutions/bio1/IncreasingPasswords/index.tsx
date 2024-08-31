@@ -12,9 +12,9 @@ export const IncreasingPasswords = () => {
       <STitle>Solution</STitle>
       <SText>
         Let's first define a recursive function that gets the number of passwords of length $n$, with all of its letters being greater than $c$.
-        To do this, we can first define the base case for when the length is 1. 
-        The number of ways to generate a password of length 1 with all characters greater than $c$: $36 - c$.
-        Otherwise, we can recursively call the function with the length $n-1$ and the character $c+i$ for all values of $i$ such that $c+i \leq 36$ (1-indexed).
+        To do this, we can first define the base case for when the length is $1$. 
+        The number of ways to generate a password of length $1$ with all characters greater than $c$ is $36 - c$.
+        Otherwise, we can recursively call the function with the length $n-1$ and the character $c+i$ for positive integer values of $i$ such that $c+i \leq 36$ (1-indexed).
         We can notice that the number of ways to generate a password of length $n$ with the first letter being $c$ is $f(n, c) - f(n, c-1)$.
       </SText>
       <SText>
