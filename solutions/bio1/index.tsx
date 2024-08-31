@@ -19,6 +19,7 @@ export * from "./PrimeConnections";
 export * from "./BlockPalindromes";
 export * from "./PalindromicNumbers";
 export * from "./PromenadeFractions";
+export * from "./Parking";
 export * from "./DownPat";
 export * from "./TriIsoGame";
 export * from "./Loops";
