@@ -45,6 +45,7 @@ import {
   DistinctPrimeFactorisation,
   EnigmaMachine,
   Shirts,
+  UpsideDown
 } from "solutions";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
@@ -532,5 +533,16 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <EnigmaMachine />,
+  },
+  {
+    difficulty: "Easy",
+    display: "Upside Down",
+    original: "https://www.olympiad.org.uk/papers/2011/bio/bio2011-Round1-Exam.pdf",
+    year: 2011,
+    question: 3,
+    tags: ["Dynamic Programming"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <UpsideDown />,
   },
 ];
