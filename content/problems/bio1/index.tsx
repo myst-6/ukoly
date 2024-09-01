@@ -43,6 +43,7 @@ import {
   NumberLadder,
   DistinctPrimeFactorisation,
   EnigmaMachine,
+  Shirts,
 } from "solutions";
 
 export const bio1Problems: ProblemInfo[] = [
@@ -135,6 +136,16 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <Juggluging />,
+  },
+  {
+    difficulty: "Medium",
+    display: "Shirts",
+    original: "https://olympiad.org.uk/papers/2008/bio/bio08-exam.pdf",
+    year: 2008,
+    tags: ["Q3", "DFS and Similar"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <Shirts />,
   },
   {
     difficulty: "Easy",

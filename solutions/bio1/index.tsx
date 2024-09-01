@@ -42,3 +42,4 @@ export * from "./DistinctPrimeFactorisation";
 export * from "./GoldbachConjecture";
 export * from "./NumberLadder";
 export * from "./EnigmaMachine";
+export * from "./Shirts";
