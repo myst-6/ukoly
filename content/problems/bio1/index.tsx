@@ -23,6 +23,7 @@ import {
   DownPat,
   PalindromicNumbers,
   TriIsoGame,
+  Parking,
   Loops,
   Battleships,
   DigitWords,
@@ -39,6 +40,10 @@ import {
   AnagramNumbers,
   Juggluging,
   IncreasingPasswords,
+  GoldbachConjecture,
+  NumberLadder,
+  DistinctPrimeFactorisation,
+  Shirts,
 } from "solutions";
 
 export const bio1Problems: ProblemInfo[] = [
@@ -51,6 +56,16 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <IntegerStrings />,
+  },
+  {
+    difficulty: "Hard",
+    display: "Number Ladder",
+    original: "https://www.olympiad.org.uk/papers/2012/bio/bio12-exam.pdf",
+    year: 2012,
+    tags: ["Q3", "DFS and Similar", "Implementation"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <NumberLadder />,
   },
   {
     difficulty: "Medium",
@@ -121,6 +136,16 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <Juggluging />,
+  },
+  {
+    difficulty: "Medium",
+    display: "Shirts",
+    original: "https://olympiad.org.uk/papers/2008/bio/bio08-exam.pdf",
+    year: 2008,
+    tags: ["Q3", "DFS and Similar"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <Shirts />,
   },
   {
     difficulty: "Easy",
@@ -233,6 +258,16 @@ export const bio1Problems: ProblemInfo[] = [
     component: <BlockPalindromes />,
   },
   {
+    difficulty: "Medium",
+    display: "Parking",
+    original: "https://www.olympiad.org.uk/papers/2022/bio/bio22-exam.pdf",
+    year: 2022,
+    tags: ["Q3", "Math"],
+    editorialAuthors: ["Duy Nguyen"],
+    solutionAuthors: ["Duy Nguyen"],
+    component: <Parking />,
+  },
+  {
     difficulty: "Easy",
 
     display: "Palindromic Numbers",
@@ -302,6 +337,16 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <DigitWords />,
+  },
+  {
+    difficulty: "Easy",
+    display: "Goldbach Conjecture",
+    original: "https://olympiad.org.uk/papers/2008/bio/bio08-exam.pdf",
+    year: 2008,
+    tags: ["Q1", "Brute Force", "Math"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <GoldbachConjecture />,
   },
   {
     difficulty: "Easy",
@@ -422,5 +467,15 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <IncreasingPasswords />,
+  },
+  {
+    difficulty: "Easy",
+    display: "Distinct Prime Factorisation",
+    original: "https://www.olympiad.org.uk/papers/2012/bio/bio12-exam.pdf",
+    year: 2012,
+    tags: ["Q1", "Implementation", "Math"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <DistinctPrimeFactorisation />,
   },
 ];
