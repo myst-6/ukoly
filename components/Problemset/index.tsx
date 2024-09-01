@@ -163,6 +163,12 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
                       difficulties.indexOf(problemA.difficulty) -
                       difficulties.indexOf(problemB.difficulty) :
                     problemA.display.localeCompare(problemB.display);
+                    if(res === 0){
+                      if(problemA.question && problemB.question && problemA.year - problemB.year === 0){
+                        return problemA.question - problemB.question;
+                      }
+                      return problemA.year - problemB.year;
+                    }
                     return sort.asc ? res : -res;
                   })
                 .map(problem => {
