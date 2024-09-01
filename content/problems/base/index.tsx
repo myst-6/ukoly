@@ -35,6 +35,7 @@ export interface ProblemInfo {
   display: string;
   original: string;
   year: number;
+  question: number;
   tags: Tag[];
   component: JSX.Element;
   editorialAuthors: string[];
