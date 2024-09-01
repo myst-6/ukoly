@@ -48,7 +48,7 @@ Problem display can't be too long (>${MAXLEN}ch). \
           <Badge colorScheme={difficultyColors[problem.difficulty]}>{problem.difficulty}</Badge>
           <Badge>{problem.year}</Badge>
           {
-            problem.question!=0 && <Badge>{"Q" + problem.question.toString()}</Badge>
+            problem.question && <Badge>{"Q" + problem.question.toString()}</Badge>
           }
           {
             ...problem.tags.map(tag => {

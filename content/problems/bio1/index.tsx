@@ -1,4 +1,4 @@
-import { ProblemInfo } from "../base";
+import { BIO1ProblemInfo } from "../base";
 
 import {
   ASpaceOddity,
@@ -45,7 +45,7 @@ import {
   Shirts
 } from "solutions";
 
-export const bio1Problems: ProblemInfo[] = [
+export const bio1Problems: BIO1ProblemInfo[] = [
   {
     difficulty: "Medium",
     display: "Integer Strings",

@@ -13,9 +13,6 @@ export const tags = [
   "Two Pointers",
   "Math",
   "Geometry",
-  "Q1",
-  "Q2",
-  "Q3"
 ] as const;
 
 export type Tag = typeof tags[number];
@@ -35,13 +32,16 @@ export interface ProblemInfo {
   display: string;
   original: string;
   year: number;
-  question: number;
+  question?: number;
   tags: Tag[];
   component: JSX.Element;
   editorialAuthors: string[];
   solutionAuthors: string[];
 }
 
+export interface BIO1ProblemInfo extends ProblemInfo{
+  question: 1 | 2 | 3;
+}
 export type DifficultyMap<T> = Record<Difficulty, T>;
 
 export const difficultyColors: DifficultyMap<string> = {
