@@ -4,7 +4,7 @@ import * as foundations from "./foundations";
 export * from "./foundations";
 
 const config: ThemeConfig = {
-    initialColorMode: "light",
+    initialColorMode: "system",
     useSystemColorMode: true,
 };
 
