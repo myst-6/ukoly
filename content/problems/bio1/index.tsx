@@ -43,6 +43,7 @@ import {
   GoldbachConjecture,
   NumberLadder,
   DistinctPrimeFactorisation,
+  EnigmaMachine,
   Shirts,
 } from "solutions";
 
@@ -477,5 +478,15 @@ export const bio1Problems: ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <DistinctPrimeFactorisation />,
+  },
+  {
+    difficulty: "Easy",
+    display: "Enigma Machine",
+    original: "https://www.olympiad.org.uk/papers/2008/bio/bio08-exam.pdf",
+    year: 2008,
+    tags: ["Q2", "Implementation"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <EnigmaMachine />,
   },
 ];
