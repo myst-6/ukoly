@@ -5,7 +5,7 @@ export * from "./foundations";
 
 const config: ThemeConfig = {
     initialColorMode: "light",
-    useSystemColorMode: false,
+    useSystemColorMode: true,
 };
 
 export const theme = extendTheme({
