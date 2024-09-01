@@ -45,6 +45,7 @@ import {
   DistinctPrimeFactorisation,
   EnigmaMachine,
   Shirts,
+  Cards,
 } from "solutions";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
@@ -58,6 +59,17 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <IntegerStrings />,
+  },
+  {
+    difficulty: "Easy",
+    display: "Cards",
+    original: "https://olympiad.org.uk/papers/2007/bio/bio07exam.pdf",
+    year: 2007,
+    question: 1,
+    tags: ["Implementation"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <Cards />,
   },
   {
     difficulty: "Hard",
