@@ -24,8 +24,8 @@ export const IncreasingPasswords = () => {
       </SText>
       <SText>
         Now we can recursively build the $n$-th password. 
-        We can first set up a base case, where the length of the password is $1$. The output here should be the $n - ways$-th letter possible ($1$-indexed). 
-        To recursively build the password, we can iterate through each possible character, and check if the number of ways to build it and all the passwords before it is greater than or equal to $n$ 
+        We can first set up a base case, where the length of the password is $1$. The output here should be the $(n - ways)$-th letter possible ($1$-indexed). 
+        To recursively build the password, we can iterate through each possible character, and check if the number of ways to build it and all the passwords before it is greater than or equal to $n$. 
         If it is at least $n$, we know that the current letter is the next letter in the result, and so we can append it, and recursively solve for $length - 1$.
         We can finally output the result.
       </SText>
