@@ -47,3 +47,4 @@ export * from "./EnigmaMachine";
 export * from "./Shirts";
 export * from "./Cards";
 export * from "./LuckyNumbers";
+export * from "./Lojban";

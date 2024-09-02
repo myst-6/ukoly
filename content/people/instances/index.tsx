@@ -140,4 +140,18 @@ export const people: Person[] = [
     ],
     roles: ["Contributor"],
   },
+  {
+    name: "Alexander Hopkins",
+    socials: [
+      {
+        platform: platforms.codeforces,
+        handle: "tephranic",
+      },
+      {
+        platform: platforms.github,
+        handle: "tephranic",
+      },
+    ],
+    roles: ["Contributor"],
+  },
 ];

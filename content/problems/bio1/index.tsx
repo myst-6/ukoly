@@ -47,6 +47,7 @@ import {
   Shirts,
   Cards,
   LuckyNumbers,
+  Lojban,
 } from "solutions";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
@@ -556,5 +557,16 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <LuckyNumbers />,
+  },
+  {
+    difficulty: "Easy",
+    display: "Lojban",
+    original: "https://olympiad.org.uk/papers/2002/bio/bio02ex.pdf",
+    year: 2002,
+    question: 1,
+    tags: ["Brute Force"],
+    editorialAuthors: ["Alexander Hopkins"],
+    solutionAuthors: ["Alexander Hopkins"],
+    component: <Lojban />,
   },
 ];
