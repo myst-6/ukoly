@@ -51,5 +51,7 @@ export * from "./Ants";
 export * from "./Passwords";
 export * from "./LuckyNumbers";
 export * from "./Lojban";
+export * from "./Fractions";
 export * from "./Drats";
 export * from "./PlayingGames";
+export * from "./MovieMagic";

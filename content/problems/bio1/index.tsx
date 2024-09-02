@@ -52,8 +52,10 @@ import {
   Anagrams,
   LuckyNumbers,
   Lojban,
+  Fractions,
   Drats,
   PlayingGames,
+  MovieMagic,
 } from "solutions";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
@@ -81,6 +83,17 @@ export const bio1Problems: BIO1ProblemInfo[] = [
   },
   {
     difficulty: "Medium",
+    display: "Movie Magic",
+    original: "https://www.olympiad.org.uk/papers/2005/bio/bio05-exam.pdf",
+    year: 2005,
+    question: 3,
+    tags: ["Dynamic Programming", "DFS and Similar"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <MovieMagic />,
+  },
+  {
+    difficulty: "Medium",
     display: "Drats",
     original: "https://olympiad.org.uk/papers/2006/bio/bio06-exam.pdf",
     year: 2006,
@@ -100,6 +113,17 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <Anagrams />,
+  },
+  {
+    difficulty: "Easy",
+    display: "Fractions",
+    original: "https://www.olympiad.org.uk/papers/2005/bio/bio05-exam.pdf",
+    year: 2005,
+    question: 1,
+    tags: ["Implementation", "Math"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <Fractions />,
   },
   {
     difficulty: "Hard",
