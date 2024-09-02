@@ -17,15 +17,15 @@ export const HatsOff = () => {
         Let's try to apply the pigeonhole principle. We will obtain an ordering
         of the inputs such that when we calculate prefix sums, all of them
         are vectors which only contain $0$ or $1$ in their entries. Since there
-        are only $2^c$ unique $0/1$ vectors of length $c$ and $2^c + 1$ distinct
+        are only $2^c$ unique $0/1$ vectors of length $c$ and $2^c + 1$
         prefix sums (if we include the empty prefix), there is guaranteed to be
         at least one repeated vector. 
       </SText>
       <SText>
-        Let a pair of repeated prefix sums appear
-        from a prefix of length $x$ and $y$. Then the answer will contain the entries
-        from positions $x + 1$ to $y$ in the ordering, since the vector sum
-        would be zero for the same prefix sum to repeat.
+        Let a pair of repeated prefix sums appear from a prefix of length $x$ 
+        and $y$. Then the answer will contain the entries from positions $x + 1$ 
+        to $y$ in the ordering, since the vector sum would be zero for the same 
+        prefix sum to repeat.
       </SText>
 
       <STitle>Solution</STitle>
