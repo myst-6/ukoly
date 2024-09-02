@@ -45,6 +45,8 @@ export * from "./NumberLadder";
 export * from "./Shirts";
 export * from "./EnigmaMachine";
 export * from "./Shirts";
+export * from "./UpsideDown";
+export * from "./Cards";
 export * from "./Ants";
 export * from "./Passwords";
 export * from "./Cards";
