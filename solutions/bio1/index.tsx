@@ -52,3 +52,4 @@ export * from "./Passwords";
 export * from "./LuckyNumbers";
 export * from "./Lojban";
 export * from "./Drats";
+export * from "./PlayingGames";
