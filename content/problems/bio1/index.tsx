@@ -45,6 +45,8 @@ import {
   DistinctPrimeFactorisation,
   EnigmaMachine,
   Shirts,
+  Ants,
+  Passwords,
 } from "solutions";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
@@ -532,5 +534,27 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <EnigmaMachine />,
+  },
+  {
+    difficulty : "Easy",
+    display: "Passwords",
+    original: "https://www.olympiad.org.uk/papers/2000/bio/bio2kex.pdf",
+    year: 2000,
+    question: 1,
+    tags: ["Brute Force"],
+    editorialAuthors: ["Shubham Kumar"],
+    solutionAuthors: ["Shubham Kumar"],
+    component: <Passwords />,
+  },
+  {
+    difficulty: "Easy",
+    display: "Ants",
+    original: "https://www.olympiad.org.uk/papers/2000/bio/bio2kex.pdf",
+    year: 2000,
+    question: 2,
+    tags: ["Implementation"],
+    editorialAuthors: ["Shubham Kumar"],
+    solutionAuthors: ["Shubham Kumar"],
+    component: <Ants />,
   },
 ];
