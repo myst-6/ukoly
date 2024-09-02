@@ -46,6 +46,7 @@ import {
   EnigmaMachine,
   Shirts,
   Cards,
+  LuckyNumbers,
 } from "solutions";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
@@ -544,5 +545,16 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <EnigmaMachine />,
+  },
+  {
+    difficulty: "Easy",
+    display: "Lucky Numbers",
+    original: "https://www.olympiad.org.uk/papers/2014/bio/bio14-exam.pdf",
+    year: 2014,
+    question: 1,
+    tags: ["Brute Force"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <LuckyNumbers />,
   },
 ];
