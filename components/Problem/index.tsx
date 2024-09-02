@@ -8,16 +8,18 @@ import { HStack, VStack } from "../Stack";
 import { Text } from "../Text";
 import { Wrap } from "../Wrap";
 import { difficultyColors, ProblemInfo } from "content";
+import { Show } from "../Problemset/ShowMenu"
 import assert from "assert";
 
 export interface ProblemProps extends CardProps {
   problem: ProblemInfo;
   onChoose: () => void;
+  show: Show;
 }
 
 const MAXLEN = 28;
 
-export const Problem = ({ problem, onChoose, ...props }: ProblemProps) => {
+export const Problem = ({ problem, onChoose, show, ...props }: ProblemProps) => {
   assert(problem.display.length <= MAXLEN, `\
 Problem display can't be too long (>${MAXLEN}ch). \
 '${problem.display}' has ${problem.display.length} characters.`);
@@ -45,7 +47,9 @@ Problem display can't be too long (>${MAXLEN}ch). \
           </Text>
         </Box>
         <Wrap width="100%" justify="center">
-          <Badge colorScheme={difficultyColors[problem.difficulty]}>{problem.difficulty}</Badge>
+          {
+           show.showDiff && <Badge colorScheme={difficultyColors[problem.difficulty]}>{problem.difficulty}</Badge>
+          }
           <Badge>{problem.year}</Badge>
           {
             problem.question && <Badge>{"Q" + problem.question.toString()}</Badge>
@@ -53,7 +57,7 @@ Problem display can't be too long (>${MAXLEN}ch). \
           {
             ...problem.tags.map(tag => {
               return (
-                <Badge key={tag}>{tag}</Badge>
+                show.showTags && <Badge key={tag}>{tag}</Badge>
               );
             })
           }
