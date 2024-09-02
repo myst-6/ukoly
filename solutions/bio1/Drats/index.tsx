@@ -1,5 +1,4 @@
 import { SCodeBlock, SText, STitle } from "components";
-import { brace } from "solutions";
 
 export const Drats = () => {
     return (
