@@ -1,4 +1,4 @@
-import { Link, SCodeBlock, SText, STitle } from "components";
+import { SCodeBlock, SText, STitle } from "components";
 
 export const ASpaceOddity = () => {
   return (
