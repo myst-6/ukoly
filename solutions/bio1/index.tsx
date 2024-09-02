@@ -53,3 +53,4 @@ export * from "./LuckyNumbers";
 export * from "./Lojban";
 export * from "./Fractions";
 export * from "./Drats";
+export * from "./MovieMagic";
