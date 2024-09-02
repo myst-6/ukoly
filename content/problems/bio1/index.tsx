@@ -52,6 +52,7 @@ import {
   Anagrams,
   LuckyNumbers,
   Lojban,
+  Fractions,
   Drats,
 } from "solutions";
 
@@ -99,6 +100,17 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <Anagrams />,
+  },
+  {
+    difficulty: "Easy",
+    display: "Fractions",
+    original: "https://www.olympiad.org.uk/papers/2005/bio/bio05-exam.pdf",
+    year: 2005,
+    question: 1,
+    tags: ["Implementation", "Math"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <Fractions />,
   },
   {
     difficulty: "Hard",
