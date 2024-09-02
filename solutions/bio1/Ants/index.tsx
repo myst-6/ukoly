@@ -41,7 +41,7 @@ export const Ants = () => {
 
       <SSubtitle>Mainloop</SSubtitle>
       <SText>
-        Before the mainloop, the program takes in an initial value for $n$, then uses it in a while loop, which has the condition ($n$!=-1).
+        Before the mainloop, the program takes in an initial value for $n$, then uses it in a while loop, which has the condition ($n \neq -1$).
         This allows it to exit immediately on the first round, rather than producing buggy behaviour.
         After this, both bugs are moved in turn $n$ times.
         The entire grid is then printed out.
