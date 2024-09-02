@@ -16,6 +16,7 @@ import { MouseEvent, useRef, useState } from "react";
 import { FilterMenu } from "./FilterMenu";
 import { defaultSort, Sort, SortMenu } from "./SortMenu";
 import { SearchMenu } from "./SearchMenu";
+import { defaultShow, Show, ShowMenu } from "./ShowMenu";
 
 export interface ProblemsetProps {
   problems: ProblemInfo[];
@@ -30,6 +31,7 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
 
   const [sort, setSort] = useState<Sort>(defaultSort);
   const [search, setSearch] = useState<string>("");
+  const [show, setShow] = useState<Show>(defaultShow);
 
   const [width, setWidth] = useState<number>(0);
   const [drag, setDrag] = useState<boolean>(false);
@@ -127,6 +129,7 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
               onDiffChange={allowed => setAllowedDiffs(allowed)}
             />
             <SortMenu onChange={sort => setSort(sort)} />
+            <ShowMenu onChange={show => setShow(show)} />
             <SearchMenu  onChange={search => setSearch(search)} />
           </HStack>
           <Wrap justify="center" overflowY="auto">
@@ -174,7 +177,7 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
                 .map(problem => {
                   return (
                     <WrapItem p={1} key={problem.display}>
-                      <Problem problem={problem} onChoose={() => setProblem(problem)} />
+                      <Problem problem={problem} onChoose={() => setProblem(problem)} show={show} />
                     </WrapItem>
                   );
                 })
