@@ -52,6 +52,7 @@ import {
   Anagrams,
   LuckyNumbers,
   Lojban,
+  Drats,
 } from "solutions";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
@@ -76,6 +77,17 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <Cards />,
+  },
+  {
+    difficulty: "Medium",
+    display: "Drats",
+    original: "https://olympiad.org.uk/papers/2006/bio/bio06-exam.pdf",
+    year: 2006,
+    question: 3,
+    tags: ["Dynamic Programming"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <Drats />,
   },
   {
     difficulty: "Easy",
