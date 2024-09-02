@@ -48,6 +48,7 @@ import {
   Ants,
   Passwords,
   Cards,
+  Lojban,
 } from "solutions";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
@@ -568,5 +569,16 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Shubham Kumar"],
     solutionAuthors: ["Shubham Kumar"],
     component: <Ants />,
+  },
+  {
+    difficulty: "Easy",
+    display: "Lojban",
+    original: "https://olympiad.org.uk/papers/2002/bio/bio02ex.pdf",
+    year: 2002,
+    question: 1,
+    tags: ["Brute Force"],
+    editorialAuthors: ["Alexander Hopkins"],
+    solutionAuthors: ["Alexander Hopkins"],
+    component: <Lojban />,
   },
 ];
