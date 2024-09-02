@@ -1,6 +1,6 @@
 import { SCodeBlock, SText, STitle } from "components";
 
-export const AnagramNumbers = () => {
+export const Passwords = () => {
   return (
     <>
       <STitle>Solution</STitle>
