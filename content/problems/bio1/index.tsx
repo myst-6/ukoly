@@ -54,6 +54,7 @@ import {
   Lojban,
   Fractions,
   Drats,
+  MovieMagic,
 } from "solutions";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
@@ -78,6 +79,17 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <Cards />,
+  },
+  {
+    difficulty: "Medium",
+    display: "Movie Magic",
+    original: "https://www.olympiad.org.uk/papers/2005/bio/bio05-exam.pdf",
+    year: 2005,
+    question: 3,
+    tags: ["Dynamic Programming", "DFS and Similar"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <MovieMagic />,
   },
   {
     difficulty: "Medium",
