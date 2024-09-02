@@ -53,6 +53,7 @@ import {
   LuckyNumbers,
   Lojban,
   Drats,
+  PlayingGames,
 } from "solutions";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
@@ -628,5 +629,15 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alexander Hopkins"],
     solutionAuthors: ["Alexander Hopkins"],
     component: <Lojban />,
+  },{
+    difficulty: "Medium",
+    display: "Playing Games",
+    original: "https://olympiad.org.uk/papers/2000/bio/bio2kex.pdf",
+    year: 2000,
+    question: 3,
+    tags: ["Brute Force", "Implementation"],
+    editorialAuthors: ["Shubham Kumar"],
+    solutionAuthors: ["Shubham Kumar"],
+    component: <PlayingGames />,
   },
 ];
