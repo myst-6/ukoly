@@ -25,12 +25,12 @@ export const Ants = () => {
         <SText>Toggle the colour of the square</SText>
       </SList>
       <SText>
-        It is imperative that this is done in the correct order, or else the outcome will be completely different
+        It is imperative that this is done in the correct order, or else the outcome will be completely different.
       </SText>
 
       <SSubtitle>Removing an ant</SSubtitle>
       <SText>
-        If an ant falls of the edge of the board, you can set a flag, which prevents it from running any more functions, and prints "Removed" instead of its position
+        If an ant falls off the edge of the board, you can set a flag, which prevents it from running any more functions, and prints "Removed" instead of its position.
       </SText>
 
       <STitle>Code</STitle>
