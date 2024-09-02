@@ -60,6 +60,24 @@ export const people: Person[] = [
     roles: ["Contributor"]
   },
   {
+    name: "Shubham Kumar",
+    socials: [
+      {
+        platform: platforms.discord,
+        handle: "626315460538793985",
+      },
+      {
+        platform: platforms.codeforces,
+        handle: "RedMinecrafter101",
+      },
+      {
+        platform: platforms.github,
+        handle: "RedMincrafter",
+      },
+    ],
+    roles: ["Contributor"],
+  },
+  {
     name: "Yuvan Raja",
     socials: [
       // i don't know yuvan's discord :C
