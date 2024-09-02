@@ -1,6 +1,6 @@
 import { SCodeBlock, SText, STitle } from "components";
 
-export const ASpaceOddity = () => {
+export const Lojban = () => {
   return (
     <>
       <STitle>Idea</STitle>
