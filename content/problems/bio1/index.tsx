@@ -48,6 +48,7 @@ import {
   Ants,
   Passwords,
   Cards,
+  LuckyNumbers,
   Lojban,
 } from "solutions";
 
@@ -569,6 +570,17 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Shubham Kumar"],
     solutionAuthors: ["Shubham Kumar"],
     component: <Ants />,
+  },
+  {
+    difficulty: "Easy",
+    display: "Lucky Numbers",
+    original: "https://www.olympiad.org.uk/papers/2014/bio/bio14-exam.pdf",
+    year: 2014,
+    question: 1,
+    tags: ["Brute Force"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <LuckyNumbers />,
   },
   {
     difficulty: "Easy",
