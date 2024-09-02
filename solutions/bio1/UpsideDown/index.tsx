@@ -7,7 +7,7 @@ export const UpsideDown = () => {
       <STitle>Idea</STitle>
       <SText>
         Let's first notice the large constraint on $n$. 
-        This means that we can't simply generate all numbers up to the $n-th$ number, as this would be too slow.
+        This means that we can't simply generate all numbers up to the $n$-th number, as this would be too slow.
         Instead, we can generate the $n$-th number efficiently, using dyanmic programming.
       </SText>
 
