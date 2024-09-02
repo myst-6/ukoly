@@ -120,8 +120,9 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
           spacing={1} 
           h="65vh"
         >
+          <Text p={1} typography="display.small">Problems</Text>
           <HStack spacing={2} justifyContent="center">
-            <Text p={1} typography="display.small">Problems</Text>
+            
             <FilterMenu 
               problems={problems} 
               onYearChange={allowed => setAllowedYears(allowed)}

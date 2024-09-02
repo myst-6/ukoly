@@ -53,7 +53,7 @@ export const ShowMenu = ({
             value={show.showTags ? "tags" : "hidden"}
             onClick={() => setShow(({ showDiff, showTags }) => ({ showDiff: showDiff, showTags: !showTags }))}
           >
-            {"Problem Type"}
+            {"Problem Tags"}
           </MenuItemOption>
           
         </MenuOptionGroup>
