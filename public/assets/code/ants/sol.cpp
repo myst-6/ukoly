@@ -13,7 +13,7 @@ class Ant{ // this class is not necessary, all of this code could be written seq
     short x,y,direction;
     bool exists = true; // all ants begin existing
     public:
-    void initalise(){
+    void initialise(){
         char c;
         cin >> x >> y >> c;
         x--; y--; // convert to 0 indexing
@@ -39,8 +39,8 @@ class Ant{ // this class is not necessary, all of this code could be written seq
 
 int main(){
     Ant ants[2]; // init ants
-    ants[0].initalise();
-    ants[1].initalise();
+    ants[0].initialise();
+    ants[1].initialise();
 
     // mainloop
     int n;
