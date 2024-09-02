@@ -47,3 +47,4 @@ export * from "./EnigmaMachine";
 export * from "./Shirts";
 export * from "./Ants";
 export * from "./Passwords";
+export * from "./Cards";
