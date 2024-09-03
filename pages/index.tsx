@@ -11,6 +11,7 @@ export default function Home() {
           maxWidth="100%"
           px={5}
           py={2}
+          mb={20}
           justifyContent="center"
           height="100%"
         >
@@ -28,13 +29,46 @@ export default function Home() {
           <Text typography="body.medium">
             If you want to contribute, message Boris on discord by clicking the discord icon by his name.
           </Text>
+
+          <Text typography='title.large' padding="5% 0% 0% 0%">Managers</Text>
+          <Divider mb={3} mt={3} />
           <SimpleGrid mt={2} columns={2} gap={4}>
             {
-              ...people.map((info, index) => {
-                return <Profile key={index} person={info} />;
-              })
+              ...people
+                .filter((info, _) => info.roles.includes("Manager"))
+                .sort((a, b) => a.name.localeCompare(b.name))
+                .map((info, index) => {
+                  return <Profile key={index} person={info} />;
+                })
             }
           </SimpleGrid>
+
+          <Text typography='title.large' padding="5% 0% 0% 0%">Developers</Text>
+          <Divider mb={3} mt={3} />
+          <SimpleGrid mt={2} columns={2} gap={4}>
+            {
+              ...people
+                .filter((info, _) => info.roles.includes("Developer") && !info.roles.includes("Manager"))
+                .sort((a, b) => a.name.localeCompare(b.name))
+                .map((info, index) => {
+                  return <Profile key={index} person={info} />;
+                })
+            }
+          </SimpleGrid>
+
+          <Text typography='title.large' padding="5% 0% 0% 0%">Contributors</Text>
+          <Divider mb={3} mt={3} />
+          <SimpleGrid mt={2} columns={2} gap={4}>
+            {
+              ...people
+                .filter((info, _) => !info.roles.includes("Developer") && !info.roles.includes("Manager"))
+                .sort((a, b) => a.name.localeCompare(b.name))
+                .map((info, index) => {
+                  return <Profile key={index} person={info} />;
+                })
+            }
+          </SimpleGrid>
+
         </Box>
       </Flex>
     </>
