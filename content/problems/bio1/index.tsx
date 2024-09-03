@@ -56,6 +56,7 @@ import {
   Drats,
   MovieMagic,
   MayanCalendar,
+  WatchingTheClock,
 } from "solutions";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
@@ -664,5 +665,16 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alexander Hopkins"],
     solutionAuthors: ["Alexander Hopkins"],
     component: <Lojban />,
+  },
+  {
+    difficulty: "Easy",
+    display: "Watching The Clock",
+    original: "https://www.olympiad.org.uk/papers/2013/bio/bio13-exam.pdf",
+    year: 2013,
+    question: 1,
+    tags: ["Brute Force"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <WatchingTheClock />,
   },
 ];
