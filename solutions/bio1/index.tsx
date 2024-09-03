@@ -54,3 +54,4 @@ export * from "./Lojban";
 export * from "./Fractions";
 export * from "./Drats";
 export * from "./MovieMagic";
+export * from "./MayanCalendar";
