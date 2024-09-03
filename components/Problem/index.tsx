@@ -33,7 +33,7 @@ Problem display can't be too long (>${MAXLEN}ch). \
             <Flex flex={1} justifyContent="flex-end">
               <Button 
                 size="sm" 
-                colorScheme={show.showDiff ? difficultyColors[problem.difficulty] : "purple"} 
+                colorScheme={show.showDiff ? difficultyColors[problem.difficulty] : "gray"} 
                 onClick={() => onChoose()}
               >
                 View
