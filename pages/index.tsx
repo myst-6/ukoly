@@ -1,6 +1,19 @@
 import { Box, Divider, Flex, Header, Profile, SimpleGrid, Text } from "components";
 import { pages, people } from "content";
 
+function cmp(a: string, b: string) {
+  let names1 = a.split(" ");
+  let names2 = b.split(" ");
+
+  let surname1 = names1.slice(-1)[0];
+  let surname2 = names2.slice(-1)[0];
+  if (!(surname1 && surname2)) return a.localeCompare(b);
+
+  if (names1.slice(-1)[0] != names2.slice(-1)[0]) 
+      return surname1.localeCompare(surname2);
+  return a.localeCompare(b);
+}
+
 export default function Home() {
   return (
     <>
@@ -36,7 +49,7 @@ export default function Home() {
             {
               ...people
                 .filter((info, _) => info.roles.includes("Manager"))
-                .sort((a, b) => a.name.localeCompare(b.name))
+                .sort((a, b) => cmp(a.name, b.name))
                 .map((info, index) => {
                   return <Profile key={index} person={info} />;
                 })
@@ -49,7 +62,7 @@ export default function Home() {
             {
               ...people
                 .filter((info, _) => info.roles.includes("Developer") && !info.roles.includes("Manager"))
-                .sort((a, b) => a.name.localeCompare(b.name))
+                .sort((a, b) => cmp(a.name, b.name))
                 .map((info, index) => {
                   return <Profile key={index} person={info} />;
                 })
@@ -62,7 +75,7 @@ export default function Home() {
             {
               ...people
                 .filter((info, _) => !info.roles.includes("Developer") && !info.roles.includes("Manager"))
-                .sort((a, b) => a.name.localeCompare(b.name))
+                .sort((a, b) => cmp(a.name, b.name))
                 .map((info, index) => {
                   return <Profile key={index} person={info} />;
                 })
