@@ -13,7 +13,7 @@ export const Mops = () => {
 
       <STitle>Solution</STitle>
       <SText>
-        Let's first initialize and array, <SCode>moplen</SCode> storing the minimum mop length for any positive integer $i$.
+        Let's first initialise an array <SCode>moplen</SCode> storing the minimum mop length for any positive integer $i$.
         We can initialize the value of <SCode>moplen[0]</SCode> to $0$, as we need exactly $0$ $1$s to represent $0$.
         For each positive integer from $0$ to $n$, we can calculate the minimum possible mop length to be the minimum of the following:
       </SText>
@@ -25,7 +25,7 @@ export const Mops = () => {
             The length of this mop is the sum of the lengths of the mops of the factors.
         </SText>
       </SList>
-      <SText>Finally, we can output the moplength of the desired number, $n$.</SText>
+      <SText>Finally, we can output the mop length of the desired number, $n$.</SText>
 
       <STitle>Code</STitle>
       <SCodeBlock path="mops/sol"/>
