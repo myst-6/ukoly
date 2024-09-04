@@ -80,13 +80,12 @@ export const people: Person[] = [
   {
     name: "Yuvan Raja",
     socials: [
-      // i don't know yuvan's discord :C
       {
         platform: platforms.github,
         handle: "ykr5184",
       }
     ],
-    roles: ["Contributor"],
+    roles: ["Developer", "Contributor"],
   },
   {
     name: "Anango Prabhat",

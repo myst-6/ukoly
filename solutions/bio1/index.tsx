@@ -55,3 +55,4 @@ export * from "./Fractions";
 export * from "./Drats";
 export * from "./MovieMagic";
 export * from "./ISBN";
+export * from "./MayanCalendar";

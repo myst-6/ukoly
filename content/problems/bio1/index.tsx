@@ -55,7 +55,8 @@ import {
   Fractions,
   Drats,
   MovieMagic,
-  ISBN
+  ISBN,
+  MayanCalendar,
 } from "solutions";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
@@ -69,6 +70,17 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <IntegerStrings />,
+  },
+  {
+    difficulty: "Easy",
+    display: "Mayan Calendar",
+    original: "https://olympiad.org.uk/papers/2004/bio/bio04ex.pdf",
+    year: 2004,
+    question: 1,
+    tags: ["Math"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <MayanCalendar />,
   },
   {
     difficulty: "Easy",
