@@ -57,6 +57,7 @@ import {
   MovieMagic,
   ISBN,
   MayanCalendar,
+  Mops,
 } from "solutions";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
@@ -676,5 +677,16 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alexander Hopkins"],
     solutionAuthors: ["Alexander Hopkins"],
     component: <Lojban />,
+  },
+  {
+    difficulty: "Easy",
+    display: "Mops",
+    original: "https://www.olympiad.org.uk/papers/2002/bio/bio02ex.pdf",
+    year: 2002,
+    question: 3,
+    tags: ["Dynamic Programming"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <Mops />,
   },
 ];
