@@ -1,5 +1,4 @@
 import { ProblemInfo } from "../base";
-import { BrokersDoom, Carve, Dino, Milk, Proto, Whisperer, TerminalVelocity, ScoopOne, ScoopTwo, KeepOnTheGrass, Byway, Cables, TickTock, BestOfShow, PhotoFinish } from "solutions";
 import { BrokersDoom, Carve, Dino, Milk, Proto, Whisperer, TerminalVelocity, ScoopOne, ScoopTwo, KeepOnTheGrass, Byway, Cables, TickTock, BestOfShow, PhotoFinish, HatsOff } from "solutions";
 
 
