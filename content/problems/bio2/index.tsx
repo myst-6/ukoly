@@ -1,5 +1,5 @@
 import { ProblemInfo } from "../base";
-import { BrokersDoom, Carve, Dino, Milk, Proto, Whisperer, TerminalVelocity, ScoopOne, ScoopTwo, KeepOnTheGrass, Byway, Cables, TickTock, BestOfShow, HatsOff, Raiders } from "solutions";
+import { BrokersDoom, Carve, Dino, Milk, Proto, Whisperer, TerminalVelocity, ScoopOne, ScoopTwo, KeepOnTheGrass, Byway, Cables, TickTock, BestOfShow, PhotoFinish, HatsOff, Raiders } from "solutions";
 
 
 export const bio2Problems: ProblemInfo[] = [
@@ -142,6 +142,16 @@ export const bio2Problems: ProblemInfo[] = [
     editorialAuthors: ["Vladimir Filip", "Yuvan Raja"],
     solutionAuthors: ["Vladimir Filip", "Yuvan Raja"],
     component: <TickTock />
+  },
+  {
+    difficulty: "Hard",
+    display: "Photo Finish",
+    original: "https://www.olympiad.org.uk/papers/2017/final/PhotoFinish.pdf",
+    year: 2017,
+    tags: ["Implementation"],
+    editorialAuthors: ["Vladimir Filip"],
+    solutionAuthors: ["Vladimir Filip"],
+    component: <PhotoFinish />
   },
   {
     difficulty: "Insane",
