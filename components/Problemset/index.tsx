@@ -1,5 +1,5 @@
 import { useMediaQuery } from "@chakra-ui/react";
-import { difficulties, Difficulty, ProblemInfo, Tag } from "content";
+import { difficulties, Difficulty, ProblemInfo, Question, Tag } from "content";
 import { Box } from "../Box";
 import { Card } from "../Card";
 import { Divider } from "../Divider";
@@ -28,6 +28,7 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
   const [allowedYears, setAllowedYears] = useState<number[]>();
   const [allowedTags, setAllowedTags] = useState<Tag[]>();
   const [allowedDiffs, setAllowedDiffs] = useState<Difficulty[]>();
+  const [allowedQuestionNumbers, setAllowedQuestionNumbers] = useState<Question[]>();
 
   const [sort, setSort] = useState<Sort>(defaultSort);
   const [search, setSearch] = useState<string>("");
@@ -128,6 +129,7 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
               onYearChange={allowed => setAllowedYears(allowed)}
               onTagChange={allowed => setAllowedTags(allowed)}
               onDiffChange={allowed => setAllowedDiffs(allowed)}
+              onQuestionNumberChange={allowed => setAllowedQuestionNumbers(allowed)}
             />
             <SortMenu onChange={sort => setSort(sort)} />
             <ShowMenu onChange={show => setShow(show)} />
@@ -142,6 +144,14 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
                   }
                   if (allowedYears) {
                     if (!allowedYears.includes(problem.year)) {
+                      return false;
+                    }
+                  }
+                  if (allowedQuestionNumbers) {
+                    if (problem.question === undefined) {
+                      return true;
+                    }
+                    if (!allowedQuestionNumbers.includes(problem.question)) {
                       return false;
                     }
                   }
