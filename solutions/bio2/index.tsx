@@ -12,4 +12,6 @@ export * from "./ScoopTwo";
 export * from "./Cables";
 export * from "./Byway";
 export * from "./BestOfShow";
+export * from "./Raiders";
+export * from "./PhotoFinish";
 export * from "./HatsOff";

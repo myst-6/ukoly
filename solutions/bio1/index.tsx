@@ -56,3 +56,5 @@ export * from "./Drats";
 export * from "./MovieMagic";
 export * from "./MayanCalendar";
 export * from "./WatchingTheClock"; 
+export * from "./ISBN";
+export * from "./Mops";
