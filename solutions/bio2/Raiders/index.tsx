@@ -44,7 +44,7 @@ export const Raiders = () => {
         Yet we can't swap pedestals $0$ with $v_1$ because we've already done this swap.
       </SText>
       <SText>
-        To redemy this, let's perform the swap $(n + 1, v_k)$ before the above sequence.
+        To remedy this, let's perform the swap $(n + 1, v_k)$ before the above sequence.
         Now, at the end of the above sequence, the idol from $v_k$ is at pedestal $n + 1$
         when it's meant to be at position $v_1$. So, let's perform the swap $(n + 1, v_1)$.
         Now all the idols in the cycle are in the correct place, but the idols $0$ and
