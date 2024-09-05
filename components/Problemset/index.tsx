@@ -148,10 +148,7 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
                     }
                   }
                   if (allowedQuestionNumbers) {
-                    if (problem.question === undefined) {
-                      return true;
-                    }
-                    if (!allowedQuestionNumbers.includes(problem.question)) {
+                    if (problem.question && !allowedQuestionNumbers.includes(problem.question)) {
                       return false;
                     }
                   }
