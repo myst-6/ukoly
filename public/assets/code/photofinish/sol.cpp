@@ -20,9 +20,9 @@ int getIndexOfMax(int n, vector<int> v) {
 
 bool isPermIndexEven(int n, vector<int> v) {
     /*
-     * Returns true if the vector v containing a permutation of integers from 1 to n
-     * would have an even index in the sequence of permutations produced
-     * according to the logic in the problem statement
+     * Returns true if the vector v containing a permutation of integers 
+     * from 1 to n would have an even index in the sequence of permutations 
+     * generated according to the procedure in the problem statement
      */
     if (n == 1)
         return true;
@@ -62,16 +62,12 @@ void solve(int n, vector<int>& v) {
 signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    int t;
-    cin >> t;
-    while (t--) {
-        int n;
-        cin >> n;
-        vector<int> v(n);
-        for (int i = 0; i < n; i++) cin >> v[i];
-        solve(n, v);
-        for (int i = 0; i < n - 1; i++) cout << v[i] << " ";
-        cout << v[n - 1] << endl;
-        cache.clear();
-    }
+    int n;
+    cin >> n;
+    vector<int> v(n);
+    for (int i = 0; i < n; i++) cin >> v[i];
+    solve(n, v);
+    for (int i = 0; i < n - 1; i++) cout << v[i] << " ";
+    cout << v[n - 1] << endl;
+    return 0;
 }
