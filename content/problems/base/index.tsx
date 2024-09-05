@@ -27,13 +27,14 @@ export const difficulties = [
 ] as const;
 
 export type Difficulty = typeof difficulties[number];
+export type Question = 1 | 2 | 3;
 
 export interface ProblemInfo {
   difficulty: Difficulty;
   display: string;
   original: string;
   year: number;
-  question?: number;
+  question?: Question;
   tags: Tag[];
   component: JSX.Element;
   editorialAuthors: string[];
@@ -41,7 +42,7 @@ export interface ProblemInfo {
 }
 
 export interface BIO1ProblemInfo extends ProblemInfo{
-  question: 1 | 2 | 3;
+  question: Question;
 }
 export type DifficultyMap<T> = Record<Difficulty, T>;
 

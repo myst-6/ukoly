@@ -1,11 +1,12 @@
 import { HStack, IconButton, Menu, MenuButton, MenuItemOption, MenuList, MenuOptionGroup } from "@chakra-ui/react";
-import { difficulties, Difficulty, ProblemInfo, Tag } from "content";
+import { difficulties, Difficulty, ProblemInfo, Question, Tag } from "content";
 import { FaFilter } from "react-icons/fa";
 import { useGroup } from "./hook";
 
 export interface FilterMenuProps {
   problems: ProblemInfo[];
   onYearChange: (allowed: number[]) => void;
+  onQuestionNumberChange: (allowed: Question[]) => void;
   onTagChange: (allowed: Tag[]) => void;
   onDiffChange: (allowed: Difficulty[]) => void;
 }
@@ -15,8 +16,9 @@ type Heatmap<T> = Map<T,number>;
 export const FilterMenu = ({ 
   problems, 
   onYearChange, 
+  onQuestionNumberChange,
   onTagChange,
-  onDiffChange
+  onDiffChange,
 }: FilterMenuProps) => {
   const years = [...problems.reduce<Heatmap<number>>((map, { year }) => {
     const curr = map.get(year) || 0;
@@ -44,6 +46,15 @@ export const FilterMenu = ({
     return difficulties.indexOf(difficultyA) - difficulties.indexOf(difficultyB);
   });
 
+  const questionNumbers = [...problems.reduce<Heatmap<Question>>((map, { question }) => {
+    if (question === undefined) return map;
+    const curr = map.get(question) || 0;
+    map.set(question, curr + 1);
+    return map;
+  }, new Map()).entries()].sort(([ questionNumber1 ], [ questionNumber2 ]) => {
+    return questionNumber1 - questionNumber2;
+  });
+
   const allYears = years.map(([ year ]) => year);
   const { 
     value: yearValue, 
@@ -64,6 +75,13 @@ export const FilterMenu = ({
     toggle: toggleDiff, 
     toggleAll: toggleAllDiffs 
   } = useGroup(allDiffs, onDiffChange);
+
+  const allQuestionNumbers = questionNumbers.map(([ questionNumber ]) => questionNumber);
+  const { 
+    value: questionNumberValue, 
+    toggle: toggleQuestionNumber, 
+    toggleAll: toggleAllQuestionNumbers 
+  } = useGroup(allQuestionNumbers, onQuestionNumberChange);
 
   return (
     <Menu closeOnSelect={false}>
@@ -98,29 +116,29 @@ export const FilterMenu = ({
               })
             }
           </MenuOptionGroup>
-          <MenuOptionGroup 
-            title="Tag" 
+          {questionNumbers.length > 0 && <MenuOptionGroup 
+            title="Question Number" 
             type="checkbox"
             overflowY="auto"
-            value={tagValue} 
+            value={questionNumberValue.map(questionNumber => String(questionNumber))}
           >
-            <MenuItemOption value="all" onClick={() => toggleAllTags()}>
+            <MenuItemOption value="all" onClick={() => toggleAllQuestionNumbers()}>
               Toggle All
             </MenuItemOption>
             {
-              tags.map(([ tag, count ], index) => {
+              questionNumbers.map(([ questionNumber, count ], index) => {
                 return (
                   <MenuItemOption 
-                    value={tag} 
-                    onClick={() => toggleTag(tag)} 
+                    value={String(questionNumber)} 
+                    onClick={() => toggleQuestionNumber(questionNumber)} 
                     key={index}
                   >
-                    {`${tag} (${count})`}
+                    {`Q${questionNumber} (${count})`}
                   </MenuItemOption>
                 );
               })
             }
-          </MenuOptionGroup>
+          </MenuOptionGroup>}
           <MenuOptionGroup 
             title="Difficulty" 
             type="checkbox"
@@ -139,6 +157,29 @@ export const FilterMenu = ({
                     key={index}
                   >
                     {`${diff} (${count})`}
+                  </MenuItemOption>
+                );
+              })
+            }
+          </MenuOptionGroup>
+          <MenuOptionGroup 
+            title="Tag" 
+            type="checkbox"
+            overflowY="auto"
+            value={tagValue} 
+          >
+            <MenuItemOption value="all" onClick={() => toggleAllTags()}>
+              Toggle All
+            </MenuItemOption>
+            {
+              tags.map(([ tag, count ], index) => {
+                return (
+                  <MenuItemOption 
+                    value={tag} 
+                    onClick={() => toggleTag(tag)} 
+                    key={index}
+                  >
+                    {`${tag} (${count})`}
                   </MenuItemOption>
                 );
               })
