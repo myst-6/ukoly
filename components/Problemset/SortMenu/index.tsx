@@ -30,8 +30,9 @@ export const SortMenu = ({
       <MenuButton
         as={IconButton}
         aria-label="Sort"
-        icon={<FaSort />}
+        icon={<FaSort size="100%" />}
         variant="filled"
+        height="100%"
       />
       <MenuList maxH="sm" overflowY="auto">
         <MenuOptionGroup 

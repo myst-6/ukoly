@@ -30,8 +30,9 @@ export const ShowMenu = ({
       <MenuButton
         as={IconButton}
         aria-label="Show"
-        icon={<BiSolidHide />}
+        icon={<BiSolidHide size="100%" />}
         variant="filled"
+        height="100%"
       />
       <MenuList maxH="sm" overflowY="auto">
         <MenuOptionGroup 

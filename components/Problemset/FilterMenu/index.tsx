@@ -70,8 +70,9 @@ export const FilterMenu = ({
       <MenuButton
         as={IconButton}
         aria-label="Filter"
-        icon={<FaFilter />}
+        icon={<FaFilter size="100%" />}
         variant="filled"
+        height="100%"
       />
       <MenuList maxH="sm" overflowY="auto">
         <HStack alignItems="flex-start">

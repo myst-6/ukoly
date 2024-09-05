@@ -28,9 +28,10 @@ export const SearchMenu = ({
     >
       <PopoverTrigger>
         <IconButton 
-          icon={<FaSearch />} 
+          icon={<FaSearch size="100%" />} 
           aria-label="" 
           variant="filled" 
+          height="100%"
         />
       </PopoverTrigger>
       <PopoverContent p={5}>

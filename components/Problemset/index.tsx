@@ -121,8 +121,13 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
           h="65vh"
         >
           <Text p={1} typography="display.small">Problems</Text>
-          <HStack spacing={2} justifyContent="center">
-            
+          <HStack 
+            justifyContent="center" 
+            spacing={isNarrow ? 10 : 2} 
+            height={isNarrow ? "2rem" : "1.125rem"}
+            mt={2}
+            mb={2}
+          >
             <FilterMenu 
               problems={problems} 
               onYearChange={allowed => setAllowedYears(allowed)}
