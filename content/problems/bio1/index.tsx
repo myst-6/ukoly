@@ -55,6 +55,7 @@ import {
   Fractions,
   Drats,
   MovieMagic,
+  ISBN,
   MayanCalendar,
   Mops,
 } from "solutions";
@@ -92,6 +93,17 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <Cards />,
+  },
+  {
+    difficulty: "Easy",
+    display: "ISBN",
+    original: "https://olympiad.org.uk/papers/2003/bio/bio03ex.pdf",
+    year: 2003,
+    question: 1,
+    tags: ["Implementation"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <ISBN />,
   },
   {
     difficulty: "Medium",
