@@ -1,5 +1,5 @@
 import { ProblemInfo } from "../base";
-import { BrokersDoom, Carve, Dino, Milk, Proto, Whisperer, TerminalVelocity, ScoopOne, ScoopTwo, KeepOnTheGrass, Byway, Cables, TickTock, BestOfShow, HatsOff } from "solutions";
+import { BrokersDoom, Carve, Dino, Milk, Proto, Whisperer, TerminalVelocity, ScoopOne, ScoopTwo, KeepOnTheGrass, Byway, Cables, TickTock, BestOfShow, HatsOff, Raiders } from "solutions";
 
 
 export const bio2Problems: ProblemInfo[] = [
@@ -152,5 +152,15 @@ export const bio2Problems: ProblemInfo[] = [
     editorialAuthors: ["Boris Hall"],
     solutionAuthors: ["Boris Hall"],
     component: <HatsOff />
+  },
+  {
+    difficulty: "Easy",
+    display: "Raiders", // The original name is way too long.
+    original: "https://www.olympiad.org.uk/papers/2020/final/Raiders.pdf",
+    year: 2020,
+    tags: ["Greedy", "Implementation"],
+    editorialAuthors: ["Boris Hall"],
+    solutionAuthors: ["Boris Hall"],
+    component: <Raiders />
   }
 ];
