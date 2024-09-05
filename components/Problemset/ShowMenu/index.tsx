@@ -1,4 +1,5 @@
 import { IconButton, Menu, MenuButton, MenuItemOption, MenuList, MenuOptionGroup } from "@chakra-ui/react";
+import { Text } from "../../Text";
 import { useEffect, useState } from "react";
 import { BiSolidHide } from "react-icons/bi";
 
@@ -14,10 +15,12 @@ export const defaultShow: Show = {
 
 export interface ShowMenuProps {
   onChange: (show: Show) => void;
+  isNarrow?: boolean;
 }
 
 export const ShowMenu = ({ 
-  onChange
+  onChange,
+  isNarrow = false,
 }: ShowMenuProps) => {
   const [show, setShow] = useState<Show>(defaultShow);
 
@@ -46,15 +49,18 @@ export const ShowMenu = ({
             value={show.showDiff ? "diff" : "hidden"}
             onClick={() => setShow(({ showDiff, showTags }) => ({ showDiff: !showDiff, showTags: showTags }))}
           >
-            
-            {"Problem Difficulty"}
+            <Text typography={isNarrow ? "body.large" : "body.medium"}>
+              Problem Difficulty
+            </Text>
           </MenuItemOption>
           <MenuItemOption 
             type="checkbox"
             value={show.showTags ? "tags" : "hidden"}
             onClick={() => setShow(({ showDiff, showTags }) => ({ showDiff: showDiff, showTags: !showTags }))}
           >
-            {"Problem Tags"}
+            <Text typography={isNarrow ? "body.large" : "body.medium"}>
+              Problem Tags
+            </Text>
           </MenuItemOption>
           
         </MenuOptionGroup>

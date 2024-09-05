@@ -1,4 +1,5 @@
 import { Icon, IconButton, Menu, MenuButton, MenuItemOption, MenuList, MenuOptionGroup } from "@chakra-ui/react";
+import { Text } from "../../Text";
 import { useEffect, useState } from "react";
 import { FaSort, FaSortAmountDown, FaSortAmountUp } from "react-icons/fa";
 
@@ -14,10 +15,12 @@ export const defaultSort: Sort = {
 
 export interface SortMenuProps {
   onChange: (sort: Sort) => void;
+  isNarrow?: boolean;
 }
 
 export const SortMenu = ({ 
-  onChange
+  onChange,
+  isNarrow = false,
 }: SortMenuProps) => {
   const [sort, setSort] = useState<Sort>(defaultSort);
 
@@ -44,13 +47,19 @@ export const SortMenu = ({
           <MenuItemOption 
             value={"dir"}
             onClick={() => setSort(({ prop, asc }) => ({ prop, asc: !asc }))}
+            // height="3rem"
           >
             <Icon 
               as={sort.asc ? FaSortAmountUp : FaSortAmountDown} 
               display="inline"
               mr={2}
             />
-            {sort.asc ? "Ascending" : "Descending"}
+            <Text 
+              display="inline" 
+              typography={isNarrow ? "body.large" : "body.medium"}
+            >
+              {sort.asc ? "Ascending" : "Descending"}
+            </Text>
           </MenuItemOption>
           {
             ...(["Year", "Difficulty", "Title"] as const).flatMap(prop => {
@@ -59,7 +68,9 @@ export const SortMenu = ({
                   key={prop} 
                   value={prop} 
                   onClick={() => setSort(({ prop: _oldProp, asc }) => ({ prop, asc }))}>
-                  {prop}
+                  <Text typography={isNarrow ? "body.large" : "body.medium"}>
+                    {prop}
+                  </Text>
                 </MenuItemOption>
               );
             })

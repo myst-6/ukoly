@@ -1,4 +1,5 @@
 import { HStack, IconButton, Menu, MenuButton, MenuItemOption, MenuList, MenuOptionGroup } from "@chakra-ui/react";
+import { Text } from "../../Text";
 import { difficulties, Difficulty, ProblemInfo, Tag } from "content";
 import { FaFilter } from "react-icons/fa";
 import { useGroup } from "./hook";
@@ -8,6 +9,7 @@ export interface FilterMenuProps {
   onYearChange: (allowed: number[]) => void;
   onTagChange: (allowed: Tag[]) => void;
   onDiffChange: (allowed: Difficulty[]) => void;
+  isNarrow?: boolean;
 }
 
 type Heatmap<T> = Map<T,number>;
@@ -16,7 +18,8 @@ export const FilterMenu = ({
   problems, 
   onYearChange, 
   onTagChange,
-  onDiffChange
+  onDiffChange,
+  isNarrow = false,
 }: FilterMenuProps) => {
   const years = [...problems.reduce<Heatmap<number>>((map, { year }) => {
     const curr = map.get(year) || 0;
@@ -83,7 +86,9 @@ export const FilterMenu = ({
             value={yearValue.map(year => String(year))} 
           >
             <MenuItemOption value="all" onClick={() => toggleAllYears()}>
-              Toggle All
+              <Text typography={isNarrow ? "body.large" : "body.medium"}>
+                Toggle All
+              </Text>
             </MenuItemOption>
             {
               years.map(([ year, count ], index) => {
@@ -93,7 +98,9 @@ export const FilterMenu = ({
                     onClick={() => toggleYear(year)} 
                     key={index}
                   >
-                    {`${year} (${count})`}
+                    <Text typography={isNarrow ? "body.large" : "body.medium"}>
+                      {`${year} (${count})`}
+                    </Text>
                   </MenuItemOption>
                 );
               })
@@ -106,7 +113,9 @@ export const FilterMenu = ({
             value={tagValue} 
           >
             <MenuItemOption value="all" onClick={() => toggleAllTags()}>
-              Toggle All
+              <Text typography={isNarrow ? "body.large" : "body.medium"}>
+                Toggle All
+              </Text>
             </MenuItemOption>
             {
               tags.map(([ tag, count ], index) => {
@@ -116,7 +125,9 @@ export const FilterMenu = ({
                     onClick={() => toggleTag(tag)} 
                     key={index}
                   >
-                    {`${tag} (${count})`}
+                    <Text typography={isNarrow ? "body.large" : "body.medium"}>
+                      {`${tag} (${count})`}
+                    </Text>
                   </MenuItemOption>
                 );
               })
@@ -129,7 +140,9 @@ export const FilterMenu = ({
             value={diffValue} 
           >
             <MenuItemOption value="all" onClick={() => toggleAllDiffs()}>
+            <Text typography={isNarrow ? "body.large" : "body.medium"}>
               Toggle All
+            </Text>
             </MenuItemOption>
             {
               diffs.map(([ diff, count ], index) => {
@@ -139,7 +152,9 @@ export const FilterMenu = ({
                     onClick={() => toggleDiff(diff)} 
                     key={index}
                   >
-                    {`${diff} (${count})`}
+                    <Text typography={isNarrow ? "body.large" : "body.medium"}>
+                      {`${diff} (${count})`}
+                    </Text>
                   </MenuItemOption>
                 );
               })

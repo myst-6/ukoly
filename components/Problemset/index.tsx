@@ -133,10 +133,19 @@ export const Problemset = ({ problems }: ProblemsetProps) => {
               onYearChange={allowed => setAllowedYears(allowed)}
               onTagChange={allowed => setAllowedTags(allowed)}
               onDiffChange={allowed => setAllowedDiffs(allowed)}
+              isNarrow={isNarrow}
             />
-            <SortMenu onChange={sort => setSort(sort)} />
-            <ShowMenu onChange={show => setShow(show)} />
-            <SearchMenu  onChange={search => setSearch(search)} />
+            <SortMenu 
+              onChange={sort => setSort(sort)} 
+              isNarrow={isNarrow}
+            />
+            <ShowMenu 
+              onChange={show => setShow(show)} 
+              isNarrow={isNarrow}
+            />
+            <SearchMenu 
+              onChange={search => setSearch(search)}
+            />
           </HStack>
           <Wrap justify="center" overflowY="auto">
             {
