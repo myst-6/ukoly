@@ -4,6 +4,20 @@ import { brace } from "solutions/util";
 export const PhotoFinish = () => {
   return (
     <>
+      <STitle>Abridged Statement</STitle>
+      <SText>
+        Starting from an array of pidgeons numbered from 1 to $n$ arranged in order, an infinite sequence of pigeon permutations is produced by pigeons swapping with adjacent pigeons according to the following procedure: 
+        pigeon $n$ is gradually moved to the far end, followed by the other pigeons performing the swap they would have performed if pigeon $n$ was not present.
+      </SText>
+      <SText>
+        The swap that takes place depends entirely on the current permutation of birds.
+      </SText>
+      <SText>
+        As input, you are given an integer $n$ and in a new line a permutation of numbers $1$ to $n$ indicating a line-up of pigeons.
+      </SText>
+      <SText>
+        Perform a swap on the input permutation according to the procedure and output the new permutation.
+      </SText>
       <STitle>Solution</STitle>
       <SText>
         Let $v$ be a permutation of integers in the range $[1, n]$.
