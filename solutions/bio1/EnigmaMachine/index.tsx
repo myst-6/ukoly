@@ -5,7 +5,7 @@ export const EnigmaMachine = () => {
     <>
       <STitle>Idea</STitle>
       <SText>
-        There are 16 states the machine can be in. 
+        There are $16$ states the machine can be in. 
         This suggests it is easy to simulate.
       </SText>
       

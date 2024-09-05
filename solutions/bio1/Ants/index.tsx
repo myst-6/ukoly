@@ -30,18 +30,18 @@ export const Ants = () => {
 
       <SSubtitle>Removing an ant</SSubtitle>
       <SText>
-        If an ant falls off the edge of the board, you can set a flag, which prevents it from running any more functions, and prints "Removed" instead of its position.
+        If an ant falls off the edge of the board, you can set a flag, which prevents it from running any more functions, and prints <SCode>Removed</SCode> instead of its position.
       </SText>
 
       <SSubtitle>Initialising the board</SSubtitle>
       <SText>
-        Initalising the board is simple: an $11$x$11$ white grid. (I used a 2D Boolean List.)
+        Initalising the board is simple: an $11$x$11$ white grid. I used a 2D Boolean Array.
         Initalising the ants is also simple, input their positions and directions, and then parse them into usable data. (I subtract one for zero indexing, and change the direction into a number, which i use as an index to a list of directions.
       </SText>
 
-      <SSubtitle>Mainloop</SSubtitle>
+      <SSubtitle>Main Loop</SSubtitle>
       <SText>
-        Before the mainloop, the program takes in an initial value for $n$, then uses it in a while loop, which has the condition ($n \neq -1$).
+        Before the main loop, the program takes in an initial value for $n$, then uses it in a while loop, which has the condition ($n \neq -1$).
         This allows it to exit immediately on the first round, rather than producing buggy behaviour.
         After this, both bugs are moved in turn $n$ times.
         The entire grid is then printed out.

@@ -19,6 +19,7 @@ export type Tag = typeof tags[number];
 
 // ordered from easiest to hardest
 export const difficulties = [
+  "Trivial",
   "Easy",
   "Medium",
   "Hard",
@@ -45,6 +46,7 @@ export interface BIO1ProblemInfo extends ProblemInfo{
 export type DifficultyMap<T> = Record<Difficulty, T>;
 
 export const difficultyColors: DifficultyMap<string> = {
+  "Trivial": "blue",
   "Easy": "green",
   "Medium": "orange",
   "Hard": "red",
