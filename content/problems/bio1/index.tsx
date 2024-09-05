@@ -95,7 +95,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     component: <Cards />,
   },
   {
-    difficulty: "Easy",
+    difficulty: "Trivial",
     display: "ISBN",
     original: "https://olympiad.org.uk/papers/2003/bio/bio03ex.pdf",
     year: 2003,
@@ -128,7 +128,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     component: <Drats />,
   },
   {
-    difficulty: "Easy",
+    difficulty: "Trivial",
     display: "Anagrams",
     original: "https://olympiad.org.uk/papers/2006/bio/bio06-exam.pdf",
     year: 2006,
@@ -293,7 +293,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     component: <BlockChains />,
   },
   {
-    difficulty: "Easy",
+    difficulty: "Trivial",
     display: "Coloured Triangles",
     original: "https://www.olympiad.org.uk/papers/2017/bio/bio17-exam.pdf",
     year: 2017,
@@ -315,7 +315,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     component: <DotsAndBoxes />,
   },
   {
-    difficulty: "Medium",
+    difficulty: "Hard",
     display: "Mystery Parcel",
     original: "https://www.olympiad.org.uk/papers/2017/bio/bio17-exam.pdf",
     year: 2017,
@@ -370,7 +370,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     component: <BlockPalindromes />,
   },
   {
-    difficulty: "Medium",
+    difficulty: "Hard",
     display: "Parking",
     original: "https://www.olympiad.org.uk/papers/2022/bio/bio22-exam.pdf",
     year: 2022,
@@ -382,7 +382,6 @@ export const bio1Problems: BIO1ProblemInfo[] = [
   },
   {
     difficulty: "Easy",
-
     display: "Palindromic Numbers",
     original: "https://www.olympiad.org.uk/papers/2019/bio/bio19-exam.pdf",
     year: 2019,
@@ -459,7 +458,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     component: <DigitWords />,
   },
   {
-    difficulty: "Easy",
+    difficulty: "Trivial",
     display: "Goldbach Conjecture",
     original: "https://olympiad.org.uk/papers/2008/bio/bio08-exam.pdf",
     year: 2008,
@@ -536,7 +535,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     component: <FibonacciLetters />,
   },
   {
-    difficulty: "Medium",
+    difficulty: "Hard",
     display: "Neutron",
     original: "https://www.olympiad.org.uk/papers/2013/bio/bio13-exam.pdf",
     year: 2013,
@@ -580,7 +579,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     component: <MuTorere />,
   },
   {
-    difficulty: "Easy",
+    difficulty: "Trivial",
     display: "Anagram Numbers",
     original: "https://olympiad.org.uk/papers/2010/bio/bio-10-exam.pdf",
     year: 2010,
@@ -624,7 +623,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     component: <EnigmaMachine />,
   },
   {
-    difficulty: "Easy",
+    difficulty: "Medium",
     display: "Upside Down",
     original: "https://www.olympiad.org.uk/papers/2011/bio/bio2011-Round1-Exam.pdf",
     year: 2011,
@@ -635,7 +634,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     component: <UpsideDown />,
   },
   {
-    difficulty : "Easy",
+    difficulty : "Trivial",
     display: "Passwords",
     original: "https://www.olympiad.org.uk/papers/2000/bio/bio2kex.pdf",
     year: 2000,
@@ -668,7 +667,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     component: <LuckyNumbers />,
   },
   {
-    difficulty: "Easy",
+    difficulty: "Trivial",
     display: "Lojban",
     original: "https://olympiad.org.uk/papers/2002/bio/bio02ex.pdf",
     year: 2002,
@@ -679,7 +678,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     component: <Lojban />,
   },
   {
-    difficulty: "Easy",
+    difficulty: "Medium",
     display: "Mops",
     original: "https://www.olympiad.org.uk/papers/2002/bio/bio02ex.pdf",
     year: 2002,
