@@ -6,7 +6,7 @@ export const PhotoFinish = () => {
     <>
       <STitle>Abridged Statement</STitle>
       <SText>
-        Starting from an array of pidgeons numbered from 1 to $n$ arranged in order, an infinite sequence of pigeon permutations is produced by pigeons swapping with adjacent pigeons according to the following procedure: 
+        Starting from an array of pigeons numbered from 1 to $n$ arranged in order, an infinite sequence of pigeon permutations is produced by pigeons swapping with adjacent pigeons according to the following procedure: 
         pigeon $n$ is gradually moved to the far end, followed by the other pigeons performing the swap they would have performed if pigeon $n$ was not present.
       </SText>
       <SText>
