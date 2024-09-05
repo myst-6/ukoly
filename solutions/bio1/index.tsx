@@ -58,3 +58,4 @@ export * from "./MayanCalendar";
 export * from "./WatchingTheClock"; 
 export * from "./ISBN";
 export * from "./Mops";
+export * from "./PlayfairCipher";
