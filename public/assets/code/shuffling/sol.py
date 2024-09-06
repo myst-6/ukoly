@@ -1,3 +1,4 @@
+# Solution author: Alex Pylypenko
 def break_shuffle(x):
     return x[1:] + [x[0]]
 
