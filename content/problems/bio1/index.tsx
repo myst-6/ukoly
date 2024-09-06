@@ -59,7 +59,8 @@ import {
   MayanCalendar,
   WatchingTheClock,
   Mops,
-  PlayfairCipher
+  PlayfairCipher,
+  Shuffling,
 } from "solutions";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
@@ -84,6 +85,17 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <MayanCalendar />,
+  },
+  {
+    difficulty: "Medium",
+    display: "Shuffling",
+    original: "https://www.olympiad.org.uk/papers/2002/bio/bio02ex.pdf",
+    year: 2002,
+    question: 2,
+    tags: ["Brute Force", "Implementation"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <Shuffling />,
   },
   {
     difficulty: "Easy",
