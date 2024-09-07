@@ -61,6 +61,7 @@ import {
   Mops,
   PlayfairCipher,
   Shuffling,
+  FourInALine,
   DieTipping,
 } from "solutions";
 
@@ -185,6 +186,17 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <ParsingLists />,
+  },
+  {
+    difficulty: "Medium",
+    display: "Four in a Line",
+    original: "https://www.olympiad.org.uk/papers/2004/bio/bio04ex.pdf",
+    year: 2004,
+    question: 2,
+    tags: ["Implementation"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <FourInALine />,
   },
   {
     difficulty: "Medium",
