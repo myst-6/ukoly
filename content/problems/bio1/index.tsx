@@ -64,6 +64,8 @@ import {
   FourInALine,
   DieTipping,
   PlayingGames,
+  TuringMachine,
+  PuzzleGame,
 } from "solutions";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
@@ -750,6 +752,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     component: <DieTipping />,
   },
   {
+
     difficulty: "Hard",
     display: "Playing Games",
     original: "https://olympiad.org.uk/papers/2000/bio/bio2kex.pdf",
@@ -759,5 +762,27 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Shubham Kumar"],
     solutionAuthors: ["Shubham Kumar"],
     component: <PlayingGames />,
+  },
+  {
+    difficulty: "Easy",
+    display: "Turing Machine",
+    original: "https://www.olympiad.org.uk/papers/2005/bio/bio05-exam.pdf",
+    year: 2005,
+    question: 2,
+    tags: ["Implementation"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <TuringMachine />,
+  },
+  {
+    difficulty: "Hard",
+    display: "Puzzle Game",
+    original: "https://www.olympiad.org.uk/papers/2009/bio/bio09-exam.pdf",
+    year: 2009,
+    question: 2,
+    tags: ["Implementation", "DFS and Similar"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <PuzzleGame />,
   },
 ];
