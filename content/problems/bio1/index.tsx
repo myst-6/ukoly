@@ -64,6 +64,7 @@ import {
   FourInALine,
   DieTipping,
   TuringMachine,
+  PuzzleGame,
 } from "solutions";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
@@ -759,5 +760,16 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <TuringMachine />,
+  },
+  {
+    difficulty: "Hard",
+    display: "Puzzle Game",
+    original: "https://www.olympiad.org.uk/papers/2009/bio/bio09-exam.pdf",
+    year: 2009,
+    question: 2,
+    tags: ["Implementation", "DFS and Similar"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <PuzzleGame />,
   },
 ];
