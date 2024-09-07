@@ -63,6 +63,7 @@ import {
   Shuffling,
   FourInALine,
   DieTipping,
+  TuringMachine,
 } from "solutions";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
@@ -747,5 +748,16 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <DieTipping />,
+  },
+  {
+    difficulty: "Trivial",
+    display: "Turing Machine",
+    original: "https://www.olympiad.org.uk/papers/2005/bio/bio05-exam.pdf",
+    year: 2005,
+    question: 2,
+    tags: ["Implementation"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <TuringMachine />,
   },
 ];
