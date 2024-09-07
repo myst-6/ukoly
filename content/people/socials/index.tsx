@@ -1,4 +1,5 @@
 import { SiCodeforces, SiDiscord, SiGithub } from "react-icons/si";
+import IOIIcon from "./ioiicon";
 
 export interface PlatformInfo {
   icon: JSX.Element;
@@ -21,7 +22,12 @@ export const platforms = {
     icon: <SiDiscord />,
     base: "https://discord.com/users/",
     label: "Discord",
-  }
+  } as PlatformInfo,
+  ioi: {
+    icon: <IOIIcon />,
+    base: "https://stats.ioinformatics.org/people/",
+    label: "IOI",
+  } as PlatformInfo,
 };
 
 export interface PlatformInstance {
