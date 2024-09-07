@@ -750,7 +750,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     component: <DieTipping />,
   },
   {
-    difficulty: "Trivial",
+    difficulty: "Easy",
     display: "Turing Machine",
     original: "https://www.olympiad.org.uk/papers/2005/bio/bio05-exam.pdf",
     year: 2005,
