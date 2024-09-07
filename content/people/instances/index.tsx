@@ -97,7 +97,11 @@ export const people: Person[] = [
       {
         platform: platforms.github,
         handle: "AnangoPrabhat",
-      }
+      },
+      {
+        platform: platforms.ioi,
+        handle: "8461",
+      },
     ],
     roles: ["Contributor"]
   },
@@ -125,6 +129,10 @@ export const people: Person[] = [
       {
         platform: platforms.github,
         handle: "sammyuri",
+      },
+      {
+        platform: platforms.ioi,
+        handle: "8215",
       },
     ],
     roles: ["Contributor"],
