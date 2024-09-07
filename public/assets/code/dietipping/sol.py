@@ -1,3 +1,4 @@
+# Solution Author: Adwaya Gupta
 class Die:
     def __init__(self):
         self.x = 5
