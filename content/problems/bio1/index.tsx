@@ -61,7 +61,8 @@ import {
   Mops,
   PlayfairCipher,
   Shuffling,
-  FourInALine
+  FourInALine,
+  DieTipping,
 } from "solutions";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
@@ -735,5 +736,16 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <Mops />,
+  },
+  {
+    difficulty: "Easy",
+    display: "Die Tipping",
+    original: "https://www.olympiad.org.uk/papers/2010/bio/bio-10-exam.pdf",
+    year: 2010,
+    question: 2,
+    tags: ["Implementation"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <DieTipping />,
   },
 ];
