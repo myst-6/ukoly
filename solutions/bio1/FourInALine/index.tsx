@@ -16,8 +16,8 @@ export const FourInALine = () => {
                 integer <SCode>current_turn</SCode> which stores
                 a number: $1$ if it is player $1$'s turn, and
                 $2$ if it is player $2$'s turn. Then, we can 
-                very easily implement the <SCode>get_winner</SCode>
-                method, which checks for a horizontal, vertical or 
+                very easily implement the <SCode>get_winner</SCode> method, 
+                which checks for a horizontal, vertical or 
                 diagonal line of $4$ in a row.
             </SText>
             <SText>
