@@ -24,7 +24,7 @@ export const platforms = {
     label: "Discord",
   } as PlatformInfo,
   ioi: {
-    icon: <Image src="/assets/images/ioi.png" />,
+    icon: <Image src="/assets/images/ioi.png" height="1em"/>,
     base: "https://stats.ioinformatics.org/people/",
     label: "IOI",
   } as PlatformInfo,
