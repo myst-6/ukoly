@@ -1,4 +1,4 @@
-import { Icon, useColorMode, Image } from "@chakra-ui/react";
+import { useColorMode, Image } from "@chakra-ui/react";
 
 const ThemedIcon = () => {
   const { colorMode } = useColorMode();
