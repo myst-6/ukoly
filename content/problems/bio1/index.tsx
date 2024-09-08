@@ -66,6 +66,7 @@ import {
   TuringMachine,
   PuzzleGame,
   NewOrder,
+  Rules,
 } from "solutions";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
@@ -79,6 +80,17 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <IntegerStrings />,
+  },
+  {
+    difficulty: "Medium",
+    display: "Rules",
+    original: "https://olympiad.org.uk/papers/2006/bio/bio06-exam.pdf",
+    year: 2006,
+    question: 2,
+    tags: ["Implementation", "Brute Force"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <Rules />,
   },
   {
     difficulty: "Easy",
