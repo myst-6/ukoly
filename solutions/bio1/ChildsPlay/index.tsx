@@ -13,6 +13,8 @@ export const ChildsPlay = () => {
       <STitle>Solution</STitle>
       <SText>
         First, let's define a function <SCode>combs</SCode> to calculate the number of ways to form a sum of $n$.
+        To prevent duplicate work, we should memoize this function. This can be done using Python's <SCode>functools.lru_cache</SCode> decorator, 
+        or using an <SCode>std::unordered_map</SCode>.
         Now we can use this function to find the next number in the answer.
         To do this, we can iterate through each number in dictionary order, and check if the number of combinations to form that total 
         is greater than $n$. If it is, we can add that number to the answer and subtract the number of combinations from $n$.
