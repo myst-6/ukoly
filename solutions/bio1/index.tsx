@@ -65,5 +65,6 @@ export * from "./DieTipping";
 export * from "./TuringMachine";
 export * from "./PuzzleGame";
 export * from "./ChildsPlay";
+export * from "./NewOrder";
 export * from "./MorseCode";
 export * from "./Rules";

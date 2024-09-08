@@ -66,6 +66,7 @@ import {
   TuringMachine,
   PuzzleGame,
   ChildsPlay,
+  NewOrder,
   MorseCode,
   Rules,
 } from "solutions";
@@ -797,6 +798,17 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     solutionAuthors: ["Adwaya Gupta"],
     component: <ChildsPlay />,
   },
+  {
+    difficulty: "Medium",
+    display: "New Order",
+    original: "https://www.olympiad.org.uk/papers/2003/bio/bio03ex.pdf",
+    year: 2003,
+    question: 3,
+    tags: ["Dynamic Programming"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <NewOrder />,
+  }, 
   {
     difficulty: "Medium",
     display: "Morse Code",
