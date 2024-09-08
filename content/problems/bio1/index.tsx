@@ -66,6 +66,8 @@ import {
   TuringMachine,
   PuzzleGame,
   ChildsPlay,
+  MorseCode,
+  Rules,
 } from "solutions";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
@@ -79,6 +81,17 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <IntegerStrings />,
+  },
+  {
+    difficulty: "Medium",
+    display: "Rules",
+    original: "https://olympiad.org.uk/papers/2006/bio/bio06-exam.pdf",
+    year: 2006,
+    question: 2,
+    tags: ["Implementation", "Brute Force"],
+    editorialAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Alex Pylypenko"],
+    component: <Rules />,
   },
   {
     difficulty: "Easy",
@@ -783,5 +796,16 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <ChildsPlay />,
+  },
+  {
+    difficulty: "Medium",
+    display: "Morse Code",
+    original: "https://www.olympiad.org.uk/papers/2004/bio/bio04ex.pdf",
+    year: 2004,
+    question: 3,
+    tags: ["Dynamic Programming", "Brute Force"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <MorseCode />,
   },
 ];
