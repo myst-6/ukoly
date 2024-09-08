@@ -67,6 +67,7 @@ import {
   PuzzleGame,
   MorseCode,
   Rules,
+  AccordionPatience,
 } from "solutions";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
@@ -795,5 +796,16 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <MorseCode />,
+  },
+  {
+    difficulty: "Medium",
+    display: "Accordion Patience",
+    original: "https://www.olympiad.org.uk/papers/2011/bio/bio2011-Round1-Exam.pdf",
+    year: 2011,
+    question: 2,
+    tags: ["Implementation"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <AccordionPatience />,
   },
 ];
