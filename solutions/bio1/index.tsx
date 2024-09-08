@@ -67,3 +67,4 @@ export * from "./PuzzleGame";
 export * from "./NewOrder";
 export * from "./MorseCode";
 export * from "./Rules";
+export * from "./AccordionPatience";
