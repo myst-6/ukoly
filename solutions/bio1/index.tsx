@@ -64,4 +64,5 @@ export * from "./FourInALine";
 export * from "./DieTipping";
 export * from "./TuringMachine";
 export * from "./PuzzleGame";
+export * from "./MorseCode";
 export * from "./Rules";
