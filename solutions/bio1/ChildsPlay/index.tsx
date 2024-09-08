@@ -19,7 +19,8 @@ export const ChildsPlay = () => {
         $f(0) = 0 \\ n {brace(" < ")} 0; f(n) = 0 \\ f(n) = {brace("\\sum_{i=1}^{9}")} f(n - i)$
       </SText>
       <SText>
-        This is because the number of ways to form a total $n$ is the sum of the number of ways to form a total of $n - 1$, $n - 2$, ..., $n - 9$.
+        This is because the number of ways to form a total $n$ is the sum of the number of ways to form a total of $n - 1$, $n - 2$, ${brace("\\ldots")}$, $n - 9$,
+        as at each step, we can add a number from $1$ to $9$ to the current solution. Only the answers which finish with a total of $0$ are valid. 
       </SText>
       <SText>
         To prevent duplicate work, we should memoize this function. This can be done using Python's <SCode>functools.lru_cache</SCode> decorator, 
