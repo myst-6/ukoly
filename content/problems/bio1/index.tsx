@@ -65,6 +65,7 @@ import {
   DieTipping,
   TuringMachine,
   PuzzleGame,
+  MorseCode,
 } from "solutions";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
@@ -771,5 +772,16 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <PuzzleGame />,
+  },
+  {
+    difficulty: "Easy",
+    display: "Morse Code",
+    original: "https://www.olympiad.org.uk/papers/2004/bio/bio04ex.pdf",
+    year: 2004,
+    question: 3,
+    tags: ["Dynamic Programming", "Brute Force"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <MorseCode />,
   },
 ];
