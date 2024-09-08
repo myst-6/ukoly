@@ -1,4 +1,5 @@
 import { SCodeBlock, SText, STitle, SCode } from "components";
+import { brace } from "solutions/util";
 
 export const ChildsPlay = () => {
   return (
@@ -13,12 +14,24 @@ export const ChildsPlay = () => {
       <STitle>Solution</STitle>
       <SText>
         First, let's define a function <SCode>combs</SCode> to calculate the number of ways to form a sum of $n$.
+      </SText>
+      <SText align="center">
+        $f(0) = 0 \\ n {brace(" < ")} 0; f(n) = 0 \\ f(n) = {brace("\\sum_{i=1}^{9}")} f(n - i)$
+      </SText>
+      <SText>
+        This is because the number of ways to form a total $n$ is the sum of the number of ways to form a total of $n - 1$, $n - 2$, ..., $n - 9$.
+      </SText>
+      <SText>
         To prevent duplicate work, we should memoize this function. This can be done using Python's <SCode>functools.lru_cache</SCode> decorator, 
         or using an <SCode>std::unordered_map</SCode>.
+      </SText>
+      <SText>
         Now we can use this function to find the next number in the answer.
-        To do this, we can iterate through each number in dictionary order, and check if the number of combinations to form that total 
-        is greater than $n$. If it is, we can add that number to the answer and subtract the number of combinations from $n$.
-        Finally, when the goal reaches $0$, we have found the answer.
+        To do this, we can iterate through each possible next number in order. 
+        We should find it's position in dictionary order by finding the number of combinations of the remaining sum and adding it to 
+        the position of the last element. 
+        When the position is greater than $n$, we have found the next number.
+        We can now recursively build the answer until we reach $n$.
       </SText>
 
       <STitle>Code</STitle>
