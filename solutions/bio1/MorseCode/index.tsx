@@ -11,8 +11,8 @@ export const MorseCode = () => {
 
       <STitle>Solution</STitle>
       <SText>
-        We can solve this problem by using a recursive function that tries every possible split of the Morse Code.
-        For each split, we can check if the first part is a valid Morse Code character.
+        We can solve this problem by using a recursive function that tries every possible split of the Morse code.
+        For each split, we can check if the first part is a valid Morse code character.
         If it is, we can recurse on the rest of the word.
         If we reach the end of the word, we have found a valid split.
         We should ensure we do not perform more than $s$ splits, where $s$ is the size of the original word.
