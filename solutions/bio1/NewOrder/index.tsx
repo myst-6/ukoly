@@ -21,7 +21,7 @@ export const NewOrder = () => {
       <SText>
         As for each character, we can either use a $1$ or a $0$. 
         To prevent duplicate calls to this function, we should memoize the result. 
-        We can do this by using Python's <SCode>functools.lru_cache</SCode> or a <SCode>std::vector<vector<int>></SCode>.
+        We can do this by using Python's <SCode>functools.lru_cache</SCode> or a or a $2$-dimensional array.
       </SText>
       <SText>
         Next, we can find the length of the answer. 
