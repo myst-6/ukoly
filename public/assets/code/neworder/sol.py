@@ -1,12 +1,10 @@
-# Solution Author: Adwaya Gupta
 from functools import lru_cache
+from math import comb
 
 @lru_cache(maxsize=None)
 def combs(ones, length):
     if length < 0: return 0
-    if length == 0: 
-        return ones == 0
-    return combs(ones, length-1) + combs(ones-1, length-1)
+    return comb(length, ones)
 
 def solve(ones, length):
     global ways
