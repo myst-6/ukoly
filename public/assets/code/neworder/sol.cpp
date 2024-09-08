@@ -1,48 +1,54 @@
-// Solution Author: Adwaya Gupta
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<string> morse = {".-", "-...", "-.-.", "-..", ".", 
-                        "..-.", "--.", "....", "..", ".---", 
-                        "-.-", ".-..", "--", "-.", "---", 
-                        ".--.", "--.-", ".-.", "...", "-", 
-                        "..-", "...-", ".--", "-..-", "-.--", 
-                        "--.."};
+vector<vector<long long>> combs_cache;
 
-string toMorse(char c) {
-    return morse[c - 'a'];
+long long combs(int ones, int length) {
+    if (length < 0) return 0;
+    if (ones < 0) return 0;
+    if (length == 0) return ones == 0;
+    
+    if (combs_cache[ones][length] != -1) {
+        return combs_cache[ones][length];
+    }
+    
+    return combs_cache[ones][length] = combs(ones, length - 1) + combs(ones - 1, length - 1);
 }
 
-int solve(const string &s, int i, int depth, int maxDepth, unordered_map<string, int> &memo) {
-    if (depth > maxDepth) return 0;
-    if (s.length() - i < 0) return 0;
-    if (s.length() - i == 0) return depth == maxDepth;
-
-    string key = to_string(i) + "," + to_string(depth);
-    if (memo.find(key) != memo.end()) return memo[key];
-
-    int ans = 0;
-    for (int j = 1; j <= min(4, (int)s.length() - i); ++j) {
-        string sub = s.substr(i, j);
-        if (find(morse.begin(), morse.end(), sub) != morse.end()) {
-            ans += solve(s, i + j, depth + 1, maxDepth, memo);
-        }
+string solve(int ones, int length, long long& ways, long long n) {
+    if (ones == 0) return string(length, '0');
+    if (length == 1) return (ones == 0) ? "0" : "1";
+    
+    if (ways + combs(ones, length - 1) < n) {
+        ways += combs(ones, length - 1);
+        return "1" + solve(ones - 1, length - 1, ways, n);
     }
-    memo[key] = ans;
-    return ans;
+    return "0" + solve(ones, length - 1, ways, n);
 }
 
 int main() {
-    string word;
-    cin >> word;
+    long long n, m;
+    cin >> n >> m;
 
-    string encrypt = "";
-    for (char c : word) {
-        encrypt += toMorse(c);
+    if (m == 0) {
+        cout << '0' << endl;
+        return 0;
     }
 
-    unordered_map<string, int> memo;
-    cout << solve(encrypt, 0, 0, word.length(), memo) << endl;
+    combs_cache = vector<vector<long long>>(m + 1, vector<long long>(100, -1));
+
+    long long length = 0, ways = 0;
+
+    while (ways + combs(m - 1, length - 1) < n) {
+        ways += combs(m - 1, length - 1);
+        length++;
+    }
+
+    string ans = "1" + solve(m - 1, length - 1, ways, n);
+    for (size_t i = 0; i < ans.size(); i += 6) {
+        cout << ans.substr(i, 6) << ' ';
+    }
+    cout << endl;
 
     return 0;
 }
