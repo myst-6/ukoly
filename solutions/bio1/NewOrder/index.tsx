@@ -1,4 +1,5 @@
 import { SCodeBlock, SText, STitle, SCode } from "components";
+import { brace } from "solutions/util";
 
 export const NewOrder = () => {
   return (
@@ -20,6 +21,9 @@ export const NewOrder = () => {
       </SText>
       <SText>
         As for each character, we can either use a $1$ or a $0$. 
+        From this definition, we can see that $f(o, l) = {brace("\\binom{o}{l}")}$.
+      </SText>
+      <SText>
         To prevent duplicate calls to this function, we should memoize the result. 
         We can do this by using Python's <SCode>functools.lru_cache</SCode> or a or a $2$-dimensional array.
       </SText>
