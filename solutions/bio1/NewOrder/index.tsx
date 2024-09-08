@@ -19,6 +19,9 @@ export const NewOrder = () => {
         $f(o, l) = f(o, l-1) + f(o-1, l-1) \\ f(0, 0) = 1$
       </SText>
       <SText>
+        To prevent duplicate calls to this function, we should memoize the result.
+      </SText>
+      <SText>
         Next, we can find the length of the answer. 
         We can do this by iterating through lengths, and checking if the number of combinations with $o$ ones, of length at most $l$ is greater than $n$.
         Finally, to build the answer, we can check if the next number should be a $1$ or a $0$, by checking the interval $n$ lies in. 
