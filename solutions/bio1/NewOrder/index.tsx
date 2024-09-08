@@ -19,12 +19,21 @@ export const NewOrder = () => {
         $f(o, l) = f(o, l-1) + f(o-1, l-1) \\ f(0, 0) = 1$
       </SText>
       <SText>
-        To prevent duplicate calls to this function, we should memoize the result.
+        As for each character, we can either use a $1$ or a $0$. 
+        To prevent duplicate calls to this function, we should memoize the result. 
+        We can do this by using Python's <SCode>functools.lru_cache</SCode> or a <SCode>std::vector<vector<int>></SCode>.
       </SText>
       <SText>
         Next, we can find the length of the answer. 
-        We can do this by iterating through lengths, and checking if the number of combinations with $o$ ones, of length at most $l$ is greater than $n$.
-        Finally, to build the answer, we can check if the next number should be a $1$ or a $0$, by checking the interval $n$ lies in. 
+        We can do this by iterating through lengths, and keeping track of the number of ways to make a solution with length less than or equal to the current length.
+        The first length such that the combinations is greater than or equal to $n$ will be the length of the answer. 
+      </SText>
+      <SText>
+        Finally, we should recursively build the answer.
+        To do this, we can observe that in dictionary order, a solution with a $0$ as the next digit will always be before a solution with $1$ as the next digit. 
+        Using this, we can check if the number of combinations produced by adding a $0$ as the next digit is greater than $n$. 
+        If it is, we know the next digit is a $0$. Otherwise, the next digit is a $1$. 
+        We can now recursively solve for the rest of the answer. 
         We should note that the first digit must be a $1$, as leading $0$s are not allowed.
         We should also consider the edge case when $m = 0$, where the only solution is $0$.
       </SText>
