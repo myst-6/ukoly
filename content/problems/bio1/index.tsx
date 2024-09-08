@@ -65,6 +65,7 @@ import {
   DieTipping,
   TuringMachine,
   PuzzleGame,
+  ChildsPlay,
 } from "solutions";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
@@ -771,5 +772,16 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <PuzzleGame />,
+  },
+  {
+    difficulty: "Easy",
+    display: "Child's Play",
+    original: "https://www.olympiad.org.uk/papers/2009/bio/bio09-exam.pdf",
+    year: 2009,
+    question: 3,
+    tags: ["Dynamic Programming"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <ChildsPlay />,
   },
 ];
