@@ -5,7 +5,7 @@ export const OnTheRightTrack = () => {
     <>
       <STitle>Idea</STitle>
       <SText>
-        This is a quite straightforward implementation problem, and with the small-ish n $(n \le 10\,000)$, a simulation is in order.
+        This is a quite straightforward implementation problem, and with the small-ish $n$ $(n \le 10\,000)$, a simulation is in order.
       </SText>
 
       <STitle>Solution</STitle>
