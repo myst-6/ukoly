@@ -5,16 +5,12 @@ export const AlphaComplex = () => {
     <>
       <STitle>Solution</STitle>
       <SText>
-        Just iterate through all the digits from $2$ to $9$,
-        and check if the sorted list of the input number 
-        is equal to the sorted list of the input number multiplied
-        by the current digit.
+        Since the constraints are reasonably low, we will simply implement the procedure as described in the question. Firstly we will construct the edges of the rooms, storing these as adjacency lists. We can then ouput these adjacency lists. 
       </SText>
       <SText>
-        This is a common trick to check if two strings are 
-        anagrams - just sort them and compare.
+        Next, we will store two arrays indicating whether each exit, and each room has been passed through an odd or even number of times. Using this information we can decide which room to walk to, q times.
       </SText>
-      <SCodeBlock path="anagramnumbers/sol"/>
+      <SCodeBlock path="alphacomplex/sol"/>
     </>
   );
 };
