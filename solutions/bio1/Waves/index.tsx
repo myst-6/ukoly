@@ -1,4 +1,4 @@
-import { SCodeBlock, SText, STitle } from "components";
+import { SCodeBlock, SText, STitle, SList } from "components";
 
 export const Waves = () => {
     return (
@@ -33,13 +33,13 @@ export const Waves = () => {
           <SList>
             <SText>
               The cell's $x$-coordinate is between the pebble's $x$-coordinate and the left bank.
-                  Here each of the waves can only reflect once.
-                  The time the first wave would then take to reach the cell
-                  = the distance between the $y$-coordinates of the pebble and the cell
-                  + the distance between the $x$-coordinates of the left bank and the pebble
-                  + the distance between the $x$-coordinates of the left bank the cell.
-                  With that, we can check whether the first or the second wave reaches the cell
-                  at time $r$.
+              Here each of the waves can only reflect once.
+              The time the first wave would then take to reach the cell
+              = the distance between the $y$-coordinates of the pebble and the cell
+              + the distance between the $x$-coordinates of the left bank and the pebble
+              + the distance between the $x$-coordinates of the left bank the cell.
+              With that, we can check whether the first or the second wave reaches the cell
+              at time $r$.
             </SText>
           </SList>
           <SList>
