@@ -15,3 +15,4 @@ export * from "./BestOfShow";
 export * from "./Raiders";
 export * from "./PhotoFinish";
 export * from "./HatsOff";
+export * from "./RiffledFeathers";

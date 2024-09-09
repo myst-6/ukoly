@@ -1,5 +1,5 @@
 import { ProblemInfo } from "../base";
-import { BrokersDoom, Carve, Dino, Milk, Proto, Whisperer, TerminalVelocity, ScoopOne, ScoopTwo, KeepOnTheGrass, Byway, Cables, TickTock, BestOfShow, PhotoFinish, HatsOff, Raiders } from "solutions";
+import { BrokersDoom, Carve, Dino, Milk, Proto, Whisperer, TerminalVelocity, ScoopOne, ScoopTwo, KeepOnTheGrass, Byway, Cables, TickTock, BestOfShow, PhotoFinish, HatsOff, Raiders, RiffledFeathers } from "solutions";
 
 
 export const bio2Problems: ProblemInfo[] = [
@@ -172,5 +172,15 @@ export const bio2Problems: ProblemInfo[] = [
     editorialAuthors: ["Boris Hall"],
     solutionAuthors: ["Boris Hall"],
     component: <Raiders />
+  },
+  {
+    difficulty: "Easy",
+    display: "Riffled Feathers",
+    original: "https://www.olympiad.org.uk/papers/2016/final/Riffled.pdf",
+    year: 2016,
+    tags: ["Dynamic Programming", "Math", "Implementation"],
+    editorialAuthors: ["Vladimir Filip"],
+    solutionAuthors: ["Vladimir Filip"],
+    component: <RiffledFeathers />
   }
 ];
