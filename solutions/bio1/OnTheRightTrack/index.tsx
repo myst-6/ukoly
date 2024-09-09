@@ -21,7 +21,7 @@ export const OnTheRightTrack = () => {
 
       <SSubtitle>Initialising the board</SSubtitle>
       <SText>
-        The board is created quite strangely, but it only has $26$ stops, so making it is relatively easy: just be careful to link the stops correctly with the left and right stops.
+        The board is created quite strangely, but it only has $26$ stops, so making it is relatively easy; just be careful to link the stops correctly with the left and right stops.
         I manually put in the top and bottom $4$ stops, and used a loop for the middle $2$ rows of $8$ stops.
       </SText>
 
