@@ -70,6 +70,7 @@ import {
   MorseCode,
   Rules,
   AccordionPatience,
+  Waves,
 } from "solutions";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
@@ -831,5 +832,16 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <AccordionPatience />,
+  },
+  {
+    difficulty: "Medium",
+    display: "Waves",
+    original: "https://www.olympiad.org.uk/papers/2003/bio/bio03ex.pdf",
+    year: 2003,
+    question: 2,
+    tags: ["Brute Force", "Implementation"],
+    editorialAuthors: ["Daria Sanina"],
+    solutionAuthors: ["Daria Sanina"],
+    component: <Waves />,
   },
 ];
