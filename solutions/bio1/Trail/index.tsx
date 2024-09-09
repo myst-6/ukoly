@@ -17,7 +17,7 @@ export const Trail = () => {
         We can simulate each move by keeping track of the direction and position of the explorer.
         To check if a cell contains a trail, we simply need to compare the current time, with the time the trail was last visited.
         Formally, if the current time is $j$, and the last time the cell was visited was $i$, 
-        the trail still exists if $j - i {brace("~<~")} t$.
+        the trail still exists if $j - i \lt t$.
         Now, we can simulate each move as specified by the problem statement, and output the explorer's final position.
       </SText>
 
