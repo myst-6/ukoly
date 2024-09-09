@@ -1,4 +1,4 @@
-import { SCodeBlock, SText, STitle, SList } from "components";
+import { SCodeBlock, SText, STitle, SList, SCode } from "components";
 
 export const Waves = () => {
     return (
