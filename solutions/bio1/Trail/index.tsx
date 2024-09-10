@@ -13,7 +13,7 @@ export const Trail = () => {
       <STitle>Solution</STitle>
       <SText>
         To keep track of the trail, we can use a hashmap, storing the last time a cell was visited.
-        Unvisited cells can be stored as $-{brace("\\text{inf}")}$, or some other very large negative number
+        Unvisited cells can be stored as $-{brace("\\text{inf}")}$, or some other very large negative number. 
         We can simulate each move by keeping track of the direction and position of the explorer.
         To check if a cell contains a trail, we simply need to compare the current time with the time the trail was last visited.
         Formally, if the current time is $j$, and the last time the cell was visited was $i$, 
