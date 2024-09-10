@@ -63,6 +63,7 @@ export * from "./PlayfairCipher";
 export * from "./Shuffling";
 export * from "./FourInALine";
 export * from "./DieTipping";
+export * from "./PlayingGames";
 export * from "./TuringMachine";
 export * from "./PuzzleGame";
 export * from "./ChildsPlay";

@@ -63,6 +63,7 @@ import {
   Shuffling,
   FourInALine,
   DieTipping,
+  PlayingGames,
   TuringMachine,
   PuzzleGame,
   ChildsPlay,
@@ -778,6 +779,18 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <DieTipping />,
+  },
+  {
+
+    difficulty: "Hard",
+    display: "Playing Games",
+    original: "https://olympiad.org.uk/papers/2000/bio/bio2kex.pdf",
+    year: 2000,
+    question: 3,
+    tags: ["Brute Force", "Implementation"],
+    editorialAuthors: ["Shubham Kumar"],
+    solutionAuthors: ["Shubham Kumar"],
+    component: <PlayingGames />,
   },
   {
     difficulty: "Easy",
