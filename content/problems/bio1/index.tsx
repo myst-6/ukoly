@@ -71,6 +71,7 @@ import {
   MorseCode,
   Rules,
   AccordionPatience,
+  Waves,
   OnTheRightTrack,
   Trail,
 } from "solutions";
@@ -859,6 +860,17 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     component: <AccordionPatience />,
   },
   {
+    difficulty: "Hard",
+    display: "Waves",
+    original: "https://www.olympiad.org.uk/papers/2003/bio/bio03ex.pdf",
+    year: 2003,
+    question: 2,
+    tags: ["Brute Force", "Implementation"],
+    editorialAuthors: ["Daria Sanina"],
+    solutionAuthors: ["Daria Sanina"],
+    component: <Waves />,
+},
+{
     difficulty: "Easy",
     display: "Trail",
     original: "https://www.olympiad.org.uk/papers/2019/bio/bio19-exam.pdf",
