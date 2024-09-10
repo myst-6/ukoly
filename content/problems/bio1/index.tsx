@@ -63,6 +63,7 @@ import {
   Shuffling,
   FourInALine,
   DieTipping,
+  PlayingGames,
   TuringMachine,
   PuzzleGame,
   ChildsPlay,
@@ -70,7 +71,10 @@ import {
   MorseCode,
   Rules,
   AccordionPatience,
-  AlphaComplex
+  AlphaComplex,
+  Waves,
+  OnTheRightTrack,
+  Trail,
 } from "solutions";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
@@ -282,6 +286,17 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <Juggluging />,
+  },
+  {
+    difficulty: "Medium",
+    display: "On The Right Track",
+    original: "https://www.olympiad.org.uk/papers/2012/bio/bio12-exam.pdf",
+    year: 2012,
+    question: 2,
+    tags: ["Implementation"],
+    editorialAuthors: ["Duy Nguyen"],
+    solutionAuthors: ["Duy Nguyen"],
+    component: <OnTheRightTrack />,
   },
   {
     difficulty: "Medium",
@@ -768,6 +783,18 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     component: <DieTipping />,
   },
   {
+
+    difficulty: "Hard",
+    display: "Playing Games",
+    original: "https://olympiad.org.uk/papers/2000/bio/bio2kex.pdf",
+    year: 2000,
+    question: 3,
+    tags: ["Brute Force", "Implementation"],
+    editorialAuthors: ["Shubham Kumar"],
+    solutionAuthors: ["Shubham Kumar"],
+    component: <PlayingGames />,
+  },
+  {
     difficulty: "Easy",
     display: "Turing Machine",
     original: "https://www.olympiad.org.uk/papers/2005/bio/bio05-exam.pdf",
@@ -843,5 +870,27 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Yuvan Raja"],
     solutionAuthors: ["Yuvan Raja"],
     component: <AlphaComplex />
-  }
+  },
+  {
+    difficulty: "Hard",
+    display: "Waves",
+    original: "https://www.olympiad.org.uk/papers/2003/bio/bio03ex.pdf",
+    year: 2003,
+    question: 2,
+    tags: ["Brute Force", "Implementation"],
+    editorialAuthors: ["Daria Sanina"],
+    solutionAuthors: ["Daria Sanina"],
+    component: <Waves />,
+},
+{
+    difficulty: "Easy",
+    display: "Trail",
+    original: "https://www.olympiad.org.uk/papers/2019/bio/bio19-exam.pdf",
+    year: 2019,
+    question: 2,
+    tags: ["Implementation"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <Trail />,
+  },
 ];

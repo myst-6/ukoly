@@ -53,6 +53,7 @@ export * from "./LuckyNumbers";
 export * from "./Lojban";
 export * from "./Fractions";
 export * from "./Drats";
+export * from "./OnTheRightTrack"
 export * from "./MovieMagic";
 export * from "./MayanCalendar";
 export * from "./WatchingTheClock"; 
@@ -62,6 +63,7 @@ export * from "./PlayfairCipher";
 export * from "./Shuffling";
 export * from "./FourInALine";
 export * from "./DieTipping";
+export * from "./PlayingGames";
 export * from "./TuringMachine";
 export * from "./PuzzleGame";
 export * from "./ChildsPlay";
@@ -69,4 +71,6 @@ export * from "./NewOrder";
 export * from "./MorseCode";
 export * from "./Rules";
 export * from "./AccordionPatience";
-export * from "./AlphaComplex"
+export * from "./AlphaComplex";
+export * from "./Waves";
+export * from "./Trail";
