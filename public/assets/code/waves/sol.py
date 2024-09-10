@@ -5,31 +5,46 @@ class Pebble:
         self.t = t
     
     def effect_on_cell(self, x, y, t):
-        if abs(x - self.x) + abs(y - self.y) == t - self.t \
-            or self.x < x < bank1 \
-                and x - self.x + 2 * (bank1 - x) + abs(y - self.y) == t - self.t \
-            or bank1 < self.x < x < bank2 \
-                and (t - self.t) - (x - self.x + 2 * (bank2 - x) + abs(y - self.y)) >= 0 \
-                and ((t - self.t) - (x - self.x + 2 * (bank2 - x) + abs(y - self.y))) % (bank2 - bank1) == 0 \
-            or bank1 < x < self.x < bank2 \
-                and (t - self.t) - self.x - x + 2 * (x - bank1) + abs(y - self.y) >= 0 \
-                and ((t - self.t) - self.x - x + 2 * (x - bank1) + abs(y - self.y)) % (bank2 - bank1) == 0 \
-            or bank2 < x < self.x and self.x - x + 2 * (x - bank2) + abs(y - self.y) == t - self.t:
-                    return 1
+        result = 0
+        elapsed_time = t - self.t - abs(y - self.y)
+
+        if elapsed_time < 0:
+            return 0
+        if min(x, self.x) < bank1 < max(x, self.x) or min(x, self.x) < bank2 < max(x, self.x):
+            return 0
+        elif x == self.x and elapsed_time == 0:
+            return 1
+
+        # right wave
+        if self.x <= x < bank1 and elapsed_time == x - self.x:  # pebble -> wave -> left bank, no reflections have happened yet
+            result += 1
+        elif max(self.x, x) < bank1 and elapsed_time == (bank1 - self.x - 1) + (bank1 - x):  # the pebble and the wave are to the left of the left bank, the wave has been reflected once
+            result += 1
+        elif bank2 < self.x <= x and elapsed_time == x - self.x:  # right bank -> pebble -> wave
+            result += 1
+        elif bank1 < min(x, self.x) and max(x, self.x) < bank2:  # the pebble and the wave are in between the banks
+            elapsed_time += self.x - bank1
+            if elapsed_time >= (x - bank1) and (elapsed_time - (x - bank1)) % ((bank2 - bank1 - 1) * 2) == 0:  # an even number of reflections
+                result += 1
+            elif elapsed_time >= (bank2 - x) + (bank2 - bank1 - 1) and (elapsed_time - (bank2 - x) - (bank2 - bank1 - 1)) % ((bank2 - bank1 - 1) * 2) == 0:  # an odd number of reflections
+                result += 1
+            elapsed_time -= self.x - bank1
         
-        if abs(x - self.x) + abs(y - self.y) == t - self.t - 2 \
-            or self.x < x < bank1 \
-                and x - self.x + 2 * (bank1 - x) + abs(y - self.y) == t - self.t - 2 \
-            or bank1 < self.x < x < bank2 \
-                and (t - self.t - 2) - (x - self.x + 2 * (bank2 - x) + abs(y - self.y)) >= 0 \
-                and ((t - self.t - 2) - (x - self.x + 2 * (bank2 - x) + abs(y - self.y))) % (bank2 - bank1) == 0 \
-            or bank1 < x < self.x < bank2 \
-                and (t - self.t - 2) - self.x - x + 2 * (x - bank1) + abs(y - self.y) >= 0 \
-                and ((t - self.t - 2) - self.x - x + 2 * (x - bank1) + abs(y - self.y)) % (bank2 - bank1) == 0 \
-            or self.x > x > bank2 and self.x - x + 2 * (x - bank2) + abs(y - self.y) == t - self.t - 2:
-                    return -1
+        # left wave
+        if x <= self.x < bank1 and elapsed_time == self.x - x:  # wave -> pebble -> left bank
+            result += 1
+        elif bank2 < x <= self.x and elapsed_time == self.x - x:  # right bank -> wave -> pebble, no reflections have happened yet
+            result += 1
+        elif bank2 < min(x, self.x) and elapsed_time == (self.x - bank2 - 1) + (x - bank2):  # the pebble and the wave are to the right of the right bank, the wave has been reflected once
+            result += 1
+        elif bank1 < min(x, self.x) and max(x, self.x) < bank2:  # the pebble and the wave are in between the banks
+            elapsed_time += bank2 - self.x
+            if elapsed_time >= (bank2 - x) and (elapsed_time - (bank2 - x)) % ((bank2 - bank1 - 1) * 2) == 0:  # an even number of reflections
+                result += 1
+            elif elapsed_time >= (x - bank1) + (bank2 - bank1 - 1) and (elapsed_time - (x - bank1) - (bank2 - bank1 - 1)) % ((bank2 - bank1 - 1) * 2) == 0:  # an odd number of reflections
+                result += 1
         
-        return 0
+        return result
 
 
 p = int(input())
@@ -52,6 +67,7 @@ for y in range(4, -5, -1):
             depth = 0
             for pebble in pebbles:
                 depth += pebble.effect_on_cell(x, y, r)
+                depth -= pebble.effect_on_cell(x, y, r - 2)
             if depth < 0:
                 print("o", end="")
             elif depth == 0:

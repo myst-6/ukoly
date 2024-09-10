@@ -834,7 +834,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     component: <AccordionPatience />,
   },
   {
-    difficulty: "Medium",
+    difficulty: "Hard",
     display: "Waves",
     original: "https://www.olympiad.org.uk/papers/2003/bio/bio03ex.pdf",
     year: 2003,
