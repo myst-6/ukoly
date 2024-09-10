@@ -70,6 +70,7 @@ import {
   MorseCode,
   Rules,
   AccordionPatience,
+  OnTheRightTrack,
   Trail,
 } from "solutions";
 
@@ -282,6 +283,17 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <Juggluging />,
+  },
+  {
+    difficulty: "Medium",
+    display: "On The Right Track",
+    original: "https://www.olympiad.org.uk/papers/2012/bio/bio12-exam.pdf",
+    year: 2012,
+    question: 2,
+    tags: ["Implementation"],
+    editorialAuthors: ["Duy Nguyen"],
+    solutionAuthors: ["Duy Nguyen"],
+    component: <OnTheRightTrack />,
   },
   {
     difficulty: "Medium",
