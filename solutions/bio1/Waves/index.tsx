@@ -5,18 +5,18 @@ export const Waves = () => {
         <>
         <STitle>Observation</STitle>
         <SText>
-          The main observation for this task is that the board size is small (only $9 \times 9$) and the number of pebbles is only $\leq 5$.
+          The main observation for this task is that the board size is small (only $9 \times 9$) and the number of pebbles is only at most $5$.
           This allows us to iterate through all the cells and all the pebbles to calculate the contribution of each pebble to the depth in each cell.
         </SText>
 
         <STitle>Solution</STitle>
         <SText>
           For a given pebble and a given cell, we can calculate the contribution of the first wave of the pebble to the depth of the cell at time $r$.
-          Let the coordinates of the cell be $x_c$ and $y_c$, the coordinates of the pebble be $x_p$ and $y_p$, the time the pebble was thrown be $t_p$,
+          Let the coordinates of the cell be $(x_c, y_c)$, the coordinates of the pebble be $x_p$ and $y_p$, the time the pebble was thrown be $t_p$,
           and the $x$-coordinates of the left and right banks be $x_l$ and $x_r$ respectively. Let's also call the time elapsed since the pebble was thrown $\Delta t = r - t_p$.
         </SText>
         <SText>
-          We can note that the time in which the wave reaches the cell if there are no collisions is $abs(x_c - x_p) + abs(y_c - y_p)$.
+          We can note that the time at which the wave reaches the cell if there are no collisions is $abs(x_c - x_p) + abs(y_c - y_p)$.
           Collisions in the $y$-direction are impossible, so we can subtract $abs(y_c - y_p)$ from $\Delta t$ and then work only in the $x$-dimension.
         </SText>
         <SText>
@@ -52,7 +52,7 @@ export const Waves = () => {
             For an even number of collisions, the wave should be able cover the distance between the banks an even number of times (returning to $x_l$) and then reach $x_c$,
             so $\Delta t$ should be $\geq x_c - x_l$ and $\Delta t - (x_c - x_l)$ should be divisible by $2(x_r - x_l - 1)$.$\\$
             For an odd number of collisions, the wave should be able to cover the distance between the banks an odd number of times (finishing at $x_r$) and then reach $x_c$,
-            so $\Delta t$ shold be $\geq (x_r - x_c) + (x_r - x_l - 1)$ and $\Delta t - (x_r - x_c) - (x_r - x_l - 1)$ should be divisible by $2(x_r - x_l - 1)$.
+            so $\Delta t$ should be $\geq (x_r - x_c) + (x_r - x_l - 1)$ and $\Delta t - (x_r - x_c) - (x_r - x_l - 1)$ should be divisible by $2(x_r - x_l - 1)$.
           </SText>
         </SList>
         <SText>
