@@ -28,7 +28,7 @@ export const Waves = () => {
           there are two components of each wave that act independently from each other. One initially goes to the right, and the other one goes to the left.
         </SText>
         <SText>
-          Now, for each component of the first wave, we need to determine whether it increases the water level in the cell by 1. Here I will explain the process only for the right component;
+          Now, for each component of the first wave, we need to determine whether it increases the water level in the cell by $1$. Here I will explain the process only for the right component;
           the process for the left component is very similar. There are several possible cases, and at least one of them should be true for the wave component to increase the water level by $1$.
         </SText>
         <SList numbered>
@@ -48,7 +48,7 @@ export const Waves = () => {
           <SText>
             The pebble was thrown in between the banks ($x_l \lt min(x_c, x_p)$ and $max(x_c, x_p) \lt x_r$).
             We can add $x_p - x_l$ to $\Delta t$ and check how the right component of the wave would behave if it started at $x_l$.
-            The wave can be reflected either an odd or an even (possibly 0) number of times.$\\$
+            The wave can be reflected either an odd or an even (possibly $0$) number of times.$\\$
             For an even number of collisions, the wave should be able cover the distance between the banks an even number of times (returning to $x_l$) and then reach $x_c$,
             so $\Delta t$ should be $\geq x_c - x_l$ and $\Delta t - (x_c - x_l)$ should be divisible by $2(x_r - x_l - 1)$.$\\$
             For an odd number of collisions, the wave should be able to cover the distance between the banks an odd number of times (finishing at $x_r$) and then reach $x_c$,
@@ -56,7 +56,7 @@ export const Waves = () => {
           </SText>
         </SList>
         <SText>
-          The process for the second (negative) wave is very similar, although this wave decreases the water level by 1 instead of increasing it.
+          The process for the second (negative) wave is very similar, although this wave decreases the water level by $1$ instead of increasing it.
           We also need to subtract $2$ from $\Delta t$ in the beginning, because the second wave is always $2$ seconds behind the first one.
         </SText>
         <SText>
