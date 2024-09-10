@@ -10,8 +10,8 @@ export const PlayingGames = () => {
       </SText>
       <STitle>Brute Force</STitle>
       <SText>
-        We can brute force every possible first die, as we know the first pair of dice have a maximum value of $8$, the maximum possible combination is $16$, and we know that at least one of the second pair.
-        has a value of less than or equal to $8$, as the biggest value of both cannot be greater than $8$, as this would mean their sum is more than or equal to $18$, which is too big.
+        We can brute force every possible first die, as we know the first pair of dice have a maximum value of $8$, the maximum possible combination is $16$, and we know that the largest face of at least one of the second pair
+        $\le 8$, as the largest face of both cannot be greater than $8$, as this would mean their sum is more than or equal to $18$, which is too big.
         To brute force the first die of the second pair, iterate through all the numbers from one to eight for all faces, and dont let a face value be smaller than one before it (to avoid duplicates).
         With the maximum possible $n$ being $8$, we can just have $8$ nested for loops, to generate every single die face. However for $n \lt 8$, we can set the for loops to not iterate, and ignore the first $8-n$ faces.
         Note that there is a Python module which does this for us, <SCode> itertools.combinations_with_replacement </SCode> which brute forces the first die as described.
