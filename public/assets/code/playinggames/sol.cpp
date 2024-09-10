@@ -1,8 +1,6 @@
 // Solution Author: Shubham Kumar
 
 #include <bits/stdc++.h>
-#include <set>
-#include <iostream>
 using namespace std;
 #define all(x) x.begin(),x.end()
 #define l(x) for (dice_to_check[x]=(x?dice_to_check[x-1]:1);dice_to_check[x]<=point[x];++dice_to_check[x])
