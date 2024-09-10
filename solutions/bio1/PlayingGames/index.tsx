@@ -5,7 +5,7 @@ export const PlayingGames = () => {
     <>
       <STitle>Observation</STitle>
       <SText>
-        Given the first two dice, you can generate every single combination, in a set.
+        Given the first two dice, you can generate the entire distribution.
         Given the first die of the second pair, you can determine whether the dice will produce an identical distribution, and if so, you can find the last die.
       </SText>
       <STitle>Brute Force Solution</STitle>
