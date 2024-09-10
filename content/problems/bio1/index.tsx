@@ -71,6 +71,7 @@ import {
   Rules,
   AccordionPatience,
   OnTheRightTrack,
+  Trail,
 } from "solutions";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
@@ -843,5 +844,16 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <AccordionPatience />,
+  },
+  {
+    difficulty: "Easy",
+    display: "Trail",
+    original: "https://www.olympiad.org.uk/papers/2019/bio/bio19-exam.pdf",
+    year: 2019,
+    question: 2,
+    tags: ["Implementation"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <Trail />,
   },
 ];
