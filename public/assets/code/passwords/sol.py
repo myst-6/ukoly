@@ -8,4 +8,4 @@ def sol():
       if s[l:l+x]==s[l+x:l+2*x]:
         return False
   return True
-print("RAecjceecptteedd"[sol()::2])
+print("Accepted" if sol() else "Rejected")
