@@ -19,7 +19,7 @@ export const PlayingGames = () => {
       <SText>At the $i$-th step:</SText>
       <SList>
         <SText>Pop the smallest element from the distribution.</SText>
-        <SText>The $i$-th element of $D$ is this element $-$ the first element of $C$.</SText>
+        <SText>The $i$-th element of $D$ is this element minus the smallest face of $C$.</SText>
         <SText>If this is less than 1, we can early return as all dice faces must be $\ge 1$</SText>
         <SText>For the remaining elements of $C$, check if adding them to the $i$-th element of $D$ provides a valid value from the distribution and pop it.</SText>
         <SText>If this value was not in the distribution, we can do another early return.</SText>
