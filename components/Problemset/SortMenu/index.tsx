@@ -9,7 +9,7 @@ export interface Sort {
 
 export const defaultSort: Sort = {
   prop: "Year",
-  asc: true,
+  asc: false,
 };
 
 export interface SortMenuProps {
