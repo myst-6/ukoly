@@ -1,4 +1,5 @@
 import { SCodeBlock, SText, STitle, Link } from "components";
+import { BASE_URL } from "content";
 
 export const Shirts = () => {
   return (
@@ -33,7 +34,7 @@ export const Shirts = () => {
         you are not familiar with BFS, you can read more
         about it <Link href="https://usaco.guide/silver/graph-traversal?lang=cpp">here</Link>.
         For another BIO problem that can be solved using BFS,
-        see <Link href="https://ukoly.vercel.app/bio1?problem=Dreaming+Spires">BIO1 2023 Q3 - Dreaming Spires</Link>.
+        see <Link href={`${BASE_URL}/bio1?problem=Dreaming+Spires`}>BIO1 2023 Q3 - Dreaming Spires</Link>.
       </SText>
       <STitle>Code</STitle>
       <SCodeBlock path="shirts/sol" />
