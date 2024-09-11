@@ -63,10 +63,6 @@ export const people: Person[] = [
     name: "Shubham Kumar",
     socials: [
       {
-        platform: platforms.discord,
-        handle: "626315460538793985",
-      },
-      {
         platform: platforms.codeforces,
         handle: "RedMinecrafter101",
       },
