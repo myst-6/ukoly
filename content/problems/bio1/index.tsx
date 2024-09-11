@@ -71,6 +71,7 @@ import {
   MorseCode,
   Rules,
   AccordionPatience,
+  AlphaComplex,
   Waves,
   OnTheRightTrack,
   Trail,
@@ -858,6 +859,17 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <AccordionPatience />,
+  },
+  {
+    difficulty: "Medium",
+    display: "Alpha Complex",
+    original: "https://olympiad.org.uk/papers/2020/bio/bio20-exam.pdf",
+    year: 2020,
+    question: 2,
+    tags: ["Implementation"],
+    editorialAuthors: ["Yuvan Raja"],
+    solutionAuthors: ["Yuvan Raja"],
+    component: <AlphaComplex />
   },
   {
     difficulty: "Hard",
