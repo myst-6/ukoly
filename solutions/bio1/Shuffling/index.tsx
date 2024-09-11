@@ -1,4 +1,5 @@
 import { SCodeBlock, SText, STitle, Link, SCode } from "components";
+import { BASE_URL } from "content";
 
 export const Shuffling = () => {
   return (
@@ -32,7 +33,7 @@ export const Shuffling = () => {
         you may enjoy<Link href="https://www.youtube.com/watch?v=Eythq9848Fg&list=PLZQftyCk7_SdoVexSmwy_tBgs7P0b97yD">this video series</Link>on how to build a programming language interpreter.
       </SText>
       <SText>
-        A BIO problem solvable by a very similar idea is <Link href="https://ukoly.vercel.app/bio1?problem=Parsing+Lists">BIO1 2024 Q2</Link>.
+        A BIO problem solvable by a very similar idea is <Link href={`${BASE_URL}/bio1?problem=Parsing+Lists`}>BIO1 2024 Q2</Link>.
       </SText>
       <STitle>Code</STitle>
       <SCodeBlock path="shirts/sol" />

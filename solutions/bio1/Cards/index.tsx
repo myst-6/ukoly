@@ -1,4 +1,5 @@
 import { Link, SCodeBlock, SText, STitle } from "components";
+import { BASE_URL } from "content";
 
 export const Cards = () => {
     return (
@@ -22,7 +23,7 @@ export const Cards = () => {
             </SText>
             <SText>
                 For an explanation of bitmasking, see
-                <Link href="https://ukoly.vercel.app/bio1?problem=Block+Palindromes">Solution 2</Link> in 
+                <Link href={`${BASE_URL}/bio1?problem=Block+Palindromes`}>Solution 2</Link> in 
                 this editorial.
             </SText>
 

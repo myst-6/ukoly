@@ -1,4 +1,5 @@
 import { SCodeBlock, SList, SSubtitle, SText, STitle, Link } from "components";
+import { BASE_URL } from "content";
 //
 export const FalsePlan = () => {
   return (
@@ -37,7 +38,7 @@ export const FalsePlan = () => {
       </SText>
       <STitle>Commentary</STitle>
       <SText>
-        It may be useful to think of the second part of the above solution as trying to walk down a decision tree to reach the desired leaf node, knowing the size of all subtrees. For another problem which can be solved in a very similar way see <Link href="https://ukoly.vercel.app/bio1?problem=Word+Game">BIO 2024 R1 Q3 (Word Game)</Link>.
+        It may be useful to think of the second part of the above solution as trying to walk down a decision tree to reach the desired leaf node, knowing the size of all subtrees. For another problem which can be solved in a very similar way see <Link href={`${BASE_URL}/bio1?problem=Word+Game`}>BIO 2024 R1 Q3 (Word Game)</Link>.
       </SText> 
       <STitle>Code</STitle>
       <SCodeBlock path="falseplan/sol" />
