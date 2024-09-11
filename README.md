@@ -8,4 +8,4 @@ On the 'Round 1' and 'Round 2' pages, you can see a list of the problems which h
 1. Having a grader for the publicly-available BIO1 test data per problem.
 
 # Website
-https://ukoly.vercel.app
+https://www.britishinformatics.org/
