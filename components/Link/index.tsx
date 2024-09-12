@@ -13,6 +13,7 @@ export const Link = ({ children, current, ...props }: LinkProps) => {
     as={NextLink} 
     borderRadius={5}
     padding={1}
+    target="_blank"
     color={colorMode === "dark" ? "lightblue" : "blue"}
     _hover={current ? {} : { backgroundColor: colorMode === "dark" ? "gray.600" : "gray.100" }} 
     {...props}>
