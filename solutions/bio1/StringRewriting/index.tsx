@@ -37,7 +37,7 @@ export const StringRewriting = () => {
         This function will return a vector $v$ with size 5 containing (in order) the number of $A$, $B$, $C$, $D$, $E$ characters of the first $pos$ characters of $c[steps]$.  
         
         Using a divide-and-conquer approach, this function works by identifying two consecutive substrings $a$ and $b$, s.t. $a+b=c[steps]$. 
-        If $pos <= |a|$, then we call $Find(c, steps-1, pos)$. 
+        If $pos \leq |a|$, then we call $Find(c, steps-1, pos)$. 
         Else, we call $Find(c, steps-2, pos - |a|)$. 
 
         $v$ will then be added to $ans$ (exactly how matrix addition works), and $len$ will be updated accordingly depending on the $c$ (check implementation).

@@ -271,7 +271,7 @@ export const bio1Problems: ProblemInfo[] = [
     component: <Loops />,
   },
   {
-    difficulty: "Hard",
+    difficulty: "Insane",
     display: "String Rewriting",
     original: "https://olympiad.org.uk/papers/2007/bio/bio07exam.pdf",
     year: 2007,
