@@ -6,7 +6,7 @@ export const StringRewriting = () => {
       <STitle>Idea</STitle>
       
       <SText>
-        Note $2^(31)$ is much greater than $10^9$, therefore a bruteforce approach won't work. 
+        Note $2^{31}$ is much greater than $10^9$, therefore a bruteforce approach won't work. 
         Let $A[i], B[i], C[i], D[i], E[i]$ each respectively denote the result of $i$ operations applied to $A$, $B$, $C$, $D$ and $E$.  
       </SText>
       
