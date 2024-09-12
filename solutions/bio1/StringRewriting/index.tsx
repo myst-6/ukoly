@@ -28,7 +28,7 @@ export const StringRewriting = () => {
       </SText>
       <SText>
         We will store the answer in a vector with size 5 called $ans$, initially filled with 0s. 
-        We will also store the length has been processed so far in $len$. By keeping track of this variable, we can ensure the information contributing to $ans$ is only when $len <= pos$. 
+        We will also store the length has been processed so far in $len$. By keeping track of this variable, we can ensure the information contributing to $ans$ is only when $len \leq pos$. 
       </SText>
       <SText>
         After this, we will iterate through each character of the three letter string. 
