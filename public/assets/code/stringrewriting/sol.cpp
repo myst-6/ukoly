@@ -15,7 +15,7 @@ void solve() {
 
 	vector<int> fib={1,1}; 
 	while (fib.back() < pow2[31]) {
-		fib.push_back(fib.back() + fib[ssize(fib)-2]); 
+		fib.push_back(fib.back() + fib[(int)fib.size()-2]); 
 	}
 
 	map<array<int,3>, vector<int>> dp; 
