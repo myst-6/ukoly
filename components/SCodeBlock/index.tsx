@@ -99,12 +99,8 @@ export const SCodeBlock = ({ path }: SCodeBlockProps) => {
     const { status, message } = results[0]!;
     if (status === "TS") {
       setOutput("Waiting...");
-    } else if (status === "OK") {
-      setOutput(message);
-    } else if (status === "RJ") {
-      setOutput(`Please report this to Boris on discord:\n${message}`);
     } else {
-      setOutput("Invalid input given.");
+      setOutput(message);
     }
   }, [results]);
 
