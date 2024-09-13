@@ -1,7 +1,17 @@
-import { Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon, Box, Tab, TabList, TabPanel, TabPanels, Tabs, Textarea,
+  HStack,
+  VStack,
+  Button
+} from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { atomOneDark } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import { CodeBlock } from "./CodeBlock";
+import { STitle } from "components";
 
 export const base: string = "/assets/code/";
 
@@ -9,6 +19,8 @@ export interface Language {
   display: string;
   extension: string;
   highlight: string;
+  pistonName: string;
+  version: string;
 }
 
 /*
@@ -22,16 +34,22 @@ export const languages: Language[] = [
   {
     display: "C++",
     extension: "cpp",
-    highlight: "cpp"
+    highlight: "cpp",
+    pistonName: "c++",
+    version: "10.2.0"
   },
   {
     display: "Python",
     extension: "py",
-    highlight: "python"
+    highlight: "python",
+    pistonName: "python",
+    version: "3.10"
   }
 ];
 
 export type SourceCode = null | string;
+export type TestCase = null | string;
+export type Output = null | string;
 
 export interface SCodeBlockProps {
   path: string;
@@ -39,6 +57,8 @@ export interface SCodeBlockProps {
 
 export const SCodeBlock = ({ path }: SCodeBlockProps) => {
   const [codes, setCodes] = useState<SourceCode[]>(languages.map(() => null));
+  const [testCase, setTestCase] = useState<TestCase>("");
+  const [output, setOutput] = useState<Output>(null);
 
   useEffect(() => {
     async function getCode(ext: string): Promise<SourceCode> {
@@ -53,7 +73,7 @@ export const SCodeBlock = ({ path }: SCodeBlockProps) => {
       } catch (error) {
         // some severe error
         console.error("Sorry, there was an error fetching the solution.");
-        console.error("Please report this to one of the managers on discord.");
+        console.error("Please report this to Boris on discord.");
         console.error(error);
         return null;
       }
@@ -63,31 +83,116 @@ export const SCodeBlock = ({ path }: SCodeBlockProps) => {
       setCodes(codes);
     })();
   }, [path]);
+  const handleRunCode = () => {
+    setOutput("waiting");
+    const idx = codes.findIndex(code => code !== null);
+    fetch("https://emkc.org/api/v2/piston/execute",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          language: languages[idx] ? languages[idx].pistonName : "python", // specify the language
+          files: [{"name": "sol." + (languages[idx] ? languages[idx].extension : "py"), "content": codes[idx]}], // specify the code to execute
+          stdin: testCase, // specify the input
+          version: languages[idx] ? languages[idx].version : "3.10",
+        }),
+      }
+    ).then(res => {
+      if (!res.ok) {
+        console.error(res);
+        throw new Error("Network error");
+      }
+      return res.json();
+    }).then(data => {
+      if (data.run.stderr) {  
+        setOutput(data.run.stderr);
+        return;
+      }
+      setOutput(data.run.stdout);
+    }).catch(err => {
+      console.error(err);
+      setOutput("Grader error. Please report this to Boris on discord.");
+    });
+  };
 
   return (
-    <Tabs isFitted defaultIndex={0} variant="line">
-      <TabList mb={1}>
-        {
-          ...languages.filter((_, idx) => codes[idx] !== null).map(({ display, extension }) => {
-            return <Tab key={extension}>{display}</Tab>
-          })
-        }
-      </TabList>
-      <TabPanels>
-        {
-          ...Object.entries(codes).filter(([_, code]) => code !== null).map(([idx, code]) => {
-            return (
-              <TabPanel key={+idx}>
-                <CodeBlock 
-                  theme={atomOneDark} 
-                  code={code!}
-                  language={languages[+idx]!.highlight} 
+    <>
+      <Accordion defaultIndex={[1]} allowMultiple>
+        <AccordionItem>
+          <AccordionButton>
+            <Box as='span' flex='1' textAlign='left'>
+              Click to see code:
+            </Box>
+            <AccordionIcon />
+          </AccordionButton>
+          <AccordionPanel>
+            <Tabs isFitted defaultIndex={0} variant="line">
+              <TabList mb={1}>
+                {
+                  ...languages.filter((_, idx) => codes[idx] !== null).map(({ display, extension }) => {
+                    return <Tab key={extension}>{display}</Tab>
+                  })
+                }
+              </TabList>
+              <TabPanels>
+                {
+                  ...Object.entries(codes).filter(([_, code]) => code !== null).map(([idx, code]) => {
+                    return (
+                      <TabPanel key={+idx}>
+                        <CodeBlock
+                          theme={atomOneDark}
+                          code={code!}
+                          language={languages[+idx]!.highlight}
+                        />
+                      </TabPanel>
+                    )
+                  })
+                }
+              </TabPanels>
+            </Tabs>
+          </AccordionPanel>
+        </AccordionItem>
+        <AccordionItem>
+          <AccordionButton>
+            <Box as='span' flex='1' textAlign='left'>
+              Click to test on custom inputs:
+            </Box>
+            <AccordionIcon />
+          </AccordionButton>
+          <AccordionPanel>
+            <HStack justifyContent="center" alignItems="center" width="100%">
+              <VStack flex="1" spacing={4}>
+                <STitle size="sm">Input</STitle>
+                <Textarea
+                  placeholder="Enter a test case: "
+                  size="md"
+                  width="100%"
+                  value={testCase === null ? "" : testCase}
+                  onChange={(e) => setTestCase(e.target.value)}
                 />
-              </TabPanel>
-            )
-          })
-        }
-      </TabPanels>
-    </Tabs>
-  );
+              </VStack>
+              <VStack flex="1" spacing={4}>
+
+                <STitle size="sm">Output</STitle>
+                <Textarea
+                  placeholder="Output will appear here"
+                  size="md"
+                  width="100%"
+                  isReadOnly
+                  value={output === null ? "" : output}
+                />
+              </VStack>
+            </HStack>
+            <Box display="flex" justifyContent="center" width="100%" marginTop="15px">
+              <Button colorScheme="teal" size="md" onClick={handleRunCode}>
+                Run Code
+              </Button>
+            </Box>
+          </AccordionPanel>
+        </AccordionItem>
+      </Accordion>
+    </>
+  )
 }
