@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import { atomOneDark } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import { CodeBlock } from "./CodeBlock";
 import { STitle } from "components";
+import { useRunner } from "utils";
 
 export const base: string = "/assets/code/";
 
@@ -85,39 +86,27 @@ export const SCodeBlock = ({ path }: SCodeBlockProps) => {
       setCodes(codes);
     })();
   }, [path]);
+
+  const { dispatch, results } = useRunner();
+  
   const handleRunCode = () => {
-    setOutput("Waiting...");
     const idx = codes.findIndex(code => code !== null);
-    fetch("https://emkc.org/api/v2/piston/execute",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          language: languages[idx]!.pistonName, // specify the language
-          files: [{"name": "sol." + languages[idx]!.extension, "content": codes[idx]}], // specify the code to execute
-          stdin: testCase, // specify the input
-          version: languages[idx]!.version,
-        }),
-      }
-    ).then(res => {
-      if (!res.ok) {
-        console.error(res);
-        throw new Error("Network error");
-      }
-      return res.json();
-    }).then(data => {
-      if (data.run.stderr) {  
-        setOutput(data.run.stderr);
-        return;
-      }
-      setOutput(data.run.stdout);
-    }).catch(err => {
-      console.error(err);
-      setOutput("Grader error. Please report this to Boris on discord.");
-    });
+    dispatch([testCase ?? ""], codes[idx]!, languages[idx]!);
   };
+
+  useEffect(() => {
+    if (results.length === 0) return;
+    const { status, message } = results[0]!;
+    if (status === "TS") {
+      setOutput("Waiting...");
+    } else if (status === "OK") {
+      setOutput(message);
+    } else if (status === "RJ") {
+      setOutput(`Please report this to Boris on discord:\n${message}`);
+    } else {
+      setOutput("Invalid input given.");
+    }
+  }, [results]);
 
   return (
     <>
@@ -176,7 +165,6 @@ export const SCodeBlock = ({ path }: SCodeBlockProps) => {
                 />
               </VStack>
               <VStack flex="1" spacing={4}>
-
                 <STitle size="sm">Output</STitle>
                 <Textarea
                   placeholder="Output will appear here"
