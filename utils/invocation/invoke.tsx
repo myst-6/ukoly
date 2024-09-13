@@ -12,6 +12,22 @@ export const waiting: InvocationResult = {
   message: "Waiting..."
 };
 
+/**
+ * @summary 
+ * Runs code on a single input and returns a promise holding an invocation result.
+ * 
+ * @param source
+ * The source code, as a string.
+ * 
+ * @param input
+ * The stdin for the test, as a string.
+ * 
+ * @param language
+ * The code language being used.
+ * 
+ * @dispatch
+ * A way of running invocation on a list of inputs for a given source code and language.
+ */
 export function invoke(
   source: string,
   input: string,

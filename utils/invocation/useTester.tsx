@@ -12,6 +12,27 @@ export interface TestResult {
   message: string;
 }
 
+/**
+ * @summary 
+ * Runs code on a list of tests and produces test results. 
+ * If the invocation status is anything other than OK then the test result is the same.
+ * Otherwise, the checker is used to determine a checker status - either AC or WA.
+ * 
+ * @param tests
+ * The list of tests used for the program.
+ * This should be fixed during runtime!
+ * 
+ * @param checker
+ * The checker function used to determine whether a participant's output is correct.
+ * For most problems, `ncmp`/`wcmp`/`fcmp` should be suitable.
+ * 
+ * @results
+ * A list of test results.
+ * The i-th test result is for the i-th test given in the dispatch.
+ * 
+ * @dispatch​
+ * A way of running the tests on a given source code and language.
+ */
 export function useTester(tests: Test[], checker: Checker) {
   const [results, setResults] = useState<TestResult[]>([]);
 
