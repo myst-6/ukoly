@@ -15,7 +15,11 @@ export const pages = {
   bio2: {
     display: "Round 2",
     path: "bio2"
-  } as PageInfo
+  } as PageInfo,
+  grader: {
+    display: "Grader",
+    path: "grader"
+  } as PageInfo,
 };
 
 export type Pages = typeof pages;
