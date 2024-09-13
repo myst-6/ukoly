@@ -39,14 +39,14 @@ export const StringRewriting = () => {
       
       <SText>
         After this, we will iterate through each character of the three letter string. 
-        In each iteration, we call a helper function called $Find(c, steps, pos)$ which takes three parameters: $c$, the character of the current iteration; $steps$, how many operations we will apply on this character; and $pos$, the length of the string we should take into account.
+        In each iteration, we call a helper function called $countChars(c, steps, pos)$ which takes three parameters: $c$, the character of the current iteration; $steps$, how many operations we will apply on this character; and $pos$, the length of the string we should take into account.
         This function will return a vector $v$ with size $5$ containing (in order) the number of $A$, $B$, $C$, $D$, $E$ characters of the first $pos$ characters of $c[steps]$.  
       </SText>
         
       <SText>
         Using a divide-and-conquer approach, this function works by identifying two consecutive substrings $a$ and $b$, such that $a+b=c[steps]$. 
-        If $pos \leq |a|$, then we call $Find(c, steps-1, pos)$. 
-        Else, we call $Find(c, steps-2, pos - |a|)$. 
+        If $pos \leq |a|$, then we call $countChars(c, steps-1, pos)$. 
+        Else, we call $countChars(c, steps-2, pos - |a|)$. 
       </SText>
         
       <SText>
@@ -54,7 +54,7 @@ export const StringRewriting = () => {
       </SText> 
         
       <SText> 
-        Note that dynamic programing is used; we memoize the results of the function $Find(c, steps, pos)$, as this means calculations which have been already done won't be made again.  
+        Note that dynamic programing is used; we memoize the results of the function $countChars(c, steps, pos)$, as this means calculations which have been already done won't be made again.  
       </SText>
         
       <STitle>Code</STitle>
