@@ -6,12 +6,12 @@ export const StringRewriting = () => {
       <STitle>Idea</STitle>
       
       <SText>
-        Note constraints are big, therefore a bruteforce approach won't work. 
-        Let $A[i], B[i], C[i], D[i], E[i]$ each respectively denote the result of $i$ operations applied to $A$, $B$, $C$, $D$ and $E$.  
+        Note constraints are big, therefore a brute force approach won't work. 
+        Let $A[i], B[i], C[i], D[i], E[i]$ denote the result of $i$ operations applied to $A$, $B$, $C$, $D$ and $E$, respectively.  
       </SText>
       
       <SText>
-        From caseworking by hand, the following could be observed: 
+        From considering small cases by hand, the following observations can be made: 
       </SText>
       
       <SList>
@@ -29,12 +29,12 @@ export const StringRewriting = () => {
       <STitle>Solution</STitle>
       
       <SText>
-        Initially, we precompute $2$ sequences and store them into arrays: powers of $2$ and the fibonacci sequence. This will allow $O(1)$ retrieval for further queries regarding these $2$ sequences. 
+        Initially, we precompute $2$ sequences and store them into arrays: powers of $2$ and the Fibonacci sequence. This will allow $O(1)$ retrieval for further queries regarding these $2$ sequences. 
       </SText>
       
       <SText>
-        We will store the answer in a vector with size $5$ called $ans$, initialised with $0$. 
-        We will also store the length has been processed so far in $len$. By keeping track of this variable, we can ensure the information contributing to $ans$ is only when $len \leq pos$. 
+        We will store the answer in a vector with size $5$ called $ans$, initialised with full zeroes. 
+        We will also store the length that has been processed so far in $len$. By keeping track of this variable, we can ensure the information contributing to $ans$ is only when $len \leq pos$. 
       </SText>
       
       <SText>
@@ -44,13 +44,13 @@ export const StringRewriting = () => {
       </SText>
         
       <SText>
-        Using a divide-and-conquer approach, this function works by identifying two consecutive substrings $a$ and $b$, s.t. $a+b=c[steps]$. 
+        Using a divide-and-conquer approach, this function works by identifying two consecutive substrings $a$ and $b$, such that $a+b=c[steps]$. 
         If $pos \leq |a|$, then we call $Find(c, steps-1, pos)$. 
         Else, we call $Find(c, steps-2, pos - |a|)$. 
       </SText>
         
       <SText>
-        $v$ will then be added to $ans$ (vector addition), and $len$ will be updated accordingly depending on the $c$ (check implementation).
+        $v$ will then be added to $ans$ (vector addition), and $len$ will be updated accordingly depending on $c$ (check implementation).
       </SText> 
         
       <SText> 

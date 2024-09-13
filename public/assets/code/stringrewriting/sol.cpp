@@ -20,7 +20,7 @@ void solve() {
 
 	map<array<int,3>, vector<int>> dp; 
 
-	function<vector<int>(char,int,int)> Find = [&] (char c, int steps, int pos) {
+	function<vector<int>(char,int,int)> countChars = [&] (char c, int steps, int pos) {
 		if (dp.count({c-'A',steps,pos})) {
 			return dp[{c-'A',steps,pos}]; 
 		}
@@ -31,46 +31,46 @@ void solve() {
 			if (steps == 0) return vector<int>{1,0,0,0,0}; 
 			if (steps == 1) return vector<int>{0,1,0,0,0}; 
 			if (pos >= fib[steps-2]) {
-				vector<int> a = Find('A', steps-2, fib[steps-2]); 
-				vector<int> b = Find('A', steps-1, pos - fib[steps-2]); 
+				vector<int> a = countChars('A', steps-2, fib[steps-2]); 
+				vector<int> b = countChars('A', steps-1, pos - fib[steps-2]); 
 				for (int i=0; i<5; i++) {
 					a[i] += b[i]; 
 				}
 				return dp[{c-'A',steps,pos}]=a; 
 			} else {
-				return Find('A', steps-2, pos); 
+				return countChars('A', steps-2, pos); 
 			}
 		}
 		if (c == 'B') {
-			return Find('A', steps+1, pos); 
+			return countChars('A', steps+1, pos); 
 		}
 		if (c == 'C') {
 			if (steps == 0) return vector<int>{0,0,1,0,0}; 
 			int len = pow2[steps]; 
 			if (pos >= len/2) {
-				vector<int> a = Find('C', steps-1, len/2); 
-				vector<int> b = Find('D', steps-1, pos - len/2); 
+				vector<int> a = countChars('C', steps-1, len/2); 
+				vector<int> b = countChars('D', steps-1, pos - len/2); 
 				for (int i=0; i<5; i++) {
 					a[i] += b[i]; 
 				}
 				return dp[{c-'A',steps,pos}]=a; 
 			} else {
-				return Find('C', steps-1, pos); 
+				return countChars('C', steps-1, pos); 
 			}
 		}
 		if (c == 'D') {
 			if (steps == 0) return vector<int>{0,0,0,1,0}; 
 			int len = pow2[steps]; 
 			if (pos >= len/2) {
-				vector<int> a = Find('D', steps-1, len/2); 
+				vector<int> a = countChars('D', steps-1, len/2); 
 				pos -= len/2; 
-				vector<int> b = Find('C', steps-1, pos); 
+				vector<int> b = countChars('C', steps-1, pos); 
 				for (int i=0; i<5; i++) {
 					a[i] += b[i]; 
 				}
 				return dp[{c-'A',steps,pos}]=a; 
 			} else {
-				return Find('D', steps-1, pos); 
+				return countChars('D', steps-1, pos); 
 			}
 		}
 		if (c == 'E') {
@@ -81,7 +81,7 @@ void solve() {
 	int len = 0; 
 	vector<int> ans(5,0); 
 	for (char c : s) {
-		vector<int> add = Find(c, steps, pos - len); 
+		vector<int> add = countChars(c, steps, pos - len); 
 		for (int i=0; i<5; i++) {
 			ans[i] += add[i]; 
 		}
