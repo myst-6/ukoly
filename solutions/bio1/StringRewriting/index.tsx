@@ -29,18 +29,18 @@ export const StringRewriting = () => {
       <STitle>Solution</STitle>
       
       <SText>
-        Initially, we precompute 2 sequences and store them into arrays: powers of 2 and the fibonacci sequence. This will allow $O(1)$ retrieval for further queries regarding these 2 sequences. 
+        Initially, we precompute $2$ sequences and store them into arrays: powers of $2$ and the fibonacci sequence. This will allow $O(1)$ retrieval for further queries regarding these $2$ sequences. 
       </SText>
       
       <SText>
-        We will store the answer in a vector with size 5 called $ans$, initially filled with 0s. 
+        We will store the answer in a vector with size $5$ called $ans$, initialised with $0$. 
         We will also store the length has been processed so far in $len$. By keeping track of this variable, we can ensure the information contributing to $ans$ is only when $len \leq pos$. 
       </SText>
       
       <SText>
         After this, we will iterate through each character of the three letter string. 
         In each iteration, we call a helper function called $Find(c, steps, pos)$ which takes three parameters: $c$, the character of the current iteration; $steps$, how many operations we will apply on this character; and $pos$, the length of the string we should take into account.
-        This function will return a vector $v$ with size 5 containing (in order) the number of $A$, $B$, $C$, $D$, $E$ characters of the first $pos$ characters of $c[steps]$.  
+        This function will return a vector $v$ with size $5$ containing (in order) the number of $A$, $B$, $C$, $D$, $E$ characters of the first $pos$ characters of $c[steps]$.  
       </SText>
         
       <SText>
