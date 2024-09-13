@@ -43,7 +43,7 @@ def solve(volumes, n):
 
 
 if __name__ == "__main__":
-    j, n = [int(i) for i in input("Please enter two integers: ").split()]
+    j, n = [int(i) for i in input().split()]
     capacities = [int(i) for i in input(f"Please enter jug volumes: ").split()]
     volumes = [0 for _ in capacities]
     print(solve(volumes, n))

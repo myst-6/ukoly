@@ -1,5 +1,5 @@
 if __name__ == "__main__":
-    nums = [int(x) for x in input("Please enter 5 numbers: ").split()]
+    nums = [int(x) for x in input().split()]
     score = 0
     for i in range(5):
         for j in range(i+1, 5):

@@ -72,8 +72,8 @@ def match(pattern, string):
 
 
 if __name__ == '__main__':
-    pattern = input("Please enter the pattern: ")
-    s1 = input("Please enter the first string: ")
-    s2 = input("Please enter the second string: ")
+    pattern = input()
+    s1 = input()
+    s2 = input()
     print("Yes" if match(pattern, s1) else "No")
     print("Yes" if match(pattern, s2) else "No")
