@@ -98,7 +98,7 @@ export const SCodeBlock = ({ path }: SCodeBlockProps) => {
           language: languages[idx]!.pistonName, // specify the language
           files: [{"name": "sol." + languages[idx]!.extension, "content": codes[idx]}], // specify the code to execute
           stdin: testCase, // specify the input
-          version: languages[idx]!,
+          version: languages[idx]!.version,
         }),
       }
     ).then(res => {
