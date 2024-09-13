@@ -3,9 +3,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define cin fin
-#define cout fout
-
 typedef long long ll;
 
 const int MAXN = (1 << 18);
@@ -57,8 +54,6 @@ bool comp2(pair<point, int> a, pair<point, int> b) {
 }
 
 int main() {
-    ifstream fin ("input.txt");
-    ofstream fout ("output.txt");
     vector<pair<int, int>> points;
     init();
     int n; cin >> n;

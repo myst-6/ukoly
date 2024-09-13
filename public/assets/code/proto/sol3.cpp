@@ -4,11 +4,6 @@
 
 using namespace std;
 
-ifstream fin("input.txt");
-ofstream fout("output.txt");
-
-#define cin fin
-#define cout fout
 #define int unsigned int
 
 const int inf = -1;

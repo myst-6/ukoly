@@ -62,10 +62,10 @@ export function invoke(
       }
       return res.json();
     }).then(data => {
-      if (data.run.stderr) {
+      if (data.run.stderr || data.run.signal) {
         resolve({
           status: "RE",
-          message: data.run.stderr,
+          message: data.run.stderr || data.run.signal,
         });
       }
       resolve({
