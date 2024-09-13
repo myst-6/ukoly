@@ -63,8 +63,7 @@ void solve() {
 			int len = pow2[steps]; 
 			if (pos >= len/2) {
 				vector<int> a = countChars('D', steps-1, len/2); 
-				pos -= len/2; 
-				vector<int> b = countChars('C', steps-1, pos); 
+				vector<int> b = countChars('C', steps-1, pos - len/2); 
 				for (int i=0; i<5; i++) {
 					a[i] += b[i]; 
 				}

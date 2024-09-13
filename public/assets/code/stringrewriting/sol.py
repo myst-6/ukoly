@@ -54,8 +54,7 @@ def solve():
             length = pow2[steps]
             if pos >= length // 2:
                 a = countChars('D', steps - 1, length // 2)
-                pos -= length // 2
-                b = countChars('C', steps - 1, pos)
+                b = countChars('C', steps - 1, pos - length // 2)
                 result = [a[i] + b[i] for i in range(5)]
                 dp[(c, steps, pos)] = result
                 return result
