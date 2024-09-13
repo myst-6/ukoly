@@ -50,7 +50,7 @@ export const StringRewriting = () => {
       </SText>
         
       <SText>
-        $v$ will then be added to $ans$ (exactly the same as how matrix addition works), and $len$ will be updated accordingly depending on the $c$ (check implementation).
+        $v$ will then be added to $ans$ (vector addition), and $len$ will be updated accordingly depending on the $c$ (check implementation).
       </SText> 
         
       <SText> 
