@@ -4,12 +4,6 @@
 
 using namespace std;
 
-// set up I/O
-ifstream fin("input.txt");
-ofstream fout("output.txt");
-#define cin fin
-#define cout fout
-
 // memory limit prevents long long :sob:
 #define int unsigned int 
 

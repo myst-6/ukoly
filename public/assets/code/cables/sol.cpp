@@ -7,8 +7,6 @@ using namespace std;
 
 int32_t main()
 {
-    ifstream cin("input.txt");
-    ofstream cout("output.txt");
     int s, l;
     cin >> s >> l;
 

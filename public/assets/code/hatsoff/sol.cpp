@@ -2,12 +2,6 @@
 
 using namespace std;
 
-ifstream fin("input.txt");
-ofstream fout("output.txt");
-
-#define cin fin
-#define cout fout
-
 int main() {
   // take inputs
   int c;

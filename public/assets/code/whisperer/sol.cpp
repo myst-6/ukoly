@@ -5,12 +5,6 @@
 using namespace std;
 using ll = long long;
 
-ifstream fin("input.txt");
-ofstream fout("output.txt");
-
-#define cin fin
-#define cout fout
-
 const int P = 31;
 
 ll powP[12];
