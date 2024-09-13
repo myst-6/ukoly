@@ -3,10 +3,12 @@ import {
   AccordionItem,
   AccordionButton,
   AccordionPanel,
-  AccordionIcon, Box, Tab, TabList, TabPanel, TabPanels, Tabs, Textarea,
+  AccordionIcon, Tab, TabList, TabPanel, TabPanels, Tabs, Textarea,
   HStack,
   VStack,
-  Button
+  Button,
+  Flex,
+  Box
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { atomOneDark } from "react-syntax-highlighter/dist/cjs/styles/hljs";
@@ -84,7 +86,7 @@ export const SCodeBlock = ({ path }: SCodeBlockProps) => {
     })();
   }, [path]);
   const handleRunCode = () => {
-    setOutput("waiting");
+    setOutput("Waiting...");
     const idx = codes.findIndex(code => code !== null);
     fetch("https://emkc.org/api/v2/piston/execute",
       {
@@ -93,10 +95,10 @@ export const SCodeBlock = ({ path }: SCodeBlockProps) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          language: languages[idx] ? languages[idx].pistonName : "python", // specify the language
-          files: [{"name": "sol." + (languages[idx] ? languages[idx].extension : "py"), "content": codes[idx]}], // specify the code to execute
+          language: languages[idx]!.pistonName, // specify the language
+          files: [{"name": "sol." + languages[idx]!.extension, "content": codes[idx]}], // specify the code to execute
           stdin: testCase, // specify the input
-          version: languages[idx] ? languages[idx].version : "3.10",
+          version: languages[idx]!,
         }),
       }
     ).then(res => {
@@ -169,7 +171,7 @@ export const SCodeBlock = ({ path }: SCodeBlockProps) => {
                   placeholder="Enter a test case: "
                   size="md"
                   width="100%"
-                  value={testCase === null ? "" : testCase}
+                  value={testCase ?? ""}
                   onChange={(e) => setTestCase(e.target.value)}
                 />
               </VStack>
@@ -181,15 +183,15 @@ export const SCodeBlock = ({ path }: SCodeBlockProps) => {
                   size="md"
                   width="100%"
                   isReadOnly
-                  value={output === null ? "" : output}
+                  value={output ?? ""}
                 />
               </VStack>
             </HStack>
-            <Box display="flex" justifyContent="center" width="100%" marginTop="15px">
+            <Flex justifyContent="center" width="100%" marginTop="15px">
               <Button colorScheme="teal" size="md" onClick={handleRunCode}>
                 Run Code
               </Button>
-            </Box>
+            </Flex>
           </AccordionPanel>
         </AccordionItem>
       </Accordion>
