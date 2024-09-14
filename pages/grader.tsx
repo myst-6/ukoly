@@ -41,33 +41,33 @@ export default function Grader() {
           <Box padding="1em">
             <HStack paddingBottom="1%" justifyContent="space-between" width="50vw">
               <SSelector name={"Language"} opts={
-          Object.entries(languages).reduce((acc: Record<string, string>, [key, value]) => {
-            acc[key] = value.display;
-            return acc;
-          }, {} as Record<string, string>)
+                Object.entries(languages).reduce((acc: Record<string, string>, [key, value]) => {
+                  acc[key] = value.display;
+                  return acc;
+                }, {} as Record<string, string>)
               } opt={language} onSelect={
-          (key: string) => {
-            setLanguage(+key);
-            const lang = languages[+key]!;
-            const ed = editorRef.current;
-            console.log(lang.initPos);
-            if (Object.values(languages).some(lang => ed.getValue() === lang.template) || ed.getValue().trim() === '') {
-              setValue(lang.template);
-              ed.setValue(lang.template);
-              ed.setPosition(lang.initPos);
-              ed.focus();
-            }
-          }
+                (key: string) => {
+                  setLanguage(+key);
+                  const lang = languages[+key]!;
+                  const ed = editorRef.current;
+                  console.log(lang.initPos);
+                  if (Object.values(languages).some(lang => ed.getValue() === lang.template) || ed.getValue().trim() === '') {
+                    setValue(lang.template);
+                    ed.setValue(lang.template);
+                    ed.setPosition(lang.initPos);
+                    ed.focus();
+                  }
+                }
               } />
               <HStack>
-          <SSelector name={"Year"} opts={years} opt={year} onSelect={setYear} />
-          <SSelector name={"Question"} opts={
-            bio1Problems.filter((problem: BIO1ProblemInfo) => problem.year == year) // implicit type conversion, I hate javascript!
-              .reduce((acc: Record<number, string>, problem) => {
-                acc[problem.question] = `${problem.question}. ${problem.display}`;
-                return acc;
-              }, {} as Record<number, string>)
-          } opt={q} onSelect={setq} />
+                <SSelector name={"Year"} opts={years} opt={year} onSelect={setYear} />
+                <SSelector name={"Question"} opts={
+                  bio1Problems.filter((problem: BIO1ProblemInfo) => problem.year == year) // implicit type conversion, I hate javascript!
+                    .reduce((acc: Record<number, string>, problem) => {
+                      acc[problem.question] = `${problem.question}. ${problem.display}`;
+                      return acc;
+                    }, {} as Record<number, string>)
+                } opt={q} onSelect={setq} />
               </HStack>
             </HStack>
             <Editor
@@ -77,10 +77,10 @@ export default function Grader() {
               language={languages[language]!.monaco!}
               defaultValue=""
               onMount={(editor) => {
-          const lang = languages[language]!;
-          editorRef.current = editor;
-          editor.setPosition(lang.initPos);
-          editor.focus();
+                const lang = languages[language]!;
+                editorRef.current = editor;
+                editor.setPosition(lang.initPos);
+                editor.focus();
               }}
               value={value}
               onChange={(value = '') => setValue(value)}
@@ -88,7 +88,7 @@ export default function Grader() {
           </Box>
           <SRunner codes={
             Array(languages.length).fill(null).map((_, index) => index === language ? value : null)
-          }/>
+          } />
         </VStack>
       </HStack >
     </>
