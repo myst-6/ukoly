@@ -23,6 +23,7 @@ export interface Language {
   extension: string;
   highlight: string;
   pistonName: string;
+  monaco: string;
   version: string;
 }
 
@@ -39,6 +40,7 @@ export const languages: Language[] = [
     extension: "cpp",
     highlight: "cpp",
     pistonName: "c++",
+    monaco: "cpp",
     version: "10.2.0"
   },
   {
@@ -46,6 +48,7 @@ export const languages: Language[] = [
     extension: "py",
     highlight: "python",
     pistonName: "python",
+    monaco: "python",
     version: "3.10"
   }
 ];
