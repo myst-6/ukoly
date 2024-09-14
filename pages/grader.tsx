@@ -30,11 +30,6 @@ export default function Grader() {
     return `https://www.olympiad.org.uk/papers/${year}/bio/bio${String(year).slice(2)}-exam.pdf`;
   }
 
-  const onMount = (editor: any) => {
-    editorRef.current = editor;
-    editorRef.current.focus();
-  }
-
   return (
     <>
       <Header page={pages.grader} />
@@ -82,7 +77,7 @@ export default function Grader() {
             defaultValue=""
             onMount={(editor) => {
               const lang = languages[language]!;
-              onMount(editor);
+              editorRef.current = editor;
               editor.setPosition(lang.initPos);
               editor.focus();
             }}
