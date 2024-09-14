@@ -6,7 +6,6 @@ using namespace std;
 int main() {
     char a, b;
     int n;
-    cout << "Please enter two capital letters and a positive integer: ";
     cin >> a >> b >> n;
 
     int a_val = a - 'A' + 1; // Convert to 1-based index

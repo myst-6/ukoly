@@ -4,7 +4,6 @@ using namespace std;
 
 int main() {
     string input;
-    cout << "Please enter a decimal number: ";
     cin >> input;
 
     // Find the position of the decimal point

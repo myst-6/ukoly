@@ -5,7 +5,6 @@
 using namespace std;
 
 int main() {
-    cout << "Password: "; // prompt! (rare in competitive programming)
     string s; cin >> s;
     int n = s.length();
 

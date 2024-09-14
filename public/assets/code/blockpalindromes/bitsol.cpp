@@ -9,7 +9,6 @@ bool is_palindromic(const vector<string>& subsets) {
 
 int main() {
     string s;
-    cout << "Please enter a word: ";
     cin >> s;
 
     int n = s.length() - 1;

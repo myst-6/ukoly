@@ -28,7 +28,6 @@ bool is_pat(const string& s) {
 
 int main() {
     string a, b;
-    cout << "Please enter two strings: ";
     cin >> a >> b;
 
     cout << (is_pat(a) ? "YES" : "NO") << endl;
