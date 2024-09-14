@@ -29,3 +29,5 @@ export * from "./Stack";
 export * from "./Text";
 export * from "./Wrap";
 export * from "./SSubtitle";
+export * from "./SSelector";
+export * from "./PDFViewer";
