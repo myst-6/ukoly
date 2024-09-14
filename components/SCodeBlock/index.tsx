@@ -25,6 +25,8 @@ export interface Language {
   pistonName: string;
   monaco: string;
   version: string;
+  template: string;
+  initPos: { lineNumber: number, column: number };
 }
 
 /*
@@ -41,7 +43,20 @@ export const languages: Language[] = [
     highlight: "cpp",
     pistonName: "c++",
     monaco: "cpp",
-    version: "10.2.0"
+    version: "10.2.0",
+    template: `#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    // Enter your solution below. 
+    // Use std::cin and std::cout for I/O, and do not 
+    // output any prompts, because the grader will not work.
+    
+    
+    
+    return 0;
+}`,
+    initPos: { lineNumber: 9, column: 5 }
   },
   {
     display: "Python",
@@ -49,8 +64,14 @@ export const languages: Language[] = [
     highlight: "python",
     pistonName: "python",
     monaco: "python",
-    version: "3.10"
-  }
+    version: "3.10",
+    template: `# Enter your solution below. Use input() 
+# and print() for I/O, and do not output
+# any prompts, because the grader will not work.
+
+`,
+    initPos: { lineNumber: 5, column: 1 }
+  },
 ];
 
 export type SourceCode = null | string;
