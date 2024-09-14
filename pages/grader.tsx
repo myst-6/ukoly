@@ -1,10 +1,10 @@
 import { Box, Header, HStack, languages } from "components";
-import { useColorMode } from "@chakra-ui/react";
+import { useColorMode, VStack } from "@chakra-ui/react";
 import { BIO1ProblemInfo, bio1Problems } from "content";
 import { pages } from "content";
 import { useRef, useState } from "react";
 import { Editor } from "@monaco-editor/react";
-import { PDFViewer, SSelector } from "components";
+import { PDFViewer, SSelector, SRunner } from "components";
 
 const years = bio1Problems.reduce((acc: Record<number, number>, problem) => {
   acc[problem.year] = problem.year;
@@ -37,54 +37,59 @@ export default function Grader() {
         <Box padding="1em" paddingRight="0">
           <PDFViewer url={makeURL(year)} />
         </Box>
-        <Box padding="1em">
-          <HStack paddingBottom="1%" justifyContent="space-between" width="50vw">
-            <SSelector name={"Language"} opts={
-              Object.entries(languages).reduce((acc: Record<string, string>, [key, value]) => {
-                acc[key] = value.display;
+        <VStack>
+          <Box padding="1em">
+            <HStack paddingBottom="1%" justifyContent="space-between" width="50vw">
+              <SSelector name={"Language"} opts={
+          Object.entries(languages).reduce((acc: Record<string, string>, [key, value]) => {
+            acc[key] = value.display;
+            return acc;
+          }, {} as Record<string, string>)
+              } opt={language} onSelect={
+          (key: string) => {
+            setLanguage(+key);
+            const lang = languages[+key]!;
+            const ed = editorRef.current;
+            console.log(lang.initPos);
+            if (Object.values(languages).some(lang => ed.getValue() === lang.template) || ed.getValue().trim() === '') {
+              setValue(lang.template);
+              ed.setValue(lang.template);
+              ed.setPosition(lang.initPos);
+              ed.focus();
+            }
+          }
+              } />
+              <HStack>
+          <SSelector name={"Year"} opts={years} opt={year} onSelect={setYear} />
+          <SSelector name={"Question"} opts={
+            bio1Problems.filter((problem: BIO1ProblemInfo) => problem.year == year) // implicit type conversion, I hate javascript!
+              .reduce((acc: Record<number, string>, problem) => {
+                acc[problem.question] = `${problem.question}. ${problem.display}`;
                 return acc;
-              }, {} as Record<string, string>)
-            } opt={language} onSelect={
-              (key: string) => {
-                setLanguage(+key);
-                const lang = languages[+key]!;
-                const ed = editorRef.current;
-                console.log(lang.initPos);
-                if (Object.values(languages).some(lang => ed.getValue() === lang.template) || ed.getValue().trim() === '') {
-                  setValue(lang.template);
-                  ed.setValue(lang.template);
-                  ed.setPosition(lang.initPos);
-                  ed.focus();
-                }
-              }
-            } />
-            <HStack>
-              <SSelector name={"Year"} opts={years} opt={year} onSelect={setYear} />
-              <SSelector name={"Question"} opts={
-                bio1Problems.filter((problem: BIO1ProblemInfo) => problem.year == year) // implicit type conversion, I hate javascript!
-                  .reduce((acc: Record<number, string>, problem) => {
-                    acc[problem.question] = `${problem.question}. ${problem.display}`;
-                    return acc;
-                  }, {} as Record<number, string>)
-              } opt={q} onSelect={setq} />
+              }, {} as Record<number, string>)
+          } opt={q} onSelect={setq} />
+              </HStack>
             </HStack>
-          </HStack>
-          <Editor
-            height="80vh"
-            width="50vw"
-            theme={`vs-${colorMode}`}
-            language={languages[language]!.monaco!}
-            defaultValue=""
-            onMount={(editor) => {
-              const lang = languages[language]!;
-              editorRef.current = editor;
-              editor.setPosition(lang.initPos);
-              editor.focus();
-            }}
-            value={value}
-            onChange={(value = '') => setValue(value)}
-          />
-        </Box >
+            <Editor
+              height="55vh"
+              width="50vw"
+              theme={`vs-${colorMode}`}
+              language={languages[language]!.monaco!}
+              defaultValue=""
+              onMount={(editor) => {
+          const lang = languages[language]!;
+          editorRef.current = editor;
+          editor.setPosition(lang.initPos);
+          editor.focus();
+              }}
+              value={value}
+              onChange={(value = '') => setValue(value)}
+            />
+          </Box>
+          <SRunner codes={
+            Array(languages.length).fill(null).map((_, index) => index === language ? value : null)
+          }/>
+        </VStack>
       </HStack >
     </>
   );
