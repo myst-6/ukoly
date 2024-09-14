@@ -1,5 +1,5 @@
 import { Box, Header, HStack, languages } from "components";
-import { useColorMode, Text, Menu, MenuButton, Button, MenuItem, MenuList } from "@chakra-ui/react";
+import { useColorMode } from "@chakra-ui/react";
 import { BIO1ProblemInfo, bio1Problems } from "content";
 import { pages } from "content";
 import { useRef, useState } from "react";
@@ -11,7 +11,7 @@ const years = bio1Problems.reduce((acc: Record<number, number>, problem) => {
   return acc;
 }, {} as Record<number, number>);
 
-export default function grader() {
+export default function Grader() {
   const editorRef = useRef<any>();
   const { colorMode } = useColorMode();
 
