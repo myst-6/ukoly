@@ -1,5 +1,5 @@
 //solution author: yuvan raja
-#include <fstream>
+#include <iostream>
 #include <algorithm>
 #include <vector>
 #include <queue>
@@ -8,14 +8,12 @@
 using namespace std;
 
 int main(){
-    ifstream fin("input.txt");
-    ofstream fout("output.txt");
     int n,x,y;
-    fin >> n;
+    cin >> n;
     vector<vector<bool>> info(n, vector<bool>(n, false));
     for(int i = 0; i<n; ++i){
         for(int j = 0; j<i; ++j){
-            fin >> x >> y;
+            cin >> x >> y;
             info[x-1][y-1] = true; //x-1 beats y-1
         }
     }
@@ -53,7 +51,7 @@ int main(){
         }
     }
     for(auto It = l.begin(); It!=l.end(); ++It){
-        fout << (*It) + 1 << ' ';
+        cout << (*It) + 1 << ' ';
     }
     return 0;
 }

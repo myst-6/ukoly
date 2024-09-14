@@ -2,5 +2,5 @@ from fractions import Fraction
 from decimal import Decimal
 
 if __name__ == "__main__":
-    a = Decimal(input("Please enter a number: "))
+    a = Decimal(input())
     print(Fraction(a))

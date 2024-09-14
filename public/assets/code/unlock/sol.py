@@ -29,7 +29,7 @@ def combinations():
 
 if __name__ == "__main__":
     current_lighting = [[0] * 5 for _ in range(5)]
-    c = input("Please enter current lighting state: ")
+    c = input()
     for i in c:
         if i == i.upper():
             letter_index = ascii_uppercase.index(i)

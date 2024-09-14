@@ -69,6 +69,6 @@ def parse(instructions, current_cards, start, end):
 
 
 if __name__ == "__main__":
-    instructions = input("Please enter some instructions: ")
+    instructions = input()
     c = parse(instructions, [1, 2, 3, 4, 5, 6, 7, 8], 0, len(instructions) - 1)
     print(c)

@@ -4,12 +4,6 @@ using namespace std;
 
 #define int long long
 
-ifstream fin("input.txt");
-ofstream fout("output.txt");
-
-#define cin fin
-#define cout fout
-
 int getParity(int x) {
     int parity = 0;
     while (x > 0) {

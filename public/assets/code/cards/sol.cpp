@@ -4,8 +4,6 @@ using namespace std;
 
 int main() {
     vector<int> nums(5);
-    cout << "Please enter 5 numbers: ";
-    
     // Read the input and store it in nums
     for (int i = 0; i < 5; ++i) {
         cin >> nums[i];

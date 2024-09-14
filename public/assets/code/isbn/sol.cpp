@@ -5,7 +5,6 @@ using namespace std;
 int main()
 {
     string input;
-    cout << "ISBN: ";
     cin >> input;
 
     vector<int> digits(10);
@@ -39,7 +38,8 @@ int main()
 
         if (sum % 11 == 0)
         {
-            cout << "The missing digit is " << digit << endl;
+            cout << digit << endl;
+            break;
         }
     }
 

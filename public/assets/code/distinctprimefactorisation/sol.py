@@ -1,6 +1,6 @@
 # Solution author: Alex Pylypenko
 if __name__ == "__main__":
-    n = int(input("Please enter a number: "))
+    n = int(input())
     answer = 1
     for i in range(2, n+1):
         if n % i == 0:

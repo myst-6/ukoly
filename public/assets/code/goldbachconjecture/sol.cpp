@@ -15,7 +15,6 @@ bool is_prime(int x) {
 
 int main() {
     int a;
-    cout << "Please enter a number: ";
     cin >> a;
 
     int ways = 0;
