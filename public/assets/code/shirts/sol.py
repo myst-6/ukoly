@@ -8,7 +8,7 @@ if __name__ == "__main__":
         lambda x: x[3] + x[:3] + x[4:],
         lambda x: x[:3] + x[4:] + x[3]
     ]
-    a = input("Please enter a sequence: ")
+    a = input()
     seen = set()
     q = collections.deque([(0, a)])
 

@@ -3,8 +3,8 @@ from queue import PriorityQueue
 
 
 if __name__ == "__main__":
-    n = int(input("Enter number of astronauts: "))
-    times = [int(i) for i in input("Enter times: ").strip().split()]
+    n = int(input())
+    times = [int(i) for i in input().strip().split()]
 
     q = PriorityQueue()
     q.put((0, tuple([False] * (n + 1))))

@@ -43,9 +43,9 @@ if __name__ == "__main__":
                 adjlist[i].append(j)
                 adjlist[j].append(i)
     
-    a, b = [int(i) for i in input("Please enter two numbers: ").split()]
-    c, d = [int(i) for i in input("Please enter two numbers: ").split()]
-    e, f = [int(i) for i in input("Please enter two numbers: ").split()]
+    a, b = [int(i) for i in input().split()]
+    c, d = [int(i) for i in input().split()]
+    e, f = [int(i) for i in input().split()]
 
     print(solve(a, b))
     print(solve(c, d))

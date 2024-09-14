@@ -10,5 +10,5 @@ def solve(s):
 
 
 if __name__ == "__main__":
-    s = input("Please enter a word: ")
+    s = input()
     print(solve(s)-1)

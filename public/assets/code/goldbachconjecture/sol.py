@@ -10,7 +10,7 @@ def is_prime(x):
 
 
 if __name__ == "__main__":
-    a = int(input("Please enter a number: "))
+    a = int(input())
     ways = 0
     for num1 in range((a//2) + 1):
         num2 = a - num1

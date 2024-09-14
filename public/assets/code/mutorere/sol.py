@@ -93,11 +93,11 @@ class Board:
 
 
 if __name__ == "__main__":
-    s = input("Please enter the starting layout: ")
+    s = input()
     b = Board(s)
 
     while True:
-        command = input("Please enter n/r: ")
+        command = input()
         if command == "r":
             if x := b.check_winner():
                 print(f"Player {x} wins")
