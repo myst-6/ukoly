@@ -63,16 +63,16 @@ export default function Grader() {
                 }
               }
             } />
-          </HStack>
-          <HStack>
-            <SSelector name={"Year"} opts={years} opt={year} onSelect={setYear} />
-            <SSelector name={"Question"} opts={
-              bio1Problems.filter((problem: BIO1ProblemInfo) => problem.year == year) // implicit type conversion, I hate javascript!
-                .reduce((acc: Record<number, string>, problem) => {
-                  acc[problem.question] = `${problem.question}. ${problem.display}`;
-                  return acc;
-                }, {} as Record<number, string>)
-            } opt={q} onSelect={setq} />
+            <HStack>
+              <SSelector name={"Year"} opts={years} opt={year} onSelect={setYear} />
+              <SSelector name={"Question"} opts={
+                bio1Problems.filter((problem: BIO1ProblemInfo) => problem.year == year) // implicit type conversion, I hate javascript!
+                  .reduce((acc: Record<number, string>, problem) => {
+                    acc[problem.question] = `${problem.question}. ${problem.display}`;
+                    return acc;
+                  }, {} as Record<number, string>)
+              } opt={q} onSelect={setq} />
+            </HStack>
           </HStack>
           <Editor
             height="80vh"
