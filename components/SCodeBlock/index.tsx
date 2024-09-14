@@ -9,7 +9,8 @@ import {
 import { useEffect, useState } from "react";
 import { atomOneDark } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import { CodeBlock } from "./CodeBlock";
-import { SRunner, languages } from "components";
+import { SRunner } from "components";
+import { languages } from "content";
 
 export const base: string = "/assets/code/";
 

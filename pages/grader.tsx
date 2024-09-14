@@ -1,6 +1,6 @@
-import { Box, Header, HStack, languages } from "components";
+import { Box, Header, HStack } from "components";
 import { useColorMode, VStack } from "@chakra-ui/react";
-import { BIO1ProblemInfo, bio1Problems } from "content";
+import { BIO1ProblemInfo, bio1Problems, languages } from "content";
 import { pages } from "content";
 import { useRef, useState } from "react";
 import { Editor } from "@monaco-editor/react";
