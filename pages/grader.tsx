@@ -87,7 +87,7 @@ export default function Grader() {
               editor.focus();
             }}
             value={value}
-            onChange={(value = '', event) => setValue(value)}
+            onChange={(value = '') => setValue(value)}
           />
         </Box >
       </HStack >
