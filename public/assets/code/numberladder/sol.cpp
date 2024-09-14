@@ -65,11 +65,8 @@ int main() {
     }
 
     int a, b, c, d, e, f;
-    cout << "Please enter two numbers: ";
     cin >> a >> b;
-    cout << "Please enter two numbers: ";
     cin >> c >> d;
-    cout << "Please enter two numbers: ";
     cin >> e >> f;
 
     cout << solve(a, b, adjlist) << endl;

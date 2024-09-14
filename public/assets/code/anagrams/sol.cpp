@@ -3,13 +3,7 @@ using namespace std;
 
 int main() {
     string word1, word2;
-    
-    // Get user input
-    cout << "Enter a word: ";
-    cin >> word1;
-    
-    cout << "Enter another word: ";
-    cin >> word2;
+    cin >> word1 >> word2;
     
     // Sort the strings
     sort(word1.begin(), word1.end());

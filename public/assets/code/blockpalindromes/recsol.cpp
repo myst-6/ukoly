@@ -21,7 +21,6 @@ int solve(const string& s) {
 
 int main() {
     string s;
-    cout << "Please enter a word: ";
     cin >> s;
 
     // Output the result after subtracting 1 (to match the original Python behavior)
