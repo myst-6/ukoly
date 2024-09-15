@@ -83,6 +83,7 @@ import {
   TestParsingLists,
   TestWordGame
 } from "content/tests";
+import { ncmp } from "utils";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
   {
@@ -96,6 +97,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     solutionAuthors: ["Alex Pylypenko"],
     component: <IntegerStrings />,
     tests: TestIntegerStrings,
+    checker: ncmp,
   },
   {
     difficulty: "Medium",
@@ -218,6 +220,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     solutionAuthors: ["Alex Pylypenko"],
     component: <ParsingLists />,
     tests: TestParsingLists,
+    checker: ncmp,
   },
   {
     difficulty: "Medium",
@@ -241,6 +244,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     solutionAuthors: ["Alex Pylypenko"],
     component: <WordGame />,
     tests: TestWordGame,
+    checker: ncmp,
   },
   {
     difficulty: "Hard",

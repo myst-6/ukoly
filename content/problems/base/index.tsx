@@ -1,4 +1,5 @@
 import { Test } from "content";
+import { Checker } from "utils";
 
 // order doesn't matter; it will be alphabetical
 export const tags = [
@@ -44,6 +45,7 @@ export interface ProblemInfo {
 }
 
 export interface BIO1ProblemInfo extends ProblemInfo {
+  checker?: Checker;
   question: Question;
   tests?: Test[];
 }
