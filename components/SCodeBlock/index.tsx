@@ -60,7 +60,7 @@ export const SCodeBlock = ({ path }: SCodeBlockProps) => {
       <Accordion defaultIndex={[1]} allowMultiple>
         <AccordionItem>
           <AccordionButton>
-            <Box as='span' flex='1' textAlign='left'>
+          <Box display="inline" flex={1} textAlign="left">
               Click to see code:
             </Box>
             <AccordionIcon />
@@ -94,7 +94,7 @@ export const SCodeBlock = ({ path }: SCodeBlockProps) => {
         </AccordionItem>
         <AccordionItem>
           <AccordionButton>
-            <Box as='span' flex='1' textAlign='left'>
+            <Box display="inline" flex={1} textAlign="left">
               Click to test on custom inputs:
             </Box>
             <AccordionIcon />

@@ -6,76 +6,88 @@ import { useRef, useState } from "react";
 import { Editor } from "@monaco-editor/react";
 import { PDFViewer, SSelector, STester, SRunner } from "components";
 
-const years = bio1Problems.reduce((acc: Record<number, number>, problem) => {
-  acc[problem.year] = problem.year;
-  return acc;
-}, {} as Record<number, number>);
-
 export default function Grader() {
   const editorRef = useRef<any>();
   const { colorMode } = useColorMode();
-
+  
+  const years = [...new Set(bio1Problems.map(problem => problem.year))].sort((a, b) => b - a);
 
   const [language, setLanguage] = useState<number>(0);
-  const [year, setYear] = useState<number>(2024)
+  const [year, setYear] = useState<number>(0);
   const [value, setValue] = useState(languages[language]!.template);
-  const [q, setq] = useState<number>(1)
+  const [question, setQuestion] = useState<number>(0); // 0-indexed
 
-  const makeURL = (year: any) => {
-    if (year == 2000) return "https://www.olympiad.org.uk/papers/2000/bio/bio2kex.pdf";
-    if (year <= 2004) return `https://www.olympiad.org.uk/papers/${year}/bio/bio${String(year).slice(2)}ex.pdf`;
-    if (year == 2007) return "https://www.olympiad.org.uk/papers/2007/bio/bio07exam.pdf";
-    if (year == 2010) return "https://www.olympiad.org.uk/papers/2010/bio/bio-10-exam.pdf";
-    if (year == 2011) return "https://www.olympiad.org.uk/papers/2011/bio/bio2011-Round1-Exam.pdf";
+  const makeURL = (year: number) => {
+    if (year == 2000) 
+      return "https://www.olympiad.org.uk/papers/2000/bio/bio2kex.pdf";
+    if (year <= 2004) 
+      return `https://www.olympiad.org.uk/papers/${year}/bio/bio${String(year).slice(2)}ex.pdf`;
+    if (year == 2007) 
+      return "https://www.olympiad.org.uk/papers/2007/bio/bio07exam.pdf";
+    if (year == 2010) 
+      return "https://www.olympiad.org.uk/papers/2010/bio/bio-10-exam.pdf";
+    if (year == 2011) 
+      return "https://www.olympiad.org.uk/papers/2011/bio/bio2011-Round1-Exam.pdf";
     return `https://www.olympiad.org.uk/papers/${year}/bio/bio${String(year).slice(2)}-exam.pdf`;
   }
 
-  const currProb = bio1Problems.find((problem: BIO1ProblemInfo) => problem.year == year && problem.question == q)!;
+  const currProb = bio1Problems.find((problem: BIO1ProblemInfo) => problem.year === years[year] && problem.question == question + 1)!;
 
   return (
     <>
       <Header page={pages.grader} />
       <HStack justifyContent="space-between">
-        <Box padding="1em" paddingRight="0">
-          <PDFViewer url={makeURL(year)} />
+        <Box padding="1em" pr="0">
+          <PDFViewer url={makeURL(years[year]!)} />
         </Box>
         <VStack>
           <Box padding="1em">
-            <HStack paddingBottom="1%" justifyContent="space-between" width="50vw">
-              <SSelector name={"Language"} opts={
-                Object.entries(languages).reduce((acc: Record<string, string>, [key, value]) => {
-                  acc[key] = value.display;
-                  return acc;
-                }, {} as Record<string, string>)
-              } opt={language} onSelect={
-                (key: string) => {
-                  setLanguage(+key);
-                  const lang = languages[+key]!;
+            <HStack
+              pb="1%"
+              justifyContent="space-between"
+              width="50vw"
+            >
+              <SSelector
+                name="Language"
+                opts={languages.map(language => language.display)}
+                opt={language}
+                onSelect={(opt: number) => {
+                  setLanguage(opt);
+                  const lang = languages[opt]!;
                   const ed = editorRef.current;
-                  if (Object.values(languages).some(lang => ed.getValue() === lang.template) || ed.getValue().trim() === '') {
+                  if (
+                    languages.some((lang) => ed.getValue() === lang.template) ||
+                    ed.getValue().trim() === ""
+                  ) {
                     setValue(lang.template);
                     ed.setValue(lang.template);
                     ed.setPosition(lang.initPos);
                     ed.focus();
                   }
-                }
-              } />
+                }}
+              />
               <HStack>
-                <SSelector name={"Year"} opts={years} opt={year} onSelect={setYear} />
-                <SSelector name={"Question"} opts={
-                  bio1Problems.filter((problem: BIO1ProblemInfo) => problem.year == year) // implicit type conversion, I hate javascript!
-                    .reduce((acc: Record<number, string>, problem) => {
-                      acc[problem.question] = `${problem.question}. ${problem.display}`;
-                      return acc;
-                    }, {} as Record<number, string>)
-                } opt={q} onSelect={setq} />
+                <SSelector
+                  name="Year"
+                  opts={years.map(String)}
+                  opt={year}
+                  onSelect={setYear}
+                />
+                <SSelector
+                  name="Question"
+                  opts={bio1Problems
+                    .filter((problem: BIO1ProblemInfo) => problem.year === years[year])
+                    .map(problem => `${problem.question}. ${problem.display}`)}
+                  opt={question}
+                  onSelect={setQuestion}
+                />
               </HStack>
             </HStack>
             <Editor
               height="55vh"
               width="50vw"
               theme={`vs-${colorMode}`}
-              language={languages[language]!.monaco!}
+              language={languages[language]!.monaco}
               defaultValue=""
               onMount={(editor) => {
                 const lang = languages[language]!;
@@ -84,15 +96,19 @@ export default function Grader() {
                 editor.focus();
               }}
               value={value}
-              onChange={(value = '') => setValue(value)}
+              onChange={value => setValue(value || "")}
             />
           </Box>
-          <STester problem={currProb} code={value} language={languages[language]!} />
-          <SRunner codes={
-            Array(languages.length).fill(null).map((_, index) => index === language ? value : null)
-          } />
+          <STester
+            problem={currProb}
+            code={value}
+            language={languages[language]!}
+          />
+          <SRunner
+            codes={languages.map((_, index) => (index === language ? value : null))}
+          />
         </VStack>
-      </HStack >
+      </HStack>
     </>
   );
 }

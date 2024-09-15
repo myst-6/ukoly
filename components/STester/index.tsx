@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button, HStack, SText } from "components";
 import { useTester, ncmp } from "utils";
-import { Output, BIO1ProblemInfo, Language } from "content";
+import { BIO1ProblemInfo, Language } from "content";
 
 // Refactored STester to accept props
 interface STesterProps {
@@ -11,13 +11,21 @@ interface STesterProps {
 }
 
 export const STester = ({ problem, code, language }: STesterProps) => {
-  const [output, setOutput] = useState<Output>(null);
   const [points, setPoints] = useState(0);
-  const { dispatch, results } = useTester(problem.tests!, ncmp);
+  const { dispatch, results } = useTester();
+  
   const handleRunCode = () => {
+    if (!problem.tests) {
+      console.error("No tests for this problem.");
+      return;
+    }
+
+    // please fix the below code
+
+    // ncmp is usually, but not always, the correct checker for a problem.
     setPoints(0);
-    dispatch(code, language);
-    console.log(results);
+    dispatch(problem.tests, ncmp, code, language);
+
     const zippedResults = problem.tests!.map((test, index) => ({
       test,
       result: results[index],
@@ -29,16 +37,6 @@ export const STester = ({ problem, code, language }: STesterProps) => {
       }
     }
   };
-
-  useEffect(() => {
-    if (results.length === 0) return;
-    const { status, message } = results[0]!;
-    if (status === "TS") {
-      setOutput("Waiting...");
-    } else {
-      setOutput(message);
-    }
-  }, [results]);
 
   return (
     <>

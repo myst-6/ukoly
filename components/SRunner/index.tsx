@@ -6,20 +6,23 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { STitle } from "components";
+import { SourceCode, STitle } from "components";
 import { useRunner } from "utils";
-import { languages, TestCase, Output } from "content";
+import { languages } from "content";
 
-export const SRunner = ({codes}:any) => {
-    const [testCase, setTestCase] = useState<TestCase>("");
-    const [output, setOutput] = useState<Output>(null);
+export interface SRunnerProps {
+  codes: SourceCode[];
+}
 
+export const SRunner = ({ codes }: SRunnerProps) => {
+    const [testCase, setTestCase] = useState<string>("");
+    const [output, setOutput] = useState<string>("");
 
     const { dispatch, results } = useRunner();
   
     const handleRunCode = () => {
       const idx = codes.findIndex((code: string | null) => code !== null);
-      dispatch([testCase ?? ""], codes[idx]!, languages[idx]!);
+      dispatch([ testCase ], codes[idx]!, languages[idx]!);
     };
 
     useEffect(() => {
@@ -40,8 +43,8 @@ export const SRunner = ({codes}:any) => {
           placeholder="Enter a test case: "
           size="md"
           width="100%"
-          value={testCase ?? ""}
-          onChange={(e) => setTestCase(e.target.value)}
+          value={testCase}
+          onChange={ev => setTestCase(ev.target.value)}
         />
       </VStack>
       <VStack flex="1" spacing={4}>
@@ -50,8 +53,8 @@ export const SRunner = ({codes}:any) => {
           placeholder="Output will appear here"
           size="md"
           width="100%"
+          value={output}
           isReadOnly
-          value={output ?? ""}
         />
       </VStack>
     </HStack>
