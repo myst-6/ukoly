@@ -1,4 +1,4 @@
-import { Button, HStack, Text } from "components";
+import { Button, HStack, SText, Text } from "components";
 import { useTester, waiting } from "utils";
 import { BIO1ProblemInfo, Language } from "content";
 
@@ -20,14 +20,26 @@ export const STester = ({ problem, code, language }: STesterProps) => {
     dispatch(problem.tests!, problem.checker!, code, language);
   };
 
+  console.log(results);
+
   return (
-    <HStack alignItems="center">
-      <Button onClick={handleRunCode}>Submit Code</Button>
-      <Text typography="body.medium">{
-        results[0] === waiting ? "Waiting..." : `Points scored: ${results.reduce(
-          (acc, result) => acc + (result.status === "AC" ? problem.tests![results!.indexOf(result)]!.points : 0), 0)}`
+    <>
+      <HStack alignItems="center">
+        <Button onClick={handleRunCode}>Submit Code</Button>
+        <Text typography="body.medium">{
+          results[0] === waiting ? "Waiting..." : `Points scored: ${results.reduce(
+            (acc, result) => acc + (result.status === "AC" ? problem.tests![results!.indexOf(result)]!.points : 0), 0)}`
+        }
+
+        </Text>
+      </HStack>
+      {
+        problem.tests!.map((test, idx) => {
+          return (
+            <SText>{`Test ${idx + 1}: ${results[idx]?.status} (${results[idx]?.message})` ?? "Waiting..."}</SText>
+          )
+        })
       }
-      </Text>
-    </HStack>
+    </>
   );
 };
