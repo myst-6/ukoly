@@ -1,5 +1,5 @@
 import { Box, Header, HStack, languages } from "components";
-import { useColorMode, VStack } from "@chakra-ui/react";
+import { TabPanels, Tab, TabPanel, Tabs, TabList, useColorMode, VStack } from "@chakra-ui/react";
 import { BIO1ProblemInfo, bio1Problems } from "content";
 import { pages } from "content";
 import { useRef, useState } from "react";
@@ -37,8 +37,8 @@ export default function Grader() {
         <Box padding="1em" paddingRight="0">
           <PDFViewer url={makeURL(year)} />
         </Box>
-        <VStack>
-          <Box padding="1em">
+        <VStack marginTop="-1em">
+          <Box padding="1em" paddingRight="2em">
             <HStack paddingBottom="1%" justifyContent="space-between" width="50vw">
               <SSelector name={"Language"} opts={
                 Object.entries(languages).reduce((acc: Record<string, string>, [key, value]) => {
@@ -86,9 +86,24 @@ export default function Grader() {
               onChange={(value = '') => setValue(value)}
             />
           </Box>
-          <SRunner codes={
-            Array(languages.length).fill(null).map((_, index) => index === language ? value : null)
-          } />
+          <Box width="50vw" height="20vw" marginTop="-1.5em" paddingRight="1em">
+            <Tabs>
+              <TabList marginBottom="-1.5em">
+                <Tab>Run</Tab>
+                <Tab>Submit</Tab>
+              </TabList>
+              <TabPanels>
+                <TabPanel>
+                  <SRunner codes={
+                    Array(languages.length).fill(null).map((_, index) => index === language ? value : null)
+                  } />
+                </TabPanel>
+                <TabPanel marginTop="1.5em">
+                  <p>Submit</p>
+                </TabPanel>
+              </TabPanels>
+            </Tabs>
+          </Box>
         </VStack>
       </HStack >
     </>
