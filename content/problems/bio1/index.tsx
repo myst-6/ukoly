@@ -78,6 +78,10 @@ import {
   ZeckendorfRepresentation  
 } from "solutions";
 
+import {
+  TestIntegerStrings,
+} from "content/tests";
+
 export const bio1Problems: BIO1ProblemInfo[] = [
   {
     difficulty: "Medium",
@@ -89,6 +93,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <IntegerStrings />,
+    tests: TestIntegerStrings,
   },
   {
     difficulty: "Medium",

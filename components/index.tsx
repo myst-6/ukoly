@@ -32,3 +32,4 @@ export * from "./SSubtitle";
 export * from "./SSelector";
 export * from "./PDFViewer";
 export * from "./SRunner";
+export * from "./STester";  

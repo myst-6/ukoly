@@ -1,4 +1,4 @@
-import { Language } from "components";
+import { Language } from "content";
 
 export type InvocationStatus = "OK" | "TLE" | "RE" | "RJ" | "TS";
 

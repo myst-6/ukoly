@@ -1,3 +1,5 @@
+import { Test } from "content";
+
 // order doesn't matter; it will be alphabetical
 export const tags = [
   "Data Structures",
@@ -41,8 +43,9 @@ export interface ProblemInfo {
   solutionAuthors: string[];
 }
 
-export interface BIO1ProblemInfo extends ProblemInfo{
+export interface BIO1ProblemInfo extends ProblemInfo {
   question: Question;
+  tests?: Test[];
 }
 export type DifficultyMap<T> = Record<Difficulty, T>;
 

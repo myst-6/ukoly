@@ -4,7 +4,7 @@ import { BIO1ProblemInfo, bio1Problems, languages } from "content";
 import { pages } from "content";
 import { useRef, useState } from "react";
 import { Editor } from "@monaco-editor/react";
-import { PDFViewer, SSelector, SRunner } from "components";
+import { PDFViewer, SSelector, STester, SRunner } from "components";
 
 const years = bio1Problems.reduce((acc: Record<number, number>, problem) => {
   acc[problem.year] = problem.year;
@@ -30,6 +30,8 @@ export default function Grader() {
     return `https://www.olympiad.org.uk/papers/${year}/bio/bio${String(year).slice(2)}-exam.pdf`;
   }
 
+  const currProb = bio1Problems.find((problem: BIO1ProblemInfo) => problem.year == year && problem.question == q)!;
+
   return (
     <>
       <Header page={pages.grader} />
@@ -50,7 +52,6 @@ export default function Grader() {
                   setLanguage(+key);
                   const lang = languages[+key]!;
                   const ed = editorRef.current;
-                  console.log(lang.initPos);
                   if (Object.values(languages).some(lang => ed.getValue() === lang.template) || ed.getValue().trim() === '') {
                     setValue(lang.template);
                     ed.setValue(lang.template);
@@ -86,6 +87,7 @@ export default function Grader() {
               onChange={(value = '') => setValue(value)}
             />
           </Box>
+          <STester problem={currProb} code={value} language={languages[language]!} />
           <SRunner codes={
             Array(languages.length).fill(null).map((_, index) => index === language ? value : null)
           } />

@@ -47,5 +47,4 @@ int main() {
     },
   ];
   
-  export type TestCase = null | string;
   export type Output = null | string;

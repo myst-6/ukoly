@@ -3,7 +3,7 @@ import { InvocationResult, InvocationStatus, waiting } from "./invoke";
 import { Test } from "content";
 import { Checker, CheckerStatus } from "./checkers";
 import { useInvoker } from "./useInvoker";
-import { Language } from "components";
+import { Language } from "content";
 
 export type TestStatus = Exclude<InvocationStatus, "OK"> | CheckerStatus;
 
