@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, HStack, SText } from "components";
+import { Button, HStack, Text } from "components";
 import { useTester, ncmp } from "utils";
 import { BIO1ProblemInfo, Language } from "content";
 
@@ -39,11 +39,9 @@ export const STester = ({ problem, code, language }: STesterProps) => {
   };
 
   return (
-    <>
-      <HStack>
-        <Button onClick={handleRunCode}>Submit Code</Button>
-        <SText>{`${points} points scored`}</SText>
-      </HStack>
-    </>
+    <HStack alignItems="center">
+      <Button onClick={handleRunCode}>Submit Code</Button>
+      <Text typography="body.medium">{`${points} points scored`}</Text>
+    </HStack>
   );
 };

@@ -1,5 +1,5 @@
-import { Box, Header, HStack } from "components";
-import { useColorMode, VStack } from "@chakra-ui/react";
+import { Box, Header, HStack, VStack } from "components";
+import { useColorMode } from "@chakra-ui/react";
 import { BIO1ProblemInfo, bio1Problems, languages } from "content";
 import { pages } from "content";
 import { useRef, useState } from "react";
@@ -34,18 +34,28 @@ export default function Grader() {
   const currProb = bio1Problems.find((problem: BIO1ProblemInfo) => problem.year === years[year] && problem.question == question + 1)!;
 
   return (
-    <>
+    <VStack
+        height="100%"
+        gap={0}
+      >
       <Header page={pages.grader} />
-      <HStack justifyContent="space-between">
-        <Box padding="1em" pr="0">
+      <HStack
+        px={5}
+        py={2} 
+        justifyContent="space-between" 
+        flex={1}
+        height="100%"
+        width="100%"
+        gap="3em"
+      >
+        <Box flex={4} height="100%">
           <PDFViewer url={makeURL(years[year]!)} />
         </Box>
-        <VStack>
-          <Box padding="1em">
+        <VStack flex={5} height="100%">
+          <VStack flex={1} width="100%">
             <HStack
-              pb="1%"
+              pb={1}
               justifyContent="space-between"
-              width="50vw"
             >
               <SSelector
                 name="Language"
@@ -83,22 +93,24 @@ export default function Grader() {
                 />
               </HStack>
             </HStack>
-            <Editor
-              height="55vh"
-              width="50vw"
-              theme={`vs-${colorMode}`}
-              language={languages[language]!.monaco}
-              defaultValue=""
-              onMount={(editor) => {
-                const lang = languages[language]!;
-                editorRef.current = editor;
-                editor.setPosition(lang.initPos);
-                editor.focus();
-              }}
-              value={value}
-              onChange={value => setValue(value || "")}
-            />
-          </Box>
+            <Box flex={1} width="100%">
+              <Editor
+                height="100%"
+                width="100%"
+                theme={`vs-${colorMode}`}
+                language={languages[language]!.monaco}
+                defaultValue=""
+                onMount={(editor) => {
+                  const lang = languages[language]!;
+                  editorRef.current = editor;
+                  editor.setPosition(lang.initPos);
+                  editor.focus();
+                }}
+                value={value}
+                onChange={value => setValue(value || "")}
+              />
+            </Box>
+          </VStack>
           <STester
             problem={currProb}
             code={value}
@@ -109,6 +121,6 @@ export default function Grader() {
           />
         </VStack>
       </HStack>
-    </>
+    </VStack>
   );
 }

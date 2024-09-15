@@ -3,7 +3,7 @@ import {
   HStack,
   VStack,
   Button,
-  Flex,
+  Flex
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { SourceCode, STitle } from "components";
@@ -35,7 +35,7 @@ export const SRunner = ({ codes }: SRunnerProps) => {
       }
     }, [results]);
 
-    return <>
+    return <VStack width="100%">
       <HStack justifyContent="center" alignItems="center" width="100%">
       <VStack flex="1" spacing={4}>
         <STitle size="sm">Input</STitle>
@@ -58,10 +58,10 @@ export const SRunner = ({ codes }: SRunnerProps) => {
         />
       </VStack>
     </HStack>
-    <Flex justifyContent="center" width="100%" marginTop="15px">
+    <Flex justifyContent="center" width="100%" mt={2}>
       <Button colorScheme="teal" size="md" onClick={handleRunCode}>
         Run Code
       </Button>
     </Flex>
-  </>
+  </VStack>
 }

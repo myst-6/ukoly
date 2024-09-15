@@ -1,3 +1,4 @@
+import { Box } from 'components';
 import React from 'react';
 
 export interface PDFViewerProps {
@@ -6,13 +7,13 @@ export interface PDFViewerProps {
 
 export const PDFViewer = ({ url }: PDFViewerProps) => {
   return (
-    <div style={{ height:"87vh", width: "45vw" }}>
+    <Box height="100%" width="100%">
       <embed
         height="100%"
         width="100%"
         src={url}
         type="application/pdf"
       />
-    </div>
+    </Box>
   );
 };

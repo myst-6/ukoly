@@ -9,3 +9,8 @@ header.dark {
                     linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   background-size: 20px 20px; /* Adjust to make pattern larger or smaller */
 }
+
+html, body, #__next {
+  height: 100%;
+  width: 100%;
+}
