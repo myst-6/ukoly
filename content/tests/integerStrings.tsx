@@ -70,5 +70,10 @@ export const TestIntegerStrings: Test[] = [
         input: "12345678912345 987654321987",
         output: "9",
         points: 2
-    }
+    },
+    {
+        input: "1 1",
+        output: "1",
+        points: 3
+    } // replacing the "program inputs two integers, for each test a single digit is output...." thing
 ];

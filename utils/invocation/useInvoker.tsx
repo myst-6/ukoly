@@ -1,7 +1,7 @@
 import { InvocationResult, invoke } from "./invoke";
-import { Language } from "components";
+import { Language } from "content";
 
-const TPS = 3; // how many Tests Per Second 
+const TPS = 1; // how many Tests Per Second 
 
 /**
  * @summary 
@@ -21,6 +21,7 @@ export function useInvoker(
 ) {
   function dispatch(inputs: string[], source: string, language: Language) {
     inputs.forEach((input, index) => {
+      console.log("Dispatching invocation for input", index);
       const batch = Math.floor(index / TPS);
       setTimeout(() => {
         invoke(source, input, language).then(result => {

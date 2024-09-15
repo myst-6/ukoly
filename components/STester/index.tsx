@@ -17,9 +17,17 @@ export const STester = ({ problem, code, language }: STesterProps) => {
   const handleRunCode = () => {
     setPoints(0);
     dispatch(code, language);
+    console.log(results);
+    const zippedResults = problem.tests!.map((test, index) => ({
+      test,
+      result: results[index],
+    }));
 
-    const acCount = results.filter(result => result.status === "AC").length;
-    setPoints(prevPoints => prevPoints + acCount);
+    for (const { test, result } of zippedResults) {
+      if (result!.status === "AC") {
+        setPoints(prevPoints => prevPoints + test.points);
+      }
+    }
   };
 
   useEffect(() => {
