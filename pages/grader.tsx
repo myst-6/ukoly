@@ -2,12 +2,13 @@ import { Box, Header, HStack, VStack } from "components";
 import { useColorMode } from "@chakra-ui/react";
 import { BIO1ProblemInfo, bio1Problems, languages } from "content";
 import { pages } from "content";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Editor } from "@monaco-editor/react";
 import { PDFViewer, SSelector, STester, SRunner } from "components";
+import { useDimensions, useWindowDimensions } from "utils";
+import { editor } from "monaco-editor";
 
 export default function Grader() {
-  const editorRef = useRef<any>();
   const { colorMode } = useColorMode();
   
   const years = [...new Set(bio1Problems.map(problem => problem.year))].sort((a, b) => b - a);
@@ -33,6 +34,18 @@ export default function Grader() {
 
   const currProb = bio1Problems.find((problem: BIO1ProblemInfo) => problem.year === years[year] && problem.question == question + 1)!;
 
+  const editorRef = useRef<editor.IStandaloneCodeEditor | null>(null);
+  const { ref: sideRef, dimensions } = useDimensions<HTMLDivElement>();
+  const { dimensions: windowDimensions } = useWindowDimensions();
+
+  useEffect(() => {
+    console.log("dimensions changed", dimensions);
+    if (editorRef.current !== null) {
+      // resize from nothing
+      editorRef.current.layout({ height: 0, width: 0 });
+    }
+  }, [dimensions, windowDimensions]);
+
   return (
     <VStack
         height="100%"
@@ -51,7 +64,7 @@ export default function Grader() {
         <Box flex={4} height="100%">
           <PDFViewer url={makeURL(years[year]!)} />
         </Box>
-        <VStack flex={5} height="100%">
+        <VStack flex={5} height="100%" ref={sideRef}>
           <VStack flex={1} width="100%">
             <HStack
               pb={1}
@@ -62,11 +75,12 @@ export default function Grader() {
                 opts={languages.map(language => language.display)}
                 opt={language}
                 onSelect={(opt: number) => {
+                  if (editorRef.current === null) return;
                   setLanguage(opt);
                   const lang = languages[opt]!;
                   const ed = editorRef.current;
                   if (
-                    languages.some((lang) => ed.getValue() === lang.template) ||
+                    languages.some(lang => ed.getValue() === lang.template) ||
                     ed.getValue().trim() === ""
                   ) {
                     setValue(lang.template);
@@ -100,7 +114,7 @@ export default function Grader() {
                 theme={`vs-${colorMode}`}
                 language={languages[language]!.monaco}
                 defaultValue=""
-                onMount={(editor) => {
+                onMount={editor => {
                   const lang = languages[language]!;
                   editorRef.current = editor;
                   editor.setPosition(lang.initPos);
