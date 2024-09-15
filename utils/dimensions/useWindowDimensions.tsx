@@ -1,11 +1,5 @@
 import { useLayoutEffect, useState } from "react";
-
-export interface Dimensions {
-  width: number;
-  height: number;
-}
-
-export const empty: Dimensions = { width: -1, height: -1 };
+import { Dimensions, empty } from "./base";
 
 export function useWindowDimensions() {
   const [dimensions, setDimensions] = useState<Dimensions>(empty);
