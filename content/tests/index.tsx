@@ -1,2 +1,4 @@
 export * from "./base";
-export * from "./integerStrings";
+export * from "./IntegerStrings";
+export * from "./ParsingLists";
+export * from "./WordGame";

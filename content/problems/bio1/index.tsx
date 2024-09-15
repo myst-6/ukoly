@@ -80,6 +80,8 @@ import {
 
 import {
   TestIntegerStrings,
+  TestParsingLists,
+  TestWordGame
 } from "content/tests";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
@@ -215,6 +217,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <ParsingLists />,
+    tests: TestParsingLists,
   },
   {
     difficulty: "Medium",
@@ -237,6 +240,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <WordGame />,
+    tests: TestWordGame,
   },
   {
     difficulty: "Hard",
