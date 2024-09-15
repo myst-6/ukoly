@@ -34,7 +34,7 @@ export const STester = ({ problem, code, language }: STesterProps) => {
       {
         problem.tests!.map((_, idx) => {
           return (
-            <SText>{`Test ${idx + 1}: ${results[idx]?.status} (${results[idx]?.message})` ?? "Waiting..."}</SText>
+            <SText key={idx}>{`Test ${idx + 1}: ${results[idx]?.status} (${results[idx]?.message})` ?? "Waiting..."}</SText>
           )
         })
       }
