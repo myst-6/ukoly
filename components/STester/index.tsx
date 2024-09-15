@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Button, HStack, Text } from "components";
 import { useTester, waiting } from "utils";
 import { BIO1ProblemInfo, Language } from "content";
