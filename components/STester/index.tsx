@@ -20,8 +20,6 @@ export const STester = ({ problem, code, language }: STesterProps) => {
     dispatch(problem.tests!, problem.checker!, code, language);
   };
 
-  console.log(results);
-
   return (
     <>
       <HStack alignItems="center">
@@ -34,7 +32,7 @@ export const STester = ({ problem, code, language }: STesterProps) => {
         </Text>
       </HStack>
       {
-        problem.tests!.map((test, idx) => {
+        problem.tests!.map((_, idx) => {
           return (
             <SText>{`Test ${idx + 1}: ${results[idx]?.status} (${results[idx]?.message})` ?? "Waiting..."}</SText>
           )
