@@ -4,7 +4,6 @@ export interface Language {
   highlight: string;
   apiName: string;
   monaco: string;
-  version: string;
   template: string;
   initPos: { lineNumber: number, column: number };
 }
@@ -16,7 +15,6 @@ export const languages: Language[] = [
     highlight: "cpp",
     apiName: "cpp",
     monaco: "cpp",
-    version: "10.2.0",
     template: `#include <bits/stdc++.h>
 using namespace std;
 
@@ -37,7 +35,6 @@ int main() {
     highlight: "python",
     apiName: "python",
     monaco: "python",
-    version: "3.12",
     template: `# Enter your solution below. Use input() 
 # and print() for I/O, and do not output
 # any prompts, because the grader will not work.
@@ -45,4 +42,49 @@ int main() {
 `,
     initPos: { lineNumber: 5, column: 1 }
   },
+  {
+    display: "C",
+    extension: "c",
+    highlight: "c",
+    apiName: "c",
+    monaco: "c",
+    template: "", // TODO
+    initPos: { lineNumber: 1, column: 1 } // TODO
+  },
+  {
+    display: "Java",
+    extension: "java",
+    highlight: "java",
+    apiName: "java",
+    monaco: "java",
+    template: "", // TODO
+    initPos: { lineNumber: 1, column: 1 } // TODO
+  },
+  {
+    display: "JavaScript",
+    extension: "js",
+    highlight: "js",
+    apiName: "js",
+    monaco: "js",
+    template: "", // TODO
+    initPos: { lineNumber: 1, column: 1 } // TODO
+  },
+  {
+    display: "Rust",
+    extension: "rs",
+    highlight: "rust",
+    apiName: "rust",
+    monaco: "rust",
+    template: "", // TODO
+    initPos: { lineNumber: 1, column: 1 } // TODO
+  },
+  {
+    display: "BF",
+    extension: "bf",
+    highlight: "bf",
+    apiName: "bf",
+    monaco: "bf",
+    template: "", // TODO
+    initPos: { lineNumber: 1, column: 1 } // TODO
+  }
 ];
