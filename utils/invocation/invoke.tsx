@@ -34,7 +34,7 @@ export function invoke(
   language: Language,
 ): Promise<InvocationResult> {
   return new Promise<InvocationResult>(resolve => {
-    fetch("https://emkc.org/api/v2/piston/execute",
+    fetch("http://35.214.73.95:2000/api/v2/execute",
       {
         method: "POST",
         headers: {
