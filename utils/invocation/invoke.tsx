@@ -34,22 +34,16 @@ export function invoke(
   language: Language,
 ): Promise<InvocationResult> {
   return new Promise<InvocationResult>(resolve => {
-    fetch("http://35.214.73.95:12345/api/api/v2/execute",
+    fetch("https://execute-jk2pgw2dlq-uc.a.run.app",
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          language: language.pistonName, // specify the language
-          files: [
-            {
-              "name": "sol." + language.extension, 
-              "content": source
-            }
-          ], // specify the code to execute
-          stdin: input, // specify the input
-          version: language.version,
+          language: language.apiName,
+          source,
+          input
         }),
       }
     ).then(res => {

@@ -1,7 +1,7 @@
 import { InvocationResult, invoke } from "./invoke";
 import { Language } from "content";
 
-const TPS = 1; // how many Tests Per Second (can be fractional)
+const TPS = 25; // how many Tests Per Second (can be fractional)
 
 /**
  * @summary 

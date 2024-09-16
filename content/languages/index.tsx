@@ -2,7 +2,7 @@ export interface Language {
   display: string;
   extension: string;
   highlight: string;
-  pistonName: string;
+  apiName: string;
   monaco: string;
   version: string;
   template: string;
@@ -14,7 +14,7 @@ export const languages: Language[] = [
     display: "C++",
     extension: "cpp",
     highlight: "cpp",
-    pistonName: "c++",
+    apiName: "cpp",
     monaco: "cpp",
     version: "10.2.0",
     template: `#include <bits/stdc++.h>
@@ -35,7 +35,7 @@ int main() {
     display: "Python",
     extension: "py",
     highlight: "python",
-    pistonName: "python",
+    apiName: "python",
     monaco: "python",
     version: "3.12",
     template: `# Enter your solution below. Use input() 
