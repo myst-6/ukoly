@@ -37,7 +37,7 @@ int main() {
     highlight: "python",
     pistonName: "python",
     monaco: "python",
-    version: "3.10",
+    version: "3.12",
     template: `# Enter your solution below. Use input() 
 # and print() for I/O, and do not output
 # any prompts, because the grader will not work.
