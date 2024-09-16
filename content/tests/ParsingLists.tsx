@@ -57,7 +57,7 @@ export const TestParsingLists: Test[] = [
         points: 2
     },
     {
-        input: "EEEOEEEOEEO 12345",
+        input: "EEEOEEEOEEEO 12345",
         output: "103552892655",
         points: 2
     },
