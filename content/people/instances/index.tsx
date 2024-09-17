@@ -57,7 +57,7 @@ export const people: Person[] = [
         handle: "AG-88301",
       }
     ],
-    roles: ["Contributor"]
+    roles: ["Developer", "Contributor"]
   },
   {
     name: "Shubham Kumar",
