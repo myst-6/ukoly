@@ -27,7 +27,7 @@ def output_grids(*grids):
 if __name__ == "__main__":
     alphabet = list(ascii_uppercase)
     alphabet.remove("Q")
-    word1 = input("Please enter word 1: ")
+    word1 = input()
     grid1 = alphabet[:]
 
     for i in word1[::-1]:
@@ -35,7 +35,7 @@ if __name__ == "__main__":
         grid1.insert(0, i)
 
     grid1 = reshape(grid1)
-    word2 = input("Please enter word 2: ")
+    word2 = input()
 
     grid2 = alphabet[:]
 
@@ -47,13 +47,13 @@ if __name__ == "__main__":
     output_grids(grid1, grid2)
     print()
     while True:
-        command = input("Enter a command: ")
+        command = input()
 
         match command:
             case "Q":
                 break
             case "E":
-                word_to_encode = input("Enter word to encode: ")
+                word_to_encode = input()
                 if len(word_to_encode) % 2 == 1:
                     word_to_encode += "X"
                 output = ""
@@ -72,7 +72,7 @@ if __name__ == "__main__":
                 print(output + "\n")
 
             case "D":
-                word_to_decode = input("Enter word to decode: ")
+                word_to_decode = input()
                 output = ""
                 for letter1, letter2 in zip(word_to_decode[::2], word_to_decode[1::2]):
                     row1, col1 = find(grid1, letter1)

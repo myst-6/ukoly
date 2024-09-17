@@ -14,8 +14,6 @@ int solve(int a, int b) {
 
 int32_t main()
 {
-    ifstream cin("input.txt");
-    ofstream cout("output.txt");
     int a, b;
     cin >> a >> b;
     cout << solve(abs(a), abs(b))+1 << endl;

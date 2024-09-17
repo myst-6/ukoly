@@ -11,7 +11,7 @@ def product(x):
         return 1
 
 if __name__ == "__main__":
-    letters = input("Please enter lowercase letters and an integer: ").strip().split()
+    letters = input().strip().split()
     letters, n = letters[0], int(letters[1])
     num_cars = len(letters)
     preference_lists = []

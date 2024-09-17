@@ -2,12 +2,6 @@
 
 using namespace std;
 
-ifstream fin("input.txt");
-ofstream fout("output.txt");
-
-#define cin fin
-#define cout fout
-
 const int inf = 1<<30;
 
 int main() {
@@ -23,7 +17,7 @@ int main() {
     adj[v].push_back(u);
   }
 
-  auto sssp = [&](int start, vector<int> &dist, function<void(int)> ev) {
+  auto bfs = [&](int start, vector<int> &dist, function<void(int)> ev) {
     dist.assign(h, inf);
     dist[start] = 1;
     queue<pair<int,int>> Q;
@@ -45,7 +39,7 @@ int main() {
   int ans = h;
 
   vector<int> dist_from_root(h);
-  sssp(0, dist_from_root, [&](int _a, int _b) {});
+  bfs(0, dist_from_root, [&](int _a, int _b) {});
   for (int i=1; i<h; i++) {
     if (adj[i].size() < 3) {
       ans = min(ans, dist_from_root[i]);
@@ -58,7 +52,7 @@ int main() {
   for (int i=0; i<h; i++) {
     int d = dist_from_root[i];
     vector<int> dist_from_i(h);
-    sssp(i, dist_from_i, [&](int x) {
+    bfs(i, dist_from_i, [&](int x) {
       ans = min(ans, d + x - 2);
     });
   }

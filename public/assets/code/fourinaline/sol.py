@@ -79,7 +79,7 @@ class Board:
 
 
 if __name__ == "__main__":
-    n = int(input("Please enter a number: "))
+    n = int(input())
     a = [int(i) for i in input(f"Please enter {n} numbers: ").split()]
 
     board = [[0 for _ in range(6)] for _ in range(7)]
@@ -97,7 +97,7 @@ if __name__ == "__main__":
         if b.all_full():
             print("Draw")
             exit(0)
-        move = input("Please enter a move: ")
+        move = input()
         if move == "n":
             b = b.simulate_one()
         else:

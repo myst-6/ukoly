@@ -13,7 +13,7 @@ def is_pat(s):
 
 
 if __name__ == "__main__":
-    a, b = input("Please enter two strings: ").split()
+    a, b = input().split()
     print("YES" if is_pat(a) else "NO")
     print("YES" if is_pat(b) else "NO")
     print("YES" if is_pat(a+b) else "NO")

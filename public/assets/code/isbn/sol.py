@@ -1,5 +1,5 @@
 if __name__ == "__main__":
-    isbn = list(input("ISBN: "))
+    isbn = list(input())
     if isbn[9] == "X":
         isbn[9] = "10"
     questionmark = isbn.index("?")

@@ -3,11 +3,10 @@ using namespace std;
 #define int long long
 #define pii pair<int, int>
 #define vpii vector<pii>
+#define vi vector<int>
 
 int32_t main()
 {
-    ifstream cin("input.txt");
-    ofstream cout("output.txt");
     
     int n;
     cin >> n;

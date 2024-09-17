@@ -75,6 +75,7 @@ import {
   Waves,
   OnTheRightTrack,
   Trail,
+  StringRewriting
 } from "solutions";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
@@ -893,4 +894,15 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     solutionAuthors: ["Adwaya Gupta"],
     component: <Trail />,
   },
+  {
+    difficulty: "Insane",
+    display: "String Rewriting",
+    original: "https://olympiad.org.uk/papers/2007/bio/bio07exam.pdf",
+    year: 2007,
+    question: 3,
+    tags: ["Dynamic Programming", "Implementation", "Graphs"],
+    editorialAuthors: ["Seyoon Park"],
+    solutionAuthors: ["Seyoon Park"],
+    component: <StringRewriting />,
+  }
 ];

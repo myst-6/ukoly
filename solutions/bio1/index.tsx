@@ -74,3 +74,4 @@ export * from "./AccordionPatience";
 export * from "./AlphaComplex";
 export * from "./Waves";
 export * from "./Trail";
+export * from "./StringRewriting"

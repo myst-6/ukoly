@@ -7,9 +7,6 @@ using namespace std;
 
 int32_t main()
 {
-    ifstream cin("input.txt");
-    ofstream cout("output.txt");
-    
     int n, x;
     cin >> n >> x;
     vi a(n+1, 0);
