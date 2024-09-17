@@ -1,6 +1,8 @@
 import { Language } from "content";
 
-export type InvocationStatus = "OK" | "TLE" | "RE" | "RJ" | "TS";
+export const invocationStatuses = ["OK", "TLE", "CE", "RE", "RJ", "TS"];
+
+export type InvocationStatus = typeof invocationStatuses[number];
 
 export interface InvocationResult {
   status: InvocationStatus;
@@ -48,23 +50,18 @@ export function invoke(
       }
     ).then(res => {
       if (!res.ok) {
-        console.error(res);
-        resolve({
-          status: "RJ",
-          message: "Network error. Please report this to Boris on discord.",
-        });
+        throw new Error(String(res));
       }
       return res.json();
     }).then(data => {
-      if (data.run.stderr || data.run.signal) {
-        resolve({
-          status: "RE",
-          message: data.run.stderr || data.run.signal,
-        });
+      const { verdict, stdout, stderr, compileOutput, time, memory } = data;
+      if (!invocationStatuses.includes(verdict)) {
+        throw new Error();
       }
+      console.info(time,memory);
       resolve({
-        status: "OK",
-        message: data.run.stdout,
+        status: verdict,
+        message: verdict === "RE" ? stderr : verdict === "CE" ? compileOutput : stdout,
       });
     }).catch(err => {
       console.error(err);

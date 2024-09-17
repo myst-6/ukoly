@@ -1,7 +1,7 @@
 import { InvocationResult, invoke } from "./invoke";
 import { Language } from "content";
 
-const TPS = 3; // how many Tests Per Second (can be fractional)
+const TPS = 1; // how many Tests Per Second (can be fractional)
 
 /**
  * @summary 
@@ -35,7 +35,6 @@ export function useInvoker() {
   ) {
     inputs.forEach((input, index) => {
       console.log("Dispatching invocation for input", index);
-      const batch = Math.floor(index / TPS);
       setTimeout(() => {
         invoke(source, input, language).then(result => {
           onResult(index, result);
@@ -43,7 +42,7 @@ export function useInvoker() {
           console.error("Severe error, how could this have happened?");
           console.error(error);
         })
-      }, batch * 1000);
+      }, index / TPS * 1000);
     });
   }
 

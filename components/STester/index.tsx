@@ -27,8 +27,9 @@ export const STester = ({ problem, code, language }: STesterProps) => {
         <Button onClick={handleRunCode}>Submit Code</Button>
         <Text typography="body.medium">
           {
-            results[0] === waiting ? "Waiting..." : `Points scored: ${results.reduce(
-              (acc, result, index) => acc + (result.status === "AC" ? dispatchedProblem.tests![index]!.points : 0), 0)}`
+            results.length === dispatchedProblem.tests?.length &&
+              results[0] === waiting ? "Waiting..." : `Points scored: ${results.reduce(
+                (acc, result, index) => acc + (result.status === "AC" ? dispatchedProblem.tests![index]!.points : 0), 0)}`
           }
         </Text>
       </HStack>
