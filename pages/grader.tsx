@@ -1,5 +1,5 @@
 import { Box, Header, HStack, VStack } from "components";
-import { useColorMode } from "@chakra-ui/react";
+import { useColorMode, Tab, Tabs, TabPanels, TabPanel, TabList } from "@chakra-ui/react";
 import { BIO1ProblemInfo, bio1Problems, languages } from "content";
 import { pages } from "content";
 import { useEffect, useRef, useState } from "react";
@@ -125,14 +125,27 @@ export default function Grader() {
               />
             </Box>
           </VStack>
-          <STester
-            problem={currProb}
-            code={value}
-            language={languages[language]!}
-          />
-          <SRunner
-            codes={languages.map((_, index) => (index === language ? value : null))}
-          />
+          <Tabs>
+            <TabList>
+              <Tab>Run</Tab>
+              <Tab>Submit</Tab>
+            </TabList>
+
+            <TabPanels height="25vh" width="100%">
+              <TabPanel width="50vw" marginTop="-1em">
+                <SRunner
+                  codes={languages.map((_, index) => (index === language ? value : null))}
+                />
+              </TabPanel>
+              <TabPanel width="50vw">
+                <STester
+                  problem={currProb}
+                  code={value}
+                  language={languages[language]!}
+                />
+              </TabPanel>
+            </TabPanels>
+          </Tabs>
         </VStack>
       </HStack>
     </VStack>
