@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { InvocationResult, InvocationStatus, waiting } from "./invoke";
-import { Test } from "content";
-import { Checker, CheckerStatus } from "./checkers";
+import { BIO1ProblemInfo } from "content";
+import { CheckerStatus } from "./checkers";
 import { useInvoker } from "./useInvoker";
 import { Language } from "content";
 
@@ -25,10 +25,20 @@ export interface TestResult {
  * @dispatch​
  * A way of running the tests on a given source code and language.
  */
-export function useTester() {
+export function useTester(initialProblem: BIO1ProblemInfo) {
   const [results, setResults] = useState<TestResult[]>([]);
+  const [epoch, setEpoch] = useState<number>(0);
+  const [problem, setProblem] = useState<BIO1ProblemInfo>(initialProblem);
 
   const { dispatch: invokerDispatch } = useInvoker();
+
+  useEffect(() => {
+    if (!problem.tests) {
+      console.error("No tests for this problem.");
+      return;
+    }
+    setResults([]);
+  }, [problem]);
 
   /**
    * 
@@ -37,32 +47,52 @@ export function useTester() {
    * @param source The source code of the participant.
    * @param lang The source code's language
    */
-  function dispatch(tests: Test[], checker: Checker, source: string, lang: Language) {
+  function dispatch(source: string, lang: Language) {
+    if (!problem.tests) {
+      console.error("No tests for this problem.");
+      return;
+    }
+    if (!problem.checker) {
+      console.error("No checker for this problem.");
+      return;
+    }
+    const { tests, checker } = problem;
     setResults(tests.map(() => waiting as TestResult));
+    const dispatchedEpoch = epoch + 1;
+    setEpoch(epoch => epoch + 1);
     invokerDispatch(
       tests.map(test => test.input), 
       source, 
       lang, 
       (index: number, result: InvocationResult) => {
-        setResults(res => {
-          if (result.status === "OK") {
-            const checkerResult = checker(tests[index]!.output, result.message);
-            return [
-              ...res.slice(0, index), 
-              checkerResult as TestResult, 
-              ...res.slice(index + 1)
-            ];
-          } else {
-            return [
-              ...res.slice(0, index), 
-              result as TestResult, 
-              ...res.slice(index + 1)
-            ];
+        setEpoch(epoch => {
+          console.log(dispatchedEpoch,epoch);
+          if (dispatchedEpoch === epoch) {
+            setResults(res => {
+              if (res.length !== 0) {
+                if (result.status === "OK") {
+                  const checkerResult = checker(tests[index]!.output, result.message);
+                  return [
+                    ...res.slice(0, index), 
+                    checkerResult as TestResult, 
+                    ...res.slice(index + 1)
+                  ];
+                } else {
+                  return [
+                    ...res.slice(0, index), 
+                    result as TestResult, 
+                    ...res.slice(index + 1)
+                  ];
+                }
+              }
+              return [];
+            });
           }
+          return epoch;
         });
       }
     );
   }
 
-  return { results, dispatch };
+  return { results, dispatch, problem, setProblem };
 };

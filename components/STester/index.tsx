@@ -1,6 +1,7 @@
 import { Button, HStack, SText, Text } from "components";
 import { useTester, waiting } from "utils";
 import { BIO1ProblemInfo, Language } from "content";
+import { useEffect } from "react";
 
 // Refactored STester to accept props
 interface STesterProps {
@@ -10,29 +11,29 @@ interface STesterProps {
 }
 
 export const STester = ({ problem, code, language }: STesterProps) => {
-  const { dispatch, results } = useTester();
+  const { dispatch, results, setProblem, problem: dispatchedProblem } = useTester(problem);
+
+  useEffect(() => {
+    setProblem(problem);
+  }, [problem, setProblem]);
 
   const handleRunCode = () => {
-    if (!problem.tests) {
-      console.error("No tests for this problem.");
-      return;
-    }
-    dispatch(problem.tests!, problem.checker!, code, language);
+    dispatch(code, language);
   };
 
   return (
     <>
       <HStack alignItems="center">
         <Button onClick={handleRunCode}>Submit Code</Button>
-        <Text typography="body.medium">{
-          results[0] === waiting ? "Waiting..." : `Points scored: ${results.reduce(
-            (acc, result) => acc + (result.status === "AC" ? problem.tests![results!.indexOf(result)]!.points : 0), 0)}`
-        }
-
+        <Text typography="body.medium">
+          {
+            results[0] === waiting ? "Waiting..." : `Points scored: ${results.reduce(
+              (acc, result, index) => acc + (result.status === "AC" ? dispatchedProblem.tests![index]!.points : 0), 0)}`
+          }
         </Text>
       </HStack>
       {
-        problem.tests!.map((_, idx) => {
+        results.map((_, idx) => {
           return (
             <SText key={idx}>{`Test ${idx + 1}: ${results[idx]?.status} (${results[idx]?.message})` ?? "Waiting..."}</SText>
           )
