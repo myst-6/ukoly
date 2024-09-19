@@ -88,7 +88,7 @@ import {
   TestPentominoes,
   TestZeckendorfRepresentation,
 } from "content/tests";
-import { ncmp, wcmp, fcmp } from "utils";
+import { ncmp, wcmp } from "utils";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
   {
