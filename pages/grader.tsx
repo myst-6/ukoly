@@ -101,6 +101,7 @@ export default function Grader() {
                   name="Question"
                   opts={bio1Problems
                     .filter((problem: BIO1ProblemInfo) => problem.year === years[year])
+                    .sort((a, b) => a.question - b.question)
                     .map(problem => `${problem.question}. ${problem.display}`)}
                   opt={question}
                   onSelect={setQuestion}
