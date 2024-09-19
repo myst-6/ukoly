@@ -15,7 +15,29 @@ export const languages: Language[] = [
     highlight: "cpp",
     apiName: "cpp",
     monaco: "cpp",
-    template: `#include <bits/stdc++.h>
+    template: `\
+// Note: <bits/stdc++.h> produces undefined behaviour. Please avoid using it.
+// The below imports should encompass everything you need.
+#include <algorithm>
+#include <array>
+#include <bitset>
+#include <chrono>
+#include <complex>
+#include <deque>
+#include <functional>
+#include <iostream>
+#include <iterator>
+#include <limits>
+#include <map>
+#include <queue>
+#include <random>
+#include <set>
+#include <stack>
+#include <string>
+#include <tuple>
+#include <vector>
+#include <unordered_map>
+#include <unordered_set>
 using namespace std;
 
 int main() {
@@ -78,13 +100,4 @@ int main() {
     template: "", // TODO
     initPos: { lineNumber: 1, column: 1 } // TODO
   },
-  {
-    display: "BF",
-    extension: "bf",
-    highlight: "bf",
-    apiName: "bf",
-    monaco: "bf",
-    template: "", // TODO
-    initPos: { lineNumber: 1, column: 1 } // TODO
-  }
 ];

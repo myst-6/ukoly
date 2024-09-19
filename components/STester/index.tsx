@@ -93,7 +93,15 @@ export const STester = ({ problem, code, language }: STesterProps) => {
   return (
     <>
       <HStack alignItems="center">
-        <Button onClick={handleRunCode}>Submit Code</Button>
+        {
+          <Button 
+          onClick={handleRunCode} 
+          isLoading={results.some(result => result.status === "TS")}
+        >
+          Submit Code
+        </Button>
+        }
+        
         <Text typography="body.medium">
           {
             results.length === dispatchedProblem.tests?.length &&
