@@ -38,6 +38,8 @@ export default function Grader() {
   const { ref: sideRef, dimensions } = useDimensions<HTMLDivElement>();
   const { dimensions: windowDimensions } = useWindowDimensions();
 
+  const [isRunning, setRunning] = useState<boolean>(false);
+
   useEffect(() => {
     if (editorRef.current !== null) {
       // resize from nothing
@@ -70,6 +72,7 @@ export default function Grader() {
               justifyContent="space-between"
             >
               <SSelector
+                disabled={isRunning}
                 name="Language"
                 opts={languages.map(language => language.display)}
                 opt={language}
@@ -91,12 +94,14 @@ export default function Grader() {
               />
               <HStack>
                 <SSelector
+                  disabled={isRunning}
                   name="Year"
                   opts={years.map(String)}
                   opt={year}
                   onSelect={setYear}
                 />
                 <SSelector
+                  disabled={isRunning}
                   name="Question"
                   opts={bio1Problems
                     .filter((problem: BIO1ProblemInfo) => problem.year === years[year])
@@ -142,6 +147,8 @@ export default function Grader() {
                   problem={currProb}
                   code={value}
                   language={languages[language]!}
+                  onBegin={() => setRunning(true)}
+                  onEnd={() => setRunning(false)}
                 />
               </TabPanel>
             </TabPanels>

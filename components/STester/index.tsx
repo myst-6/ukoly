@@ -77,9 +77,11 @@ interface STesterProps {
   problem: BIO1ProblemInfo;
   code: string;
   language: Language;
+  onBegin: () => void;
+  onEnd: () => void;
 }
 
-export const STester = ({ problem, code, language }: STesterProps) => {
+export const STester = ({ onBegin, onEnd, problem, code, language }: STesterProps) => {
   const { dispatch, results, setProblem, problem: dispatchedProblem } = useTester(problem);
 
   useEffect(() => {
@@ -87,8 +89,15 @@ export const STester = ({ problem, code, language }: STesterProps) => {
   }, [problem, setProblem]);
 
   const handleRunCode = () => {
+    onBegin();
     dispatch(code, language);
   };
+
+  useEffect(() => {
+    if (results.every(result => result.status !== "TS")) {
+      onEnd();
+    }
+  }, [results, onEnd]);
 
   return (
     <>

@@ -6,14 +6,15 @@ export interface SSelectorProps {
     opts: string[];
     opt: number;
     onSelect: (opt: number) => void;
+    disabled?: boolean;
 }
 
-export const SSelector = ({ name, opts, opt, onSelect }: SSelectorProps) => {
+export const SSelector = ({ name, opts, opt, onSelect, disabled }: SSelectorProps) => {
     return (
         <Box display="flex" alignItems="center">
             <Text ml={2} fontSize="lg" padding={4} pl={0}>{name}: </Text>
             <Menu>
-                <MenuButton as={Button}>{opts[opt]}</MenuButton>
+                <MenuButton as={Button} isLoading={disabled}>{opts[opt]}</MenuButton>
                 <MenuList maxHeight="20vh" overflowY="auto">
                     {opts.map((label, opt) => {
                         return (
