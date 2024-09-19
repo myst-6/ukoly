@@ -81,9 +81,14 @@ import {
 import {
   TestIntegerStrings,
   TestParsingLists,
-  TestWordGame
+  TestWordGame,
+  TestDecrypt,
+  TestGameOfDrones,
+  TestDreamingSpires,
+  TestPentominoes,
+  TestZeckendorfRepresentation,
 } from "content/tests";
-import { ncmp } from "utils";
+import { ncmp, wcmp, fcmp } from "utils";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
   {
@@ -267,6 +272,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Vladimir Filip"],
     solutionAuthors: ["Vladimir Filip"],
     component: <ZeckendorfRepresentation />,
+    tests: TestZeckendorfRepresentation,
+    checker: ncmp,
   },
   {
     difficulty: "Medium",
@@ -278,6 +285,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Vladimir Filip"],
     solutionAuthors: ["Vladimir Filip"],
     component: <Pentominoes />,
+    tests: TestPentominoes,
+    checker: ncmp,
   },
   {
     difficulty: "Medium",
@@ -289,6 +298,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Vladimir Filip"],
     solutionAuthors: ["Vladimir Filip", "Alex Pylypenko"],
     component: <DreamingSpires />,
+    tests: TestDreamingSpires,
+    checker: ncmp,
   },
   {
     difficulty: "Medium",
@@ -564,6 +575,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Yuvan Raja"],
     solutionAuthors: ["Yuvan Raja"],
     component: <Decrypt />,
+    tests: TestDecrypt,
+    checker: wcmp,
   },
   {
     difficulty: "Hard",
@@ -575,6 +588,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <GameOfDrones />,
+    tests: TestGameOfDrones,
+    checker: ncmp
   },
   {
     difficulty: "Easy",
