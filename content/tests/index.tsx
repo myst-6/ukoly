@@ -2,3 +2,8 @@ export * from "./base";
 export * from "./IntegerStrings";
 export * from "./ParsingLists";
 export * from "./WordGame";
+export * from "./ZeckendorfRepresentation";
+export * from "./Pentominoes";
+export * from "./DreamingSpires";
+export * from "./Decrypt";
+export * from "./GameOfDrones";
