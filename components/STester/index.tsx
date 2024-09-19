@@ -1,4 +1,4 @@
-import { Button, HStack, SText, Text, Box, STitle } from "components";
+import { Button, HStack, SText, Text, Box, STitle, SCode } from "components";
 import { Modal, ModalBody, ModalOverlay, ModalCloseButton, ModalContent, useDisclosure } from "@chakra-ui/react";
 import { useTester, waiting } from "utils";
 import { BIO1ProblemInfo, Language } from "content";
@@ -8,10 +8,13 @@ interface ResultModalProps {
   stat: string | undefined;
   message: string;
   isOpen: boolean;
+  input: string | undefined;
+  output: string | undefined;
+  expected: string | undefined;
   onClose: () => void;
 }
 
-const ResultModal = ({stat, message, isOpen, onClose}: ResultModalProps) => {
+const ResultModal = ({stat, message, isOpen, onClose, input, output, expected}: ResultModalProps) => {
   return (
     <>
       <Modal isOpen={isOpen} onClose={onClose}>
@@ -20,7 +23,13 @@ const ResultModal = ({stat, message, isOpen, onClose}: ResultModalProps) => {
           <ModalCloseButton />
           <ModalBody>
             <STitle>Verdict: {(stat) ?? "Error. Please contact Boris on Discord."}</STitle>
-            <SText>{message}</SText>
+            <SText>Input: </SText>
+            <SCode><pre>{input}</pre></SCode>
+            <SText>Output: </SText>
+            <SCode><pre>{output}</pre></SCode>
+            <SText>Expected: </SText>
+            <SCode><pre>{expected}</pre></SCode>
+            <SText>Grader Out: {message}</SText>
           </ModalBody>
         </ModalContent>
       </Modal>
@@ -31,9 +40,12 @@ const ResultModal = ({stat, message, isOpen, onClose}: ResultModalProps) => {
 interface ResultButtonProps {
   stat: string | undefined;
   message: string | undefined;
+  input: string | undefined;
+  output: string | undefined;
+  expected: string | undefined;
 }
 
-const ResultButton = ({ stat, message }: ResultButtonProps) => {
+const ResultButton = ({ stat, message, input, output, expected }: ResultButtonProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   if (!message) {
@@ -45,9 +57,8 @@ const ResultButton = ({ stat, message }: ResultButtonProps) => {
   let color;
   switch (stat) {
     case "AC":
-      return (
-        <Button colorScheme={"green"} margin={"0.2em"} padding="0" width={"5vw"}>AC</Button>
-      );
+      color = "green";
+      break;
     case "WA":
     case "RE":
     case "CE":
@@ -65,7 +76,7 @@ const ResultButton = ({ stat, message }: ResultButtonProps) => {
   return (
     <>
       <Button colorScheme={color} margin={"0.2em"} onClick={onOpen} width={"5vw"}>{stat}</Button>
-      <ResultModal stat={stat} message={message} isOpen={isOpen} onClose={onClose}/>
+      <ResultModal stat={stat} message={message} isOpen={isOpen} onClose={onClose} input={input} output={output} expected={expected}/>
     </>
   );
 }
@@ -105,7 +116,12 @@ export const STester = ({ problem, code, language }: STesterProps) => {
           results.map((_, idx) => {
             return (
               <>
-                <ResultButton stat={results[idx]?.status} message={results[idx]?.message} />
+                <ResultButton stat={results[idx]?.status} 
+                              message={(results[idx]?.message == "Waiting") ?  "WJ" : results[idx]?.message} 
+                              input={dispatchedProblem.tests![idx]?.input}
+                              expected={dispatchedProblem.tests![idx]?.output}
+                              output={"Boris\nPlease\nAdd\nOutputs"} // TODO: Add actual output here
+                />
               </>
             )
           })
