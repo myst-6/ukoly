@@ -39,7 +39,6 @@ export default function Grader() {
   const { dimensions: windowDimensions } = useWindowDimensions();
 
   useEffect(() => {
-    console.log("dimensions changed", dimensions);
     if (editorRef.current !== null) {
       // resize from nothing
       editorRef.current.layout({ height: 0, width: 0 });

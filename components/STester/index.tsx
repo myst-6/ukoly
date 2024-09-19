@@ -1,20 +1,17 @@
 import { Button, HStack, SText, Text, Box, STitle, SCode } from "components";
 import { Modal, ModalBody, ModalOverlay, ModalCloseButton, ModalContent, useDisclosure } from "@chakra-ui/react";
-import { useTester, waiting } from "utils";
-import { BIO1ProblemInfo, Language } from "content";
+import { TestResult, useTester, waiting } from "utils";
+import { BIO1ProblemInfo, Language, Test } from "content";
 import { useEffect } from "react";
 
 interface ResultModalProps {
-  stat: string | undefined;
-  message: string;
+  result: TestResult;
+  test: Test;
   isOpen: boolean;
-  input: string | undefined;
-  output: string | undefined;
-  expected: string | undefined;
   onClose: () => void;
 }
 
-const ResultModal = ({stat, message, isOpen, onClose, input, output, expected}: ResultModalProps) => {
+const ResultModal = ({ result, test, isOpen, onClose}: ResultModalProps) => {
   return (
     <>
       <Modal isOpen={isOpen} onClose={onClose}>
@@ -22,14 +19,17 @@ const ResultModal = ({stat, message, isOpen, onClose, input, output, expected}: 
         <ModalContent padding={"1em"}>
           <ModalCloseButton />
           <ModalBody>
-            <STitle>Verdict: {(stat) ?? "Error. Please contact Boris on Discord."}</STitle>
+            <STitle>Verdict: {result.status}</STitle>
             <SText>Input: </SText>
-            <SCode><pre>{input}</pre></SCode>
+            <SCode><pre>{test.input}</pre></SCode>
             <SText>Output: </SText>
-            <SCode><pre>{output}</pre></SCode>
+            <SCode><pre>{result.output || "(Empty)"}</pre></SCode>
             <SText>Expected: </SText>
-            <SCode><pre>{expected}</pre></SCode>
-            <SText>Grader Out: {message}</SText>
+            <SCode><pre>{test.output || "(Empty)"}</pre></SCode>
+            <SText>Checker Output: </SText>
+            <SCode><pre>{result.message || "(Empty)"}</pre></SCode>
+            <SText>Execution Time / Memory Usage: </SText>
+            <SCode><pre>{result.time}ms / {result.memory}MB</pre></SCode>
           </ModalBody>
         </ModalContent>
       </Modal>
@@ -38,24 +38,15 @@ const ResultModal = ({stat, message, isOpen, onClose, input, output, expected}: 
 }
 
 interface ResultButtonProps {
-  stat: string | undefined;
-  message: string | undefined;
-  input: string | undefined;
-  output: string | undefined;
-  expected: string | undefined;
+  result: TestResult;
+  test: Test;
 }
 
-const ResultButton = ({ stat, message, input, output, expected }: ResultButtonProps) => {
+const ResultButton = ({ result, test }: ResultButtonProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  if (!message) {
-    return (
-      <Button>Waiting...</Button>
-    )
-  } 
-
   let color;
-  switch (stat) {
+  switch (result.status) {
     case "AC":
       color = "green";
       break;
@@ -66,7 +57,7 @@ const ResultButton = ({ stat, message, input, output, expected }: ResultButtonPr
       color = "red";
       break;
     case "TLE":
-    case "MLE":
+    // case "MLE":
       color = "orange";
       break;
     default:
@@ -75,8 +66,8 @@ const ResultButton = ({ stat, message, input, output, expected }: ResultButtonPr
   }
   return (
     <>
-      <Button colorScheme={color} margin={"0.2em"} onClick={onOpen} width={"5vw"}>{stat}</Button>
-      <ResultModal stat={stat} message={message} isOpen={isOpen} onClose={onClose} input={input} output={output} expected={expected}/>
+      <Button colorScheme={color} margin={"0.2em"} onClick={onOpen} width={"5vw"}>{result.status}</Button>
+      <ResultModal result={result} test={test} isOpen={isOpen} onClose={onClose} />
     </>
   );
 }
@@ -113,16 +104,13 @@ export const STester = ({ problem, code, language }: STesterProps) => {
       </HStack>
       <Box height="100%" display={"inline-block"} marginTop={"1em"}>
         {
-          results.map((_, idx) => {
+          results.map((result, idx) => {
             return (
-              <>
-                <ResultButton stat={results[idx]?.status} 
-                              message={(results[idx]?.message == "Waiting") ?  "WJ" : results[idx]?.message} 
-                              input={dispatchedProblem.tests![idx]?.input}
-                              expected={dispatchedProblem.tests![idx]?.output}
-                              output={"Boris\nPlease\nAdd\nOutputs"} // TODO: Add actual output here
-                />
-              </>
+              <ResultButton 
+                key={idx} 
+                result={result}
+                test={problem.tests![idx]!}
+              />
             )
           })
         }

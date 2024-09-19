@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
-import { InvocationResult, InvocationStatus, waiting } from "./invoke";
+import { InvocationStatus, waiting } from "./invoke";
 import { BIO1ProblemInfo } from "content";
 import { CheckerStatus } from "./checkers";
-import { useInvoker } from "./useInvoker";
 import { Language } from "content";
+import { useRunner } from "./useRunner";
 
 export type TestStatus = Exclude<InvocationStatus, "OK"> | CheckerStatus;
 
 export interface TestResult {
   status: TestStatus;
+  output: string;
+  time: number;
+  memory: number;
   message: string;
 }
 
@@ -26,28 +29,15 @@ export interface TestResult {
  * A way of running the tests on a given source code and language.
  */
 export function useTester(initialProblem: BIO1ProblemInfo) {
-  const [results, setResults] = useState<TestResult[]>([]);
-  const [epoch, setEpoch] = useState<number>(0);
+  const { results: invocationResults, dispatch: invocationDispatch } = useRunner(); 
   const [problem, setProblem] = useState<BIO1ProblemInfo>(initialProblem);
-
-  const { dispatch: invokerDispatch } = useInvoker();
+  const [results, setResults] = useState<TestResult[]>([]);
 
   useEffect(() => {
-    if (!problem.tests) {
-      console.error("No tests for this problem.");
-      return;
-    }
     setResults([]);
   }, [problem]);
 
-  /**
-   * 
-   * @param tests The list of tests used for the program.
-   * @param checker The program used to compare an expected output against a participant's output.
-   * @param source The source code of the participant.
-   * @param lang The source code's language
-   */
-  function dispatch(source: string, lang: Language) {
+  useEffect(() => {
     if (!problem.tests) {
       console.error("No tests for this problem.");
       return;
@@ -56,42 +46,38 @@ export function useTester(initialProblem: BIO1ProblemInfo) {
       console.error("No checker for this problem.");
       return;
     }
-    const { tests, checker } = problem;
-    setResults(tests.map(() => waiting as TestResult));
-    const dispatchedEpoch = epoch + 1;
-    setEpoch(epoch => epoch + 1);
-    invokerDispatch(
-      tests.map(test => test.input), 
-      source, 
-      lang, 
-      (index: number, result: InvocationResult) => {
-        setEpoch(epoch => {
-          console.log(dispatchedEpoch,epoch);
-          if (dispatchedEpoch === epoch) {
-            setResults(res => {
-              if (res.length !== 0) {
-                if (result.status === "OK") {
-                  const checkerResult = checker(tests[index]!.output, result.message);
-                  return [
-                    ...res.slice(0, index), 
-                    checkerResult as TestResult, 
-                    ...res.slice(index + 1)
-                  ];
-                } else {
-                  return [
-                    ...res.slice(0, index), 
-                    result as TestResult, 
-                    ...res.slice(index + 1)
-                  ];
-                }
-              }
-              return [];
-            });
-          }
-          return epoch;
-        });
+    const { checker, tests } = problem;
+    setResults(invocationResults.map((result, index) => {
+      if (result.status === "OK") {
+        const checkerResult = checker(tests[index]!.output, result.message);
+        return {
+          ...checkerResult,
+          output: result.message,
+          time: result.time,
+          memory: result.memory
+        };
+      } else {
+        return {
+          ...result,
+          output: "",
+        } as TestResult;
       }
-    );
+    }));
+  }, [invocationResults, problem]);
+
+  /**
+   * 
+   * @param source The source code of the participant.
+   * @param language The source code's language
+   */
+  function dispatch(source: string, language: Language) {
+    if (!problem.tests) {
+      console.error("No tests for this problem.");
+      return;
+    }
+    const { tests } = problem;
+    setResults(tests.map(() => waiting as TestResult));
+    invocationDispatch(tests.map(test => test.input), source, language);
   }
 
   return { results, dispatch, problem, setProblem };

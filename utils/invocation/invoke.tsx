@@ -1,18 +1,44 @@
 import { Language } from "content";
 
-export const invocationStatuses = ["OK", "TLE", "CE", "RE", "RJ", "TS"];
+export const invocationStatuses = ["OK", "TLE", "CE", "RE", "RJ", "TS"] as const;
 
 export type InvocationStatus = typeof invocationStatuses[number];
 
 export interface InvocationResult {
   status: InvocationStatus;
   message: string;
+  time: number;
+  memory: number;
 }
 
 export const waiting: InvocationResult = {
   status: "TS",
-  message: "Waiting..."
+  message: "Waiting...",
+  time: 0,
+  memory: 0,
 };
+
+export interface SubmissionData {
+  verdict: InvocationStatus;
+  stdout: string;
+  stderr: string;
+  compileOutput: string;
+  time: number;
+  memory: number;
+} 
+
+export function parse(data: any): InvocationResult {
+  const { verdict, stdout, stderr, compileOutput, time, memory } = data;
+  if (!invocationStatuses.includes(verdict)) {
+    throw new Error();
+  }
+  return {
+    status: verdict,
+    message: verdict === "RE" ? atob(stderr) : verdict === "CE" ? atob(compileOutput) : atob(stdout),
+    time: parseInt(time.replace(".", "")),
+    memory: ~~(memory / 1000),
+  };
+}
 
 /**
  * @summary 
@@ -36,7 +62,7 @@ export function invoke(
   language: Language,
 ): Promise<InvocationResult> {
   return new Promise<InvocationResult>(resolve => {
-    fetch("https://execute-jk2pgw2dlq-uc.a.run.app",
+    fetch("https://executesync-jk2pgw2dlq-ew.a.run.app",
       {
         method: "POST",
         headers: {
@@ -54,20 +80,14 @@ export function invoke(
       }
       return res.json();
     }).then(data => {
-      const { verdict, stdout, stderr, compileOutput, time, memory } = data;
-      if (!invocationStatuses.includes(verdict)) {
-        throw new Error();
-      }
-      console.info(time,memory);
-      resolve({
-        status: verdict,
-        message: verdict === "RE" ? stderr : verdict === "CE" ? compileOutput : stdout,
-      });
+      resolve(parse(data));
     }).catch(err => {
       console.error(err);
       resolve({
         status: "RJ",
         message: "Grader error. Please report this to Boris on discord.",
+        time: 0,
+        memory: 0,
       });
     });
   });

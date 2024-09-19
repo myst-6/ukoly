@@ -1,13 +1,7 @@
-import {
-  Textarea,
-  HStack,
-  VStack,
-  Button,
-  Flex
-} from "@chakra-ui/react";
+import { Textarea, HStack, VStack, Button, Flex } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { SourceCode, STitle } from "components";
-import { useRunner } from "utils";
+import { useInvoker } from "utils";
 import { languages } from "content";
 
 export interface SRunnerProps {
@@ -18,22 +12,21 @@ export const SRunner = ({ codes }: SRunnerProps) => {
     const [testCase, setTestCase] = useState<string>("");
     const [output, setOutput] = useState<string>("");
 
-    const { dispatch, results } = useRunner();
+    const { dispatch, result } = useInvoker();
   
     const handleRunCode = () => {
       const idx = codes.findIndex((code: string | null) => code !== null);
-      dispatch([ testCase ], codes[idx]!, languages[idx]!);
+      dispatch(testCase, codes[idx]!, languages[idx]!);
     };
 
     useEffect(() => {
-      if (results.length === 0) return;
-      const { status, message } = results[0]!;
+      const { status, message } = result;
       if (status === "TS") {
         setOutput("Waiting...");
       } else {
         setOutput(message);
       }
-    }, [results]);
+    }, [result]);
 
     return <VStack width="100%">
       <HStack justifyContent="center" alignItems="center" width="100%">

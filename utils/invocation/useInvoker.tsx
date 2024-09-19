@@ -1,20 +1,21 @@
-import { InvocationResult, invoke } from "./invoke";
+import { useState } from "react";
+import { InvocationResult, invoke, waiting } from "./invoke";
 import { Language } from "content";
-
-const TPS = 1; // how many Tests Per Second (can be fractional)
 
 /**
  * @summary 
- * Runs code on a list of inputs and produces invocation results. 
- * The results are fed through a callback function. 
+ * Runs code on a single input and produces the invocation result. 
+ * The result is fed through a callback function. 
  * 
  * @dispatch​
- * A way of running invocation on a list of inputs for a given source code and language.
+ * A way of running invocation on a single inputs for a given source code and language.
  */
 export function useInvoker() {
+  const [result, setResult] = useState<InvocationResult>(waiting);
+
   /**
-   * @param inputs
-   * The list of stdin values.
+   * @param input
+   * The stdin value.
    * 
    * @param source
    * The source code.
@@ -28,23 +29,17 @@ export function useInvoker() {
    * The first parameter `index` is the index of the test in the list of inputs. The second parameter `result` is the result of the invocation.
    */
   function dispatch(
-    inputs: string[], 
+    input: string, 
     source: string, 
-    language: Language,
-    onResult: (index: number, result: InvocationResult) => void
+    language: Language
   ) {
-    inputs.forEach((input, index) => {
-      console.log("Dispatching invocation for input", index);
-      setTimeout(() => {
-        invoke(source, input, language).then(result => {
-          onResult(index, result);
-        }).catch(error => {
-          console.error("Severe error, how could this have happened?");
-          console.error(error);
-        })
-      }, index / TPS * 1000);
+    invoke(source, input, language).then(result => {
+      setResult(result);
+    }).catch(error => {
+      console.error("Severe error, how could this have happened?");
+      console.error(error);
     });
   }
 
-  return { dispatch };
+  return { dispatch, result };
 };
