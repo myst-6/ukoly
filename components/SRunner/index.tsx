@@ -11,22 +11,26 @@ export interface SRunnerProps {
 export const SRunner = ({ codes }: SRunnerProps) => {
     const [testCase, setTestCase] = useState<string>("");
     const [output, setOutput] = useState<string>("");
+    const [ran, setRan] = useState<boolean>(false);
 
     const { dispatch, result } = useInvoker();
   
     const handleRunCode = () => {
       const idx = codes.findIndex((code: string | null) => code !== null);
+      setRan(true);
       dispatch(testCase, codes[idx]!, languages[idx]!);
     };
 
     useEffect(() => {
       const { status, message } = result;
-      if (status === "TS") {
+      if (!ran) {
+        setOutput("");
+      } else if (status === "TS") {
         setOutput("Waiting...");
       } else {
         setOutput(message);
       }
-    }, [result]);
+    }, [ran, result]);
 
     return <VStack width="100%">
       <HStack justifyContent="center" alignItems="center" width="100%">
