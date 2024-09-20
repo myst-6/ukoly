@@ -101,7 +101,8 @@ import {
   TestDecoderRing,
   TestPlayingGames,
   TestPasswords,
-  TestEenieMeenieMaineeMo
+  TestEenieMeenieMaineeMo,
+  TestASpaceOddity,
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker } from "utils";
 
@@ -464,6 +465,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <ASpaceOddity />,
+    tests: TestASpaceOddity,
+    checker: ncmp,
   },
   {
     difficulty: "Medium",

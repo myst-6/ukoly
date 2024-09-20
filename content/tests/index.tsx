@@ -23,3 +23,4 @@ export * from "./Ants";
 export * from "./DecoderRing";
 export * from "./PlayingGames";
 export * from "./EenieMeenieMaineeMo";
+export * from "./ASpaceOddity";
