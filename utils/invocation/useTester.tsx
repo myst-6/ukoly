@@ -49,7 +49,7 @@ export function useTester(initialProblem: BIO1ProblemInfo) {
     const { checker, tests } = problem;
     setResults(invocationResults.map((result, index) => {
       if (result.status === "OK") {
-        const checkerResult = checker(tests[index]!.output, result.message);
+        const checkerResult = checker(tests[index]!, result.message);
         return {
           ...checkerResult,
           output: result.message,
