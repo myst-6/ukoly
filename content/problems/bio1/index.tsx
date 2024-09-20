@@ -106,6 +106,7 @@ import {
   TestLojban,
   TestsAnts,
   TestShuffling,
+  TestMops
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker } from "utils";
 
@@ -850,6 +851,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <Mops />,
+    tests: TestMops,
+    checker: ncmp,
   },
   {
     difficulty: "Easy",
