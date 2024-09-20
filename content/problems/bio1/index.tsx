@@ -92,6 +92,8 @@ import {
   TestTriIsoGame,
   TestWindowDressing,
   TestRomanLookAndSay,
+  TestAlphaComplex,
+  TestFalsePlan,
 } from "content/tests";
 import { ncmp, wcmp } from "utils";
 
@@ -627,6 +629,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Yuvan Raja"],
     solutionAuthors: ["Yuvan Raja"],
     component: <FalsePlan />,
+    tests: TestFalsePlan,
+    checker: wcmp
   },
   {
     difficulty: "Easy",
@@ -913,7 +917,9 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     tags: ["Implementation"],
     editorialAuthors: ["Yuvan Raja"],
     solutionAuthors: ["Yuvan Raja"],
-    component: <AlphaComplex />
+    component: <AlphaComplex />,
+    tests: TestAlphaComplex,
+    checker: wcmp
   },
   {
     difficulty: "Hard",
