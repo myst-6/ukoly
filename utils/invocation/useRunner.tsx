@@ -26,7 +26,7 @@ export function useRunner() {
     if (tokens.length === 0) {
       return;
     }
-    fetch("https://getmany-jk2pgw2dlq-ew.a.run.app",
+    fetch("https://getmany-jk2pgw2dlq-nw.a.run.app",
       {
         method: "POST",
         headers: {
@@ -75,7 +75,7 @@ export function useRunner() {
    */
   function dispatch(inputs: string[], source: string, language: Language) {
     setTokens([]);
-    fetch("https://executemanyasync-jk2pgw2dlq-ew.a.run.app",
+    fetch("https://executemanyasync-jk2pgw2dlq-nw.a.run.app",
       {
         method: "POST",
         headers: {

@@ -69,7 +69,7 @@ export function invoke(
   language: Language,
 ): Promise<InvocationResult> {
   return new Promise<InvocationResult>(resolve => {
-    fetch("https://executesync-jk2pgw2dlq-ew.a.run.app",
+    fetch("https://executesync-jk2pgw2dlq-nw.a.run.app",
       {
         method: "POST",
         headers: {
