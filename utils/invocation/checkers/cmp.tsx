@@ -61,3 +61,25 @@ export const wcmp: Checker = (exp: string, got: string) => {
   const gotValues = getValues(got);
   return cmp(expValues, gotValues, got);
 };
+
+  export const debtRepaymentChecker = (exp: string, got: string) => {
+  if (!/\d+(.\d\d)/.test(got)) {
+    return {
+      status: "PE",
+      output: got,
+      message: `Expected a single number in the form X or X.dd, instead got ${got}`
+    } as CheckerResult;
+  }
+  if (parseFloat(exp) !== parseFloat(got)) {
+    return {
+      status: "WA",
+      output: got,
+      message: `Expected ${exp}, got ${got}`
+    } as CheckerResult;
+  }
+  return {
+    status: "AC",
+    output: got,
+    message: `OK 1 token`
+  } as CheckerResult;
+}
