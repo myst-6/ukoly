@@ -46,7 +46,7 @@ export function useRunner() {
       const { results } = data;
       const parsed: InvocationResult[] = results.map(parse);
       setResults(parsed);
-      if (parsed.some(result => result.status === "TS")) {
+      if (parsed.some(result => result.status === "TS" || result.status === "WJ")) {
         setTimeout(check, CHECK_INTERVAL);
       }
     }).catch(err => {

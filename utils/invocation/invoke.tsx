@@ -1,6 +1,6 @@
 import { Language } from "content";
 
-export const invocationStatuses = ["OK", "TLE", "CE", "RE", "RJ", "TS"] as const;
+export const invocationStatuses = ["OK", "TLE", "CE", "RE", "RJ", "TS", "WJ"] as const;
 
 export type InvocationStatus = typeof invocationStatuses[number];
 
@@ -10,6 +10,13 @@ export interface InvocationResult {
   time: number;
   memory: number;
 }
+
+export const queue: InvocationResult = {
+  status: "WJ",
+  message: "In Queue",
+  time: 0,
+  memory: 0,
+};
 
 export const waiting: InvocationResult = {
   status: "TS",

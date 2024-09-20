@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { InvocationStatus, waiting } from "./invoke";
+import { InvocationStatus, queue } from "./invoke";
 import { BIO1ProblemInfo } from "content";
 import { CheckerStatus } from "./checkers";
 import { Language } from "content";
@@ -76,7 +76,7 @@ export function useTester(initialProblem: BIO1ProblemInfo) {
       return;
     }
     const { tests } = problem;
-    setResults(tests.map(() => waiting as TestResult));
+    setResults(tests.map(() => queue as TestResult));
     invocationDispatch(tests.map(test => test.input), source, language);
   }
 

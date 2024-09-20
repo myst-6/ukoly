@@ -94,7 +94,7 @@ export const STester = ({ onBegin, onEnd, problem, code, language }: STesterProp
   };
 
   useEffect(() => {
-    if (results.every(result => result.status !== "TS")) {
+    if (results.every(result => result.status !== "TS" && result.status !== "WJ")) {
       onEnd();
     }
   }, [results, onEnd]);
@@ -105,7 +105,7 @@ export const STester = ({ onBegin, onEnd, problem, code, language }: STesterProp
         {
           <Button 
           onClick={handleRunCode} 
-          isLoading={results.some(result => result.status === "TS")}
+          isLoading={results.some(result => result.status === "TS" || result.status === "WJ")}
         >
           Submit Code
         </Button>
