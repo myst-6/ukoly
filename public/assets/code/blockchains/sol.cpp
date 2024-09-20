@@ -1,3 +1,4 @@
+// Solution Author: Julia Volovich
 #include <iostream>
 #include <cmath>
 #include <vector>
