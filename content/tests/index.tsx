@@ -7,3 +7,8 @@ export * from "./Pentominoes";
 export * from "./DreamingSpires";
 export * from "./Decrypt";
 export * from "./GameOfDrones";
+export * from "./Parking";
+export * from "./DownPat";
+export * from "./TriIsoGame";
+export * from "./WindowDressing";
+export * from "./RomanLookAndSay";
