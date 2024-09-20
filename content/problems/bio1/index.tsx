@@ -103,8 +103,9 @@ import {
   TestPasswords,
   TestEenieMeenieMaineeMo,
   TestASpaceOddity,
+  TestsAnts,
 } from "content/tests";
-import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker } from "utils";
+import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker } from "utils";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
   {
@@ -786,6 +787,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Shubham Kumar"],
     solutionAuthors: ["Shubham Kumar"],
     component: <Ants />,
+    checker: antsChecker,
+    tests: TestsAnts
   },
   {
     difficulty: "Easy",

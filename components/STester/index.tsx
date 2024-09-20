@@ -16,12 +16,9 @@ const ResultModal = ({ result, test, isOpen, onClose}: ResultModalProps) => {
   if (result.status === "PA") {
     assert(!!result.partial);
   }
-  /*
-    --------  maybe display number of points received here somewhere @AG
   const points = result.status === "PA" ? result.partial! * test.points 
     : result.status === "AC" ? test.points 
       : 0;
-      */
   return (
     <>
       <Modal isOpen={isOpen} onClose={onClose}>
@@ -29,7 +26,7 @@ const ResultModal = ({ result, test, isOpen, onClose}: ResultModalProps) => {
         <ModalContent padding={"1em"}>
           <ModalCloseButton />
           <ModalBody>
-            <STitle>Verdict: {result.status}</STitle>
+            <STitle>Verdict: {result.status} ({`${points} / ${test.points}`})</STitle>
             <SText>Input: </SText>
             <SCode><pre style={{ whiteSpace: "pre-wrap", wordWrap: "break-word" }}>{test.input}</pre></SCode>
             <SText>Output: </SText>
@@ -129,7 +126,7 @@ export const STester = ({ onBegin, onEnd, problem, code, language }: STesterProp
               results[0] === waiting ? "Waiting..." : `Points scored: ${results.reduce(
                 (acc, result, index) => acc + (result.status === "PA" ? result.partial! * dispatchedProblem.tests![index]!.points 
                   : result.status === "AC" ? dispatchedProblem.tests![index]!.points 
-                    : 0), 0)}`
+                    : 0), 0)} / ${dispatchedProblem.tests?.reduce((acc, test) => acc + test.points, 0)}`
           }
         </Text>
       </HStack>
