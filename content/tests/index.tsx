@@ -12,3 +12,5 @@ export * from "./DownPat";
 export * from "./TriIsoGame";
 export * from "./WindowDressing";
 export * from "./RomanLookAndSay";
+export * from "./AlphaComplex";
+export * from "./FalsePlan";
