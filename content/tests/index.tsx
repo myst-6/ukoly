@@ -25,3 +25,4 @@ export * from "./PlayingGames";
 export * from "./EenieMeenieMaineeMo";
 export * from "./ASpaceOddity";
 export * from "./Lojban";
+export * from "./Shuffling";

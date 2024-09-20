@@ -105,6 +105,7 @@ import {
   TestASpaceOddity,
   TestLojban,
   TestsAnts,
+  TestShuffling,
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker } from "utils";
 
@@ -154,6 +155,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <Shuffling />,
+    tests: TestShuffling,
+    checker: ncmp,
   },
   {
     difficulty: "Easy",

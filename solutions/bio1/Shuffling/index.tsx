@@ -36,7 +36,7 @@ export const Shuffling = () => {
         A BIO problem solvable by a very similar idea is <Link href={`${BASE_URL}/bio1?problem=Parsing+Lists`}>BIO1 2024 Q2</Link>.
       </SText>
       <STitle>Code</STitle>
-      <SCodeBlock path="shirts/sol" />
+      <SCodeBlock path="shuffling/sol" />
     </>
   );
 };
