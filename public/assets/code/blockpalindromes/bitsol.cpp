@@ -1,3 +1,5 @@
+// Solution author: Alex Pylypenko
+
 #include <bits/stdc++.h>
 
 using namespace std;
