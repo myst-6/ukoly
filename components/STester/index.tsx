@@ -21,15 +21,15 @@ const ResultModal = ({ result, test, isOpen, onClose}: ResultModalProps) => {
           <ModalBody>
             <STitle>Verdict: {result.status}</STitle>
             <SText>Input: </SText>
-            <SCode><pre>{test.input}</pre></SCode>
+            <SCode><pre style={{ whiteSpace: "pre-wrap", wordWrap: "break-word" }}>{test.input}</pre></SCode>
             <SText>Output: </SText>
-            <SCode><pre>{result.output || "(Empty)"}</pre></SCode>
+            <SCode><pre style={{ whiteSpace: "pre-wrap", wordWrap: "break-word" }}>{result.output || "(Empty)"}</pre></SCode>
             <SText>Expected: </SText>
-            <SCode><pre>{test.output || "(Empty)"}</pre></SCode>
+            <SCode><pre style={{ whiteSpace: "pre-wrap", wordWrap: "break-word" }}>{test.output || "(Empty)"}</pre></SCode>
             <SText>Checker Output: </SText>
-            <SCode><pre>{result.message || "(Empty)"}</pre></SCode>
+            <SCode><pre style={{ whiteSpace: "pre-wrap", wordWrap: "break-word" }}>{result.message || "(Empty)"}</pre></SCode>
             <SText>Execution Time / Memory Usage: </SText>
-            <SCode><pre>{result.time}ms / {result.memory}MB</pre></SCode>
+            <SCode><pre style={{ whiteSpace: "pre-wrap", wordWrap: "break-word" }}>{result.time}ms / {result.memory}MB</pre></SCode>
           </ModalBody>
         </ModalContent>
       </Modal>
