@@ -1,3 +1,4 @@
+# Solution Author: Adwaya Gupta
 class Board:
     def __init__(self):
         self.board = [[False]*10 for _ in range(10)]
