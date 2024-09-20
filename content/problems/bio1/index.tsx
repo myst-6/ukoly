@@ -87,6 +87,11 @@ import {
   TestDreamingSpires,
   TestPentominoes,
   TestZeckendorfRepresentation,
+  TestParking,
+  TestDownPat,
+  TestTriIsoGame,
+  TestWindowDressing,
+  TestRomanLookAndSay,
 } from "content/tests";
 import { ncmp, wcmp } from "utils";
 
@@ -465,6 +470,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Duy Nguyen"],
     solutionAuthors: ["Duy Nguyen"],
     component: <Parking />,
+    tests: TestParking,
+    checker: wcmp,
   },
   {
     difficulty: "Easy",
@@ -498,6 +505,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <WindowDressing />,
+    tests: TestWindowDressing,
+    checker: ncmp
   },
   {
     difficulty: "Medium",
@@ -509,6 +518,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <DownPat />,
+    tests: TestDownPat,
+    checker: wcmp
   },
   {
     difficulty: "Insane",
@@ -520,6 +531,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <TriIsoGame />,
+    tests: TestTriIsoGame,
+    checker: ncmp
   },
   {
     difficulty: "Medium",
@@ -601,6 +614,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Seyoon Park"],
     solutionAuthors: ["Seyoon Park"],
     component: <RomanLookAndSay />,
+    tests: TestRomanLookAndSay,
+    checker: ncmp
   },
   {
     difficulty: "Medium",
