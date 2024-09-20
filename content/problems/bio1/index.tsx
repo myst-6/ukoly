@@ -98,6 +98,7 @@ import {
   TestTrail,
   TestBlockChain,
   TestDebtRepayment,
+  TestDecoderRing,
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker } from "utils";
 
@@ -368,6 +369,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <DecoderRing />,
+    tests: TestDecoderRing,
+    checker: wcmp,
   },
   {
     difficulty: "Medium",
