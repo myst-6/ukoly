@@ -98,8 +98,14 @@ import {
   TestTrail,
   TestBlockChain,
   TestDebtRepayment,
+  TestPasswords,
+  TestAnts,
 } from "content/tests";
 import { ncmp, wcmp } from "utils";
+
+
+console.log(TestPasswords);
+console.log(TestDebtRepayment);
 
 export const bio1Problems: BIO1ProblemInfo[] = [
   {
@@ -762,6 +768,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Shubham Kumar"],
     solutionAuthors: ["Shubham Kumar"],
     component: <Passwords />,
+    tests: TestPasswords,
+    checker: wcmp,
   },
   {
     difficulty: "Easy",
@@ -773,6 +781,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Shubham Kumar"],
     solutionAuthors: ["Shubham Kumar"],
     component: <Ants />,
+    tests: TestAnts,
+    checker: wcmp,
   },
   {
     difficulty: "Easy",

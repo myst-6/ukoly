@@ -49,7 +49,7 @@ int main() {
 \t
 \treturn 0;
 }`,
-    initPos: { lineNumber: 9, column: 3 }
+    initPos: { lineNumber: 30, column: 5 }
   },
   {
     display: "Python",
