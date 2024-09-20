@@ -1,3 +1,4 @@
+# Solution author: Alex Pylypenko
 def solve(s):
     if len(s) < 2:
         return 1
