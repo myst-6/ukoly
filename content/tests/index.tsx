@@ -18,3 +18,4 @@ export * from "./PalindromicNumbers";
 export * from "./Trail";
 export * from "./BlockChain";
 export * from "./DebtRepayment";
+export * from "./DecoderRing";
