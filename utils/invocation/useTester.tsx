@@ -13,6 +13,7 @@ export interface TestResult {
   time: number;
   memory: number;
   message: string;
+  partial?: number; // should only exist if status is PA
 }
 
 /**

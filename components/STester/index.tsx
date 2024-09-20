@@ -3,6 +3,7 @@ import { Modal, ModalBody, ModalOverlay, ModalCloseButton, ModalContent, useDisc
 import { TestResult, useTester, waiting } from "utils";
 import { BIO1ProblemInfo, Language, Test } from "content";
 import { useEffect } from "react";
+import assert from "assert";
 
 interface ResultModalProps {
   result: TestResult;
@@ -12,6 +13,15 @@ interface ResultModalProps {
 }
 
 const ResultModal = ({ result, test, isOpen, onClose}: ResultModalProps) => {
+  if (result.status === "PA") {
+    assert(!!result.partial);
+  }
+  /*
+    --------  maybe display number of points received here somewhere @AG
+  const points = result.status === "PA" ? result.partial! * test.points 
+    : result.status === "AC" ? test.points 
+      : 0;
+      */
   return (
     <>
       <Modal isOpen={isOpen} onClose={onClose}>
@@ -58,6 +68,7 @@ const ResultButton = ({ result, test }: ResultButtonProps) => {
       color = "red";
       break;
     case "TLE":
+    case "PA":
     // case "MLE":
       color = "orange";
       break;
