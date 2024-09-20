@@ -20,3 +20,4 @@ export * from "./Trail";
 export * from "./BlockChain";
 export * from "./DebtRepayment";
 export * from "./Ants";
+export * from "./DecoderRing";

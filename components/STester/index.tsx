@@ -54,6 +54,7 @@ const ResultButton = ({ result, test }: ResultButtonProps) => {
     case "RE":
     case "CE":
     case "RJ":
+    case "PE":
       color = "red";
       break;
     case "TLE":
