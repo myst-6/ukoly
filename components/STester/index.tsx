@@ -121,15 +121,16 @@ export const STester = ({ onBegin, onEnd, problem, code, language }: STesterProp
       </HStack>
       <Box height="100%" display={"inline-block"} marginTop={"1em"}>
         {
-          results.map((result, idx) => {
-            return (
-              <ResultButton 
-                key={idx} 
-                result={result}
-                test={problem.tests![idx]!}
-              />
-            )
-          })
+          results.length === dispatchedProblem.tests?.length &&
+            results.map((result, idx) => {
+              return (
+                <ResultButton 
+                  key={idx} 
+                  result={result}
+                  test={dispatchedProblem.tests![idx]!}
+                />
+              )
+            })
         }
       </Box>
     </>
