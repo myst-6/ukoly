@@ -101,6 +101,7 @@ import {
   TestDecoderRing,
   TestPlayingGames,
   TestPasswords,
+  TestEenieMeenieMaineeMo
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker } from "utils";
 
@@ -679,6 +680,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <EenieMeenieMaineeMo />,
+    tests: TestEenieMeenieMaineeMo,
+    checker: ncmp
   },
   {
     difficulty: "Medium",
