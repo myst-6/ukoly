@@ -103,6 +103,7 @@ import {
   TestPasswords,
   TestEenieMeenieMaineeMo,
   TestASpaceOddity,
+  TestLojban,
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker } from "utils";
 
@@ -808,6 +809,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alexander Hopkins"],
     solutionAuthors: ["Alexander Hopkins"],
     component: <Lojban />,
+    tests: TestLojban,
+    checker: wcmp,
   },
   {
     difficulty: "Easy",
