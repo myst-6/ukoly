@@ -106,7 +106,8 @@ import {
   TestLojban,
   TestsAnts,
   TestShuffling,
-  TestMops
+  TestMops,
+  TestISBN
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker } from "utils";
 
@@ -180,6 +181,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <ISBN />,
+    tests: TestISBN,
+    checker: ncmp,
   },
   {
     difficulty: "Medium",

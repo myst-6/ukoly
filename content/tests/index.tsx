@@ -27,3 +27,4 @@ export * from "./ASpaceOddity";
 export * from "./Lojban";
 export * from "./Shuffling";
 export * from "./Mops";
+export * from "./ISBN";
