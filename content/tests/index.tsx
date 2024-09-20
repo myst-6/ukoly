@@ -14,3 +14,4 @@ export * from "./WindowDressing";
 export * from "./RomanLookAndSay";
 export * from "./AlphaComplex";
 export * from "./FalsePlan";
+export * from "./PalindromicNumbers";
