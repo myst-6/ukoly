@@ -24,7 +24,7 @@ class Triangle:
 class Grid:
     def __init__(self):
         self.grid = []
-        n = 500
+        n = 190
         
         for r in range(n):
             self.grid.append([])
