@@ -1,3 +1,5 @@
+# Solution author: Alex Pylypenko
+
 def is_palindromic(subsets):
     return subsets == subsets[::-1]
 
