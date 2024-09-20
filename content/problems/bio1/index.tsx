@@ -95,6 +95,9 @@ import {
   TestAlphaComplex,
   TestFalsePlan,
   TestPalindromicNumbers,
+  TestTrail,
+  TestBlockChain,
+  TestDebtRepayment,
 } from "content/tests";
 import { ncmp, wcmp } from "utils";
 
@@ -352,6 +355,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <DebtRepayment />,
+    tests: TestDebtRepayment,
+    checker: ncmp,
   },
   {
     difficulty: "Easy",
@@ -385,6 +390,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Julia Volovich"],
     solutionAuthors: ["Julia Volovich"],
     component: <BlockChains />,
+    tests: TestBlockChain,
+    checker: ncmp,
   },
   {
     difficulty: "Trivial",
@@ -945,6 +952,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <Trail />,
+    tests: TestTrail,
+    checker: ncmp
   },
   {
     difficulty: "Insane",

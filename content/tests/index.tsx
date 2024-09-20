@@ -15,3 +15,6 @@ export * from "./RomanLookAndSay";
 export * from "./AlphaComplex";
 export * from "./FalsePlan";
 export * from "./PalindromicNumbers";
+export * from "./Trail";
+export * from "./BlockChain";
+export * from "./DebtRepayment";
