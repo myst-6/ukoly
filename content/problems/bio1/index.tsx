@@ -94,6 +94,7 @@ import {
   TestRomanLookAndSay,
   TestAlphaComplex,
   TestFalsePlan,
+  TestPalindromicNumbers,
 } from "content/tests";
 import { ncmp, wcmp } from "utils";
 
@@ -485,6 +486,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Yuvan Raja"],
     solutionAuthors: ["Yuvan Raja"],
     component: <PalindromicNumbers />,
+    tests: TestPalindromicNumbers,
+    checker: ncmp,
   },
   {
     difficulty: "Easy",
