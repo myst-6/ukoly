@@ -1,3 +1,4 @@
+# Solution author: Alex Pylypenko
 if __name__ == "__main__":
     word1 = input()
     word2 = input()
