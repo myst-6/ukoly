@@ -35,7 +35,7 @@ export function parse(data: any): InvocationResult {
   return {
     status: verdict,
     message: verdict === "RE" ? atob(stderr) : verdict === "CE" ? atob(compileOutput) : atob(stdout),
-    time: parseInt(time.replace(".", "")),
+    time,
     memory: ~~(memory / 1000),
   };
 }
