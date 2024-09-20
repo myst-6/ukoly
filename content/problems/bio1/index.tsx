@@ -99,7 +99,7 @@ import {
   TestBlockChain,
   TestDebtRepayment,
 } from "content/tests";
-import { ncmp, wcmp } from "utils";
+import { ncmp, wcmp, debtRepaymentChecker } from "utils";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
   {
@@ -356,7 +356,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     solutionAuthors: ["Adwaya Gupta"],
     component: <DebtRepayment />,
     tests: TestDebtRepayment,
-    checker: ncmp,
+    checker: debtRepaymentChecker,
   },
   {
     difficulty: "Easy",
