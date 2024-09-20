@@ -127,7 +127,9 @@ export const STester = ({ onBegin, onEnd, problem, code, language }: STesterProp
           {
             results.length === dispatchedProblem.tests?.length &&
               results[0] === waiting ? "Waiting..." : `Points scored: ${results.reduce(
-                (acc, result, index) => acc + (result.status === "AC" ? dispatchedProblem.tests![index]!.points : 0), 0)}`
+                (acc, result, index) => acc + (result.status === "PA" ? result.partial! * dispatchedProblem.tests![index]!.points 
+                  : result.status === "AC" ? dispatchedProblem.tests![index]!.points 
+                    : 0), 0)}`
           }
         </Text>
       </HStack>
