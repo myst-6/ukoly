@@ -120,6 +120,7 @@ import {
   TestDrats,
   TestCards,
   TestMuTorere,
+  TestStringRewriting,
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker } from "utils";
 
@@ -1031,5 +1032,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Seyoon Park"],
     solutionAuthors: ["Seyoon Park"],
     component: <StringRewriting />,
+    tests: TestStringRewriting,
+    checker: ncmp
   }
 ];

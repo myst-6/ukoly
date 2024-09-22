@@ -1,10 +1,13 @@
-from functools import cache
+from functools import lru_cache  
+# cache is Python 3.9+ only, so it's risky unless 
+# you know the version of Python your teacher is using
+
 
 scene_nums = []
 n = 0
 
 
-@cache
+@lru_cache(maxsize=None)
 def solve(scenes_shot):
     scenes_shot = list(scenes_shot)
     if scenes_shot == scene_nums:
