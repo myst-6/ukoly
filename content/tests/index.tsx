@@ -39,3 +39,4 @@ export * from "./Anagrams";
 export * from "./Rules";
 export * from "./Drats";
 export * from "./Cards";
+export * from "./MuTorere";

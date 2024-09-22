@@ -119,8 +119,9 @@ import {
   TestRules,
   TestDrats,
   TestCards,
+  TestMuTorere,
 } from "content/tests";
-import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker } from "utils";
+import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker } from "utils";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
   {
@@ -741,6 +742,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <MuTorere />,
+    tests: TestMuTorere,
+    checker: muTorereChecker,
   },
   {
     difficulty: "Trivial",
