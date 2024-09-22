@@ -13,7 +13,7 @@ if __name__ == "__main__":
 
             if digit_index == len(digit):
                 print(number)
-                exit(-1)
+                exit(0)
             if word_index == len(word):
                 break
     else:
