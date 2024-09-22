@@ -48,3 +48,4 @@ export * from "./DigitWords";
 export * from "./ChildsPlay";
 export * from "./AnagramNumbers";
 export * from "./DieTipping";
+export * from "./Juggluging";

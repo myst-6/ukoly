@@ -126,7 +126,9 @@ import {
   TestShirts,
   TestDigitWords,
   TestChildsPlay,
-  TestAnagramNumbers
+  TestAnagramNumbers,
+  TestDieTipping,
+  TestJuggluging,
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker } from "utils";
 
@@ -369,6 +371,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <Juggluging />,
+    tests: TestJuggluging,
+    checker: ncmp,
   },
   {
     difficulty: "Medium",
