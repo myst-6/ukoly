@@ -125,6 +125,7 @@ import {
   TestEnigmaMachine,
   TestShirts,
   TestDigitWords,
+  TestChildsPlay
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker } from "utils";
 
@@ -957,6 +958,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <ChildsPlay />,
+    tests: TestChildsPlay,
+    checker: ncmp
   },
   {
     difficulty: "Medium",
