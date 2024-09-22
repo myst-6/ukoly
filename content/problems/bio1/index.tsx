@@ -122,6 +122,7 @@ import {
   TestMuTorere,
   TestStringRewriting,
   TestGoldbachConjecture,
+  TestEnigmaMachine,
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker } from "utils";
 
@@ -792,6 +793,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <EnigmaMachine />,
+    tests: TestEnigmaMachine,
+    checker: wcmp,
   },
   {
     difficulty: "Medium",
