@@ -46,3 +46,5 @@ export * from "./EnigmaMachine";
 export * from "./Shirts";
 export * from "./DigitWords";
 export * from "./ChildsPlay";
+export * from "./AnagramNumbers";
+export * from "./DieTipping";

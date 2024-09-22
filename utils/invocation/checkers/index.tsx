@@ -7,3 +7,4 @@ export * from "./playingGames";
 export * from "./morseCode";
 export * from "./turingMachine";
 export * from "./muTorere";
+export * from "./anagramNumbers";

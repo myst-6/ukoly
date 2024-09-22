@@ -125,9 +125,10 @@ import {
   TestEnigmaMachine,
   TestShirts,
   TestDigitWords,
-  TestChildsPlay
+  TestChildsPlay,
+  TestAnagramNumbers
 } from "content/tests";
-import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker } from "utils";
+import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker } from "utils";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
   {
@@ -767,6 +768,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <AnagramNumbers />,
+    tests: TestAnagramNumbers,
+    checker: anagramNumbersChecker,
   },
   {
     difficulty: "Medium",
