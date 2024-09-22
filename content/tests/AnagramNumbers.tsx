@@ -50,5 +50,15 @@ export const TestAnagramNumbers: Test[] = [
         input: "123450186",
         output: "7",
         points: 3
+    },
+    {
+        input: "69420",
+        output: "NO",
+        points: 3
+    },
+    {
+        input: "6942069",
+        output: "NO",
+        points: 3
     }
 ];
