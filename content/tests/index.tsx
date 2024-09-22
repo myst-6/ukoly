@@ -33,3 +33,4 @@ export * from "./NewOrder";
 export * from "./MayanCalendar";
 export * from "./MorseCode";
 export * from "./Fractions";
+export * from "./TuringMachine";

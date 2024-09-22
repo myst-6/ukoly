@@ -112,9 +112,10 @@ import {
   TestNewOrder,
   TestMayanCalendar,
   TestMorseCode,
-  TestFractions
+  TestFractions,
+  TestTuringMachine
 } from "content/tests";
-import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker } from "utils";
+import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker } from "utils";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
   {
@@ -901,6 +902,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <TuringMachine />,
+    tests: TestTuringMachine,
+    checker: turingMachineChecker
   },
   {
     difficulty: "Hard",
