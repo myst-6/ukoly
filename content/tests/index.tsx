@@ -41,3 +41,4 @@ export * from "./Drats";
 export * from "./Cards";
 export * from "./MuTorere";
 export * from "./StringRewriting";
+export * from "./GoldbachConjecture";  

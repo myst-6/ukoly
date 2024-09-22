@@ -121,6 +121,7 @@ import {
   TestCards,
   TestMuTorere,
   TestStringRewriting,
+  TestGoldbachConjecture,
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker } from "utils";
 
@@ -623,6 +624,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <GoldbachConjecture />,
+    tests: TestGoldbachConjecture,
+    checker: ncmp,
   },
   {
     difficulty: "Easy",
