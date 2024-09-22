@@ -11,7 +11,7 @@ export const morseCodeChecker: Checker = (test: Test, out: string) => {
       message: `OK 1 line`
     };
   }
-  else if (expLines.length === 2 && expLines[1] === outLines[0]) {
+  else if (expLines.length === 2 && expLines[1]?.slice(1, -1) === outLines[0]) {
     return {
       status: "PA",
       message: `Partial credit awarded, as per mark scheme`,

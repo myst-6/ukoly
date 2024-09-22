@@ -18,52 +18,52 @@ export const TestMorseCode: Test[] = [
     },
     {
         input: "ea",
-        output: "2\n4",
+        output: "2\n(4)",
         points: 2
     },
     {
         input: "eeeee",
-        output: "1\n15",
+        output: "1\n(15)",
         points: 2
     },
     {
         input: "ss",
-        output: "3\n29",
+        output: "3\n(29)",
         points: 2
     },
     {
         input: "oo",
-        output: "1\n24",
+        output: "1\n(24)",
         points: 2
     },
     {
         input: "morse",
-        output: "99\n1268",
+        output: "99\n(1268)",
         points: 2
     },
     {
         input: "cyclops",
-        output: "12\n11798568",
+        output: "12\n(11798568)",
         points: 2
     },
     {
         input: "wireless",
-        output: "8092\n283953",
+        output: "8092\n(283953)",
         points: 2
     },
     {
         input: "olympiad",
-        output: "1255\n3074351",
+        output: "1255\n(3074351)",
         points: 2
     },
     {
         input: "invisible",
-        output: "27876\n3919944",
+        output: "27876\n(3919944)",
         points: 2
     },
     {
         input: "typewriter",
-        output: "91674\n1950220",
+        output: "91674\n(1950220)",
         points: 3
     }
 ];
