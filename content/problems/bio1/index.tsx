@@ -112,6 +112,7 @@ import {
   TestNewOrder,
   TestMayanCalendar,
   TestMorseCode,
+  TestFractions
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker } from "utils";
 
@@ -233,6 +234,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <Fractions />,
+    tests: TestFractions,
+    checker: ncmp,
   },
   {
     difficulty: "Hard",
