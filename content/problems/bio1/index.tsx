@@ -124,6 +124,7 @@ import {
   TestGoldbachConjecture,
   TestEnigmaMachine,
   TestShirts,
+  TestDigitWords,
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker } from "utils";
 
@@ -617,6 +618,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <DigitWords />,
+    tests: TestDigitWords,
+    checker: wcmp,
   },
   {
     difficulty: "Trivial",
