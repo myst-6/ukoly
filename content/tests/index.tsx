@@ -31,3 +31,4 @@ export * from "./ISBN";
 export * from "./Waves";
 export * from "./NewOrder";
 export * from "./MayanCalendar";
+export * from "./MorseCode";

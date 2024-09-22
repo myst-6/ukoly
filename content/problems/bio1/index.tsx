@@ -110,9 +110,10 @@ import {
   TestISBN,
   TestWaves,
   TestNewOrder,
-  TestMayanCalendar
+  TestMayanCalendar,
+  TestMorseCode,
 } from "content/tests";
-import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker } from "utils";
+import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker } from "utils";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
   {
@@ -943,6 +944,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <MorseCode />,
+    tests: TestMorseCode,
+    checker: morseCodeChecker
   },
   {
     difficulty: "Medium",
