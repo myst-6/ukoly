@@ -117,6 +117,7 @@ import {
   TestMovieMagic,
   TestAnagrams,
   TestRules,
+  TestDrats
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker } from "utils";
 
@@ -220,6 +221,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <Drats />,
+    tests: TestDrats,
+    checker: ncmp,
   },
   {
     difficulty: "Trivial",

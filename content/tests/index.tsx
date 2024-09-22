@@ -37,3 +37,4 @@ export * from "./TuringMachine";
 export * from "./MovieMagic";
 export * from "./Anagrams";
 export * from "./Rules";
+export * from "./Drats";
