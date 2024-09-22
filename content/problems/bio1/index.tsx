@@ -108,7 +108,8 @@ import {
   TestShuffling,
   TestMops,
   TestISBN,
-  TestWaves
+  TestWaves,
+  TestNewOrder,
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker } from "utils";
 
@@ -926,6 +927,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <NewOrder />,
+    tests: TestNewOrder,
+    checker: ncmp,
   }, 
   {
     difficulty: "Medium",
