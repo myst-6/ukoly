@@ -114,7 +114,8 @@ import {
   TestMorseCode,
   TestFractions,
   TestTuringMachine,
-  TestMovieMagic
+  TestMovieMagic,
+  TestAnagrams
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker } from "utils";
 
@@ -227,6 +228,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <Anagrams />,
+    tests: TestAnagrams,
+    checker: wcmp,
   },
   {
     difficulty: "Easy",
