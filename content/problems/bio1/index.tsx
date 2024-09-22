@@ -113,7 +113,8 @@ import {
   TestMayanCalendar,
   TestMorseCode,
   TestFractions,
-  TestTuringMachine
+  TestTuringMachine,
+  TestMovieMagic
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker } from "utils";
 
@@ -202,6 +203,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <MovieMagic />,
+    tests: TestMovieMagic,
+    checker: ncmp,
   },
   {
     difficulty: "Medium",
