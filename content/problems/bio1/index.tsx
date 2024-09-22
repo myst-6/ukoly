@@ -107,7 +107,8 @@ import {
   TestsAnts,
   TestShuffling,
   TestMops,
-  TestISBN
+  TestISBN,
+  TestWaves
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker } from "utils";
 
@@ -971,6 +972,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Daria Sanina"],
     solutionAuthors: ["Daria Sanina"],
     component: <Waves />,
+    tests: TestWaves,
+    checker: wcmp
 },
 {
     difficulty: "Easy",

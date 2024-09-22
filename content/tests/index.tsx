@@ -28,3 +28,4 @@ export * from "./Lojban";
 export * from "./Shuffling";
 export * from "./Mops";
 export * from "./ISBN";
+export * from "./Waves";
