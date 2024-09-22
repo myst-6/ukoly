@@ -43,3 +43,4 @@ export * from "./MuTorere";
 export * from "./StringRewriting";
 export * from "./GoldbachConjecture";  
 export * from "./EnigmaMachine";
+export * from "./Shirts";
