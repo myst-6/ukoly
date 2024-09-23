@@ -60,6 +60,9 @@ export function parse(data: any): InvocationResult {
  * @param language
  * The code language being used.
  * 
+ * @param timeLimit (optional)
+ * The time limit, in seconds, for the code to run in. Defaults to 1 second.
+ * 
  * @dispatch
  * A way of running invocation on a list of inputs for a given source code and language.
  */
@@ -67,6 +70,7 @@ export function invoke(
   source: string,
   input: string,
   language: Language,
+  timeLimit?: number,
 ): Promise<InvocationResult> {
   return new Promise<InvocationResult>(resolve => {
     fetch("https://executesync-jk2pgw2dlq-nw.a.run.app",
@@ -78,7 +82,8 @@ export function invoke(
         body: JSON.stringify({
           language: language.apiName,
           source,
-          input
+          input,
+          ...(timeLimit ? { timeLimit } : {})
         }),
       }
     ).then(res => {

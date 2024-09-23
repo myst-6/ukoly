@@ -78,7 +78,7 @@ export function useTester(initialProblem: BIO1ProblemInfo) {
     }
     const { tests } = problem;
     setResults(tests.map(() => queue as TestResult));
-    invocationDispatch(tests.map(test => test.input), source, language);
+    invocationDispatch(tests.map(test => test.input), source, language, problem.timeLimit);
   }
 
   return { results, dispatch, problem, setProblem };

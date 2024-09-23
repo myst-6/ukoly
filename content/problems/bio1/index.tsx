@@ -127,7 +127,7 @@ import {
   TestDigitWords,
   TestChildsPlay,
   TestAnagramNumbers,
-  TestDieTipping,
+  // TestDieTipping,
   TestJuggluging,
   TestFibonacciLetters,
   TestAccordionPatience,
@@ -278,6 +278,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <NumberLadder />,
+    timeLimit: 5,
   },
   {
     difficulty: "Medium",
@@ -391,6 +392,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     component: <OnTheRightTrack />,
     tests: TestOnTheRightTrack,
     checker: wcmp,
+    timeLimit: 5,
   },
   {
     difficulty: "Medium",
@@ -807,6 +809,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     component: <DistinctPrimeFactorisation />,
     tests: TestDistinctPrimeFactorisation,
     checker: ncmp,
+    timeLimit: 5,
   },
   {
     difficulty: "Easy",

@@ -68,12 +68,15 @@ export function useRunner() {
    * @param language
    * The source code's language.
    * 
+   * @param timeLimit (optional)
+   * The time limit, in seconds, for the code to run in. Defaults to 1 second.
+   * 
    * @param onResult 
    * A function that accepts two arguments. 
    * The hook calls the onResult function one time for each time the result of an invocation completes.
    * The first parameter `index` is the index of the test in the list of inputs. The second parameter `result` is the result of the invocation.
    */
-  function dispatch(inputs: string[], source: string, language: Language) {
+  function dispatch(inputs: string[], source: string, language: Language, timeLimit?: number) {
     setTokens([]);
     fetch("https://executemanyasync-jk2pgw2dlq-nw.a.run.app",
       {
@@ -85,6 +88,7 @@ export function useRunner() {
           language: language.apiName,
           source,
           inputs: JSON.stringify(inputs),
+          ...(timeLimit ? { timeLimit } : {})
         }),
       }
     ).then(res => {
