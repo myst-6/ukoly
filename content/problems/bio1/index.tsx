@@ -129,9 +129,10 @@ import {
   TestAnagramNumbers,
   TestDieTipping,
   TestJuggluging,
-  TestFibonacciLetters
+  TestFibonacciLetters,
+  TestAccordionPatience,
 } from "content/tests";
-import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker } from "utils";
+import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker, accordionPatienceChecker } from "utils";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
   {
@@ -1007,6 +1008,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <AccordionPatience />,
+    tests: TestAccordionPatience,
+    checker: accordionPatienceChecker
   },
   {
     difficulty: "Medium",

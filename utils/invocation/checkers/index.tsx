@@ -8,3 +8,4 @@ export * from "./morseCode";
 export * from "./turingMachine";
 export * from "./muTorere";
 export * from "./anagramNumbers";
+export * from "./accordionPatience"
