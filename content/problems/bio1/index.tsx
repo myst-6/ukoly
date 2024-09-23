@@ -133,7 +133,8 @@ import {
   TestAccordionPatience,
   TestUpsideDown,
   TestDistinctPrimeFactorisation,
-  TestOnTheRightTrack
+  TestOnTheRightTrack,
+  TestNumberLadder,
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker, accordionPatienceChecker } from "utils";
 
@@ -278,6 +279,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <NumberLadder />,
+    tests: TestNumberLadder,
+    checker: ncmp,
   },
   {
     difficulty: "Medium",

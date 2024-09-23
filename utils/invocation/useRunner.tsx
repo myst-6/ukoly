@@ -55,7 +55,7 @@ export function useRunner() {
   }, [tokens]);
 
   useEffect(() => {
-    setTimeout(check, 1000);
+    setTimeout(check, 2000);
   }, [check, tokens]);
 
   /**
