@@ -131,6 +131,7 @@ import {
   TestJuggluging,
   TestFibonacciLetters,
   TestAccordionPatience,
+  TestUpsideDown,
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker, accordionPatienceChecker } from "utils";
 
@@ -824,6 +825,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <UpsideDown />,
+    tests: TestUpsideDown,
+    checker: ncmp,
   },
   {
     difficulty : "Trivial",

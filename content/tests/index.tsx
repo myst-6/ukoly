@@ -51,3 +51,4 @@ export * from "./DieTipping";
 export * from "./Juggluging";
 export * from "./FibonacciLetters";
 export * from "./AccordionPatience";
+export * from "./UpsideDown";
