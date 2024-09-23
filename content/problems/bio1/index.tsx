@@ -132,6 +132,7 @@ import {
   TestFibonacciLetters,
   TestAccordionPatience,
   TestUpsideDown,
+  TestDistinctPrimeFactorisation
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker, accordionPatienceChecker } from "utils";
 
@@ -801,6 +802,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <DistinctPrimeFactorisation />,
+    tests: TestDistinctPrimeFactorisation,
+    checker: ncmp,
   },
   {
     difficulty: "Easy",
