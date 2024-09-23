@@ -129,6 +129,7 @@ import {
   TestAnagramNumbers,
   TestDieTipping,
   TestJuggluging,
+  TestFibonacciLetters
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker } from "utils";
 
@@ -713,6 +714,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <FibonacciLetters />,
+    tests: TestFibonacciLetters,
+    checker: wcmp,
   },
   {
     difficulty: "Hard",
