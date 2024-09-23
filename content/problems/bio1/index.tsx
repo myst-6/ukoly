@@ -132,7 +132,8 @@ import {
   TestFibonacciLetters,
   TestAccordionPatience,
   TestUpsideDown,
-  TestDistinctPrimeFactorisation
+  TestDistinctPrimeFactorisation,
+  TestOnTheRightTrack
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker, accordionPatienceChecker } from "utils";
 
@@ -388,6 +389,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Duy Nguyen"],
     solutionAuthors: ["Duy Nguyen"],
     component: <OnTheRightTrack />,
+    tests: TestOnTheRightTrack,
+    checker: wcmp,
   },
   {
     difficulty: "Medium",
