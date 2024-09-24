@@ -10,3 +10,4 @@ export * from "./muTorere";
 export * from "./anagramNumbers";
 export * from "./accordionPatience"
 export * from "./watchingTheClock";
+export * from "./unlock";

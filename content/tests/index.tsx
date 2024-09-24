@@ -56,3 +56,4 @@ export * from "./DistinctPrimeFactorisation";
 export * from "./OnTheRightTrack";
 export * from "./NumberLadder";
 export * from "./WatchingTheClock";
+export * from "./Unlock";
