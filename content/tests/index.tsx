@@ -58,3 +58,4 @@ export * from "./NumberLadder";
 export * from "./WatchingTheClock";
 export * from "./Unlock";
 export * from "./LuckyNumbers";
+export * from "./Loops";

@@ -137,7 +137,8 @@ import {
   TestNumberLadder,
   TestWatchingTheClock,
   TestUnlock,
-  TestLuckyNumbers
+  TestLuckyNumbers,
+  TestLoops
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker, accordionPatienceChecker, watchingTheClockChecker, unlockChecker, luckyNumbersChecker } from "utils";
 
@@ -630,6 +631,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <Loops />,
+    tests: TestLoops,
+    checker: ncmp
   },
   {
     difficulty: "Easy",
