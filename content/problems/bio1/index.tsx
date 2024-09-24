@@ -139,7 +139,8 @@ import {
   TestUnlock,
   TestLuckyNumbers,
   TestLoops,
-  TestIncreasingPasswords
+  TestIncreasingPasswords,
+  TestBlockPalindromes
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker, accordionPatienceChecker, watchingTheClockChecker, unlockChecker, luckyNumbersChecker } from "utils";
 
@@ -545,6 +546,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <BlockPalindromes />,
+    tests: TestBlockPalindromes,
+    checker: ncmp,
   },
   {
     difficulty: "Hard",
