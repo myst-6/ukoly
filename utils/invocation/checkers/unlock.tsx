@@ -64,7 +64,7 @@ export const unlockChecker: Checker = (test: Test, out: string) => {
             if (currGrid[row]![col] !== 0) {
                 return {
                     status: "WA",
-                    message: `This does not produce a solve.`
+                    message: `This does not produce a solve - got ${currGrid}`
                 };
             }
         }
