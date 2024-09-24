@@ -59,3 +59,4 @@ export * from "./WatchingTheClock";
 export * from "./Unlock";
 export * from "./LuckyNumbers";
 export * from "./Loops";
+export * from "./IncreasingPasswords";
