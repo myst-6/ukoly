@@ -11,3 +11,4 @@ export * from "./anagramNumbers";
 export * from "./accordionPatience"
 export * from "./watchingTheClock";
 export * from "./unlock";
+export * from "./luckyNumbers";
