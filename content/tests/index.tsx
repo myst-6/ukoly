@@ -55,3 +55,4 @@ export * from "./UpsideDown";
 export * from "./DistinctPrimeFactorisation";
 export * from "./OnTheRightTrack";
 export * from "./NumberLadder";
+export * from "./WatchingTheClock";

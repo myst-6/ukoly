@@ -135,8 +135,9 @@ import {
   TestDistinctPrimeFactorisation,
   TestOnTheRightTrack,
   TestNumberLadder,
+  TestWatchingTheClock,
 } from "content/tests";
-import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker, accordionPatienceChecker } from "utils";
+import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker, accordionPatienceChecker, watchingTheClockChecker } from "utils";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
   {
@@ -900,6 +901,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <WatchingTheClock />,
+    tests: TestWatchingTheClock,
+    checker: watchingTheClockChecker
   },
   {
     difficulty: "Easy",

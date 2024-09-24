@@ -9,3 +9,4 @@ export * from "./turingMachine";
 export * from "./muTorere";
 export * from "./anagramNumbers";
 export * from "./accordionPatience"
+export * from "./watchingTheClock";
