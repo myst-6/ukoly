@@ -34,7 +34,7 @@ export interface SubmissionData {
   memory: number;
 } 
 
-export function parse(data: any): InvocationResult {
+export function parse(data: SubmissionData): InvocationResult {
   const { verdict, stdout, stderr, compileOutput, time, memory } = data;
   if (!invocationStatuses.includes(verdict)) {
     throw new Error();
