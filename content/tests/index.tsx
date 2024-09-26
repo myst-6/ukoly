@@ -72,3 +72,4 @@ export * from "./PuzzleGame";
 export * from "./PlayfairCipher";
 export * from "./DotsAndBoxes"; 
 export * from "./FourInALine";
+export * from "./Neutron";

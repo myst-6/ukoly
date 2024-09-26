@@ -151,9 +151,10 @@ import {
   TestPuzzleGame,
   TestPlayfairCipher,
   TestDotsAndBoxes,
-  TestFourInALine
+  TestFourInALine,
+  TestNeutron
 } from "content/tests";
-import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker, accordionPatienceChecker, watchingTheClockChecker, unlockChecker, luckyNumbersChecker, battleshipsChecker, dieTippingChecker, puzzleGameChecker, playfairCipherChecker, dotsAndBoxesChecker, fourInALineChecker } from "utils";
+import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker, accordionPatienceChecker, watchingTheClockChecker, unlockChecker, luckyNumbersChecker, battleshipsChecker, dieTippingChecker, puzzleGameChecker, playfairCipherChecker, dotsAndBoxesChecker, fourInALineChecker, neutronChecker } from "utils";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
   {
@@ -777,6 +778,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <Neutron />,
+    tests: TestNeutron,
+    checker: neutronChecker,
   },
   {
     difficulty: "Easy",

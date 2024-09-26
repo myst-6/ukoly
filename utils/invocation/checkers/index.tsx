@@ -18,3 +18,4 @@ export * from "./puzzleGame";
 export * from "./playfairCipher";
 export * from "./dotsAndBoxes";
 export * from "./fourInALine";
+export * from "./neutron";
