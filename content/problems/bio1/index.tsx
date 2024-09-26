@@ -152,7 +152,8 @@ import {
   TestPlayfairCipher,
   TestDotsAndBoxes,
   TestFourInALine,
-  TestNeutron
+  TestNeutron,
+  TestSerialNumbers
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker, accordionPatienceChecker, watchingTheClockChecker, unlockChecker, luckyNumbersChecker, battleshipsChecker, dieTippingChecker, puzzleGameChecker, playfairCipherChecker, dotsAndBoxesChecker, fourInALineChecker, neutronChecker } from "utils";
 
@@ -468,6 +469,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <SerialNumbers />,
+    tests: TestSerialNumbers,
+    checker: ncmp,
   },
   {
     difficulty: "Hard",
