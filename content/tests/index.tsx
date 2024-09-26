@@ -70,3 +70,4 @@ export * from "./ColouredTriangles";
 export * from "./MysteryParcel";
 export * from "./PuzzleGame";
 export * from "./PlayfairCipher";
+export * from "./DotsAndBoxes"; 

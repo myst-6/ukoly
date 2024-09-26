@@ -16,3 +16,4 @@ export * from "./battleships";
 export * from "./dieTipping";
 export * from "./puzzleGame";
 export * from "./playfairCipher";
+export * from "./dotsAndBoxes";
