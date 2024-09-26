@@ -34,7 +34,11 @@ export interface SubmissionData {
   memory: number;
 } 
 
-export function parse(data: any): InvocationResult {
+export function decode(output: string) {
+  return Buffer.from(output, 'base64').toString();
+}
+
+export function parse(data: SubmissionData): InvocationResult {
   const { verdict, stdout, stderr, compileOutput, time, memory } = data;
   if (!invocationStatuses.includes(verdict)) {
     throw new Error();
@@ -44,9 +48,9 @@ export function parse(data: any): InvocationResult {
     message: 
       verdict === "TLE" ? `Time limit exceeded: ${time}ms` :
       verdict === "MLE" ? `Memory limit exceeded: ${~~(memory / 1000)}MB` :
-      verdict === "RE"  ? atob(stderr) : 
-      verdict === "CE"  ? atob(compileOutput) : 
-                          atob(stdout),
+      verdict === "RE"  ? decode(stderr) : 
+      verdict === "CE"  ? decode(compileOutput) : 
+                          decode(stdout),
     time,
     memory: ~~(memory / 1000),
   };

@@ -8,7 +8,6 @@ export function useDimensions<T extends HTMLElement>() {
     if (node === null) {
       setDimensions(empty);
     } else {
-      // console.log("hehe", node);
       const { clientWidth: width, clientHeight: height } = node;
       setDimensions({ width, height });
     }
