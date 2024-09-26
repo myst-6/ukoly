@@ -54,7 +54,7 @@ export const SCodeBlock = ({ path }: SCodeBlockProps) => {
       setCodes(codes);
     })();
   }, [path]);
-  console.log(codes);
+
   return (
     <>
       <Accordion defaultIndex={[1]} allowMultiple>

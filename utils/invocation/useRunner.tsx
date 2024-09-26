@@ -42,7 +42,6 @@ export function useRunner() {
       }
       return res.json();
     }).then(data => {
-      console.log("got data", data);
       const { results } = data;
       const parsed: InvocationResult[] = results.map(parse);
       setResults(parsed);
