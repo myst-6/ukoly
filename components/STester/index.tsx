@@ -65,8 +65,8 @@ const ResultButton = ({ result, test }: ResultButtonProps) => {
       color = "red";
       break;
     case "TLE":
+    case "MLE":
     case "PA":
-    // case "MLE":
       color = "orange";
       break;
     default:

@@ -1,6 +1,6 @@
 import { Language } from "content";
 
-export const invocationStatuses = ["OK", "TLE", "CE", "RE", "RJ", "TS", "WJ"] as const;
+export const invocationStatuses = ["OK", "TLE", "MLE", "CE", "RE", "RJ", "TS", "WJ"] as const;
 
 export type InvocationStatus = typeof invocationStatuses[number];
 
@@ -41,7 +41,12 @@ export function parse(data: any): InvocationResult {
   }
   return {
     status: verdict,
-    message: verdict === "RE" ? atob(stderr) : verdict === "CE" ? atob(compileOutput) : atob(stdout),
+    message: 
+      verdict === "TLE" ? `Time limit exceeded: ${time}ms` :
+      verdict === "MLE" ? `Memory limit exceeded: ${~~(memory / 1000)}MB` :
+      verdict === "RE"  ? atob(stderr) : 
+      verdict === "CE"  ? atob(compileOutput) : 
+                          atob(stdout),
     time,
     memory: ~~(memory / 1000),
   };
