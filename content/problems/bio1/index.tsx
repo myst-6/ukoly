@@ -141,7 +141,8 @@ import {
   TestLoops,
   TestIncreasingPasswords,
   TestBlockPalindromes,
-  TestBattleships
+  TestBattleships,
+  TestModernArt
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker, accordionPatienceChecker, watchingTheClockChecker, unlockChecker, luckyNumbersChecker, battleshipsChecker } from "utils";
 
@@ -777,6 +778,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <ModernArt />,
+    tests: TestModernArt,
+    checker: wcmp
   },
   {
     difficulty: "Hard",

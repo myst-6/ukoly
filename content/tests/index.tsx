@@ -62,3 +62,4 @@ export * from "./Loops";
 export * from "./IncreasingPasswords";
 export * from "./BlockPalindromes";
 export * from "./Battleships";
+export * from "./ModernArt";
