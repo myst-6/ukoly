@@ -38,7 +38,7 @@ export const TestMigration: Test[] = [
     },
     {
         input: "3 6 999\n2 3 5 7 11 13",
-        output: "2 3 5 7 11 13",
+        output: "2 3 2 3 0\n2 2 3 2 2\n3 2 3 2 1\n3 1 1 2 2\n0 3 3 1 3",
         points: 4
     }
 ];
