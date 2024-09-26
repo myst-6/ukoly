@@ -148,9 +148,10 @@ import {
   TestColouredTriangles,
   TestMysteryParcel,
   TestDieTipping,
-  TestPuzzleGame
+  TestPuzzleGame,
+  TestPlayfairCipher
 } from "content/tests";
-import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker, accordionPatienceChecker, watchingTheClockChecker, unlockChecker, luckyNumbersChecker, battleshipsChecker, dieTippingChecker, puzzleGameChecker } from "utils";
+import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker, accordionPatienceChecker, watchingTheClockChecker, unlockChecker, luckyNumbersChecker, battleshipsChecker, dieTippingChecker, puzzleGameChecker, playfairCipherChecker } from "utils";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
   {
@@ -951,6 +952,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <PlayfairCipher />,
+    tests: TestPlayfairCipher,
+    checker: playfairCipherChecker,
   },
   {
     difficulty: "Medium",

@@ -15,3 +15,4 @@ export * from "./luckyNumbers";
 export * from "./battleships";
 export * from "./dieTipping";
 export * from "./puzzleGame";
+export * from "./playfairCipher";

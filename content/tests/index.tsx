@@ -69,3 +69,4 @@ export * from "./PrimeConnections";
 export * from "./ColouredTriangles";
 export * from "./MysteryParcel";
 export * from "./PuzzleGame";
+export * from "./PlayfairCipher";

@@ -48,44 +48,39 @@ if __name__ == "__main__":
     print()
     while True:
         command = input()
+        if command == "Q":
+            break
+        
+        elif command == "E":
+            word_to_encode = input()
+            if len(word_to_encode) % 2 == 1:
+                word_to_encode += "X"
+            output = ""
+            for letter1, letter2 in zip(word_to_encode[::2], word_to_encode[1::2]):
+                row1, col1 = find(grid1, letter1)
+                row2, col2 = find(grid2, letter2)
+                if row1 == row2:
+                    output += grid1[row1][(col1+1) % 5]
+                    output += grid2[row2][(col2+1) % 5]
+                else:
+                    output += grid1[row2][col1]
+                    output += grid2[row1][col2]
+            print(output + "\n")
 
-        match command:
-            case "Q":
-                break
-            case "E":
-                word_to_encode = input()
-                if len(word_to_encode) % 2 == 1:
-                    word_to_encode += "X"
-                output = ""
-                for letter1, letter2 in zip(word_to_encode[::2], word_to_encode[1::2]):
-                    row1, col1 = find(grid1, letter1)
-                    row2, col2 = find(grid2, letter2)
+        elif command == "D":
+            word_to_decode = input()
+            output = ""
+            for letter1, letter2 in zip(word_to_decode[::2], word_to_decode[1::2]):
+                row1, col1 = find(grid1, letter1)
+                row2, col2 = find(grid2, letter2)
+                if row1 == row2:
+                    output += grid1[row1][(col1-1) % 5]
+                    output += grid2[row2][(col2-1) % 5]
 
-                    if row1 == row2:
-                        output += grid1[row1][(col1+1) % 5]
-                        output += grid2[row2][(col2+1) % 5]
+                else:
+                    output += grid1[row2][col1]
+                    output += grid2[row1][col2]
 
-                    else:
-                        output += grid1[row2][col1]
-                        output += grid2[row1][col2]
-
-                print(output + "\n")
-
-            case "D":
-                word_to_decode = input()
-                output = ""
-                for letter1, letter2 in zip(word_to_decode[::2], word_to_decode[1::2]):
-                    row1, col1 = find(grid1, letter1)
-                    row2, col2 = find(grid2, letter2)
-
-                    if row1 == row2:
-                        output += grid1[row1][(col1-1) % 5]
-                        output += grid2[row2][(col2-1) % 5]
-
-                    else:
-                        output += grid1[row2][col1]
-                        output += grid2[row1][col2]
-
-                if output[-1] == "X":
-                    output = output[:-1]
-                print(output + "\n")
+            if output[-1] == "X":
+                output = output[:-1]
+            print(output + "\n")
