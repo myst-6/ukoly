@@ -66,3 +66,4 @@ export * from "./ModernArt";
 export * from "./PromenadeFractions";
 export * from "./Migration";
 export * from "./PrimeConnections";
+export * from "./ColouredTriangles";

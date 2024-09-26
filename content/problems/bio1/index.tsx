@@ -146,6 +146,7 @@ import {
   TestPromenadeFractions,
   TestMigration,
   TestPrimeConnections,
+  TestColouredTriangles,
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker, accordionPatienceChecker, watchingTheClockChecker, unlockChecker, luckyNumbersChecker, battleshipsChecker } from "utils";
 
@@ -483,6 +484,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <ColouredTriangles />,
+    tests: TestColouredTriangles,
+    checker: wcmp,
   },
   {
     difficulty: "Medium",
