@@ -61,3 +61,4 @@ export * from "./LuckyNumbers";
 export * from "./Loops";
 export * from "./IncreasingPasswords";
 export * from "./BlockPalindromes";
+export * from "./Battleships";

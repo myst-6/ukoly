@@ -12,3 +12,4 @@ export * from "./accordionPatience"
 export * from "./watchingTheClock";
 export * from "./unlock";
 export * from "./luckyNumbers";
+export * from "./battleships";
