@@ -13,3 +13,5 @@ export * from "./watchingTheClock";
 export * from "./unlock";
 export * from "./luckyNumbers";
 export * from "./battleships";
+export * from "./dieTipping";
+export * from "./puzzleGame";

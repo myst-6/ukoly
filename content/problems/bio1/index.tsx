@@ -127,7 +127,6 @@ import {
   TestDigitWords,
   TestChildsPlay,
   TestAnagramNumbers,
-  // TestDieTipping,
   TestJuggluging,
   TestFibonacciLetters,
   TestAccordionPatience,
@@ -147,9 +146,11 @@ import {
   TestMigration,
   TestPrimeConnections,
   TestColouredTriangles,
-  TestMysteryParcel
+  TestMysteryParcel,
+  TestDieTipping,
+  TestPuzzleGame
 } from "content/tests";
-import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker, accordionPatienceChecker, watchingTheClockChecker, unlockChecker, luckyNumbersChecker, battleshipsChecker } from "utils";
+import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker, accordionPatienceChecker, watchingTheClockChecker, unlockChecker, luckyNumbersChecker, battleshipsChecker, dieTippingChecker, puzzleGameChecker } from "utils";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
   {
@@ -974,6 +975,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <DieTipping />,
+    tests: TestDieTipping,
+    checker: dieTippingChecker,
   },
   {
 
@@ -1012,6 +1015,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <PuzzleGame />,
+    tests: TestPuzzleGame,
+    checker: puzzleGameChecker
   },
   {
     difficulty: "Easy",

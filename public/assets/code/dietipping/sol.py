@@ -52,10 +52,7 @@ rotate = lambda: die.heading.append(die.heading.pop(0))
 
 n = int(input())
 while n != 0:
-    if not n.is_integer():
-        n = int(input())
-        continue
-    
+
     for _ in range(n):
         r, c = die.y, die.x
         board[r][c] = (board[r][c] + die.top - 1) % 6 + 1

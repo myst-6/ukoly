@@ -6,20 +6,20 @@ type Intervals = {
 };
 
 const intervals: Intervals = {
-  "10 5 9999": [[0, 9], [0, 9]],
-  "1 1 1000": [[0, 0], [1, 3], [4, 4], [5, 7], [8, 9]],
-  "2 2 12345": [[0, 3], [4, 7], [4, 7], [8, 9], [8, 9]],
-  "5 7 12346": [[0, 0], [1, 5], [1, 5], [6, 9], [6, 9]],
-  "1 29209 32719": [[0, 1], [0, 1], [2, 9], [2, 9], [2, 9]],
-  "16807 1 9999": [[0, 1], [0, 1], [2, 9], [2, 9], [2, 9]]
+  "RRGB": [[0, 3], [4, 4]],
+  "RBRB": [[0, 0], [1, 1]],
+  "RGRB": [[0, 3], [0, 3], [4, 4], [4, 4], [5, 5], [6, 6]],
+  "BBBB": [[0, 3], [4, 4]],
+  "RRGG": [[0, 3], [4, 4], [5, 8], [9, 9]],
+  "RRGR": [[0, 3], [4, 4], [5, 8], [9, 9], [10, 13], [14, 14], [15, 18], [19, 19]],
 };
 
-export const battleshipsChecker: Checker = (test: Test, out: string) => {
+export const puzzleGameChecker: Checker = (test: Test, out: string) => {
   const parse = (str: string) => str.trim().split("\n").map(line => line.trim()).filter(line => !!line);
   const expLines = parse(test.output).map(line => line.trim());
   const outLines = parse(out).map(line => line.trim());
 
-  const ints = intervals[test.input]!;
+  const ints = intervals[test.input.trim().split("\n")[0]!]!;
 
   if (expLines.length !== outLines.length) {
     return {
