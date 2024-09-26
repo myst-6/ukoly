@@ -65,3 +65,4 @@ export * from "./Battleships";
 export * from "./ModernArt";
 export * from "./PromenadeFractions";
 export * from "./Migration";
+export * from "./PrimeConnections";
