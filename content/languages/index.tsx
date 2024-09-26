@@ -140,16 +140,19 @@ public class Main {
         apiName: "js",
         monaco: "javascript",
         template: `\
-function main() {
-    // Enter your solution below.
-    // Use console.log for output and readline for input (if using Node.js).
-    
-    
-}
+process.stdin.on('data', data => {
+    const lines = data.toString().split("\n");
+    solution(() => lines.length ? lines.shift() : "");
+});
 
-// Start the program (if required by the environment)
-// main();`, 
-        initPos: { lineNumber: 5, column: 5 } // TODO
+function solution(input) {
+    // Code here
+    // To read a line of user input, use input()
+    // To print a line of output, use console.log(...)
+
+
+}`, 
+        initPos: { lineNumber: 11, column: 5 } // TODO
     },
     {
         display: "Rust",
