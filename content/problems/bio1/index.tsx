@@ -142,7 +142,8 @@ import {
   TestIncreasingPasswords,
   TestBlockPalindromes,
   TestBattleships,
-  TestModernArt
+  TestModernArt,
+  TestPromenadeFractions
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker, accordionPatienceChecker, watchingTheClockChecker, unlockChecker, luckyNumbersChecker, battleshipsChecker } from "utils";
 
@@ -587,6 +588,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <PromenadeFractions />,
+    tests: TestPromenadeFractions,
+    checker: ncmp,
   },
   {  
     difficulty: "Medium",
