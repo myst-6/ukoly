@@ -67,3 +67,4 @@ export * from "./PromenadeFractions";
 export * from "./Migration";
 export * from "./PrimeConnections";
 export * from "./ColouredTriangles";
+export * from "./MysteryParcel";

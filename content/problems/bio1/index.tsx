@@ -147,6 +147,7 @@ import {
   TestMigration,
   TestPrimeConnections,
   TestColouredTriangles,
+  TestMysteryParcel
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker, accordionPatienceChecker, watchingTheClockChecker, unlockChecker, luckyNumbersChecker, battleshipsChecker } from "utils";
 
@@ -508,6 +509,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <MysteryParcel />,
+    tests: TestMysteryParcel,
+    checker: ncmp,
   },
   {
     difficulty: "Easy",
