@@ -17,3 +17,4 @@ export * from "./dieTipping";
 export * from "./puzzleGame";
 export * from "./playfairCipher";
 export * from "./dotsAndBoxes";
+export * from "./fourInALine";
