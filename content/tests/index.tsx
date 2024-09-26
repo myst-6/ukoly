@@ -64,3 +64,4 @@ export * from "./BlockPalindromes";
 export * from "./Battleships";
 export * from "./ModernArt";
 export * from "./PromenadeFractions";
+export * from "./Migration";
