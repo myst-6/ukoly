@@ -2,7 +2,7 @@ import { Button, HStack, SText, Text, Box, STitle, SCode } from "components";
 import { Modal, ModalBody, ModalOverlay, ModalCloseButton, ModalContent, useDisclosure } from "@chakra-ui/react";
 import { TestResult, useTester, waiting } from "utils";
 import { BIO1ProblemInfo, Language, Test } from "content";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import assert from "assert";
 
 interface ResultModalProps {
@@ -92,12 +92,15 @@ interface STesterProps {
 
 export const STester = ({ onBegin, onEnd, problem, code, language }: STesterProps) => {
   const { dispatch, results, setProblem, problem: dispatchedProblem } = useTester(problem);
+  const [dispatched, setDispatched] = useState<boolean>(false);
 
   useEffect(() => {
     setProblem(problem);
+    setDispatched(false);
   }, [problem, setProblem]);
 
   const handleRunCode = () => {
+    setDispatched(true);
     onBegin();
     dispatch(code, language);
   };
@@ -122,27 +125,51 @@ export const STester = ({ onBegin, onEnd, problem, code, language }: STesterProp
         
         <Text typography="body.medium">
           {
-            dispatchedProblem.tests && 
-              results.length === dispatchedProblem.tests.length &&
-                results[0] === waiting ? "Waiting..." : `Points scored: ${results.reduce(
-                  (acc, result, index) => acc + (result.status === "PA" ? result.partial! * dispatchedProblem.tests![index]!.points 
-                    : result.status === "AC" ? dispatchedProblem.tests![index]!.points 
-                      : 0), 0)} / ${dispatchedProblem.tests!.reduce((acc, test) => acc + test.points, 0)}`
+            dispatched && results && results[0] && 
+              (
+                results[0] === waiting ? 
+                  "Waiting..." : 
+                  `Points scored: ${results.reduce(
+                    (acc, result, index) => {
+                      if (result.status === "PA") {
+                        if (!result.partial) {
+                          console.warn("Problem has PA verdict but no partial score assigned.");
+                          return acc;
+                        }
+                        if (!dispatchedProblem.tests) return acc;
+                        if (!dispatchedProblem.tests[index]) return acc;
+                        return acc + result.partial * dispatchedProblem.tests[index].points;
+                      } else if (result.status === "AC") {
+                        if (!dispatchedProblem.tests) return acc;
+                        if (!dispatchedProblem.tests[index]) return acc;
+                        return acc + dispatchedProblem.tests[index].points;
+                      } else {
+                        return acc;
+                      }
+                    }, 0)} / ${dispatchedProblem.tests && dispatchedProblem.tests.reduce(
+                    (acc, test) => {
+                      return acc + test.points;
+                    }, 0)}`
+              )
           }
         </Text>
       </HStack>
       <Box height="100%" display={"inline-block"} marginTop={"1em"}>
         {
-          results.length === dispatchedProblem.tests?.length &&
-            results.map((result, idx) => {
-              return (
-                <ResultButton 
-                  key={idx} 
-                  result={result}
-                  test={dispatchedProblem.tests![idx]!}
-                />
-              )
-            })
+          dispatched && results && results[0] &&
+            (
+              results.map((result, idx) => {
+                if (!dispatchedProblem.tests) return;
+                if (!dispatchedProblem.tests[idx]) return;
+                return (
+                  <ResultButton 
+                    key={idx} 
+                    result={result}
+                    test={dispatchedProblem.tests[idx]}
+                  />
+                )
+              })
+            )
         }
       </Box>
     </>
