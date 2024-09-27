@@ -131,7 +131,7 @@ public class Main {
 }
 
 `, 
-        initPos: { lineNumber: 11, column: 9 } // TODO
+        initPos: { lineNumber: 11, column: 9 }
     },
     {
         display: "JavaScript",
@@ -152,7 +152,7 @@ function solution(input) {
 
 
 }`, 
-        initPos: { lineNumber: 11, column: 5 } // TODO
+        initPos: { lineNumber: 11, column: 5 } 
     },
     {
         display: "Rust",
@@ -169,6 +169,6 @@ fn main() {
     
     
 }`,
-        initPos: { lineNumber: 7, column: 5 } // TODO
+        initPos: { lineNumber: 7, column: 5 }
     },
 ];

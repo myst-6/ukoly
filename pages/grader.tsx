@@ -10,7 +10,7 @@ import { editor } from "monaco-editor";
 
 export default function Grader() {
   const { colorMode } = useColorMode();
-  
+
   const years = [...new Set(bio1Problems.map(problem => problem.year))].sort((a, b) => b - a);
 
   const [language, setLanguage] = useState<number>(0);
@@ -19,15 +19,15 @@ export default function Grader() {
   const [question, setQuestion] = useState<number>(0); // 0-indexed
 
   const makeURL = (year: number) => {
-    if (year == 2000) 
+    if (year == 2000)
       return "https://www.olympiad.org.uk/papers/2000/bio/bio2kex.pdf";
-    if (year <= 2004) 
+    if (year <= 2004)
       return `https://www.olympiad.org.uk/papers/${year}/bio/bio${String(year).slice(2)}ex.pdf`;
-    if (year == 2007) 
+    if (year == 2007)
       return "https://www.olympiad.org.uk/papers/2007/bio/bio07exam.pdf";
-    if (year == 2010) 
+    if (year == 2010)
       return "https://www.olympiad.org.uk/papers/2010/bio/bio-10-exam.pdf";
-    if (year == 2011) 
+    if (year == 2011)
       return "https://www.olympiad.org.uk/papers/2011/bio/bio2011-Round1-Exam.pdf";
     return `https://www.olympiad.org.uk/papers/${year}/bio/bio${String(year).slice(2)}-exam.pdf`;
   }
@@ -49,14 +49,14 @@ export default function Grader() {
 
   return (
     <VStack
-        height="100%"
-        gap={0}
-      >
+      height="100%"
+      gap={0}
+    >
       <Header page={pages.grader} />
       <HStack
         px={5}
-        py={2} 
-        justifyContent="space-between" 
+        py={2}
+        justifyContent="space-between"
         flex={1}
         height="100%"
         width="100%"
@@ -78,18 +78,29 @@ export default function Grader() {
                 opt={language}
                 onSelect={(opt: number) => {
                   if (editorRef.current === null) return;
+                  let data = JSON.parse(localStorage.getItem("data") || "{}");
                   setLanguage(opt);
                   const lang = languages[opt]!;
                   const ed = editorRef.current;
                   if (
-                    languages.some(lang => ed.getValue() === lang.template) ||
-                    ed.getValue().trim() === ""
+                    data[years[year]!] === undefined ||
+                    data[years[year]!][question] === undefined ||
+                    data[years[year]!][question][lang.display] === undefined
                   ) {
+                    if (data[years[year]!] === undefined) data[years[year]!] = {};
+                    if (data[years[year]!][question] === undefined) data[years[year]!][question] = {};
+                    data[years[year]!][question][lang.display] = lang.template;
                     setValue(lang.template);
                     ed.setValue(lang.template);
                     ed.setPosition(lang.initPos);
                     ed.focus();
                   }
+                  else {
+                    setValue(data[years[year]!][question][lang.display]);
+                    ed.setValue(data[years[year]!][question][lang.display]);
+                    ed.focus();
+                  }
+                  localStorage.setItem("data", JSON.stringify(data));
                 }}
               />
               <HStack>
@@ -98,7 +109,32 @@ export default function Grader() {
                   name="Year"
                   opts={years.map(String)}
                   opt={year}
-                  onSelect={setYear}
+                  onSelect={(year) => {
+                    let data = JSON.parse(localStorage.getItem("data") || "{}");
+                    const lang = languages[language]!;
+                    const ed = editorRef.current!;
+                    setYear(year);
+                    if (
+                      data[years[year]!] === undefined ||
+                      data[years[year]!][question] === undefined ||
+                      data[years[year]!][question][lang.display] === undefined
+                    ) {
+                      if (data[years[year]!] === undefined) data[years[year]!] = {};
+                      if (data[years[year]!][question] === undefined) data[years[year]!][question] = {};
+                      data[years[year]!][question][lang.display] = lang.template;
+                      setValue(lang.template);
+                      ed.setValue(lang.template);
+                      ed.setPosition(lang.initPos);
+                      ed.focus();
+                    }
+                    else {
+                      setValue(data[years[year]!][question][lang.display]);
+                      ed.setValue(data[years[year]!][question][lang.display]);
+                      ed.focus();
+                    }
+
+                    localStorage.setItem("data", JSON.stringify(data));
+                  }}
                 />
                 <SSelector
                   disabled={isRunning}
@@ -126,7 +162,15 @@ export default function Grader() {
                   editor.focus();
                 }}
                 value={value}
-                onChange={value => setValue(value || "")}
+                onChange={value => {
+                  setValue(value || "")
+                  const lang = languages[language]!;
+                  let data = JSON.parse(localStorage.getItem("data") || "{}");
+                  if (data[years[year]!] === undefined) data[years[year]!] = {};
+                  if (data[years[year]!][question] === undefined) data[years[year]!][question] = {};
+                  data[years[year]!][question][lang.display] = value;
+                  localStorage.setItem("data", JSON.stringify(data));
+                }}
               />
             </Box>
           </VStack>
