@@ -1,4 +1,6 @@
-from functools import cache
+from functools import lru_cache  
+# cache is Python 3.9+ only, so it's risky unless 
+# you know the version of Python your teacher is using
 from collections import deque, defaultdict
 from math import comb as choose
 from string import ascii_uppercase
@@ -12,7 +14,7 @@ def number_to_letter(x):
     return ascii_uppercase[x - 1]
 
 
-@cache
+@lru_cache(maxsize=None)
 def num_answers_with_sum_x_beginning_with_y(x, y):
     # print(x, number_to_letter(y))
     if x == y:

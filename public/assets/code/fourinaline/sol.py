@@ -80,7 +80,7 @@ class Board:
 
 if __name__ == "__main__":
     n = int(input())
-    a = [int(i) for i in input(f"Please enter {n} numbers: ").split()]
+    a = [int(i) for i in input().split()]
 
     board = [[0 for _ in range(6)] for _ in range(7)]
     b = Board(board, 1)
@@ -92,7 +92,7 @@ if __name__ == "__main__":
         b.display()
         winner = b.get_winner()
         if winner:
-            print(f"Player {winner} wins!")
+            print(f"Player {winner} wins")
             exit(0)
         if b.all_full():
             print("Draw")

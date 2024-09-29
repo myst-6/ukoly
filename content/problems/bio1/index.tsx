@@ -1,82 +1,161 @@
 import { BIO1ProblemInfo } from "../base";
 
 import {
-  ASpaceOddity,
-  IntegerStrings,
-  ParsingLists,
-  WordGame,
-  Unlock,
-  ZeckendorfRepresentation,
-  Pentominoes,
-  DreamingSpires,
-  DecoderRing,
-  DebtRepayment,
-  SerialNumbers,
-  DotsAndBoxes,
-  ColouredTriangles,
-  MysteryParcel,
-  BlockChains,
-  Migration,
-  PrimeConnections,
-  BlockPalindromes,
-  PromenadeFractions,
-  DownPat,
-  PalindromicNumbers,
-  TriIsoGame,
-  Parking,
-  Loops,
-  Battleships,
-  DigitWords,
-  Decrypt, 
-  RomanLookAndSay,
-  FalsePlan,
-  GameOfDrones, 
-  FibonacciLetters,
-  Neutron,
-  WindowDressing,
-  MuTorere,
-  EenieMeenieMaineeMo,
-  ModernArt,
-  AnagramNumbers,
-  Juggluging,
-  IncreasingPasswords,
-  GoldbachConjecture,
-  NumberLadder,
-  DistinctPrimeFactorisation,
-  EnigmaMachine,
-  Shirts,
-  UpsideDown,
-  Ants,
-  Passwords,
-  Cards,
-  Anagrams,
-  LuckyNumbers,
-  Lojban,
-  Fractions,
-  Drats,
-  MovieMagic,
-  ISBN,
-  MayanCalendar,
-  WatchingTheClock,
-  Mops,
-  PlayfairCipher,
-  Shuffling,
-  FourInALine,
-  DieTipping,
-  PlayingGames,
-  TuringMachine,
-  PuzzleGame,
-  ChildsPlay,
-  NewOrder,
-  MorseCode,
-  Rules,
   AccordionPatience,
   AlphaComplex,
-  Waves,
+  AnagramNumbers,
+  Anagrams,
+  Ants,
+  ASpaceOddity,
+  Battleships,
+  BlockChains,
+  BlockPalindromes,
+  Cards,
+  ChildsPlay,
+  ColouredTriangles,
+  DecoderRing,
+  Decrypt,
+  DebtRepayment,
+  DieTipping,
+  DigitWords,
+  DistinctPrimeFactorisation,
+  DotsAndBoxes,
+  DownPat,
+  DreamingSpires,
+  Drats,
+  EenieMeenieMaineeMo,
+  EnigmaMachine,
+  FalsePlan,
+  FibonacciLetters,
+  FourInALine,
+  Fractions,
+  GameOfDrones,
+  GoldbachConjecture,
+  ISBN,
+  IncreasingPasswords,
+  IntegerStrings,
+  Juggluging,
+  Lojban,
+  Loops,
+  LuckyNumbers,
+  MayanCalendar,
+  Migration,
+  ModernArt,
+  Mops,
+  MorseCode,
+  MovieMagic,
+  MuTorere,
+  MysteryParcel,
+  Neutron,
+  NewOrder,
+  NumberLadder,
   OnTheRightTrack,
+  PalindromicNumbers,
+  Parking,
+  ParsingLists,
+  Passwords,
+  Pentominoes,
+  PlayfairCipher,
+  PlayingGames,
+  PrimeConnections,
+  PromenadeFractions,
+  PuzzleGame,
+  RomanLookAndSay,
+  Rules,
+  SerialNumbers,
+  Shirts,
+  Shuffling,
+  StringRewriting,
+  TuringMachine,
   Trail,
-  StringRewriting
+  TriIsoGame,
+  Unlock,
+  UpsideDown,
+  WatchingTheClock,
+  Waves,
+  WindowDressing,
+  WordGame,
+  ZeckendorfRepresentation  
 } from "solutions";
+
+import {
+  TestIntegerStrings,
+  TestParsingLists,
+  TestWordGame,
+  TestDecrypt,
+  TestGameOfDrones,
+  TestDreamingSpires,
+  TestPentominoes,
+  TestZeckendorfRepresentation,
+  TestParking,
+  TestDownPat,
+  TestTriIsoGame,
+  TestWindowDressing,
+  TestRomanLookAndSay,
+  TestAlphaComplex,
+  TestFalsePlan,
+  TestPalindromicNumbers,
+  TestTrail,
+  TestBlockChain,
+  TestDebtRepayment,
+  TestDecoderRing,
+  TestPlayingGames,
+  TestPasswords,
+  TestEenieMeenieMaineeMo,
+  TestASpaceOddity,
+  TestLojban,
+  TestsAnts,
+  TestShuffling,
+  TestMops,
+  TestISBN,
+  TestWaves,
+  TestNewOrder,
+  TestMayanCalendar,
+  TestMorseCode,
+  TestFractions,
+  TestTuringMachine,
+  TestMovieMagic,
+  TestAnagrams,
+  TestRules,
+  TestDrats,
+  TestCards,
+  TestMuTorere,
+  TestStringRewriting,
+  TestGoldbachConjecture,
+  TestEnigmaMachine,
+  TestShirts,
+  TestDigitWords,
+  TestChildsPlay,
+  TestAnagramNumbers,
+  TestJuggluging,
+  TestFibonacciLetters,
+  TestAccordionPatience,
+  TestUpsideDown,
+  TestDistinctPrimeFactorisation,
+  TestOnTheRightTrack,
+  TestNumberLadder,
+  TestWatchingTheClock,
+  TestUnlock,
+  TestLuckyNumbers,
+  TestLoops,
+  TestIncreasingPasswords,
+  TestBlockPalindromes,
+  TestBattleships,
+  TestModernArt,
+  TestPromenadeFractions,
+  TestMigration,
+  TestPrimeConnections,
+  TestColouredTriangles,
+  TestMysteryParcel,
+  TestDieTipping,
+  TestPuzzleGame,
+  TestPlayfairCipher,
+  TestDotsAndBoxes,
+  TestFourInALine,
+  TestNeutron,
+  TestSerialNumbers
+} from "content/tests";
+import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker, accordionPatienceChecker, watchingTheClockChecker, unlockChecker, luckyNumbersChecker, battleshipsChecker, dieTippingChecker, puzzleGameChecker, playfairCipherChecker, dotsAndBoxesChecker, fourInALineChecker, neutronChecker } from "utils";
 
 export const bio1Problems: BIO1ProblemInfo[] = [
   {
@@ -89,6 +168,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <IntegerStrings />,
+    tests: TestIntegerStrings,
+    checker: ncmp,
   },
   {
     difficulty: "Medium",
@@ -100,6 +181,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <Rules />,
+    tests: TestRules,
+    checker: wcmp
   },
   {
     difficulty: "Easy",
@@ -111,6 +194,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <MayanCalendar />,
+    tests: TestMayanCalendar,
+    checker: ncmp,
   },
   {
     difficulty: "Medium",
@@ -122,6 +207,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <Shuffling />,
+    tests: TestShuffling,
+    checker: ncmp,
   },
   {
     difficulty: "Easy",
@@ -133,6 +220,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <Cards />,
+    tests: TestCards,
+    checker: ncmp,
   },
   {
     difficulty: "Trivial",
@@ -144,6 +233,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <ISBN />,
+    tests: TestISBN,
+    checker: ncmp,
   },
   {
     difficulty: "Medium",
@@ -155,6 +246,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <MovieMagic />,
+    tests: TestMovieMagic,
+    checker: ncmp,
   },
   {
     difficulty: "Medium",
@@ -166,6 +259,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <Drats />,
+    tests: TestDrats,
+    checker: ncmp,
   },
   {
     difficulty: "Trivial",
@@ -177,6 +272,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <Anagrams />,
+    tests: TestAnagrams,
+    checker: wcmp,
   },
   {
     difficulty: "Easy",
@@ -188,6 +285,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <Fractions />,
+    tests: TestFractions,
+    checker: ncmp,
   },
   {
     difficulty: "Hard",
@@ -199,6 +298,9 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <NumberLadder />,
+    tests: TestNumberLadder,
+    checker: ncmp,
+    timeLimit: 5,
   },
   {
     difficulty: "Medium",
@@ -210,6 +312,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <ParsingLists />,
+    tests: TestParsingLists,
+    checker: ncmp,
   },
   {
     difficulty: "Medium",
@@ -221,6 +325,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <FourInALine />,
+    tests: TestFourInALine,
+    checker: fourInALineChecker
   },
   {
     difficulty: "Medium",
@@ -232,6 +338,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <WordGame />,
+    tests: TestWordGame,
+    checker: ncmp,
   },
   {
     difficulty: "Hard",
@@ -243,6 +351,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <Unlock />,
+    tests: TestUnlock,
+    checker: unlockChecker,
   },
   {
     difficulty: "Easy",
@@ -254,6 +364,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Vladimir Filip"],
     solutionAuthors: ["Vladimir Filip"],
     component: <ZeckendorfRepresentation />,
+    tests: TestZeckendorfRepresentation,
+    checker: ncmp,
   },
   {
     difficulty: "Medium",
@@ -265,6 +377,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Vladimir Filip"],
     solutionAuthors: ["Vladimir Filip"],
     component: <Pentominoes />,
+    tests: TestPentominoes,
+    checker: ncmp,
   },
   {
     difficulty: "Medium",
@@ -276,6 +390,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Vladimir Filip"],
     solutionAuthors: ["Vladimir Filip", "Alex Pylypenko"],
     component: <DreamingSpires />,
+    tests: TestDreamingSpires,
+    checker: ncmp,
   },
   {
     difficulty: "Medium",
@@ -287,6 +403,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <Juggluging />,
+    tests: TestJuggluging,
+    checker: ncmp,
   },
   {
     difficulty: "Medium",
@@ -298,6 +416,9 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Duy Nguyen"],
     solutionAuthors: ["Duy Nguyen"],
     component: <OnTheRightTrack />,
+    tests: TestOnTheRightTrack,
+    checker: wcmp,
+    timeLimit: 5,
   },
   {
     difficulty: "Medium",
@@ -309,6 +430,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <Shirts />,
+    tests: TestShirts,
+    checker: ncmp,
   },
   {
     difficulty: "Easy",
@@ -320,6 +443,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <DebtRepayment />,
+    tests: TestDebtRepayment,
+    checker: debtRepaymentChecker,
   },
   {
     difficulty: "Easy",
@@ -331,6 +456,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <DecoderRing />,
+    tests: TestDecoderRing,
+    checker: wcmp,
   },
   {
     difficulty: "Medium",
@@ -342,6 +469,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <SerialNumbers />,
+    tests: TestSerialNumbers,
+    checker: ncmp,
   },
   {
     difficulty: "Hard",
@@ -353,6 +482,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Julia Volovich"],
     solutionAuthors: ["Julia Volovich"],
     component: <BlockChains />,
+    tests: TestBlockChain,
+    checker: ncmp,
   },
   {
     difficulty: "Trivial",
@@ -364,6 +495,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <ColouredTriangles />,
+    tests: TestColouredTriangles,
+    checker: wcmp,
   },
   {
     difficulty: "Medium",
@@ -375,6 +508,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <DotsAndBoxes />,
+    tests: TestDotsAndBoxes,
+    checker: dotsAndBoxesChecker,
   },
   {
     difficulty: "Hard",
@@ -386,6 +521,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <MysteryParcel />,
+    tests: TestMysteryParcel,
+    checker: ncmp,
   },
   {
     difficulty: "Easy",
@@ -397,6 +534,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <Migration />,
+    tests: TestMigration,
+    checker: ncmp,
   },
   {
     difficulty: "Medium",
@@ -408,6 +547,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <PrimeConnections />,
+    tests: TestPrimeConnections,
+    checker: ncmp,
   },
   {
     difficulty: "Hard",
@@ -419,6 +560,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <ASpaceOddity />,
+    tests: TestASpaceOddity,
+    checker: ncmp,
   },
   {
     difficulty: "Medium",
@@ -430,6 +573,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <BlockPalindromes />,
+    tests: TestBlockPalindromes,
+    checker: ncmp,
   },
   {
     difficulty: "Hard",
@@ -441,6 +586,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Duy Nguyen"],
     solutionAuthors: ["Duy Nguyen"],
     component: <Parking />,
+    tests: TestParking,
+    checker: wcmp,
   },
   {
     difficulty: "Easy",
@@ -452,6 +599,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Yuvan Raja"],
     solutionAuthors: ["Yuvan Raja"],
     component: <PalindromicNumbers />,
+    tests: TestPalindromicNumbers,
+    checker: ncmp,
   },
   {
     difficulty: "Easy",
@@ -463,6 +612,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <PromenadeFractions />,
+    tests: TestPromenadeFractions,
+    checker: ncmp,
   },
   {  
     difficulty: "Medium",
@@ -474,6 +625,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <WindowDressing />,
+    tests: TestWindowDressing,
+    checker: ncmp
   },
   {
     difficulty: "Medium",
@@ -485,6 +638,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <DownPat />,
+    tests: TestDownPat,
+    checker: wcmp
   },
   {
     difficulty: "Insane",
@@ -496,6 +651,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <TriIsoGame />,
+    tests: TestTriIsoGame,
+    checker: ncmp
   },
   {
     difficulty: "Medium",
@@ -507,6 +664,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <Loops />,
+    tests: TestLoops,
+    checker: ncmp
   },
   {
     difficulty: "Easy",
@@ -518,6 +677,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <DigitWords />,
+    tests: TestDigitWords,
+    checker: wcmp,
   },
   {
     difficulty: "Trivial",
@@ -529,6 +690,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <GoldbachConjecture />,
+    tests: TestGoldbachConjecture,
+    checker: ncmp,
   },
   {
     difficulty: "Easy",
@@ -540,6 +703,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <Battleships />,
+    tests: TestBattleships,
+    checker: battleshipsChecker,
   },
   {
     difficulty: "Easy",
@@ -551,6 +716,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Yuvan Raja"],
     solutionAuthors: ["Yuvan Raja"],
     component: <Decrypt />,
+    tests: TestDecrypt,
+    checker: wcmp,
   },
   {
     difficulty: "Hard",
@@ -562,6 +729,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <GameOfDrones />,
+    tests: TestGameOfDrones,
+    checker: ncmp
   },
   {
     difficulty: "Easy",
@@ -573,6 +742,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Seyoon Park"],
     solutionAuthors: ["Seyoon Park"],
     component: <RomanLookAndSay />,
+    tests: TestRomanLookAndSay,
+    checker: ncmp
   },
   {
     difficulty: "Medium",
@@ -584,6 +755,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Yuvan Raja"],
     solutionAuthors: ["Yuvan Raja"],
     component: <FalsePlan />,
+    tests: TestFalsePlan,
+    checker: wcmp
   },
   {
     difficulty: "Easy",
@@ -595,6 +768,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <FibonacciLetters />,
+    tests: TestFibonacciLetters,
+    checker: wcmp,
   },
   {
     difficulty: "Hard",
@@ -606,6 +781,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <Neutron />,
+    tests: TestNeutron,
+    checker: neutronChecker,
   },
   {
     difficulty: "Easy",
@@ -617,6 +794,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <EenieMeenieMaineeMo />,
+    tests: TestEenieMeenieMaineeMo,
+    checker: ncmp
   },
   {
     difficulty: "Medium",
@@ -628,6 +807,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <ModernArt />,
+    tests: TestModernArt,
+    checker: wcmp
   },
   {
     difficulty: "Hard",
@@ -639,6 +820,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <MuTorere />,
+    tests: TestMuTorere,
+    checker: muTorereChecker,
   },
   {
     difficulty: "Trivial",
@@ -650,6 +833,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <AnagramNumbers />,
+    tests: TestAnagramNumbers,
+    checker: anagramNumbersChecker,
   },
   {
     difficulty: "Medium",
@@ -661,6 +846,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <IncreasingPasswords />,
+    tests: TestIncreasingPasswords,
+    checker: wcmp
   },
   {
     difficulty: "Easy",
@@ -672,6 +859,9 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <DistinctPrimeFactorisation />,
+    tests: TestDistinctPrimeFactorisation,
+    checker: ncmp,
+    timeLimit: 5,
   },
   {
     difficulty: "Easy",
@@ -683,6 +873,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <EnigmaMachine />,
+    tests: TestEnigmaMachine,
+    checker: wcmp,
   },
   {
     difficulty: "Medium",
@@ -694,6 +886,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <UpsideDown />,
+    tests: TestUpsideDown,
+    checker: ncmp,
   },
   {
     difficulty : "Trivial",
@@ -705,6 +899,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Shubham Kumar"],
     solutionAuthors: ["Shubham Kumar"],
     component: <Passwords />,
+    tests: TestPasswords,
+    checker: wcmp,
   },
   {
     difficulty: "Easy",
@@ -716,6 +912,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Shubham Kumar"],
     solutionAuthors: ["Shubham Kumar"],
     component: <Ants />,
+    checker: antsChecker,
+    tests: TestsAnts
   },
   {
     difficulty: "Easy",
@@ -727,6 +925,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <LuckyNumbers />,
+    tests: TestLuckyNumbers,
+    checker: luckyNumbersChecker,
   },
   {
     difficulty: "Trivial",
@@ -738,6 +938,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alexander Hopkins"],
     solutionAuthors: ["Alexander Hopkins"],
     component: <Lojban />,
+    tests: TestLojban,
+    checker: wcmp,
   },
   {
     difficulty: "Easy",
@@ -749,6 +951,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <WatchingTheClock />,
+    tests: TestWatchingTheClock,
+    checker: watchingTheClockChecker
   },
   {
     difficulty: "Easy",
@@ -760,6 +964,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Alex Pylypenko"],
     solutionAuthors: ["Alex Pylypenko"],
     component: <PlayfairCipher />,
+    tests: TestPlayfairCipher,
+    checker: playfairCipherChecker,
   },
   {
     difficulty: "Medium",
@@ -771,6 +977,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <Mops />,
+    tests: TestMops,
+    checker: ncmp,
   },
   {
     difficulty: "Easy",
@@ -782,6 +990,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <DieTipping />,
+    tests: TestDieTipping,
+    checker: dieTippingChecker,
   },
   {
 
@@ -794,6 +1004,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Shubham Kumar"],
     solutionAuthors: ["Shubham Kumar"],
     component: <PlayingGames />,
+    tests: TestPlayingGames,
+    checker: playingGamesChecker,
   },
   {
     difficulty: "Easy",
@@ -805,6 +1017,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <TuringMachine />,
+    tests: TestTuringMachine,
+    checker: turingMachineChecker
   },
   {
     difficulty: "Hard",
@@ -816,6 +1030,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <PuzzleGame />,
+    tests: TestPuzzleGame,
+    checker: puzzleGameChecker
   },
   {
     difficulty: "Easy",
@@ -827,6 +1043,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <ChildsPlay />,
+    tests: TestChildsPlay,
+    checker: ncmp
   },
   {
     difficulty: "Medium",
@@ -838,6 +1056,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <NewOrder />,
+    tests: TestNewOrder,
+    checker: ncmp,
   }, 
   {
     difficulty: "Medium",
@@ -849,6 +1069,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <MorseCode />,
+    tests: TestMorseCode,
+    checker: morseCodeChecker
   },
   {
     difficulty: "Medium",
@@ -860,6 +1082,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <AccordionPatience />,
+    tests: TestAccordionPatience,
+    checker: accordionPatienceChecker
   },
   {
     difficulty: "Medium",
@@ -870,7 +1094,9 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     tags: ["Implementation"],
     editorialAuthors: ["Yuvan Raja"],
     solutionAuthors: ["Yuvan Raja"],
-    component: <AlphaComplex />
+    component: <AlphaComplex />,
+    tests: TestAlphaComplex,
+    checker: wcmp
   },
   {
     difficulty: "Hard",
@@ -882,6 +1108,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Daria Sanina"],
     solutionAuthors: ["Daria Sanina"],
     component: <Waves />,
+    tests: TestWaves,
+    checker: wcmp
 },
 {
     difficulty: "Easy",
@@ -893,6 +1121,8 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Adwaya Gupta"],
     solutionAuthors: ["Adwaya Gupta"],
     component: <Trail />,
+    tests: TestTrail,
+    checker: ncmp
   },
   {
     difficulty: "Insane",
@@ -904,5 +1134,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Seyoon Park"],
     solutionAuthors: ["Seyoon Park"],
     component: <StringRewriting />,
+    tests: TestStringRewriting,
+    checker: ncmp
   }
 ];

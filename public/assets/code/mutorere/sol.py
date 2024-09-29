@@ -111,6 +111,7 @@ if __name__ == "__main__":
             break
         elif command == "n":
             if x := b.check_winner():
+                print(b.chars)
                 print(f"Player {x} wins")
                 break
             state, winner = b.make_move()

@@ -1,11 +1,13 @@
 from string import ascii_uppercase
-from functools import cache
+from functools import lru_cache  
+# cache is Python 3.9+ only, so it's risky unless 
+# you know the version of Python your teacher is using
 
 
 characters_allowed = ""
 
 
-@cache
+@lru_cache(maxsize=None)
 def solve(used, smallest_fail_char, smallest_char_in_string):
     if all(used):
         return 1

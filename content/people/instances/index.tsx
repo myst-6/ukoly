@@ -29,7 +29,7 @@ export const people: Person[] = [
         handle: "macaquedev",
       }
     ],
-    roles: ["Manager", "Contributor"]
+    roles: ["Manager", "Developer", "Contributor"]
   },
   {
     name: "Vladimir Filip",
