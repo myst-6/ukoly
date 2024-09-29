@@ -157,7 +157,15 @@ export default function Grader() {
                 defaultValue=""
                 onMount={editor => {
                   const lang = languages[language]!;
+                  let data = JSON.parse(localStorage.getItem("data") || "{}");
+                  if (data[years[year]!] === undefined) data[years[year]!] = {};
+                  if (data[years[year]!][question] === undefined) data[years[year]!][question] = {};
+                  if (data[years[year]!][question][lang.display] === undefined) {
+                    data[years[year]!][question][lang.display] = lang.template;
+                    localStorage.setItem("data", JSON.stringify(data));
+                  }
                   editorRef.current = editor;
+                  editorRef.current.setValue(data[years[year]!][question][lang.display]);
                   editor.setPosition(lang.initPos);
                   editor.focus();
                 }}
