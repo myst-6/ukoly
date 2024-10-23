@@ -231,7 +231,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     question: 1,
     tags: ["Implementation"],
     editorialAuthors: ["Alex Pylypenko"],
-    solutionAuthors: ["Alex Pylypenko"],
+    solutionAuthors: ["Seyoon Park"],
     component: <ISBN />,
     tests: TestISBN,
     checker: ncmp,

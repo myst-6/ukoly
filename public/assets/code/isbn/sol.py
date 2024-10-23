@@ -1,10 +1,16 @@
-if __name__ == "__main__":
-    isbn = list(input())
-    if isbn[9] == "X":
-        isbn[9] = "10"
-    questionmark = isbn.index("?")
-    for i in range(10):
-        isbn[questionmark] = str(i)
-        if sum([int(isbn[i]) * (10 - i) for i in range(10)]) % 11 == 0:
-            print(f"Missing digit: {i}")
-            break
+s = input() 
+idx = s.index('?')
+multiplier = 10 - idx 
+total = 0 
+for (i, v) in enumerate(s): 
+    if v != '?': 
+        if v == 'X': 
+            val = 10
+        else:
+            val = int(v)
+        total += (10 - i) * val
+
+for i in range(10 + (idx==9)):
+    if (total + i * multiplier) % 11 == 0:
+        print('X' if i==10 else i)
+        break
