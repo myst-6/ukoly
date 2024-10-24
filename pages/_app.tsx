@@ -12,7 +12,6 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <title>BIO Helper</title>
         <meta name="description" content="British Informatics Olympiad Editorials and Code" />
-        {/* <meta name="viewport" content="width=device-width, initial-scale=1" /> */}
         <meta name="viewport" content="width=1024" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
