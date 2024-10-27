@@ -1,4 +1,4 @@
-import { Box, Divider, Flex, Header, Profile, SimpleGrid, Text } from "components";
+import { Box, Divider, Flex, Header, Profile, SimpleGrid, Spacer, Text } from "components";
 import { pages, people } from "content";
 
 function cmp(a: string, b: string) {
@@ -23,8 +23,7 @@ export default function Home() {
           overflow="auto"
           maxWidth="100%"
           px={5}
-          py={2}
-          mb={20}
+          py={5}
           justifyContent="center"
           height="100%"
         >
@@ -81,7 +80,7 @@ export default function Home() {
                 })
             }
           </SimpleGrid>
-
+          <Spacer height={6} />
         </Box>
       </Flex>
     </>
