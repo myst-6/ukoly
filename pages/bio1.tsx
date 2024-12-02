@@ -16,10 +16,10 @@ export default function BIO1() {
         <Box maxWidth="85%" p={0}>
           <Text typography="display.small">About</Text>
           <Text typography="body.medium">
-            These problems don't have an online grader at any point, but the test data 
-            is publicly available along with the problems. At some point in the future, I 
-            plan to add a grading system for BIO1 so you can check your program against the
-            publicly available test data.
+            During your participation, you will not have access to an online grader. However, for all past problems listed on this site,
+            you may test your code by heading to the 'Grader' tab where your code will automatically be run against the publicly-available
+            test data for the problem, to save you time testing when preparing for the competition. Furthermore, when you view the solution 
+            to a problem you may test the model code against custom inputs to see how they respond.
           </Text>
           <Divider mb={3} mt={3} />
           <Box maxWidth="full" p={0}>
