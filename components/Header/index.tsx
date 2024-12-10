@@ -22,27 +22,31 @@ export const Header = ({ page }: HeaderProps) => {
   >
     <HStack flex={1} justifyContent="space-around">
       <Box />
-      <Box width={["xs", "sm", "md"]}>
+      <Box>
         <HStack
           flex={1} 
           backgroundColor="lightgray.200"
           padding="1em"
-          justifyContent="space-around"
+          justifyContent="center"
+          spacing="3em"
         >
           {
             Object.entries(pages).map(([key, linkedPage]) => {
-              return (
-                <Link href={linkedPage.path} current={page === linkedPage} key={key}>
-                  <Text 
-                    typography="display.small" 
+              return <>
+                <Text 
+                  key={key}
+                  typography={["display.xxs", null, "display.xs", null, "display.small"]}
+                  fontWeight={page === linkedPage ? 500 : 300}>
+                  <Link 
+                    href={linkedPage.path} 
+                    current={page === linkedPage} 
                     color={colorMode === "dark" ? "white" : "black"}
-                    fontWeight={page === linkedPage ? 500 : 300}
-                    flexWrap={"nowrap"}
-                  >
+                    display="block"
+                    width="max-content">
                     {linkedPage.display}
-                  </Text>
-                </Link>
-              );
+                  </Link>
+                </Text>
+              </>;
             })
           }
         </HStack>
