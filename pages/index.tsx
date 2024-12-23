@@ -1,4 +1,4 @@
-import { Box, Divider, Flex, Header, Profile, SimpleGrid, Spacer, Text } from "components";
+import { Box, Divider, Flex, Header, Link, Profile, SimpleGrid, Spacer, Text } from "components";
 import { pages, people } from "content";
 
 function cmp(a: string, b: string) {
@@ -28,18 +28,29 @@ export default function Home() {
           height="100%"
         >
         <Box width={["xs", "md", "xl", "2xl", "4xl"]}>
-          <Text typography="display.small">About</Text>
-          <Text typography="body.medium">
-            This is a project aimed towards providing more information and assistance
-            to students in the UK studying for the British Informatics Olympiad.
-            Here you can find many editorials and solutions to old problems from both rounds.
-            The set of problems covered by this site is far from complete, but more problems 
-            will be added over time.
+          <Text typography="display.small">About the British Informatics Olympiad</Text>
+          <Text typography="body.medium" paddingTop="0.5em">
+            The British Informatics Olympiad (<Link href={`https://olympiad.org.uk/`}>BIO</Link>) is a competition for secondary-aged students in the UK, which 
+            is used to select the UK team for the International Olympiad in Informatics (<Link href={`https://ioinformatics.org/`}>IOI</Link>).
+            The competition is split into two rounds. Round 1 is open 
+            to everyone, and it is a 3-hour paper with 3 questions. Round 2
+            is held at Trinity College, Cambridge, and the top 15 students 
+            from the first round are invited to participate.
+          </Text>
+          <Divider mb={3} mt={3} />
+          <Text typography="display.small">About this website</Text>
+          <Text typography="body.medium" paddingTop="0.5em">
+            This website is aimed towards providing more information and assistance
+            to students in the UK studying for the BIO.
+            Here you can find a grader (automatic marker) for all Round 1 problems
+            since 2000, and model solutions written by past finalists and high-scorers 
+            for all of these problems. You can also find solutions to many 
+            Round 2 problems since 2016, but the list is not yet complete.
           </Text>
           <Divider mb={3} mt={3} />
           <Text typography="display.small">Authors</Text>
           <Text typography="body.medium">
-            If you want to contribute, message Boris on discord by clicking the discord icon by his name.
+            If you wish to contribute, please message Boris on Discord by clicking the Discord icon by his name.
           </Text>
 
           <Text typography='title.large' padding="5% 0% 0% 0%">Managers</Text>

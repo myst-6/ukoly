@@ -9,20 +9,20 @@ export const pages = {
     path: "/"
   } as PageInfo,
   bio1: {
-    display: "BIO Round 1",
+    display: "Round 1",
     path: "bio1",
   } as PageInfo,
   bio2: {
-    display: "BIO Round 2",
+    display: "Round 2",
     path: "bio2"
   } as PageInfo,
   grader: {
-    display: "BIO Grader",
+    display: "Grader",
     path: "grader"
   } as PageInfo,
-  pctc: {
-    display: "PCTC",
-    path: "pctc"
+  resources: {
+    display: "Resources",
+    path: "resources"
   } as PageInfo,
 };
 
