@@ -77,6 +77,10 @@ export const people: Person[] = [
     name: "Yuvan Raja",
     socials: [
       {
+        platform: platforms.codeforces,
+        handle: "ykr5184",
+      },
+      {
         platform: platforms.github,
         handle: "ykr5184",
       }
