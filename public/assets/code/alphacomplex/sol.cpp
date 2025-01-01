@@ -21,7 +21,7 @@ void addConnection(char r1, char r2) {
 void makeConnections(string plan) {
     string chosen = "";
     
-    for (int i = 0; i < plan.size(); i++) {
+    while (plan.size()) {
         for (char room : alphabet) {
             if (plan.find(room) == string::npos && chosen.find(room) == string::npos) {
                 addConnection(room, plan[0]);
