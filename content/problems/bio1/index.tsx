@@ -75,7 +75,8 @@ import {
   Waves,
   WindowDressing,
   WordGame,
-  ZeckendorfRepresentation  
+  ZeckendorfRepresentation,
+  PalindromicSums
 } from "solutions";
 
 import {
@@ -153,7 +154,8 @@ import {
   TestDotsAndBoxes,
   TestFourInALine,
   TestNeutron,
-  TestSerialNumbers
+  TestSerialNumbers,
+  TestPalindromicSums
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker, accordionPatienceChecker, watchingTheClockChecker, unlockChecker, luckyNumbersChecker, battleshipsChecker, dieTippingChecker, puzzleGameChecker, playfairCipherChecker, dotsAndBoxesChecker, fourInALineChecker, neutronChecker } from "utils";
 
@@ -1136,5 +1138,18 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     component: <StringRewriting />,
     tests: TestStringRewriting,
     checker: ncmp
-  }
+  },
+  {
+    difficulty: "Easy",
+    display: "Palindromic Sums",
+    original: "https://www.olympiad.org.uk/papers/2025/bio/bio25-exam.pdf",
+    year: 2025,
+    question: 1,
+    tags: ["Brute Force"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <PalindromicSums />,
+    tests: TestPalindromicSums,
+    checker: ncmp
+  },
 ];
