@@ -76,3 +76,4 @@ export * from "./Waves";
 export * from "./Trail";
 export * from "./StringRewriting"
 export * from "./PalindromicSums";
+export * from "./SafeHaven";
