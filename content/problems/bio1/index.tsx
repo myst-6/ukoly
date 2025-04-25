@@ -76,7 +76,8 @@ import {
   WindowDressing,
   WordGame,
   ZeckendorfRepresentation,
-  PalindromicSums
+  PalindromicSums,
+  SafeHaven
 } from "solutions";
 
 import {
@@ -155,7 +156,8 @@ import {
   TestFourInALine,
   TestNeutron,
   TestSerialNumbers,
-  TestPalindromicSums
+  TestPalindromicSums,
+  TestSafeHaven
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker, accordionPatienceChecker, watchingTheClockChecker, unlockChecker, luckyNumbersChecker, battleshipsChecker, dieTippingChecker, puzzleGameChecker, playfairCipherChecker, dotsAndBoxesChecker, fourInALineChecker, neutronChecker } from "utils";
 
@@ -1150,6 +1152,19 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     solutionAuthors: ["Adwaya Gupta"],
     component: <PalindromicSums />,
     tests: TestPalindromicSums,
+    checker: ncmp
+  },
+  {
+    difficulty: "Medium",
+    display: "Safe Haven",
+    original: "https://www.olympiad.org.uk/papers/2025/bio/bio25-exam.pdf",
+    year: 2025,
+    question: 2,
+    tags: ["Implementation", "DFS and Similar"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <SafeHaven />,
+    tests: TestSafeHaven,
     checker: ncmp
   },
 ];
