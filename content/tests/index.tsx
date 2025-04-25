@@ -74,3 +74,4 @@ export * from "./DotsAndBoxes";
 export * from "./FourInALine";
 export * from "./Neutron";
 export * from "./SerialNumbers";
+export * from "./PalindromicSums";
