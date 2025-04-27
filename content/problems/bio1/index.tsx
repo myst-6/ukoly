@@ -77,7 +77,8 @@ import {
   WordGame,
   ZeckendorfRepresentation,
   PalindromicSums,
-  SafeHaven
+  SafeHaven,
+  ShortFuse
 } from "solutions";
 
 import {
@@ -157,7 +158,8 @@ import {
   TestNeutron,
   TestSerialNumbers,
   TestPalindromicSums,
-  TestSafeHaven
+  TestSafeHaven,
+  TestShortFuse
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker, accordionPatienceChecker, watchingTheClockChecker, unlockChecker, luckyNumbersChecker, battleshipsChecker, dieTippingChecker, puzzleGameChecker, playfairCipherChecker, dotsAndBoxesChecker, fourInALineChecker, neutronChecker } from "utils";
 
@@ -1165,6 +1167,19 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     solutionAuthors: ["Adwaya Gupta"],
     component: <SafeHaven />,
     tests: TestSafeHaven,
+    checker: ncmp
+  },
+  {
+    difficulty: "Insane",
+    display: "Short Fuse",
+    original: "https://www.olympiad.org.uk/papers/2025/bio/bio25-exam.pdf",
+    year: 2025,
+    question: 3,
+    tags: ["Brute Force", "DFS and Similar"],
+    editorialAuthors: ["Adwaya Gupta"],
+    solutionAuthors: ["Adwaya Gupta"],
+    component: <ShortFuse />,
+    tests: TestShortFuse,
     checker: ncmp
   },
 ];
