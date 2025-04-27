@@ -76,3 +76,4 @@ export * from "./Neutron";
 export * from "./SerialNumbers";
 export * from "./PalindromicSums";
 export * from "./SafeHaven";
+export * from "./ShortFuse";
