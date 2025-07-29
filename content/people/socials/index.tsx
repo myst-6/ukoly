@@ -3,7 +3,8 @@ import IOIIcon from "./ioiicon";
 
 export interface PlatformInfo {
   icon: JSX.Element;
-  base: string;
+  // use null if the platform doesn't support linking to profiles
+  base: string | null;
   label: string;
 }
 
@@ -20,7 +21,7 @@ export const platforms = {
   } as PlatformInfo,
   discord: {
     icon: <SiDiscord />,
-    base: "https://discord.com/users/",
+    base: null,
     label: "Discord",
   } as PlatformInfo,
   ioi: {
