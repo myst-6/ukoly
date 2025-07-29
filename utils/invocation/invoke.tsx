@@ -95,9 +95,10 @@ export function invoke(
           ...(timeLimit ? { timeLimit } : {})
         }),
       }
-    ).then(res => {
+    ).then(async (res) => {
       if (!res.ok) {
-        throw new Error(String(res));
+        const errorText = await res.text();
+        throw new Error(`${res.status}: ${errorText}`);
       }
       return res.json();
     }).then(data => {
