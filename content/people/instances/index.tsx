@@ -8,7 +8,7 @@ export const people: Person[] = [
     socials: [
       {
         platform: platforms.discord,
-        handle: "446711256737644556",
+        handle: "myst06",
       },
       {
         platform: platforms.codeforces,
