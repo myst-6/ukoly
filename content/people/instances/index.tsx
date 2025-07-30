@@ -192,15 +192,5 @@ export const people: Person[] = [
       },
     ],
     roles: ["Contributor"],
-  },
-  {
-    name: "Sourish Sharma",
-    socials: [
-      {
-        platform: platforms.github,
-        handle: "sourishsharma17",
-      },
-    ],
-    roles: ["Honorary Contributor"],
   }
 ];
