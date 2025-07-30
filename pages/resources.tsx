@@ -47,14 +47,6 @@ export default function Resources() {
             to tackling harder BIO problems. Find the problems and 
             grader <Link href="https://pctc.perse.co.uk/">here</Link>.
           </Text>
-          <Text typography="body.medium">
-            Sourish Sharma has created model solutions for every 
-            past PCTC problem. Check them out on his 
-            <Link href="https://www.youtube.com/@sourishsharma17">YouTube channel</Link>. 
-            We added this to our website because it aligns with our 
-            mission to help students improve their coding skills and 
-            prepare for competitions!
-          </Text>
 
         </Box>
       </Flex>
