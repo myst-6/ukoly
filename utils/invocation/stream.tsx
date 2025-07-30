@@ -1,8 +1,6 @@
 import type { Language } from "content";
 
-// todo put into env
-// const API_WORKER_URL = "wss://api-worker.mborishall.workers.dev/api/execute-stream";
-const API_WORKER_URL = "ws://localhost:3001/api/execute-stream";
+const API_WORKER_URL = "wss://api-worker.mborishall.workers.dev/api/execute-stream";
 
 interface ExecutionResult {
 	stdout: string;
