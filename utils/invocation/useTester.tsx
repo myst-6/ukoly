@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { InvocationStatus, queue } from "./invoke";
 import { BIO1ProblemInfo } from "content";
 import { CheckerStatus } from "./checkers";
-import { Language } from "content";
+import type { Language } from "content";
+import { type InvocationStatus } from "./types";
 import { useRunner } from "./useRunner";
 
 export type TestStatus = Exclude<InvocationStatus, "OK"> | CheckerStatus;
@@ -77,7 +77,13 @@ export function useTester(initialProblem: BIO1ProblemInfo) {
       return;
     }
     const { tests } = problem;
-    setResults(tests.map(() => queue as TestResult));
+    setResults(tests.map(() => ({
+      status: "TS",
+      output: "",
+      time: 0,
+      memory: 0,
+      message: "Waiting...",
+    })));
     invocationDispatch(tests.map(test => test.input), source, language, problem.timeLimit);
   }
 

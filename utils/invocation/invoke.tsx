@@ -1,22 +1,5 @@
-import { Language } from "content";
-
-export const invocationStatuses = ["OK", "TLE", "MLE", "CE", "RE", "RJ", "TS", "WJ"] as const;
-
-export type InvocationStatus = typeof invocationStatuses[number];
-
-export interface InvocationResult {
-  status: InvocationStatus;
-  message: string;
-  time: number;
-  memory: number;
-}
-
-export const queue: InvocationResult = {
-  status: "WJ",
-  message: "In Queue",
-  time: 0,
-  memory: 0,
-};
+import type { Language } from "content";
+import { invocationStatuses, type InvocationResult, type InvocationStatus } from "./types";
 
 export const waiting: InvocationResult = {
   status: "TS",
