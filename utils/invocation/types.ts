@@ -12,6 +12,7 @@ export type InvocationStatus = (typeof invocationStatuses)[number];
 
 export interface InvocationResult {
 	status: InvocationStatus;
+	stdout?: string;
 	message: string;
 	time: number;
 	memory: number;

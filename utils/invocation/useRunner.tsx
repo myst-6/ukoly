@@ -67,6 +67,7 @@ export function useRunner() {
 									: result.exitCode === 0
 										? "OK"
 										: "RE",
+						stdout: result.stdout,
 						message: result.timedOut
 							? `Time limit exceeded: ${result.timeMS}ms`
 							: result.memoryExceeded
@@ -90,7 +91,7 @@ export function useRunner() {
 							return {
 								...result,
 								status: "RJ",
-								message: error,
+								message: `Sandbox error: ${error}. Please report this to Boris on discord.`,
 							};
 						} else {
 							return result;
