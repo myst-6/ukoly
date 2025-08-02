@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { InvocationStatus, queue } from "./invoke";
 import { BIO1ProblemInfo } from "content";
 import { CheckerStatus } from "./checkers";
-import { Language } from "content";
+import type { Language } from "content";
+import { type InvocationStatus } from "./types";
 import { useRunner } from "./useRunner";
 
 export type TestStatus = Exclude<InvocationStatus, "OK"> | CheckerStatus;
@@ -50,17 +50,17 @@ export function useTester(initialProblem: BIO1ProblemInfo) {
     const { checker, tests } = problem;
     setResults(invocationResults.map((result, index) => {
       if (result.status === "OK" && tests[index]) {
-        const checkerResult = checker(tests[index], result.message);
+        const checkerResult = checker(tests[index], result.stdout || "");
         return {
           ...checkerResult,
-          output: result.message,
+          output: result.stdout || "",
           time: result.time,
           memory: result.memory
         };
       } else {
         return {
           ...result,
-          output: "",
+          output: result.stdout || "",
         } as TestResult;
       }
     }));
@@ -77,7 +77,13 @@ export function useTester(initialProblem: BIO1ProblemInfo) {
       return;
     }
     const { tests } = problem;
-    setResults(tests.map(() => queue as TestResult));
+    setResults(tests.map(() => ({
+      status: "TS",
+      output: "",
+      time: 0,
+      memory: 0,
+      message: "Waiting...",
+    })));
     invocationDispatch(tests.map(test => test.input), source, language, problem.timeLimit);
   }
 

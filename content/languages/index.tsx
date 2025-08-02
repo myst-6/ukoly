@@ -140,18 +140,10 @@ public class Main {
         apiName: "js",
         monaco: "javascript",
         template: `\
-process.stdin.on('data', data => {
-    const lines = data.toString().split("\n");
-    solution(() => lines.length ? lines.shift() : "");
-});
-
-function solution(input) {
-    // Code here
-    // To read a line of user input, use input()
-    // To print a line of output, use console.log(...)
-
-
-}`, 
+// To read a line of user input, use input() the same as python
+// This will be provided by the grader.
+// To print a line of output, use console.log(...)
+`, 
         initPos: { lineNumber: 11, column: 5 } 
     },
     {

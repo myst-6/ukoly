@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { InvocationResult, invoke, waiting } from "./invoke";
-import { Language } from "content";
+import { invoke } from "./invoke";
+import type { Language } from "content";
+import { waiting, type InvocationResult } from "./types";
 
 /**
  * @summary 
