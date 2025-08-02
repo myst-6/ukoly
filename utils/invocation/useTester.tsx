@@ -70,8 +70,9 @@ export function useTester(initialProblem: BIO1ProblemInfo) {
    * 
    * @param source The source code of the participant.
    * @param language The source code's language
+   * @param turnstileToken The Cloudflare Turnstile token for security verification.
    */
-  function dispatch(source: string, language: Language) {
+  function dispatch(source: string, language: Language, turnstileToken: string) {
     if (!problem.tests) {
       console.error("No tests for this problem.");
       return;
@@ -84,7 +85,7 @@ export function useTester(initialProblem: BIO1ProblemInfo) {
       memory: 0,
       message: "Waiting...",
     })));
-    invocationDispatch(tests.map(test => test.input), source, language, problem.timeLimitMs);
+    invocationDispatch(tests.map(test => test.input), source, language, turnstileToken, problem.timeLimitMs);
   }
 
   return { results, dispatch, problem, setProblem };

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { SourceCode, STitle } from "components";
 import { useInvoker } from "utils";
 import { languages } from "content";
+import { useTurnstile } from "utils/invocation/turnstile";
 
 export interface SRunnerProps {
   codes: SourceCode[];
@@ -14,11 +15,17 @@ export const SRunner = ({ codes }: SRunnerProps) => {
     const [ran, setRan] = useState<boolean>(false);
 
     const { dispatch, result } = useInvoker();
+    const { token, isVerified, error, reset, containerRef } = useTurnstile();
   
     const handleRunCode = () => {
+      if (!isVerified || !token) {
+        console.error("Turnstile verification required");
+        return;
+      }
       const idx = codes.findIndex((code: string | null) => code !== null);
       setRan(true);
-      dispatch(testCase, codes[idx]!, languages[idx]!);
+      dispatch(testCase, codes[idx]!, languages[idx]!, token);
+      reset(); // Reset for next execution
     };
 
     useEffect(() => {
@@ -33,6 +40,9 @@ export const SRunner = ({ codes }: SRunnerProps) => {
     }, [ran, result]);
 
     return <VStack width="100%">
+      {/* Invisible Turnstile widget */}
+      <div ref={containerRef} style={{ display: 'none' }} />
+      
       <HStack justifyContent="center" alignItems="center" width="100%">
       <VStack flex="1" spacing={4}>
         <STitle size="sm">Input</STitle>
@@ -56,7 +66,12 @@ export const SRunner = ({ codes }: SRunnerProps) => {
       </VStack>
     </HStack>
     <Flex justifyContent="center" width="100%" mt={2}>
-      <Button colorScheme="teal" size="md" onClick={handleRunCode}>
+      <Button 
+        colorScheme="teal" 
+        size="md" 
+        onClick={handleRunCode}
+        isDisabled={!isVerified}
+      >
         Run Code
       </Button>
     </Flex>

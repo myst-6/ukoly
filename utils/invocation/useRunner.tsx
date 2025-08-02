@@ -27,21 +27,20 @@ export function useRunner() {
 	 * @param language
 	 * The source code's language.
 	 *
+	 * @param turnstileToken
+	 * The Cloudflare Turnstile token for security verification.
+	 *
 	 * @param timeLimitMs (optional)
 	 * The time limit, in seconds, for the code to run in. Defaults to 1 second.
 	 *
 	 * @param memoryLimitKb (optional)
 	 * The memory limit, in KB, for the code to run in. Defaults to 1GB.
-	 *
-	 * @param onResult
-	 * A function that accepts two arguments.
-	 * The hook calls the onResult function one time for each time the result of an invocation completes.
-	 * The first parameter `index` is the index of the test in the list of inputs. The second parameter `result` is the result of the invocation.
 	 */
 	function dispatch(
 		inputs: string[],
 		source: string,
 		language: Language,
+		turnstileToken: string,
 		timeLimitMs?: number,
 		memoryLimitKb?: number,
 	) {
@@ -98,6 +97,7 @@ export function useRunner() {
 						}
 					});
 				}),
+			turnstileToken,
 		);
 	}
 

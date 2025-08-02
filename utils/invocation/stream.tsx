@@ -1,8 +1,5 @@
 import type { Language } from "content";
 
-// const API_WORKER_URL = "ws://localhost:3001/api/execute-stream";
-const API_WORKER_URL = "wss://api-worker.mborishall.workers.dev/api/execute-stream";
-
 interface ExecutionResult {
 	stdout: string;
 	stderr: string;
@@ -32,8 +29,9 @@ export function streamExecution(
 	}>,
 	onResult: (data: TestResult) => void,
 	onError?: (error: string) => void,
+	turnstileToken?: string,
 ) {
-	const ws = new WebSocket(API_WORKER_URL);
+	const ws = new WebSocket(process.env.NEXT_PUBLIC_API_WORKER_URL!);
 	const HEARTBEAT_INTERVAL = 20000;
 
 	// If no message is received for 5 seconds, close the connection
@@ -52,6 +50,7 @@ export function streamExecution(
 				code,
 				language: language.apiName,
 				testCases,
+				turnstileToken,
 			}),
 		);
 	};

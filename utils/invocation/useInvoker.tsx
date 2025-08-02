@@ -1,9 +1,6 @@
-import { useState } from "react";
-import { invoke } from "./invoke";
 import type { Language } from "content";
-import { waiting, type InvocationResult } from "./types";
+import { waiting } from "./types";
 import { useRunner } from "./useRunner";
-import { streamExecution } from "./stream";
 
 /**
  * @summary 
@@ -26,25 +23,24 @@ export function useInvoker() {
    * @param language
    * The source code's language.
    * 
+   * @param turnstileToken
+   * The Cloudflare Turnstile token for security verification.
+   * 
    * @param timeLimitMs
    * The time limit in milliseconds.
    * 
    * @param memoryLimitKb
    * The memory limit in kilobytes.
-   * 
-   * @param onResult 
-   * A function that accepts two arguments. 
-   * The hook calls the onResult function one time for each time the result of an invocation completes.
-   * The first parameter `index` is the index of the test in the list of inputs. The second parameter `result` is the result of the invocation.
    */
   function dispatch(
     input: string, 
     source: string, 
     language: Language,
+    turnstileToken: string,
     timeLimitMs?: number,
     memoryLimitKb?: number,
   ) {
-    dispatchRunner([input], source, language, timeLimitMs, memoryLimitKb);
+    dispatchRunner([input], source, language, turnstileToken, timeLimitMs, memoryLimitKb);
   }
 
   return { dispatch, result: results[0] || waiting };
