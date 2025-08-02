@@ -27,10 +27,10 @@ export function useRunner() {
 	 * @param language
 	 * The source code's language.
 	 *
-	 * @param timeLimit (optional)
+	 * @param timeLimitMs (optional)
 	 * The time limit, in seconds, for the code to run in. Defaults to 1 second.
 	 *
-	 * @param memoryLimit (optional)
+	 * @param memoryLimitKb (optional)
 	 * The memory limit, in KB, for the code to run in. Defaults to 1GB.
 	 *
 	 * @param onResult
@@ -42,8 +42,8 @@ export function useRunner() {
 		inputs: string[],
 		source: string,
 		language: Language,
-		timeLimit?: number,
-		memoryLimit?: number,
+		timeLimitMs?: number,
+		memoryLimitKb?: number,
 	) {
 		setResults(inputs.map(() => waiting));
 		streamExecution(
@@ -51,8 +51,8 @@ export function useRunner() {
 			language,
 			inputs.map((input) => ({
 				stdin: input,
-				timeLimitMs: timeLimit ?? 1000,
-				memoryLimit: memoryLimit ?? 1024 * 1024, // 1GB
+				timeLimitMs: timeLimitMs ?? 1000,
+				memoryLimitKb: memoryLimitKb ?? 1024 * 1024, // 1GB
 			})),
 			(result) => {
 				setResults((prev) => {

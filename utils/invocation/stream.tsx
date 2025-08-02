@@ -28,7 +28,7 @@ export function streamExecution(
 	testCases: Array<{
 		stdin: string;
 		timeLimitMs: number;
-		memoryLimit: number;
+		memoryLimitKb: number;
 	}>,
 	onResult: (data: TestResult) => void,
 	onError?: (error: string) => void,

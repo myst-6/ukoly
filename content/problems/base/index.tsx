@@ -48,7 +48,7 @@ export interface BIO1ProblemInfo extends ProblemInfo {
   checker?: Checker;
   question: Question;
   tests?: Test[];
-  timeLimit?: number;
+  timeLimitMs?: number;
 }
 export type DifficultyMap<T> = Record<Difficulty, T>;
 

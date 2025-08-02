@@ -84,7 +84,7 @@ export function useTester(initialProblem: BIO1ProblemInfo) {
       memory: 0,
       message: "Waiting...",
     })));
-    invocationDispatch(tests.map(test => test.input), source, language, problem.timeLimit);
+    invocationDispatch(tests.map(test => test.input), source, language, problem.timeLimitMs);
   }
 
   return { results, dispatch, problem, setProblem };
