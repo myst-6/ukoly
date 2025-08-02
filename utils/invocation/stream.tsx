@@ -34,7 +34,7 @@ export function streamExecution(
 	onError?: (error: string) => void,
 ) {
 	const ws = new WebSocket(API_WORKER_URL);
-	const HEARTBEAT_INTERVAL = 5000;
+	const HEARTBEAT_INTERVAL = 20000;
 
 	// If no message is received for 5 seconds, close the connection
 	let lastMessageTs: number = 0;
