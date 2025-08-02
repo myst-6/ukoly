@@ -15,7 +15,7 @@ export const SRunner = ({ codes }: SRunnerProps) => {
     const [ran, setRan] = useState<boolean>(false);
 
     const { dispatch, result } = useInvoker();
-    const { token, isVerified, error, reset, containerRef } = useTurnstile();
+    const { token, isVerified, reset, containerRef } = useTurnstile();
   
     const handleRunCode = () => {
       if (!isVerified || !token) {

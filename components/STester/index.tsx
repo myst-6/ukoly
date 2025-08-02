@@ -94,7 +94,7 @@ interface STesterProps {
 export const STester = ({ onBegin, onEnd, problem, code, language }: STesterProps) => {
   const { dispatch, results, setProblem, problem: dispatchedProblem } = useTester(problem);
   const [dispatched, setDispatched] = useState<boolean>(false);
-  const { token, isVerified, error, reset, containerRef } = useTurnstile();
+  const { token, isVerified, reset, containerRef } = useTurnstile();
 
   useEffect(() => {
     setProblem(problem);

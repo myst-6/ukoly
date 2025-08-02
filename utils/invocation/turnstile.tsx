@@ -111,28 +111,3 @@ export function useTurnstile() {
     containerRef,
   };
 }
-
-// Simple component for invisible turnstile
-export function InvisibleTurnstile({ 
-  onVerify, 
-  onError 
-}: { 
-  onVerify?: (token: string) => void;
-  onError?: (error: string) => void;
-}) {
-  const { token, error, containerRef } = useTurnstile();
-
-  useEffect(() => {
-    if (token && onVerify) {
-      onVerify(token);
-    }
-  }, [token, onVerify]);
-
-  useEffect(() => {
-    if (error && onError) {
-      onError(error);
-    }
-  }, [error, onError]);
-
-  return <div ref={containerRef} style={{ display: 'none' }} />;
-} 

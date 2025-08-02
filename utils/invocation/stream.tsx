@@ -31,7 +31,7 @@ export function streamExecution(
 	onError?: (error: string) => void,
 	turnstileToken?: string,
 ) {
-	const ws = new WebSocket(process.env.NEXT_PUBLIC_API_WORKER_URL!);
+	const ws = new WebSocket(process.env.NEXT_PUBLIC_API_WORKER_URL);
 	const HEARTBEAT_INTERVAL = 20000;
 
 	// If no message is received for 5 seconds, close the connection

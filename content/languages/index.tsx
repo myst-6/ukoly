@@ -9,50 +9,6 @@ export interface Language {
 }
 
 export const languages: Language[] = [
-    /*
-    {
-      display: "C++",
-      extension: "cpp",
-      highlight: "cpp",
-      apiName: "cpp",
-      monaco: "cpp",
-      template: `\
-  // Note: <bits/stdc++.h> produces undefined behaviour. Please avoid using it.
-  // The below imports should encompass everything you need.
-  #include <algorithm>
-  #include <array>
-  #include <bitset>
-  #include <chrono>
-  #include <complex>
-  #include <deque>
-  #include <functional>
-  #include <iostream>
-  #include <iterator>
-  #include <limits>
-  #include <map>
-  #include <queue>
-  #include <random>
-  #include <set>
-  #include <stack>
-  #include <string>
-  #include <tuple>
-  #include <vector>
-  #include <unordered_map>
-  #include <unordered_set>
-  using namespace std;
-  
-  int main() {
-  \t// Enter your solution below. 
-  \t// Use std::cin and std::cout for I/O, and do not 
-  \t// output any prompts, because the grader will not work.
-  \t
-  \t
-  \t
-  \treturn 0;
-  }`,
-      initPos: { lineNumber: 30, column: 5 }
-    },
-    */
     {
         display: "C++",
         extension: "cpp",
@@ -67,12 +23,13 @@ int main() {
 \t// Enter your solution below. 
 \t// Use std::cin and std::cout for I/O, and do not 
 \t// output any prompts, because the grader will not work.
-\t
+\t// Don't forget to flush the output by using std::flush or std::endl
+\t// or it might not be printed.
 \t
 \t
 \treturn 0;
 }`,
-        initPos: { lineNumber: 9, column: 5 }
+        initPos: { lineNumber: 10, column: 5 }
     },
     {
         display: "Python",
@@ -144,7 +101,7 @@ public class Main {
 // This will be provided by the grader.
 // To print a line of output, use console.log(...)
 `, 
-        initPos: { lineNumber: 11, column: 5 } 
+        initPos: { lineNumber: 5, column: 1 } 
     },
     {
         display: "Rust",
