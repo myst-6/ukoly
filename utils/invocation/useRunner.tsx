@@ -29,9 +29,9 @@ export function useRunner() {
 	 *
 	 * @param timeLimit (optional)
 	 * The time limit, in seconds, for the code to run in. Defaults to 1 second.
-   * 
-   * @param memoryLimit (optional)
-   * The memory limit, in KB, for the code to run in. Defaults to 1GB.
+	 *
+	 * @param memoryLimit (optional)
+	 * The memory limit, in KB, for the code to run in. Defaults to 1GB.
 	 *
 	 * @param onResult
 	 * A function that accepts two arguments.
@@ -43,7 +43,7 @@ export function useRunner() {
 		source: string,
 		language: Language,
 		timeLimit?: number,
-    memoryLimit?: number
+		memoryLimit?: number,
 	) {
 		setResults(inputs.map(() => waiting));
 		streamExecution(
@@ -62,26 +62,41 @@ export function useRunner() {
 							? "TLE"
 							: result.memoryExceeded
 								? "MLE"
-                : result.compilationFailed
-                  ? "CE"
-                  : result.exitCode === 0
-                    ? "OK"
-                    : "RE",
+								: result.compilationFailed
+									? "CE"
+									: result.exitCode === 0
+										? "OK"
+										: "RE",
 						message: result.timedOut
 							? `Time limit exceeded: ${result.timeMS}ms`
 							: result.memoryExceeded
 								? `Memory limit exceeded: ${~~(result.memoryKB / 1000)}MB`
-                : result.compilationFailed
-                  ? result.stderr
-                  : result.exitCode === 0
-                    ? result.stdout
-                    : result.stderr,
+								: result.compilationFailed
+									? result.stderr
+									: result.exitCode === 0
+										? result.stdout
+										: result.stderr,
 						time: result.timeMS,
 						memory: ~~(result.memoryKB / 1000),
 					};
 					return newResults;
 				});
 			},
+			(error) =>
+				setResults((prev) => {
+					const newResults = [...prev];
+					return newResults.map((result) => {
+						if (result.status === "TS") {
+							return {
+								...result,
+								status: "RJ",
+								message: error,
+							};
+						} else {
+							return result;
+						}
+					});
+				}),
 		);
 	}
 

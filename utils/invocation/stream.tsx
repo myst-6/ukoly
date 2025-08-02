@@ -1,5 +1,6 @@
 import type { Language } from "content";
 
+// const API_WORKER_URL = "ws://localhost:3001/api/execute-stream";
 const API_WORKER_URL = "wss://api-worker.mborishall.workers.dev/api/execute-stream";
 
 interface ExecutionResult {
@@ -33,6 +34,16 @@ export function streamExecution(
 	onError?: (error: string) => void,
 ) {
 	const ws = new WebSocket(API_WORKER_URL);
+	const HEARTBEAT_INTERVAL = 5000;
+
+	// If no message is received for 5 seconds, close the connection
+	let lastMessageTs: number = 0;
+	const heartbeat = setInterval(() => {
+		if (Date.now() - lastMessageTs > HEARTBEAT_INTERVAL) {
+			ws.close();
+			clearInterval(heartbeat);
+		}
+	}, HEARTBEAT_INTERVAL);
 
 	ws.onopen = () => {
 		// Send execution request with Turnstile token
@@ -47,6 +58,7 @@ export function streamExecution(
 
 	ws.onmessage = (event) => {
 		const message: WebSocketMessage = JSON.parse(event.data);
+		lastMessageTs = Date.now();
 
 		switch (message.type) {
 			case "result": {
@@ -62,12 +74,19 @@ export function streamExecution(
 
 	ws.onerror = (error) => {
 		console.error("WebSocket error:", error);
-		onError?.(error.toString());
+		onError?.(`Unknown websocket error. Please report this to Boris on discord.`);
 	};
 
 	ws.onclose = () => {
 		console.log("WebSocket connection closed");
 	};
+
+	// If the connection is not established after 5 seconds, close the connection
+	setTimeout(() => {
+		if (ws.readyState === WebSocket.CONNECTING) {
+			ws.close();
+		}
+	}, 5000);
 
 	return () => ws.close();
 }
