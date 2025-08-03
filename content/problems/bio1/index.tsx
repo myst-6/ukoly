@@ -306,7 +306,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     component: <NumberLadder />,
     tests: TestNumberLadder,
     checker: ncmp,
-    timeLimit: 5,
+    timeLimitMs: 5,
   },
   {
     difficulty: "Medium",
@@ -424,7 +424,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     component: <OnTheRightTrack />,
     tests: TestOnTheRightTrack,
     checker: wcmp,
-    timeLimit: 5,
+    timeLimitMs: 5,
   },
   {
     difficulty: "Medium",
@@ -867,7 +867,7 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     component: <DistinctPrimeFactorisation />,
     tests: TestDistinctPrimeFactorisation,
     checker: ncmp,
-    timeLimit: 5,
+    timeLimitMs: 5,
   },
   {
     difficulty: "Easy",

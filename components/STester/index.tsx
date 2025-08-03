@@ -1,8 +1,9 @@
 import { Button, HStack, SText, Text, Box, STitle, SCode } from "components";
-import { Modal, ModalBody, ModalOverlay, ModalCloseButton, ModalContent, useDisclosure } from "@chakra-ui/react";
+import { Modal, ModalBody, ModalOverlay, ModalCloseButton, ModalContent, useDisclosure, ButtonProps } from "@chakra-ui/react";
 import { TestResult, useTester, waiting } from "utils";
 import { BIO1ProblemInfo, Language, Test } from "content";
 import { useEffect, useState } from "react";
+import { useTurnstile } from "utils/invocation/turnstile";
 import assert from "assert";
 
 interface ResultModalProps {
@@ -52,7 +53,7 @@ interface ResultButtonProps {
 const ResultButton = ({ result, test }: ResultButtonProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  let color;
+  let color: ButtonProps["colorScheme"];
   switch (result.status) {
     case "AC":
       color = "green";
@@ -93,6 +94,7 @@ interface STesterProps {
 export const STester = ({ onBegin, onEnd, problem, code, language }: STesterProps) => {
   const { dispatch, results, setProblem, problem: dispatchedProblem } = useTester(problem);
   const [dispatched, setDispatched] = useState<boolean>(false);
+  const { token, isVerified, reset, containerRef } = useTurnstile();
 
   useEffect(() => {
     setProblem(problem);
@@ -100,24 +102,33 @@ export const STester = ({ onBegin, onEnd, problem, code, language }: STesterProp
   }, [problem, setProblem]);
 
   const handleRunCode = () => {
+    if (!isVerified || !token) {
+      console.error("Turnstile verification required");
+      return;
+    }
     setDispatched(true);
     onBegin();
-    dispatch(code, language);
+    dispatch(code, language, token);
+    reset(); // Reset for next execution
   };
 
   useEffect(() => {
-    if (results.every(result => result.status !== "TS" && result.status !== "WJ")) {
+    if (results.every(result => result.status !== "TS")) {
       onEnd();
     }
   }, [results, onEnd]);
 
   return (
     <>
+      {/* Invisible Turnstile widget */}
+      <div ref={containerRef} style={{ display: 'none' }} />
+      
       <HStack alignItems="center">
         {
           <Button 
           onClick={handleRunCode} 
-          isLoading={results.some(result => result.status === "TS" || result.status === "WJ")}
+          isLoading={results.some(result => result.status === "TS")}
+          isDisabled={!isVerified || results.some(result => result.status === "TS")}
         >
           Submit Code
         </Button>

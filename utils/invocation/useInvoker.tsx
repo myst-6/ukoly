@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { InvocationResult, invoke, waiting } from "./invoke";
-import { Language } from "content";
+import type { Language } from "content";
+import { waiting } from "./types";
+import { useRunner } from "./useRunner";
 
 /**
  * @summary 
@@ -11,7 +11,7 @@ import { Language } from "content";
  * A way of running invocation on a single inputs for a given source code and language.
  */
 export function useInvoker() {
-  const [result, setResult] = useState<InvocationResult>(waiting);
+  const { dispatch: dispatchRunner, results } = useRunner();
 
   /**
    * @param input
@@ -23,23 +23,25 @@ export function useInvoker() {
    * @param language
    * The source code's language.
    * 
-   * @param onResult 
-   * A function that accepts two arguments. 
-   * The hook calls the onResult function one time for each time the result of an invocation completes.
-   * The first parameter `index` is the index of the test in the list of inputs. The second parameter `result` is the result of the invocation.
+   * @param turnstileToken
+   * The Cloudflare Turnstile token for security verification.
+   * 
+   * @param timeLimitMs
+   * The time limit in milliseconds.
+   * 
+   * @param memoryLimitKb
+   * The memory limit in kilobytes.
    */
   function dispatch(
     input: string, 
     source: string, 
-    language: Language
+    language: Language,
+    turnstileToken: string,
+    timeLimitMs?: number,
+    memoryLimitKb?: number,
   ) {
-    invoke(source, input, language).then(result => {
-      setResult(result);
-    }).catch(error => {
-      console.error("Severe error, how could this have happened?");
-      console.error(error);
-    });
+    dispatchRunner([input], source, language, turnstileToken, timeLimitMs, memoryLimitKb);
   }
 
-  return { dispatch, result };
+  return { dispatch, result: results[0] || waiting };
 };
