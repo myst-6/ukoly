@@ -140,14 +140,6 @@ export const people: Person[] = [
   {
     name: "Seyoon Park",
     socials: [
-      {
-        platform: platforms.codeforces,
-        handle: "s3yoonpark",
-      },
-      {
-        platform: platforms.github,
-        handle: "s3yoonpark",
-      },
     ],
     roles: ["Contributor"],
   },
