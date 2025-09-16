@@ -85,30 +85,6 @@ export default {
           return;
         }
 
-        /*
-        // Check authentication
-        if (!data.authToken) {
-          webSocket.send(
-            JSON.stringify({
-              type: "error",
-              data: "Authentication required. Please log in to execute code.",
-            } as WebSocketMessage),
-          );
-          return;
-        }
-
-        // Verify auth token with auth worker
-        const authVerificationResult = await this.verifyAuthToken(data.authToken, env);
-        if (!authVerificationResult.success) {
-          webSocket.send(
-            JSON.stringify({
-              type: "error",
-              data: "Authentication failed. Please log in again.",
-            } as WebSocketMessage),
-          );
-          return;
-        }*/
-
         if (!data.turnstileToken) {
           webSocket.send(
             JSON.stringify({
@@ -267,26 +243,5 @@ export default {
     );
 
     await sandbox.destroy();
-  },
-
-  async verifyAuthToken(authToken: string, env: Env): Promise<{ success: boolean }> {
-    try {
-      // Make request to auth worker to verify token
-      // TODO put this in env
-      const authWorkerUrl = 'http://localhost:3002';
-      const response = await fetch(`${authWorkerUrl}/verify`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${authToken}`,
-        },
-      });
-
-      const result = await response.json() as { success?: boolean };
-      return { success: result.success || false };
-    } catch (error) {
-      console.error('Auth verification error:', error);
-      return { success: false };
-    }
   },
 };
