@@ -1,0 +1,92 @@
+{
+  "name": "api-worker",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-07-18",
+  "dev": {
+    "port": 3001
+  },
+  "containers": [
+    {
+      "class_name": "ExecutionSandbox",
+      "image": "./images/sandbox.Dockerfile",
+      "instance_type": "basic",
+      "max_instances": 17
+    },
+    {
+      "class_name": "RustSandbox",
+      "image": "./images/rust-sandbox.Dockerfile",
+      "instance_type": "basic",
+      "max_instances": 3
+    },
+    {
+      "class_name": "JavaSandbox",
+      "image": "./images/java-sandbox.Dockerfile",
+      "instance_type": "basic",
+      "max_instances": 5
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "RATE_LIMITER",
+        "class_name": "RateLimiter"
+      },
+      {
+        "name": "ExecutionSandbox",
+        "class_name": "ExecutionSandbox"
+      },
+      {
+        "name": "RustSandbox",
+        "class_name": "RustSandbox"
+      },
+      {
+        "name": "JavaSandbox",
+        "class_name": "JavaSandbox"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["RateLimiter", "Sandbox"]
+    },
+    {
+      "tag": "v2",
+      "renamed_classes": [
+        {
+          "from": "Sandbox",
+          "to": "ExecutionSandbox"
+        }
+      ]
+    },
+    {
+      "tag": "v3",
+      "new_sqlite_classes": ["JavaRustSandbox"]
+    },
+    {
+      "tag": "v4",
+      "deleted_classes": ["JavaRustSandbox"],
+      "new_sqlite_classes": ["JavaSandbox", "RustSandbox"]
+    }
+  ],
+  "vars": {
+    "ENVIRONMENT": "development"
+  },
+  "env": {
+    "local": {
+      "vars": {
+        "ENVIRONMENT": "local"
+      }
+    }
+  },
+  "observability": {
+    "enabled": false
+  },
+  "secrets_store_secrets": [
+    {
+      "binding": "TURNSTILE_SECRET_KEY",
+      "store_id": "853f0e70dc7c4bfa9bd550dab31969b9",
+      "secret_name": "TURNSTILE_SECRET_KEY"
+    }
+  ]
+}
