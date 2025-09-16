@@ -176,7 +176,7 @@ export class SandboxRuntime {
     const outputLines = (result.stdout || "").trim().split("\n");
     const memoryKB = outputLines.pop();
     const timeMS = outputLines.pop();
-    const programOutput = outputLines.slice(0, -1).join("\n"); // remove the extra empty line
+    const programOutput = outputLines.join("\n");
 
     const executionResult: ExecutionResult = {
       stdout: programOutput,
