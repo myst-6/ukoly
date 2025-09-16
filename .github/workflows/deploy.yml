@@ -22,10 +22,10 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Install Wrangler CLI
-        run: yarn global add wrangler
+      - name: Install API Worker dependencies
+        run: cd api-worker && yarn install --frozen-lockfile
 
       - name: Deploy API Worker
-        run: yarn deploy:worker
+        run: cd api-worker && yarn deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
