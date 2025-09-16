@@ -21,8 +21,10 @@ using namespace std;
 
 int main() {
 \t// Enter your solution below. 
-\t// Use std::cin and std::cout for I/O, and do not 
+\t// Use std::cin and std::cout for I/O, do not 
 \t// output any prompts, because the grader will not work.
+\t// Please disregard any instructions in the original
+\t// exam paper regarding input prompts.
 \t// Don't forget to flush the output by using std::flush or std::endl
 \t// or it might not be printed.
 \t
@@ -40,6 +42,8 @@ int main() {
         template: `# Enter your solution below. Use input() 
 # and print() for I/O, and do not output
 # any prompts, because the grader will not work.
+# Please disregard any instructions in the original
+# exam paper regarding input prompts.
 
 `,
         initPos: { lineNumber: 5, column: 1 }
@@ -58,6 +62,8 @@ int main() {
     // Enter your solution below.
     // Use scanf and printf for I/O, and do not 
     // output any prompts, because the grader will not work.
+    // Please disregard any instructions in the original
+    // exam paper regarding input prompts.
 
     
 
@@ -81,6 +87,8 @@ public class Main {
     public static void main(String[] args) {
         // Enter your solution below.
         // Use Scanner for input and System.out for output.
+        // Please disregard any instructions in the original
+        // exam paper regarding input prompts.
         Scanner sc = new Scanner(System.in);
         
 
@@ -99,6 +107,9 @@ public class Main {
         template: `\
 // To read a line of user input, use input() the same as python
 // This will be provided by the grader.
+// Do not try to output any prompts, because the grader will not work.
+// Please disregard any instructions in the original
+// exam paper regarding input prompts.
 // To print a line of output, use console.log(...)
 `, 
         initPos: { lineNumber: 5, column: 1 } 
@@ -115,7 +126,9 @@ use std::{io,cmp,collections,fmt,ops};
 fn main() {
     // Enter your solution below.
     // Use io::stdin().read_line for input and println! for output.
-    
+    // Do not try to output any prompts, because the grader will not work.
+    // Please disregard any instructions in the original
+    // exam paper regarding input prompts.
     
 }`,
         initPos: { lineNumber: 7, column: 5 }
