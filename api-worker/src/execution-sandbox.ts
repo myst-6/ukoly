@@ -84,7 +84,7 @@ import sys
 _input_lines = base64.b64decode("${encodedStdin}").decode().strip().split("\\n")
 _input_index = 0
 
-def input():
+def input(_ = ""):
     global _input_index
     if _input_index < len(_input_lines):
         line = _input_lines[_input_index]
