@@ -80,7 +80,7 @@ export const ParsingLists = () => {
       <STitle>Code</STitle>
       <SCodeBlock path="parsinglists/sol" />
 
-      <STitle>Alternative Solution (Python Only)</STitle>
+      <STitle>Alternative Solution (Python)</STitle>
       <SText>
         Python's <SCode>eval</SCode> function evaluates an expression. We can exploit this to parse the brackets easily. 
         We can define a class, <SCode>Tokens</SCode>, storing a list of tokens, and define multiplication as the operation defined by the problem statement,
