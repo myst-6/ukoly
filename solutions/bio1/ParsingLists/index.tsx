@@ -1,4 +1,4 @@
-import { Link, SCodeBlock, SList, SText, STitle } from "components";
+import { Link, SCodeBlock, SList, SText, STitle, SCode } from "components";
 import { brace, floor } from "solutions/util";
 
 export const ParsingLists = () => {
@@ -79,6 +79,19 @@ export const ParsingLists = () => {
       </SText>
       <STitle>Code</STitle>
       <SCodeBlock path="parsinglists/sol" />
+
+      <STitle>Alternative Solution (Python Only)</STitle>
+      <SText>
+        Python's <SCode>eval</SCode> function evaluates an expression. We can exploit this to parse the brackets easily. 
+        We can define a class, <SCode>Tokens</SCode>, storing a list of tokens, and define multiplication as the operation defined by the problem statement,
+        returning a new instance of <SCode>Tokens</SCode>. 
+        $O, E, T$ are special cases of this class, with the tokens attribute being fixed as $O, E$ or $T$. 
+        By reformatting the inputted expression to follow Python syntax, e.g. changing <SCode>E(OE)</SCode> to <SCode>E()*(O()*E())</SCode>, we can 
+        evaluate the expression using <SCode>eval</SCode>, returning the list of tokens as before. 
+        These can be processed in the same way as in the previous solution. 
+      </SText>
+      <STitle>Code</STitle>
+      <SCodeBlock path="parsinglists/sol2" />
     </>
   );
 };
