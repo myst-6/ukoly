@@ -85,7 +85,7 @@ export const ParsingLists = () => {
         Python's <SCode>eval</SCode> function evaluates an expression. We can exploit this to parse the brackets easily. 
         We can define a class, <SCode>Tokens</SCode>, storing a list of tokens, and define multiplication as the operation defined by the problem statement,
         returning a new instance of <SCode>Tokens</SCode>. 
-        O, E, and T are subclasses of <SCode>Tokens</SCode>, where the tokens attribute is fixed to be <SCode>['O']</SCode>, <SCode>['E']</SCode>, or <SCode>['T']</SCode>, respectively.
+        $O$, $E$, and $T$ are subclasses of <SCode>Tokens</SCode>, where the tokens attribute is fixed to be <SCode>['O']</SCode>, <SCode>['E']</SCode>, or <SCode>['T']</SCode>, respectively.
         By reformatting the inputted expression to follow Python syntax, e.g. changing <SCode>E(OE)</SCode> to <SCode>E()*(O()*E())</SCode>, we can 
         evaluate the expression using <SCode>eval</SCode>, returning the list of tokens as before. 
         These can be processed in the same way as in the previous solution. 
