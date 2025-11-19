@@ -29,6 +29,7 @@ export function streamExecution(
 	}>,
 	onResult: (data: TestResult) => void,
 	onError?: (error: string) => void,
+	onComplete?: () => void,
 	turnstileToken?: string,
 ) {
 	const ws = new WebSocket(process.env.NEXT_PUBLIC_API_WORKER_URL);
@@ -67,6 +68,10 @@ export function streamExecution(
 			}
 			case "error": 
 				onError?.(message.data as string);
+				break;
+			case "complete":
+				onComplete?.();
+				break;
 		}
 
 	};

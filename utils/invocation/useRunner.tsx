@@ -36,14 +36,15 @@ export function useRunner() {
 	 * @param memoryLimitKb (optional)
 	 * The memory limit, in KB, for the code to run in. Defaults to 1GB.
 	 */
-	function dispatch(
+	function dispatch({ inputs, source, language, turnstileToken, timeLimitMs, memoryLimitKb, onComplete }: {
 		inputs: string[],
 		source: string,
 		language: Language,
 		turnstileToken: string,
 		timeLimitMs?: number,
 		memoryLimitKb?: number,
-	) {
+		onComplete?: () => void,
+	}) {
 		setResults(inputs.map(() => waiting));
 		streamExecution(
 			source,
@@ -97,6 +98,7 @@ export function useRunner() {
 						}
 					});
 				}),
+			() => onComplete?.(),
 			turnstileToken,
 		);
 	}
