@@ -40,7 +40,14 @@ export function useInvoker() {
     timeLimitMs?: number,
     memoryLimitKb?: number,
   ) {
-    dispatchRunner([input], source, language, turnstileToken, timeLimitMs, memoryLimitKb);
+    dispatchRunner({
+      inputs: [input],
+      source,
+      language,
+      turnstileToken,
+      timeLimitMs,
+      memoryLimitKb,
+    });
   }
 
   return { dispatch, result: results[0] || waiting };
