@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import posthog from "posthog-js";
 
 interface TurnstileState {
   isLoaded: boolean;
@@ -56,6 +57,15 @@ export function useTurnstile() {
       widgetRef.current = widgetId;
     } catch (error) {
       console.error("Failed to render Turnstile:", error);
+      
+      posthog.captureException(error, {
+        context: {
+          sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY,
+          has_container: !!containerRef.current,
+          widget_exists: !!widgetRef.current,
+        }
+      });
+      
       setState(prev => ({
         ...prev,
         error: "Failed to initialize security verification",
@@ -81,10 +91,17 @@ export function useTurnstile() {
     }
 
     try {
-      // Get the current response token
       return window.turnstile.getResponse(widgetRef.current);
     } catch (error) {
       console.error("Failed to get Turnstile token:", error);
+      
+      posthog.captureException(error, {
+        context: {
+          has_turnstile: !!window.turnstile,
+          has_widget: !!widgetRef.current,
+        }
+      });
+      
       return null;
     }
   }, []);

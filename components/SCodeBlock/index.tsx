@@ -11,6 +11,7 @@ import { atomOneDark } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import { CodeBlock } from "./CodeBlock";
 import { SRunner } from "components";
 import { languages } from "content";
+import posthog from "posthog-js";
 
 export const base: string = "/assets/code/";
 
@@ -42,10 +43,18 @@ export const SCodeBlock = ({ path }: SCodeBlockProps) => {
           return res.text();
         }
       } catch (error) {
-        // some severe error
         console.error("Sorry, there was an error fetching the solution.");
         console.error("Please report this to Boris on discord.");
         console.error(error);
+        
+        posthog.captureException(error, {
+          context: {
+            path,
+            extension: ext,
+            fetch_url: `${base}${path}.${ext}`,
+          }
+        });
+        
         return null;
       }
     }
