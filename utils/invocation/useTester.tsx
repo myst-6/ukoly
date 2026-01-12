@@ -116,10 +116,24 @@ export function useTester(initialProblem: BIO1ProblemInfo) {
   useEffect(() => {
     if (!problem.tests) {
       console.error("No tests for this problem.");
+      posthog.captureException(new Error("No tests for problem"), {
+        context: {
+          problem_display: problem.display,
+          problem_year: problem.year,
+          problem_question: problem.question,
+        }
+      });
       return;
     }
     if (!problem.checker) {
       console.error("No checker for this problem.");
+      posthog.captureException(new Error("No checker for problem"), {
+        context: {
+          problem_display: problem.display,
+          problem_year: problem.year,
+          problem_question: problem.question,
+        }
+      });
       return;
     }
     const { checker, tests } = problem;
@@ -139,7 +153,7 @@ export function useTester(initialProblem: BIO1ProblemInfo) {
         } as TestResult;
       }
     }));
-  }, [invocationResults, problem]);
+  }, [invocationResults, problem, posthog]);
 
   /**
    * 
@@ -150,6 +164,14 @@ export function useTester(initialProblem: BIO1ProblemInfo) {
   function dispatch(source: string, language: Language, turnstileToken: string) {
     if (!problem.tests) {
       console.error("No tests for this problem.");
+      posthog.captureException(new Error("No tests for problem in dispatch"), {
+        context: {
+          problem_display: problem.display,
+          problem_year: problem.year,
+          problem_question: problem.question,
+          language: language.apiName,
+        }
+      });
       return;
     }
     const { tests } = problem;

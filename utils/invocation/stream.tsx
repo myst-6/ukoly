@@ -1,4 +1,5 @@
 import type { Language } from "content";
+import posthog from "posthog-js";
 
 interface ExecutionResult {
 	stdout: string;
@@ -78,6 +79,16 @@ export function streamExecution(
 
 	ws.onerror = (error) => {
 		console.error("WebSocket error:", error);
+		
+		posthog.captureException(error, {
+			context: {
+				websocket_url: process.env.NEXT_PUBLIC_API_WORKER_URL,
+				websocket_state: ws.readyState,
+				language: language.apiName,
+				test_cases_count: testCases.length,
+			}
+		});
+		
 		onError?.(`Unknown websocket error. Please report this to Boris on discord.`);
 	};
 
