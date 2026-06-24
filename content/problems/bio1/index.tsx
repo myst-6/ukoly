@@ -78,7 +78,8 @@ import {
   ZeckendorfRepresentation,
   PalindromicSums,
   SafeHaven,
-  ShortFuse
+  ShortFuse,
+  GridNotation
 } from "solutions";
 
 import {
@@ -159,7 +160,8 @@ import {
   TestSerialNumbers,
   TestPalindromicSums,
   TestSafeHaven,
-  TestShortFuse
+  TestShortFuse,
+  TestGridNotation
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker, accordionPatienceChecker, watchingTheClockChecker, unlockChecker, luckyNumbersChecker, battleshipsChecker, dieTippingChecker, puzzleGameChecker, playfairCipherChecker, dotsAndBoxesChecker, fourInALineChecker, neutronChecker } from "utils";
 
@@ -1180,6 +1182,19 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     solutionAuthors: ["Adwaya Gupta"],
     component: <ShortFuse />,
     tests: TestShortFuse,
+    checker: ncmp
+  },
+  {
+    difficulty: "Easy",
+    display: "Grid Notation",
+    original: "https://www.olympiad.org.uk/papers/2026/bio/bio26-exam.pdf",
+    year: 2026,
+    question: 1,
+    tags: ["Implementation"],
+    editorialAuthors: ["Sal Amjad"],
+    solutionAuthors: ["Sal Amjad"],
+    component: <GridNotation />,
+    tests: GridNotation,
     checker: ncmp
   },
 ];

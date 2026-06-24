@@ -1,8 +1,6 @@
 #Question 1
 #(1,1) is U
 
-
-
 letterMatrix = [["A", "B", "C", "D", "E"],
               ["F", "G", "H", "I", "J"],
               ["K", "L", "M", "N", "O"],
@@ -37,6 +35,7 @@ def determinePos(letter, n): #takes in coordinates
     xCoord *= 5**(n-1)
     yCoord *= 5**(n-1)
     return [xCoord, yCoord] 
-    print(f"(x,y) = ({xCoord},{yCoord})")
+    print(f"{coordinates[0]} {coordinates[1]}")
 
-mainSequence("BIO") #AFKPPKFKPK LEFTHAND
+userInput = input()
+mainSequence(userInput) #AFKPPKFKPK LEFTHAND
