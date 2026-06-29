@@ -78,7 +78,10 @@ import {
   ZeckendorfRepresentation,
   PalindromicSums,
   SafeHaven,
-  ShortFuse
+  ShortFuse,
+  GridNotation,
+  PlayingCodes,
+  RaindropNumbers
 } from "solutions";
 
 import {
@@ -159,7 +162,10 @@ import {
   TestSerialNumbers,
   TestPalindromicSums,
   TestSafeHaven,
-  TestShortFuse
+  TestShortFuse,
+  TestGridNotation,
+  TestPlayingCodes,
+  TestRaindropNumbers
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker, accordionPatienceChecker, watchingTheClockChecker, unlockChecker, luckyNumbersChecker, battleshipsChecker, dieTippingChecker, puzzleGameChecker, playfairCipherChecker, dotsAndBoxesChecker, fourInALineChecker, neutronChecker } from "utils";
 
@@ -1182,4 +1188,43 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     tests: TestShortFuse,
     checker: ncmp
   },
+  {
+    difficulty: "Insane",
+    display: "Grid Notation",
+    original: "https://www.olympiad.org.uk/papers/2026/bio/bio26-exam.pdf",
+    year: 2026,
+    question: 1,
+    tags: ["Math"],
+    editorialAuthors: ["?"],
+    solutionAuthors: ["?"],
+    component: <GridNotation />,
+    tests: TestGridNotation,
+    checker: ncmp  
+  },
+  {
+    difficulty: "Insane",
+    display: "Playing Codes",
+    original: "https://www.olympiad.org.uk/papers/2026/bio/bio26-exam.pdf",
+    year: 2026,
+    question: 2,
+    tags: ["Implementation"],
+    editorialAuthors: ["?"],
+    solutionAuthors: ["?"],
+    component: <PlayingCodes />,
+    tests: TestPlayingCodes,
+    checker: wcmp
+  },
+  {
+    difficulty: "Insane",
+    display: "Raindrop Numbers",
+    original: "https://www.olympiad.org.uk/papers/2026/bio/bio26-exam.pdf",
+    year: 2026,
+    question: 3,
+    tags: ["Dynamic Programming"],
+    editorialAuthors: ["?"],
+    solutionAuthors: ["?"],
+    component: <RaindropNumbers />,
+    tests: TestRaindropNumbers,
+    checker: ncmp
+  }
 ];
