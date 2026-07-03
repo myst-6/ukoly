@@ -79,7 +79,9 @@ import {
   PalindromicSums,
   SafeHaven,
   ShortFuse,
-  GridNotation
+  GridNotation,
+  PlayingCodes,
+  RaindropNumbers
 } from "solutions";
 
 import {
@@ -161,7 +163,9 @@ import {
   TestPalindromicSums,
   TestSafeHaven,
   TestShortFuse,
-  TestGridNotation
+  TestGridNotation,
+  TestPlayingCodes,
+  TestRaindropNumbers
 } from "content/tests";
 import { ncmp, wcmp, debtRepaymentChecker, playingGamesChecker, antsChecker, morseCodeChecker, turingMachineChecker, muTorereChecker, anagramNumbersChecker, accordionPatienceChecker, watchingTheClockChecker, unlockChecker, luckyNumbersChecker, battleshipsChecker, dieTippingChecker, puzzleGameChecker, playfairCipherChecker, dotsAndBoxesChecker, fourInALineChecker, neutronChecker } from "utils";
 

@@ -7,43 +7,38 @@ export const TestGridNotation: Test[] = [
         points: 1
     },
     {
-        input: "B",
-        output: "50 125",
-        points: 1
-    },
-    {
-        input: "BC",
-        output: "8 25",
+        input: "M",
+        output: "3 3",
         points: 2
     },
     {
-        input: "MUK",
-        output: "51 53",
+        input: "EE",
+        output: "25 25",
         points: 2
     },
     {
-        input: "WATER",
-        output: "1373 547",
+        input: "QN",
+        output: "9 8",
         points: 2
     },
     {
-        input: "UEUEUEUEUE",
-        output: "1627605 1627605",
+        input: "AEY",
+        output: "25 121",
         points: 2
     },
     {
-        input: "UKOLY",
-        output: "110 311",
+        input: "UPKF",
+        output: "1 39",
         points: 2
     },
     {
-        input: "OUTPUT",
-        output: "15001 7502",
+        input: "TSRQP",
+        output: "2931 782",
         points: 2
     },
     {
-        input: "PROGRAM",
-        output: "8928 20423",
+        input: "JNRVCGK",
+        output: "73306 53868",
         points: 2
     },
     {
@@ -52,18 +47,8 @@ export const TestGridNotation: Test[] = [
         points: 2
     },
     {
-        input: "COMPUTER",
-        output: "236473 343397",
+        input: "ABCDEFGHIJ",
+        output: "606445 9764844",
         points: 2
-    },
-    {
-        input: "AFKPU",
-        output: "1 2931",
-        points: 2
-    },
-    {
-        input: "PYTHON",
-        output: "10344 6563",
-        points: 2
-    },
+    }
 ];
