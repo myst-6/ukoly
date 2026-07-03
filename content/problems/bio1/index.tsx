@@ -1198,7 +1198,33 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     editorialAuthors: ["Sal Amjad"],
     solutionAuthors: ["Sal Amjad"],
     component: <GridNotation />,
-    tests: GridNotation,
+    tests: TestGridNotation,
     checker: ncmp
   },
+  {
+    difficulty: "Insane",
+    display: "Playing Codes",
+    original: "https://www.olympiad.org.uk/papers/2026/bio/bio26-exam.pdf",
+    year: 2026,
+    question: 2,
+    tags: ["Implementation"],
+    editorialAuthors: ["?"],
+    solutionAuthors: ["?"],
+    component: <PlayingCodes />,
+    tests: TestPlayingCodes,
+    checker: wcmp
+  },
+  {
+    difficulty: "Insane",
+    display: "Raindrop Numbers",
+    original: "https://www.olympiad.org.uk/papers/2026/bio/bio26-exam.pdf",
+    year: 2026,
+    question: 3,
+    tags: ["Dynamic Programming"],
+    editorialAuthors: ["?"],
+    solutionAuthors: ["?"],
+    component: <RaindropNumbers />,
+    tests: TestRaindropNumbers,
+    checker: ncmp
+  }
 ];
