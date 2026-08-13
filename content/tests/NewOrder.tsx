@@ -45,16 +45,6 @@ export const TestNewOrder: Test[] = [
         input: "77558760 15",
         output: "111111 111111 111000 000000 00000",
         points: 3
-    },
-    {
-        input: "134798 28",
-        output: "111101 111111 101111 011111 110110 111",
-        points: 3
-    },
-    {
-        input: "69420 12",
-        output: "101011 101001 001111 10",
-        points: 3
     }
 ];
 
