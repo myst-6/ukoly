@@ -1189,17 +1189,17 @@ export const bio1Problems: BIO1ProblemInfo[] = [
     checker: ncmp
   },
   {
-    difficulty: "Insane",
+    difficulty: "Easy",
     display: "Grid Notation",
     original: "https://www.olympiad.org.uk/papers/2026/bio/bio26-exam.pdf",
     year: 2026,
     question: 1,
-    tags: ["Math"],
-    editorialAuthors: ["?"],
-    solutionAuthors: ["?"],
+    tags: ["Implementation"],
+    editorialAuthors: ["Sal Amjad"],
+    solutionAuthors: ["Sal Amjad"],
     component: <GridNotation />,
     tests: TestGridNotation,
-    checker: ncmp  
+    checker: ncmp
   },
   {
     difficulty: "Insane",
